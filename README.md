@@ -44,9 +44,11 @@ While this is of course not the fastest way of calculating the stress tensor it 
 ## Elasticity Tensor
 ...
 
+isochoric part:
 ```fortran
-       C4 = det(F)**(-2./3.)*2./3.* (
+       C4_iso = det(F)**(-2./3.) * 2./3.* (
      *       tr(C) * identity4(inv(C))
      *     - (Eye.dyadic.inv(C)) - (inv(C).dyadic.Eye)
      *     + tr(C)/3. * (inv(C).dyadic.inv(C)) )
 ```
+...
