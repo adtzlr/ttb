@@ -1,0 +1,79 @@
+       subroutine assignscalar_2s(T,w)
+        implicit none
+        
+        type(Tensor2s), intent(inout) :: T
+        real(kind=8), intent(in) :: w
+        
+        T%a6 = T%a6*w
+        
+       end
+       
+       subroutine assignscalar_2sr4(T,w)
+        implicit none
+        
+        type(Tensor2s), intent(inout) :: T
+        real, intent(in) :: w
+        
+        T%a6 = T%a6*dble(w)
+        
+       end
+       
+       subroutine assignscalar_4s(T,w)
+        implicit none
+        
+        type(Tensor4s), intent(inout) :: T
+        real(kind=8), intent(in) :: w
+        
+        T%a6b6 = T%a6b6*w
+        
+       end
+       
+       subroutine assignscalar_4sr4(T,w)
+        implicit none
+        
+        type(Tensor4s), intent(inout) :: T
+        real, intent(in) :: w
+        
+        T%a6b6 = T%a6b6*dble(w)
+        
+       end
+       
+       subroutine assignscalar_2(T,w)
+        implicit none
+        
+        type(Tensor2), intent(inout) :: T
+        real(kind=8), intent(in) :: w
+        
+        T%ab = T%ab*w
+        
+       end
+       
+       subroutine assignscalar_2r4(T,w)
+        implicit none
+        
+        type(Tensor2), intent(inout) :: T
+        real, intent(in) :: w
+        
+        T%ab = T%ab*dble(w)
+        
+       end
+       
+       subroutine assignscalar_4(T,w)
+        implicit none
+        
+        type(Tensor4), intent(inout) :: T
+        real(kind=8), intent(in) :: w
+        
+        T%abcd = T%abcd*w
+        
+       end
+       
+       subroutine assignscalar_4r4(T,w)
+        implicit none
+        
+        type(Tensor4), intent(inout) :: T
+        real, intent(in) :: w
+        
+        T%abcd = T%abcd*dble(w)
+        
+       end

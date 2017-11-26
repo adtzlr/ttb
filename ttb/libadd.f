@@ -1,0 +1,50 @@
+       function add_11(T1, T2)
+        implicit none
+        
+        type(Tensor1), intent(in) :: T1, T2
+        type(Tensor1) :: add_11
+
+        add_11%a = T1%a + T2%a
+        
+       end function add_11
+       
+       function add_22(T1, T2)
+        implicit none
+        
+        type(Tensor2), intent(in) :: T1, T2
+        type(Tensor2) :: add_22
+
+        add_22%ab = T1%ab + T2%ab
+        
+       end function add_22
+       
+       function add_2s2s(T1, T2)
+        implicit none
+        
+        type(Tensor2s), intent(in) :: T1, T2
+        type(Tensor2s) :: add_2s2s
+
+        add_2s2s%a6 = T1%a6 + T2%a6
+        
+       end function add_2s2s
+       
+       function add_44(T1, T2)
+        implicit none
+        
+        type(Tensor4), intent(in) :: T1, T2
+        type(Tensor4) :: add_44
+
+        add_44%abcd = T1%abcd + T2%abcd
+        
+       end function add_44
+       
+       function add_4s4s(T1, T2)
+        implicit none
+        
+        type(Tensor4s), intent(in) :: T1, T2
+        type(Tensor4s) :: add_4s4s
+
+        add_4s4s%a6b6 = T1%a6b6 + T2%a6b6
+        
+       end function add_4s4s
+       
