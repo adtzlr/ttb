@@ -19,7 +19,7 @@ It provides the following basic operations for tensor calculus (all written in d
 The idea is to create derived data types for rank 1, rank 2 and rank 4 tensors (and it's symmetric variants). In a next step the operators are defined in a way that Fortran calls different functions based on the input types of the operator: performing a dot product between a vector and a rank 2 tensor or a rank 2 and a rank 2 tensor is a different function. Best of it: you don't have to take care of that.
 
 ## Basic Usage
-The most basic example on how to use this module is to put the 'ttb'-Folder in your working directory and add two lines of code:
+The most basic example on how to use this module is to [download the module](https://github.com/adtzlr/ttb/archive/master.zip), put the 'ttb'-Folder in your working directory and add two lines of code:
 
 ```fortran
        include 'ttb/ttb_library.f'
