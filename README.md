@@ -56,3 +56,6 @@ Isochoric part:
      *     + tr(C)/3. * (inv(C).dya.inv(C)) )
 ```
 ...
+
+## Sources
+Naumann, C.: [Chemisch-mechanisch gekoppelte Modellierung und Simulation oxidativer Alterungsvorgänge in Gummibauteilen (German)](http://nbn-resolving.de/urn:nbn:de:bsz:ch1-qucosa-222075). PhD thesis. Fakultät für Maschinenbau der Technischen Universität Chemnitz, 2016.
