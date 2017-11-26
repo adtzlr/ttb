@@ -12,7 +12,7 @@ It provides the following basic operations for tensor calculus (all written in d
 - Deviatoric Part of Tensor  `dev(C) = C - tr(C)/3 * Eye` written as `dev(C)`
 - Transpose and Permutation of indices `B(i,j,k,l) = A(i,k,j,l)` written as `B = permute(A,1,3,2,4)`
 - Assigment of a real-valued Scalar to all components of a Tensor `A = 0.0` or `A = 0.d0`
-- Assigment of a real-valued Array to a Tensor with matching dimensions `A = B` where B is a Array and A a Tensor
+- Assigment of a real-valued Array to a Tensor with matching dimensions `A = B` where B is an Array and A a Tensor
 - Rank 2 Identity tensor of input type `Eye = identity2(Eye)` with `C = Eye*C`
 - Rank 4 Identity tensor (symmetric variant) of input type `I4 = identity4(Eye)` with `C = I4(Eye)**C` or `inv(C) = identitiy4(inv(C))**C`
 
