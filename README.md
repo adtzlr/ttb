@@ -41,12 +41,9 @@ With the help of the Tensor module the Second Piola-Kirchhoff stress tensor `S` 
        S = dev(det(F)**(-2./3.)*Eye*C)*inv(C)+p*det(F)*inv(C)
 ```
 
-While this is of course not the fastest way of calculating the stress tensor it is extremely short and readable. Also the second order tensor variables `S, Eye, F, C` and a scalar quantity `p` have to be created at the beginning of the program. A minimal working example is now:
-
-...
+While this is of course not the fastest way of calculating the stress tensor it is extremely short and readable. Also the second order tensor variables `S, Eye, F, C` and a scalar quantity `p` have to be created at the beginning of the program. A minimal working example for a very simple umat user subroutine can be found in [script_umat.f](https://github.com/adtzlr/ttb/blob/master/script_umat.f).
 
 ## Elasticity Tensor
-...
 
 Isochoric part:
 ```fortran
