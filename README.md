@@ -14,7 +14,7 @@ It provides the following basic operations for tensor calculus (all written in d
 - Assigment of a real-valued Scalar to all components of a Tensor `A = 0.0` or `A = 0.d0`
 - Assigment of a real-valued Array to a Tensor with matching dimensions `A = B` where B is a Array and A a Tensor
 - Rank 2 Identity tensor of input type `Eye = identity2(Eye)` with `C = Eye*C`
-- Rank 4 Identity tensor (symetric variant) of input type `I4 = identity4(Eye)` with `C = I4(Eye)**C` or `inv(C) = identitiy4(inv(C))**C`
+- Rank 4 Identity tensor (symmetric variant) of input type `I4 = identity4(Eye)` with `C = I4(Eye)**C` or `inv(C) = identitiy4(inv(C))**C`
 
 The idea is to create derived data types for rank 1, rank 2 and rank 4 tensors (and it's symmetric variants). In a next step the operators are defined in a way that Fortran calls different functions based on the input types of the operator: performing a dot product between a vector and a rank 2 tensor or a rank 2 and a rank 2 tensor is a different function. Best of it: you don't have to take care of that.
 
