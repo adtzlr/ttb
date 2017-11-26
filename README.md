@@ -1,5 +1,5 @@
 # Tensor Toolbox for Modern Fortran (ttb)
-*...repo under construction - toolbox will be uploaded in a few days...*
+*...repo under construction - toolbox functions / operators / assignments may vary in future versions!*
 
 Commercial FEM software packages often offer interfaces (user subroutines written in Fortran) for custom defined user materials like UMAT in Abaqus or HYPELA2 in MSC.Marc. Unlike other scientific programming languages like MATLAB or Python Fortran is not as comfortable to use when dealing with high level programming features of tensor manipulation. On the other hand it's super fast - so why not combine the handy features from MATLAB or Python's NumPy/Scipy with the speed of Fortran? That's the reason why I started working on a simple but effective module called **Tensor Toolbox for Modern Fortran**. I adopted the idea to my needs from [Naumann, C. (2016)](http://nbn-resolving.de/urn:nbn:de:bsz:ch1-qucosa-222075).
 
@@ -41,12 +41,9 @@ With the help of the Tensor module the Second Piola-Kirchhoff stress tensor `S` 
        S = dev(det(F)**(-2./3.)*Eye*C)*inv(C)+p*det(F)*inv(C)
 ```
 
-While this is of course not the fastest way of calculating the stress tensor it is extremely short and readable. Also the second order tensor variables `S, Eye, F, C` and a scalar quantity `p` have to be created at the beginning of the program. A minimal working example is now:
-
-...
+While this is of course not the fastest way of calculating the stress tensor it is extremely short and readable. Also the second order tensor variables `S, Eye, F, C` and a scalar quantity `p` have to be created at the beginning of the program. A minimal working example for a very simple umat user subroutine can be found in [script_umat.f](https://github.com/adtzlr/ttb/blob/master/script_umat.f).
 
 ## Elasticity Tensor
-...
 
 Isochoric part:
 ```fortran
