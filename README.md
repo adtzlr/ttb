@@ -51,7 +51,7 @@ Tensor components may be accessed by a conventional array with the name of the t
 
 ## A note on the Permutation of Indices
 
-Currently only `(i,j,k,l) --> (i,k,j,l)` with `permute(C4,1,3,2,4)` and `(i,j,k,l) --> (i,l,j,k)` with `permute(C4,1,4,2,3)` respectively is available. Be careful, no error is raised in all other cases. Instead no reordering is perfomed and the input `(i,j,k,l)` ordering will be returned.
+Currently only a subset of reordering `(i,j,k,l) --> (i,k,j,l)` with `permute(C4,1,3,2,4)` and `(i,j,k,l) --> (i,l,j,k)` with `permute(C4,1,4,2,3)` is available. Be careful, no error is raised in all other cases. Instead no reordering is perfomed and the input `(i,j,k,l)` ordering will be returned.
 
 ## Neo-Hookean Material
 With the help of the Tensor module the Second Piola-Kirchhoff stress tensor `S` of a nearly-incompressible Neo-Hookean material model is basically a one-liner:
