@@ -225,8 +225,8 @@
        interface tensorstore
        module procedure tenstore_2
        module procedure tenstore_2s
-       ! module procedure tenstore_4
-       ! module procedure tenstore_4s
+       module procedure tenstore_4
+       module procedure tenstore_4s
        end interface
        
        interface symstore
@@ -252,6 +252,14 @@
        module procedure transp2
        module procedure transp4
        module procedure transp4s
+       end interface
+       
+       interface asarray
+       module procedure asarray_1
+       module procedure asarray_2
+       module procedure asarray_4
+       module procedure asarray_2s
+       module procedure asarray_4s
        end interface
        
        interface assignment (=)
@@ -307,6 +315,8 @@
        include 'ttb/libtenstore.f'
 !      ------REDUCE DIM. SECTION---------------------------------
        include 'ttb/libreducedim.f'
+!      ------AS ARRAY SECTION------------------------------------
+       include 'ttb/libasarray.f'
 !      ------END FUNCTIONS---------------------------------------
 
 !      ------BEGIN SUBROUTINES-----------------------------------

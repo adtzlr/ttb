@@ -9,10 +9,9 @@
 
        end function symstore_2s
        
-       function symstore_4s(T,w)
+       function symstore_4s(T)
         implicit none
         
-        integer, intent(in) :: w
         type(Tensor4s), intent(in) :: T
         type(Tensor4s) :: symstore_4s
 

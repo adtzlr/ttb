@@ -29,3 +29,30 @@
         tenstore_2%ab = T%ab
 
        end function tenstore_2
+       
+       function tenstore_4(T,w)
+        implicit none
+        
+        integer, intent(in), optional :: w
+        type(Tensor4), intent(in) :: T
+        type(Tensor4) :: tenstore_4
+        
+        tenstore_4%abcd = T%abcd
+
+       end function tenstore_4
+       
+       function tenstore_4s(T,w)
+        implicit none
+        
+        integer, intent(in), optional :: w
+        type(Tensor4s), intent(in) :: T
+        type(Tensor4) :: tenstore_4s
+        integer :: i,j,k,l
+        integer, dimension(3,3) :: i6j6
+        
+        i6j6 = reshape( (/1,4,6, 4,2,5, 6,5,3/), (/3, 3/) )
+        
+        forall (i=1:3,j=1:3,k=1:3,l=1:3) tenstore_4s%abcd(i,j,k,l)
+     *             = T%a6b6(i6j6(i,j),i6j6(k,l))
+
+       end function tenstore_4s
