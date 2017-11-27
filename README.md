@@ -54,7 +54,7 @@ Tensor components may be accessed by a conventional array with the name of the t
 It is not possible to access tensor components of a tensor valued function  in a direct way `s = symstore(S1,1)%a6` - unfortunately this is a limitation of Fortran. To avoid the creation of an extra variable it is possible to use the `asarray(T,i_max[,j_max,k_max,l_max])` function to access tensor components. `i_max,j_max,k_max,l_max` is **not** the single component, instead a slice `T%abcd(1:i_max,1:j_max,1:k_max,1:l_max)` is returned. This can be useful when dealing with mixed formulation or variation principles where the last entry/entries of stress and strain voigt vectors are used for the pressure boundary. To export a full stress tensor `S1` to voigt notation use:
 
 ```fortran
-       s(1:dim) = asarray( symstore(S1,1), dim )
+       s(1:ndim) = asarray( symstore(S1,1), ndim )
 ```
 
 ## A note on the Permutation of Indices
