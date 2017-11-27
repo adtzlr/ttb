@@ -34,8 +34,29 @@ The most basic example on how to use this module is to [download the module](htt
 ```
 The `include 'ttb/ttb_library.f'` statement replaces the line with the content of the ttb-module. The first line in a program or subroutine is now a `use Tensor` statement. That's it - now you're ready to go.
 
+## Tensor or Voigt Notation
+
+It depends on your preferences: either you store all tensors in full tensor `dimension(3,3)` or in voigt `dimension(6)` notation. The equations remain (nearly) the same. Dot Product, Double Dot Product - every function is implemented in both full tensor and voigt notation.
+
+## Access Tensor components by Array
+
+Tensor components may be accessed by a conventional array with the name of the tensor variable `T` followed by a percent operator `%` and a keyword as follows:
+
+- Tensor of rank 1 components as array: `T%a`. i-th component of T: `T%a(i)`
+- Tensor of rank 2 components as array: `T%ab`. i,j component of T: `T%ab(i,j)`
+- Tensor of rank 4 components as array: `T%abcd`. i,j,k,l component of T: `T%abcd(i,j,k,l)`
+
+- Symmetric Tensor of rank 2 (Voigt) components as array: `T%a6`. i-th component of T: `T%a6(i)`
+- Symmetric Tensor of rank 4 (Voigt) components as array: `T%a6b6`. i,j component of T: `T%a6b6(i,j)` (at least minor symmetric)
+
+## A note on the Permutation of Indices
+
+Currently only `(i,j,k,l) --> (i,k,j,l)` with `permute(C4,1,3,2,4)` and `(i,j,k,l) --> (i,l,j,k)` with `permute(C4,1,4,2,3)` respectively is available. Be careful, no error is raised in all other cases. Instead no reordering is perfomed and the input `(i,j,k,l)` ordering will be returned.
+
 ## Neo-Hookean Material
 With the help of the Tensor module the Second Piola-Kirchhoff stress tensor `S` of a nearly-incompressible Neo-Hookean material model is basically a one-liner:
+
+### Second Piola Kirchhoff Stress Tensor
 
 ```fortran
        S = dev(det(F)**(-2./3.)*C)*inv(C)+p*det(F)*inv(C)
@@ -43,16 +64,16 @@ With the help of the Tensor module the Second Piola-Kirchhoff stress tensor `S` 
 
 While this is of course not the fastest way of calculating the stress tensor it is extremely short and readable. Also the second order tensor variables `S, Eye, F, C` and a scalar quantity `p` have to be created at the beginning of the program. A minimal working example for a very simple umat user subroutine can be found in [script_umat.f](https://github.com/adtzlr/ttb/blob/master/script_umat.f). The program is just an example where umat is called and an output information is printed. It is shown that the tensor toolbox is only used inside the material user subroutine umat.
 
-## Elasticity Tensor
+### Material Elasticity Tensor
 
-Isochoric part:
+Isochoric part of the material elasticity tensor `C4_iso` of a nearly-incompressible Neo-Hookean material model:
+
 ```fortran
        C4_iso = det(F)**(-2./3.) * 2./3.* (
      *       tr(C) * identity4(inv(C))
      *     - (Eye.dya.inv(C)) - (inv(C).dya.Eye)
      *     + tr(C)/3. * (inv(C).dya.inv(C)) )
 ```
-...
 
 ## Sources
 Naumann, C.: [Chemisch-mechanisch gekoppelte Modellierung und Simulation oxidativer Alterungsvorgänge in Gummibauteilen (German)](http://nbn-resolving.de/urn:nbn:de:bsz:ch1-qucosa-222075). PhD thesis. Fakultät für Maschinenbau der Technischen Universität Chemnitz, 2016.
