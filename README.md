@@ -49,6 +49,14 @@ Tensor components may be accessed by a conventional array with the name of the t
 - Symmetric Tensor of rank 2 (Voigt) components as array: `T%a6`. i-th component of T: `T%a6(i)`
 - Symmetric Tensor of rank 4 (Voigt) components as array: `T%a6b6`. i,j component of T: `T%a6b6(i,j)` (at least minor symmetric)
 
+### Warning
+
+It is not possible to access tensor components of a tensor valued function  in a direct way `s = symstore(S1,1)%a6` - unfortunately this is a limitation of Fortran. To avoid the creation of an extra variable it is possible to use the `asarray(T,i_max[,j_max,k_max,l_max])` function to access tensor components. `i,j,k,l` is **not** the single component, instead a slice `T%abcd(1:i,1:j,1:k,1:l)` is returned. This can be useful when dealing with mixed variation where the last entry of stress and strain voigt vectors are used for the pressure boundary. To export a full stress tensor `S1` to voigt notation use:
+
+```fortran
+       s(1:dim) = asarray( symstore(S1,1), dim )
+```
+
 ## A note on the Permutation of Indices
 
 Currently only a subset of reordering `(i,j,k,l) --> (i,k,j,l)` with `permute(C4,1,3,2,4)` and `(i,j,k,l) --> (i,l,j,k)` with `permute(C4,1,4,2,3)` is available. Be careful, no error is raised in all other cases. Instead no reordering is perfomed and the input `(i,j,k,l)` ordering will be returned.
