@@ -51,23 +51,23 @@
          enddo
         enddo
         
-        symstore_4%a6b6(4,4) = 2.*T%abcd(1,2,1,2)
-        symstore_4%a6b6(5,5) = 2.*T%abcd(2,3,2,3)
-        symstore_4%a6b6(6,6) = 2.*T%abcd(3,1,3,1)
+        symstore_4%a6b6(4,4) = T%abcd(1,2,1,2)
+        symstore_4%a6b6(5,5) = T%abcd(2,3,2,3)
+        symstore_4%a6b6(6,6) = T%abcd(3,1,3,1)
         
         do i=1,3
-         symstore_4%a6b6(i,4) = 2.*T%abcd(i,i,1,2)
-         symstore_4%a6b6(i,5) = 2.*T%abcd(i,i,2,3)
-         symstore_4%a6b6(i,6) = 2.*T%abcd(i,i,3,1)
+         symstore_4%a6b6(i,4) = T%abcd(i,i,1,2)
+         symstore_4%a6b6(i,5) = T%abcd(i,i,2,3)
+         symstore_4%a6b6(i,6) = T%abcd(i,i,3,1)
         enddo
         
-        symstore_4%a6b6(4,5) = 2.*T%abcd(1,2,2,3)
-        symstore_4%a6b6(4,6) = 2.*T%abcd(1,2,3,1)
+        symstore_4%a6b6(4,5) = T%abcd(1,2,2,3)
+        symstore_4%a6b6(4,6) = T%abcd(1,2,3,1)
         
-        symstore_4%a6b6(5,4) = 2.*T%abcd(2,3,1,2)
-        symstore_4%a6b6(5,6) = 2.*T%abcd(2,3,3,1)
+        symstore_4%a6b6(5,4) = T%abcd(2,3,1,2)
+        symstore_4%a6b6(5,6) = T%abcd(2,3,3,1)
         
-        symstore_4%a6b6(6,4) = 2.*T%abcd(3,1,1,2)
-        symstore_4%a6b6(6,5) = 2.*T%abcd(3,1,2,3)
+        symstore_4%a6b6(6,4) = T%abcd(3,1,1,2)
+        symstore_4%a6b6(6,5) = T%abcd(3,1,2,3)
         
        end function symstore_4
