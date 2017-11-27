@@ -93,6 +93,7 @@
        module procedure dot_40_r4
        module procedure dot_40s
        module procedure dot_40s_r4
+       module procedure dot_11
        module procedure dot_12
        module procedure dot_21
        module procedure dot_22
@@ -120,6 +121,7 @@
        module procedure dot_40_r4
        module procedure dot_40s
        module procedure dot_40s_r4
+       module procedure dot_11
        module procedure dot_12
        module procedure dot_21
        module procedure dot_22
@@ -253,14 +255,17 @@
        end interface
        
        interface assignment (=)
+       module procedure assignscalar_1
        module procedure assignscalar_2
        module procedure assignscalar_2s
        module procedure assignscalar_4
        module procedure assignscalar_4s
+       module procedure assignscalar_1r4
        module procedure assignscalar_2r4
        module procedure assignscalar_2sr4
        module procedure assignscalar_4r4
        module procedure assignscalar_4sr4
+       module procedure assignarr_1
        module procedure assignarr_2
        module procedure assignarr_2s
        module procedure assignarr_4
