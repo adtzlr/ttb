@@ -59,10 +59,10 @@ With the help of the Tensor module the Second Piola-Kirchhoff stress tensor `S` 
 ### Second Piola Kirchhoff Stress Tensor
 
 ```fortran
-       S = dev(det(F)**(-2./3.)*C)*inv(C)+p*det(F)*inv(C)
+       S = mu*det(C)**(-1./3.)*dev(C)*inv(C)+p*det(C)**(1./2.)*inv(C)
 ```
 
-While this is of course not the fastest way of calculating the stress tensor it is extremely short and readable. Also the second order tensor variables `S, Eye, F, C` and a scalar quantity `p` have to be created at the beginning of the program. A minimal working example for a very simple umat user subroutine can be found in [script_umat.f](https://github.com/adtzlr/ttb/blob/master/script_umat.f). The program is just an example where umat is called and an output information is printed. It is shown that the tensor toolbox is only used inside the material user subroutine umat.
+While this is of course not the fastest way of calculating the stress tensor it is extremely short and readable. Also the second order tensor variables `S, C` and scalar quantities `mu, p` have to be created at the beginning of the program. A minimal working example for a very simple umat user subroutine can be found in [script_umat.f](https://github.com/adtzlr/ttb/blob/master/script_umat.f). The program is just an example where umat is called and an output information is printed. It is shown that the tensor toolbox is only used inside the material user subroutine umat.
 
 ### Material Elasticity Tensor
 
