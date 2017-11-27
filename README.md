@@ -8,7 +8,7 @@ It provides the following basic operations for tensor calculus (all written in d
 - Double Dot Product `C = A(i,j) B(i,j)` written as `C = A**B` or `C = A.ddot.B`
 - Dyadic Product `C(i,j,k,l) = A(i,j) B(k,l)` written as `C = A.dya.B`
 - Addition / Subtraction `C(i,j) = A(i,j) + B(i,j)` written as `C = A+B` or `C = A.add.B`
-- Multiplication and Divison by a Scalar `C(i,j) = A(i,j) - B(i,j)` written as `C = A-B` or `C = A.sub.B`
+- Multiplication and Division by a Scalar `C(i,j) = A(i,j) - B(i,j)` written as `C = A-B` or `C = A.sub.B`
 - Deviatoric Part of Tensor  `dev(C) = C - tr(C)/3 * Eye` written as `dev(C)`
 - Transpose and Permutation of indices `B(i,j,k,l) = A(i,k,j,l)` written as `B = permute(A,1,3,2,4)`
 - Assigment of a real-valued Scalar to all components of a Tensor `A = 0.0` or `A = 0.d0`
