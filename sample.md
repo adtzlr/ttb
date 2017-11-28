@@ -14,4 +14,4 @@ this is text
 
 $$\begin{foo}...\end{foo}$$
 
-[f1]: http://chart.apis.google.com/chart?cht=tx&chl=x=y**2\frac{2}{3}
+[f1]: http://chart.apis.google.com/chart?cht=tx&chl=x=y^2\frac{2}{3}
