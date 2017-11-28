@@ -36,7 +36,7 @@ The `include 'ttb/ttb_library.f'` statement replaces the line with the content o
 
 ## Tensor or Voigt Notation
 
-It depends on your preferences: either you store all tensors in full tensor `dimension(3,3)` or in voigt `dimension(6)` notation. The equations remain (nearly) the same. Dot Product, Double Dot Product - every function is implemented in both full tensor and voigt notation.
+It depends on your preferences: either you store all tensors in full tensor `dimension(3,3)` or in [voigt](https://en.wikipedia.org/wiki/Voigt_notation) `dimension(6)` notation. The equations remain (nearly) the same. Dot Product, Double Dot Product - every function is implemented in both full tensor and voigt notation. Look for the voigt-comments in an [example](https://github.com/adtzlr/ttb/blob/master/hypela2_nh_ttb.f) of a user subroutine for MSC.Marc.
 
 ## Access Tensor components by Array
 
