@@ -2,8 +2,6 @@ Functions
 ===
 
 ## Dot Product
-
-![f1]
 ```
 T(i,j) = A(i,k) B(k,j)
 ```
@@ -94,5 +92,3 @@ The Subraction performs an elementwise subtraction of Tensor components. Availab
 T = A-B
 T = A.sub.B
 ```
-
-[f1]: http://chart.apis.google.com/chart?cht=tx&chl=T = A\ B
