@@ -76,7 +76,7 @@ T = A+B
 T = A.add.B
 ```
 
-## Subtraxtion
+## Subtraction
 ```
 T(i,j) = A(i,j) - B(i,j)
 ```
