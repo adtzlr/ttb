@@ -25,7 +25,7 @@ T = A.dot.B
 T(i,j) = A(i,j) * w
 ```
 This special case is implemented within the Dot-Product where every Tensor component is multiplied by the scalar quantity `w`.
-As ass Tensor data types are forced as `double precision` the scalar value is **always** converted to `double precision`.
+As all Tensor data types are forced as `double precision` the scalar value is **always** converted to `double precision`.
 
 ## Double-Dot Product
 ```
