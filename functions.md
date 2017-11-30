@@ -59,6 +59,19 @@ The Dyadic Product performs a Tensor multiplication with no contraction. Availab
 T = A.dya.B
 ```
 
+## Crossed Dyadic Product
+```
+T(i,j,k,l) = ( A(i,k) B(j,l) + A(i,l) B(j,k) ) / 2
+```
+The Crossed Dyadic Product performs a Tensor multiplication with no contraction but crossed indices as stated above. Due to compatibility with symmetric tensors this function refers to a symmetric crossed dyadic product. Available combinations are:
+- `Tensor2` and `Tensor2`
+- `Tensor2s` and `Tensor2s`
+
+### Examples
+```fortran
+T = A.cdya.B
+```
+
 ## Addition
 ```
 T(i,j) = A(i,j) + B(i,j)

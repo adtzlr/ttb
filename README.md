@@ -3,10 +3,11 @@
 
 Commercial FEM software packages often offer interfaces (user subroutines written in Fortran) for custom defined user materials like UMAT in [Abaqus](https://www.3ds.com/products-services/simulia/products/abaqus/) or HYPELA2 in [MSC.Marc](http://www.mscsoftware.com/product/marc). Unlike other scientific programming languages like MATLAB or Python Fortran is not as comfortable to use when dealing with high level programming features of tensor manipulation. On the other hand it's super fast - so why not combine the handy features from MATLAB or Python's NumPy/Scipy with the speed of Fortran? That's the reason why I started working on a simple but effective module called **Tensor Toolbox for Modern Fortran**. I adopted the idea to my needs from [Naumann, C. (2016)](http://nbn-resolving.de/urn:nbn:de:bsz:ch1-qucosa-222075).
 
-It provides the following basic operations for tensor calculus (all written in double precision `real(kind=8)`):
+It provides the following [basic operations for tensor calculus](functions.md) (all written in double precision `real(kind=8)`):
 - Dot Product `C(i,j) = A(i,k) B(k,j)` written as `C = A*B` or `C = A.dot.B`
 - Double Dot Product `C = A(i,j) B(i,j)` written as `C = A**B` or `C = A.ddot.B`
 - Dyadic Product `C(i,j,k,l) = A(i,j) B(k,l)` written as `C = A.dya.B`
+- Crossed Dyadic Product `C(i,j,k,l) = (A(i,k) B(j,l) + A(i,l) B(j,k))/2` written as `C = A.cdya.B`
 - Addition / Subtraction `C(i,j) = A(i,j) + B(i,j)` written as `C = A+B` or `C = A.add.B`
 - Multiplication and Division by a Scalar `C(i,j) = A(i,j) - B(i,j)` written as `C = A-B` or `C = A.sub.B`
 - Deviatoric Part of Tensor  `dev(C) = C - tr(C)/3 * Eye` written as `dev(C)`
@@ -60,6 +61,9 @@ It is not possible to access tensor components of a tensor valued function  in a
 ## A note on the Permutation of Indices
 
 Currently only a subset of reordering `(i,j,k,l) --> (i,k,j,l)` with `permute(C4,1,3,2,4)` and `(i,j,k,l) --> (i,l,j,k)` with `permute(C4,1,4,2,3)` is available. Be careful, no error is raised in all other cases. Instead no reordering is perfomed and the input `(i,j,k,l)` ordering will be returned.
+
+## External Libraries
+This library is not using any [LAPACK](http://www.netlib.org/lapack/) functions. Instead you can compile your subroutine with `-o3` flag where at least the Intel compiler translates nested for-loops to [Intel MPI](https://software.intel.com/en-us/intel-mpi-library) functions. I'm open for ideas how to use LAPACK and Intel MPI in the future - please let me know.
 
 ## Neo-Hookean Material
 With the help of the Tensor module the Second Piola-Kirchhoff stress tensor `S` of a nearly-incompressible Neo-Hookean material model is basically a one-liner:
