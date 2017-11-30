@@ -192,6 +192,12 @@
        module procedure dyadic_2s2s
        end interface
        
+       interface operator (.cdya.)
+       ! crossed dyadic product of rank 2 tensor combinations
+       module procedure crossdyadic_22
+       module procedure crossdyadic_2s2s
+       end interface
+       
        interface tr
        module procedure tr_2
        module procedure tr_2s
@@ -299,6 +305,8 @@
        include 'ttb/libddot.f'
 !      ------DYADIC SECTION--------------------------------------
        include 'ttb/libdyadic.f'
+!      ------CROSS-DYADIC SECTION--------------------------------------
+       include 'ttb/libcrossdyadic.f'
 !      ------PERMUTE SECTION-------------------------------------
        include 'ttb/libpermute.f'
 !      ------TENSOR FUNCTION SECTION-----------------------------
