@@ -58,7 +58,7 @@
       J = det(F1)
       
       ! voigt notation
-      !C1 = symstore(transpose(F1)*F1,1) 
+      !C1 = symstore(transpose(F1)*F1)
       
       ! tensor notation
       C1 = transpose(F1)*F1 
@@ -78,7 +78,7 @@
       S1 = 2.*C10 * J**(-2./3.) * dev(C1)*inv(C1) + p*J*invC1
       
       ! output as array
-      s(1:ndim) = asarray( symstore(S1,1), ndim )
+      s(1:ndim) = asarray( symstore(S1), ndim )
       
       ! material elasticity tensor
       if (lovl.eq.4) then ! stage 4: tangent
@@ -96,7 +96,7 @@
       ! herrmann formulation
       if (ngens > ndim) then
        s(ngens) = (J-1) - p/kappa
-       d(ngens,1:ndim) = asarray( J*symstore(invC1,1), ndim)
+       d(ngens,1:ndim) = asarray( J*symstore(invC1), ndim)
        d(1:ndim,ngens) = d(ngens,1:ndim)
        d(ngens,ngens) = -1./kappa
       endif

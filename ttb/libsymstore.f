@@ -1,7 +1,7 @@
-       function symstore_2s(T,w)
+       function symstore_2s(T)
         implicit none
         
-        integer, intent(in) :: w
+        !integer, intent(in) :: w
         type(Tensor2s), intent(in) :: T
         type(Tensor2s) :: symstore_2s
 
@@ -20,10 +20,10 @@
 
        end function symstore_4s
 
-       function symstore_2(T,w)
+       function symstore_2(T)
         implicit none
         
-        integer, intent(in) :: w
+        !integer, intent(in) :: w
         type(Tensor2), intent(in) :: T
         type(Tensor2s) :: symstore_2
         integer :: i
@@ -32,9 +32,9 @@
         do i=1,3
          symstore_2%a6(i) = T%ab(i,i)
         enddo
-        symstore_2%a6(4) = T%ab(1,2)*dble(w)
-        symstore_2%a6(5) = T%ab(2,3)*dble(w)
-        symstore_2%a6(6) = T%ab(3,1)*dble(w)
+        symstore_2%a6(4) = T%ab(1,2)!*dble(w)
+        symstore_2%a6(5) = T%ab(2,3)!*dble(w)
+        symstore_2%a6(6) = T%ab(3,1)!*dble(w)
 
        end function symstore_2
        
