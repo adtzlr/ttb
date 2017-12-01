@@ -12,6 +12,8 @@
        end function crossdyadic_22
        
        function crossdyadic_2s2s(T1, T2)
+       ! check if correct
+       ! contraction of dual shear terms (4:6,i)
         implicit none
         
         type(Tensor2s), intent(in) :: T1, T2
@@ -45,11 +47,11 @@
         crossdyadic_2s2s%a6b6(3,4) = (T1%a6(6) * T2%a6(5)
      *                               +T1%a6(5) * T2%a6(6))/2.
         crossdyadic_2s2s%a6b6(4,4) = (T1%a6(1) * T2%a6(2)
-     *                               +T1%a6(4) * T2%a6(4))/2.
+     *                               +T1%a6(4) * T2%a6(4))/2.*2.
         crossdyadic_2s2s%a6b6(5,4) = (T1%a6(4) * T2%a6(5)
-     *                               +T1%a6(2) * T2%a6(6))/2.
+     *                               +T1%a6(2) * T2%a6(6))/2.*2.
         crossdyadic_2s2s%a6b6(6,4) = (T1%a6(6) * T2%a6(4)
-     *                               +T1%a6(5) * T2%a6(1))/2.
+     *                               +T1%a6(5) * T2%a6(1))/2.*2.
      
         crossdyadic_2s2s%a6b6(1,5) = (T1%a6(6) * T2%a6(4)
      *                               +T1%a6(4) * T2%a6(6))/2.
@@ -58,11 +60,11 @@
         crossdyadic_2s2s%a6b6(3,5) = (T1%a6(3) * T2%a6(5)
      *                               +T1%a6(5) * T2%a6(3))/2.
         crossdyadic_2s2s%a6b6(4,5) = (T1%a6(4) * T2%a6(5)
-     *                               +T1%a6(6) * T2%a6(2))/2.
+     *                               +T1%a6(6) * T2%a6(2))/2.*2.
         crossdyadic_2s2s%a6b6(5,5) = (T1%a6(2) * T2%a6(3)
-     *                               +T1%a6(5) * T2%a6(5))/2.
+     *                               +T1%a6(5) * T2%a6(5))/2.*2.
         crossdyadic_2s2s%a6b6(6,5) = (T1%a6(5) * T2%a6(6)
-     *                               +T1%a6(3) * T2%a6(4))/2.
+     *                               +T1%a6(3) * T2%a6(4))/2.*2.
      
         crossdyadic_2s2s%a6b6(1,6) = (T1%a6(1) * T2%a6(6)
      *                               +T1%a6(6) * T2%a6(1))/2.
@@ -71,10 +73,10 @@
         crossdyadic_2s2s%a6b6(3,6) = (T1%a6(6) * T2%a6(3)
      *                               +T1%a6(3) * T2%a6(6))/2.
         crossdyadic_2s2s%a6b6(4,6) = (T1%a6(6) * T2%a6(4)
-     *                               +T1%a6(1) * T2%a6(5))/2.
+     *                               +T1%a6(1) * T2%a6(5))/2.*2.
         crossdyadic_2s2s%a6b6(5,6) = (T1%a6(5) * T2%a6(6)
-     *                               +T1%a6(4) * T2%a6(3))/2.
+     *                               +T1%a6(4) * T2%a6(3))/2.*2.
         crossdyadic_2s2s%a6b6(6,6) = (T1%a6(3) * T2%a6(1)
-     *                               +T1%a6(6) * T2%a6(6))/2.
+     *                               +T1%a6(6) * T2%a6(6))/2.*2.
         
        end function crossdyadic_2s2s

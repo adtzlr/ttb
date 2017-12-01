@@ -63,6 +63,10 @@
             ident_4s%a6b6(i6(i,j),i6(k,l))
      *       = ( T%a6(i6(i,k)) * T%a6(i6(j,l))
      *          +T%a6(i6(i,l)) * T%a6(i6(j,k)) )/2.d0
+            if (i.ne.j) then
+             ident_4s%a6b6(i6(i,j),i6(k,l)) = 
+     *        2.d0*ident_4s%a6b6(i6(i,j),i6(k,l))
+            endif
            end if
            end do
           end do
