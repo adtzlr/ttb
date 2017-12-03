@@ -50,17 +50,28 @@ Tensor components may be accessed by a conventional array with the name of the t
 - Symmetric Tensor of rank 2 (Voigt) components as array: `T%a6`. i-th component of T: `T%a6(i)`
 - Symmetric Tensor of rank 4 (Voigt) components as array: `T%a6b6`. i,j component of T: `T%a6b6(i,j)` (at least minor symmetric)
 
-### Warning
+### Warning: Output as array
 
 It is not possible to access tensor components of a tensor valued function  in a direct way `s = symstore(S1)%a6` - unfortunately this is a limitation of Fortran. To avoid the creation of an extra variable it is possible to use the `asarray(T,i_max[,j_max,k_max,l_max])` function to access tensor components. `i_max,j_max,k_max,l_max` is **not** the single component, instead a slice `T%abcd(1:i_max,1:j_max,1:k_max,1:l_max)` is returned. This can be useful when dealing with mixed formulation or variation principles where the last entry/entries of stress and strain voigt vectors are used for the pressure boundary. To export a full stress tensor `S1` to voigt notation use:
 
 ```fortran
        s(1:ndim) = asarray( symstore(S1), ndim )
+       d(1:ndim,1:ndim) = asarray( symstore(C4), ndim, ndim )
+```
+
+#### Abaqus Users: Output as abqarray
+
+To export a stress tensor to Abaqus Voigt notation use `asabqarray` which reorders the storage indices to `11,22,33,12,13,23`. This function is available for `Tensor2s` and `Tensor4s` data types.
+
+```fortran
+       s(1:ndim) = asabqarray( symstore(S1), ndim )
+       ddsdde(1:ndim,1:ndim) = asabqarray( symstore(C4), ndim, ndim )
 ```
 
 ## A note on the Permutation of Indices
 
-Currently only a subset of reordering `(i,j,k,l) --> (i,k,j,l)` with `permute(C4,1,3,2,4)` and `(i,j,k,l) --> (i,l,j,k)` with `permute(C4,1,4,2,3)` is available. Be careful, no error is raised in all other cases. Instead no reordering is perfomed and the input `(i,j,k,l)` ordering will be returned.
+~Currently only a subset of reordering `(i,j,k,l) --> (i,k,j,l)` with `permute(C4,1,3,2,4)` and `(i,j,k,l) --> (i,l,j,k)` with `permute(C4,1,4,2,3)` is available. Be careful, no error is raised in all other cases. Instead no reordering is perfomed and the input `(i,j,k,l)` ordering will be returned.~
+The permutation function reorders indices in the given order for a fourth order tensor of data type `Tensor4`. Example: `(i,j,k,l) --> (i,k,j,l)` with `permute(C4,1,3,2,4)`.
 
 ## External Libraries
 This library is not using any [LAPACK](http://www.netlib.org/lapack/) functions. Instead you can compile your subroutine with `-o3` flag where at least the Intel compiler translates nested for-loops to [Intel MPI](https://software.intel.com/en-us/intel-mpi-library) functions. I'm open for ideas how to use LAPACK and Intel MPI in the future - please let me know.
