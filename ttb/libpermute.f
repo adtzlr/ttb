@@ -20,17 +20,19 @@
         
         type(Tensor4) :: permute_4
         integer i,j,k,l
+
+c        hard-coded permutation
+c        if (i1==1 .and. j1==3 .and. k1==2 .and. l1==4) then
+c         forall(i=1:3,j=1:3,k=1:3,l=1:3) permute_4%abcd(i,j,k,l)
+c     *                                         = T%abcd(i,k,j,l)
+c        else if (i1==1 .and. j1==4 .and. k1==2 .and. l1==3) then
+c         forall(i=1:3,j=1:3,k=1:3,l=1:3) permute_4%abcd(i,j,k,l)
+c     *                                         = T%abcd(i,l,j,k)
+c        else
+c         permute_4%abcd = T%abcd
+c        end if
         
-        if (i1==1 .and. j1==3 .and. k1==2 .and. l1==4) then
-         forall(i=1:3,j=1:3,k=1:3,l=1:3) permute_4%abcd(i,j,k,l)
-     *                                         = T%abcd(i,k,j,l)
-        else if (i1==1 .and. j1==4 .and. k1==2 .and. l1==3) then
-         forall(i=1:3,j=1:3,k=1:3,l=1:3) permute_4%abcd(i,j,k,l)
-     *                                         = T%abcd(i,l,j,k)
-        else
-         permute_4%abcd = T%abcd
-        end if
-        
-        ! permute_4%abcd = reshape(T%abcd, (/i1,j1,k1,l1/))
+         permute_4%abcd = reshape(T%abcd,(/3,3,3,3/),
+     *                            (/0.d0/),(/i1,j1,k1,l1/))
         
        end function permute_4

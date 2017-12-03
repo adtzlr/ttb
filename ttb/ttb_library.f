@@ -268,6 +268,11 @@
        module procedure asarray_4s
        end interface
        
+       interface asabqarray
+       module procedure asabqarray_2s
+       module procedure asabqarray_4s
+       end interface
+       
        interface assignment (=)
        module procedure assignscalar_1
        module procedure assignscalar_2
@@ -325,6 +330,7 @@
        include 'ttb/libreducedim.f'
 !      ------AS ARRAY SECTION------------------------------------
        include 'ttb/libasarray.f'
+       include 'ttb/libasabqarray.f'
 !      ------END FUNCTIONS---------------------------------------
 
 !      ------BEGIN SUBROUTINES-----------------------------------
