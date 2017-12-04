@@ -100,7 +100,7 @@ Isochoric part of the material elasticity tensor `C4_iso` of a nearly-incompress
 
 ### Example of MSC.Marc HYPELA2
 
-[Here](https://github.com/adtzlr/ttb/blob/master/hypela2_nh_ttb.f) you can find an example of a nearly-incompressible version of a Neo-Hookean material for MSC.Marc. It works **only** in Total Lagrange (no push forward implemented). Herrmann Elements are automatically detected. As HYPELA2 is called twice per iteration the stiffness calculation is only active during stage `lovl == 4`. One of the best things is the super-simple switch from tensor to voigt notation: Change data types of all symmetric tensors and save the right Cauchy-Green deformation tensor in voigt notation. See commented lines for details.
+[Here](https://github.com/adtzlr/ttb/blob/master/hypela2_nh_ttb.f) you can find an example of a nearly-incompressible version of a Neo-Hookean material for MSC.Marc. ~It works **only** in Total Lagrange (no push forward implemented)~. Updated Lagrange is implemented with a push forward of both stress tensor and tangent matrix. Herrmann Elements are automatically detected. As HYPELA2 is called twice per iteration the stiffness calculation is only active during stage `lovl == 4`. One of the best things is the super-simple switch from tensor to voigt notation: Change data types of all symmetric tensors and save the right Cauchy-Green deformation tensor in voigt notation. See commented lines for details.
 
 [Download HYPELA2](https://github.com/adtzlr/ttb/blob/master/hypela2_nh_ttb.f): Neo-Hooke, MSC.Marc, Total Lagrange, Tensor Toolbox
 
