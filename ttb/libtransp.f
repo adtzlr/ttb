@@ -8,6 +8,16 @@
         
        end function transp2
        
+       function transp2s(T)
+        implicit none
+        
+        type(Tensor2s), intent(in) :: T
+        type(Tensor2s) :: transp2s
+        
+        transp2s%a6 = T%a6
+        
+       end function transp2s
+       
        function transp4(T)
         implicit none
         

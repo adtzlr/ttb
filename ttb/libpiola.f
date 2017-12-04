@@ -1,0 +1,89 @@
+       function piola2(F, T)
+        implicit none
+        
+        type(Tensor2), intent(in) :: T, F
+        type(Tensor2) :: piola2
+        
+        piola2 = F*T*transpose(F)/det(F)
+        
+       end function piola2
+       
+       function piola2s(F, T)
+        implicit none
+        
+        type(Tensor2s), intent(in) :: T
+        type(Tensor2), intent(in) :: F
+        type(Tensor2s) :: piola2s
+        
+        piola2s = symstore(F*tensorstore(T)*transpose(F)/det(F))
+        
+       end function piola2s
+       
+       function piola4(F, T)
+        implicit none
+        
+        type(Tensor2), intent(in) :: F
+        type(Tensor4), intent(in) :: T
+        type(Tensor4) :: piola4
+        integer :: i,j,k,l,ii,jj,kk,ll
+        
+        piola4%abcd = 0.d0
+        do i=1,3
+         do j=1,3
+          do k=1,3
+           do l=1,3
+            do ii=1,3
+             do jj=1,3
+              do kk=1,3
+               do ll=1,3
+                piola4%abcd(i,j,k,l) = piola4%abcd(i,j,k,l) +
+     *             F%ab(i,ii)*F%ab(j,jj)*F%ab(k,kk)*F%ab(l,ll)
+     *             *T%abcd(ii,jj,kk,ll)
+               end do
+              end do
+             end do
+            end do
+           end do
+          end do
+         end do
+        end do
+        piola4%abcd = piola4%abcd/det(F)
+        
+       end function piola4
+       
+       function piola4s(F, T)
+        implicit none
+        
+        type(Tensor2), intent(in) :: F
+        type(Tensor4s), intent(in) :: T
+        type(Tensor4) :: T2, piola4
+        type(Tensor4s) :: piola4s
+        integer :: i,j,k,l,ii,jj,kk,ll
+        
+        piola4%abcd = 0.d0
+        T2 = tensorstore(T)
+        
+        do i=1,3
+         do j=1,3
+          do k=1,3
+           do l=1,3
+            do ii=1,3
+             do jj=1,3
+              do kk=1,3
+               do ll=1,3
+                piola4%abcd(i,j,k,l) = piola4%abcd(i,j,k,l) +
+     *             F%ab(i,ii)*F%ab(j,jj)*F%ab(k,kk)*F%ab(l,ll)
+     *             *T2%abcd(ii,jj,kk,ll)
+               end do
+              end do
+             end do
+            end do
+           end do
+          end do
+         end do
+        end do
+        piola4%abcd = piola4%abcd/det(F)
+        
+        piola4s = symstore(piola4)
+        
+       end function piola4s

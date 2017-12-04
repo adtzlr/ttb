@@ -254,10 +254,17 @@
        end interface
        
        interface transpose
-       ! double dot-product of rank 1 and rank 2 tensor combinations
        module procedure transp2
+       module procedure transp2s
        module procedure transp4
        module procedure transp4s
+       end interface
+       
+       interface piola
+       module procedure piola2
+       module procedure piola2s
+       module procedure piola4
+       module procedure piola4s
        end interface
        
        interface asarray
@@ -331,8 +338,9 @@
 !      ------AS ARRAY SECTION------------------------------------
        include 'ttb/libasarray.f'
        include 'ttb/libasabqarray.f'
+!      ------PIOLA SECTION------------------------------------
+       include 'ttb/libpiola.f'
 !      ------END FUNCTIONS---------------------------------------
-
 !      ------BEGIN SUBROUTINES-----------------------------------
        include 'ttb/libassignscalar.f'
        include 'ttb/libassignarray.f'

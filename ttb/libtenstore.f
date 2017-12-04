@@ -1,11 +1,12 @@
-       function tenstore_2s(T,w)
+       function tenstore_2s(T)
         implicit none
         
-        integer, intent(in) :: w
+        integer :: w
         type(Tensor2s), intent(in) :: T
         type(Tensor2) :: tenstore_2s
         integer :: i
         
+        w = 1
         tenstore_2s%ab = 0.d0
         do i=1,3
          tenstore_2s%ab(i,i) = T%a6(i)
@@ -19,10 +20,10 @@
 
        end function tenstore_2s
        
-       function tenstore_2(T,w)
+       function tenstore_2(T)
         implicit none
         
-        integer, intent(in) :: w
+        integer :: w
         type(Tensor2), intent(in) :: T
         type(Tensor2) :: tenstore_2
         
@@ -30,10 +31,10 @@
 
        end function tenstore_2
        
-       function tenstore_4(T,w)
+       function tenstore_4(T)
         implicit none
         
-        integer, intent(in), optional :: w
+        integer :: w
         type(Tensor4), intent(in) :: T
         type(Tensor4) :: tenstore_4
         
@@ -41,10 +42,10 @@
 
        end function tenstore_4
        
-       function tenstore_4s(T,w)
+       function tenstore_4s(T)
         implicit none
         
-        integer, intent(in), optional :: w
+        integer :: w
         type(Tensor4s), intent(in) :: T
         type(Tensor4) :: tenstore_4s
         integer :: i,j,k,l
