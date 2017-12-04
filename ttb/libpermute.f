@@ -11,8 +11,21 @@
         
        end function permute_2
        
+       function permute_2s(T,i1,j1)
+        ! permute tensor of rank 2 for orders 2,1 = transpose(T)
+        implicit none
+        
+        type(Tensor2s), intent(in) :: T
+        integer, intent(in) :: i1,j1
+        
+        type(Tensor2s) :: permute_2s
+        
+        permute_2s%a6 = T%a6
+        
+       end function permute_2s
+       
        function permute_4(T,i1,j1,k1,l1)
-        ! permute tensor of rank 4 for orders 1,3,2,4 or 1,4,2,3
+        ! permute tensor of rank 4
         implicit none
         
         type(Tensor4), intent(in) :: T
@@ -36,3 +49,23 @@ c        end if
      *                            (/0.d0/),(/i1,j1,k1,l1/))
         
        end function permute_4
+       
+       function permute_4s(T,i1,j1,k1,l1)
+        ! permute tensor of rank 4s
+        implicit none
+        
+        type(Tensor4s), intent(in) :: T
+        type(Tensor4) :: Tp
+        integer, intent(in) :: i1,j1,k1,l1
+        type(Tensor4) :: permute_4
+        type(Tensor4s) :: permute_4s
+        
+        integer i,j,k,l
+        
+        Tp = tensorstore(T)
+
+        permute_4%abcd = reshape(Tp%abcd,(/3,3,3,3/),
+     *                      (/0.d0/),(/i1,j1,k1,l1/))
+        permute_4s = symstore(permute_4)
+        
+       end function permute_4s

@@ -250,7 +250,9 @@
        interface permute
        ! double dot-product of rank 1 and rank 2 tensor combinations
        module procedure permute_2
+       module procedure permute_2s
        module procedure permute_4
+       module procedure permute_4s
        end interface
        
        interface transpose
