@@ -1,5 +1,10 @@
 # Tensor Toolbox for Modern Fortran (ttb)
+
+***
+## Warning
 *...repo under construction - toolbox functions / operators / assignments may vary in future versions!*
+Voigt Notation is **broken** as of now. Use Tensor Notation until it get's fixed.
+***
 
 Commercial FEM software packages often offer interfaces (user subroutines written in Fortran) for custom defined user materials like UMAT in [Abaqus](https://www.3ds.com/products-services/simulia/products/abaqus/) or HYPELA2 in [MSC.Marc](http://www.mscsoftware.com/product/marc). Unlike other scientific programming languages like MATLAB or Python Fortran is not as comfortable to use when dealing with high level programming features of tensor manipulation. On the other hand it's super fast - so why not combine the handy features from MATLAB or Python's NumPy/Scipy with the speed of Fortran? That's the reason why I started working on a simple but effective module called **Tensor Toolbox for Modern Fortran**. I adopted the idea to my needs from [Naumann, C. (2016)](http://nbn-resolving.de/urn:nbn:de:bsz:ch1-qucosa-222075).
 
