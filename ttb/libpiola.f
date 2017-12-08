@@ -4,7 +4,7 @@
         type(Tensor2), intent(in) :: T, F
         type(Tensor2) :: piola2
         
-        piola2 = F*T*transpose(F)/det(F)
+        piola2 = F*T*transpose(F)
         
        end function piola2
        
@@ -15,7 +15,7 @@
         type(Tensor2), intent(in) :: F
         type(Tensor2s) :: piola2s
         
-        piola2s = symstore(F*tensorstore(T)*transpose(F)/det(F))
+        piola2s = symstore(F*tensorstore(T)*transpose(F))
         
        end function piola2s
        
@@ -47,7 +47,6 @@
           end do
          end do
         end do
-        piola4%abcd = piola4%abcd/det(F)
         
        end function piola4
        
@@ -82,8 +81,6 @@
           end do
          end do
         end do
-        piola4%abcd = piola4%abcd/det(F)
-        
         piola4s = symstore(piola4)
         
        end function piola4s
