@@ -24,8 +24,11 @@
         integer :: i
         
         ddot_2s2s = 0.d0
-        do i=1,6
+        do i=1,3
          ddot_2s2s = ddot_2s2s + T1%a6(i)*T2%a6(i)
+        enddo
+        do i=4,6
+         ddot_2s2s = ddot_2s2s + T1%a6(i)*T2%a6(i)*2.d0
         enddo
         
        end function ddot_2s2s
@@ -58,13 +61,19 @@
         type(Tensor2s), intent(in) :: T1
         type(Tensor4s), intent(in) :: T2
         type(Tensor2s) :: ddot_2s4s
+        real(kind=8) :: w
         integer :: i,j
         
         ddot_2s4s%a6 = 0.d0
         do i = 1,6
          do j = 1,6
+          if (i > 3) then
+           w = 2.d0
+          else
+           w = 1.d0
+          endif
           ddot_2s4s%a6(j) = ddot_2s4s%a6(j)
-     *              + T1%a6(i)*T2%a6b6(i,j)
+     *              + T1%a6(i)*T2%a6b6(i,j)*w
          enddo
         enddo
         
@@ -98,13 +107,19 @@
         type(Tensor4s), intent(in) :: T1
         type(Tensor2s), intent(in) :: T2
         type(Tensor2s) :: ddot_4s2s
+        real(kind=8) :: w
         integer :: i,j
         
         ddot_4s2s%a6 = 0.d0
         do i = 1,6
          do j = 1,6
+          if (j > 3) then
+           w = 2.d0
+          else
+           w = 1.d0
+          endif
           ddot_4s2s%a6(i) = ddot_4s2s%a6(i)
-     *          + T1%a6b6(i,j)*T2%a6(j)
+     *          + T1%a6b6(i,j)*T2%a6(j)*w
          enddo
         enddo
         
@@ -141,14 +156,20 @@
         type(Tensor4s), intent(in) :: T1
         type(Tensor4s), intent(in) :: T2
         type(Tensor4s) :: ddot_4s4s
+        real(kind=8) :: w
         integer :: i,j,k,l
         
         ddot_4s4s%a6b6 = 0.d0
         do i = 1,6
          do k = 1,6
           do j = 1,6
+           if (k > 3) then
+            w = 2.d0
+           else
+            w = 1.d0
+           endif
            ddot_4s4s%a6b6(i,j) = ddot_4s4s%a6b6(i,j)
-     *           + T1%a6b6(i,k)*T2%a6b6(k,j)
+     *           + T1%a6b6(i,k)*T2%a6b6(k,j)*w
           enddo
          enddo
         enddo

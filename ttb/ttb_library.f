@@ -96,6 +96,8 @@
        module procedure dot_11
        module procedure dot_12
        module procedure dot_21
+       module procedure dot_2s1
+       module procedure dot_12s
        module procedure dot_22
        module procedure dot_2s2s
        end interface
@@ -235,7 +237,21 @@
        module procedure tenstore_4s
        end interface
        
+       interface astensor
+       module procedure tenstore_2
+       module procedure tenstore_2s
+       module procedure tenstore_4
+       module procedure tenstore_4s
+       end interface
+       
        interface symstore
+       module procedure symstore_2
+       module procedure symstore_4
+       module procedure symstore_2s
+       module procedure symstore_4s
+       end interface
+       
+       interface asvoigt
        module procedure symstore_2
        module procedure symstore_4
        module procedure symstore_2s

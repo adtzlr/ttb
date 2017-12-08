@@ -239,6 +239,19 @@
         
        end function dot_21
        
+       function dot_2s1(T1, T2)
+        implicit none
+        
+        type(Tensor2s), intent(in) :: T1
+        type(Tensor1), intent(in) :: T2
+        type(Tensor1) :: dot_2s1
+
+        dot_2s1%a(1)=T1%a6(1)*T2%a(1)+T1%a6(4)*T2%a(2)+T1%a6(6)*T2%a(3)
+        dot_2s1%a(2)=T1%a6(4)*T2%a(1)+T1%a6(2)*T2%a(2)+T1%a6(5)*T2%a(3)
+        dot_2s1%a(3)=T1%a6(6)*T2%a(1)+T1%a6(5)*T2%a(2)+T1%a6(3)*T2%a(3)
+        
+       end function dot_2s1
+       
        function dot_12(T1, T2)
         implicit none
         
@@ -255,6 +268,19 @@
         enddo
         
        end function dot_12
+       
+       function dot_12s(T1, T2)
+        implicit none
+        
+        type(Tensor2s), intent(in) :: T2
+        type(Tensor1), intent(in) :: T1
+        type(Tensor1) :: dot_12s
+
+        dot_12s%a(1)=T1%a(1)*T2%a6(1)+T1%a(2)*T2%a6(4)+T1%a(3)*T2%a6(6)
+        dot_12s%a(2)=T1%a(1)*T2%a6(4)+T1%a(2)*T2%a6(2)+T1%a(3)*T2%a6(5)
+        dot_12s%a(3)=T1%a(1)*T2%a6(6)+T1%a(2)*T2%a6(5)+T1%a(3)*T2%a6(3)
+        
+       end function dot_12s
        
        function dot_11(T1, T2)
         implicit none
@@ -290,41 +316,22 @@
         enddo
        end function dot_22
        
-       function dot_2s2s(T1, T2) !,w1,w2)
-        ! strain * strain
-        ! strain * strain: w1 = 2, w2=2 (default)
-        ! stress * strain: w1 = 1, w2=2
-        ! strain * stress: w1 = 2, w2=1
-        ! stress * stress: w1 = 1, w2=1
+       function dot_2s2s(T1, T2)
         implicit none
         
         type(Tensor2s), intent(in) :: T1, T2
-        !integer, intent(in), optional :: w1, w2
-        real(kind=8) :: v1, v2
         type(Tensor2s) :: dot_2s2s
         
-        !if (present(w1)) then
-        ! v1 = dble(w1)
-        !else
-         v1 = 1.d0
-        !end if
-        
-        !if (present(w2)) then
-        ! v2 = dble(w2)
-        !else
-         v2 = 1.d0
-        !end if
-        
-        dot_2s2s%a6(1) = T1%a6(1)*T2%a6(1)+T1%a6(4)*T2%a6(4)/v1/v2
-     *                  +T1%a6(6)*T2%a6(6)/v1/v2
-        dot_2s2s%a6(2) = T1%a6(2)*T2%a6(2)+T1%a6(4)*T2%a6(4)/v1/v2
-     *                  +T1%a6(5)*T2%a6(5)/v1/v2
-        dot_2s2s%a6(3) = T1%a6(3)*T2%a6(3)+T1%a6(5)*T2%a6(5)/v1/v2
-     *                  +T1%a6(6)*T2%a6(6)/v1/v2
-        dot_2s2s%a6(4) = T1%a6(1)*T2%a6(4)/v2+T1%a6(4)*T2%a6(2)/v1
-     *                  +T1%a6(6)*T2%a6(5)/v1/v2
-        dot_2s2s%a6(5) = T1%a6(4)*T2%a6(6)/v1/v2+T1%a6(2)*T2%a6(5)/v2
-     *                  +T1%a6(5)*T2%a6(3)/v1
-        dot_2s2s%a6(6) = T1%a6(6)*T2%a6(1)/v1+T1%a6(5)*T2%a6(4)/v1/v2
-     *                  +T1%a6(3)*T2%a6(6)/v2
+        dot_2s2s%a6(1) = T1%a6(1)*T2%a6(1)+T1%a6(4)*T2%a6(4)
+     *                  +T1%a6(6)*T2%a6(6)
+        dot_2s2s%a6(2) = T1%a6(2)*T2%a6(2)+T1%a6(4)*T2%a6(4)
+     *                  +T1%a6(5)*T2%a6(5)
+        dot_2s2s%a6(3) = T1%a6(3)*T2%a6(3)+T1%a6(5)*T2%a6(5)
+     *                  +T1%a6(6)*T2%a6(6)
+        dot_2s2s%a6(4) = T1%a6(1)*T2%a6(4)+T1%a6(4)*T2%a6(2)
+     *                  +T1%a6(6)*T2%a6(5)
+        dot_2s2s%a6(5) = T1%a6(4)*T2%a6(6)+T1%a6(2)*T2%a6(5)
+     *                  +T1%a6(5)*T2%a6(3)
+        dot_2s2s%a6(6) = T1%a6(6)*T2%a6(1)+T1%a6(5)*T2%a6(4)
+     *                  +T1%a6(3)*T2%a6(6)
        end function dot_2s2s
