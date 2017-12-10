@@ -266,6 +266,13 @@
        module procedure symstore_4s
        end interface
        
+       interface voigt
+       module procedure symstore_2
+       module procedure symstore_4
+       module procedure symstore_2s
+       module procedure symstore_4s
+       end interface
+       
        interface reduce_dim
        module procedure reduce_dim_2s
        module procedure reduce_dim_4s
