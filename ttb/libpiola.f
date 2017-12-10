@@ -55,32 +55,35 @@
         
         type(Tensor2), intent(in) :: F
         type(Tensor4s), intent(in) :: T
-        type(Tensor4) :: T2, piola4
-        type(Tensor4s) :: piola4s
-        integer :: i,j,k,l,ii,jj,kk,ll
+        ! type(Tensor4) :: T2, piola4
+        type(Tensor4s) :: piola4s,FF
+        ! integer :: i,j,k,l,ii,jj,kk,ll
         
-        piola4%abcd = 0.d0
-        T2 = tensorstore(T)
+        ! piola4%abcd = 0.d0
+        ! T2 = tensorstore(T)
         
-        do i=1,3
-         do j=1,3
-          do k=1,3
-           do l=1,3
-            do ii=1,3
-             do jj=1,3
-              do kk=1,3
-               do ll=1,3
-                piola4%abcd(i,j,k,l) = piola4%abcd(i,j,k,l) +
-     *             F%ab(i,ii)*F%ab(j,jj)*F%ab(k,kk)*F%ab(l,ll)
-     *             *T2%abcd(ii,jj,kk,ll)
-               end do
-              end do
-             end do
-            end do
-           end do
-          end do
-         end do
-        end do
-        piola4s = symstore(piola4)
+        ! do i=1,3
+         ! do j=1,3
+          ! do k=1,3
+           ! do l=1,3
+            ! do ii=1,3
+             ! do jj=1,3
+              ! do kk=1,3
+               ! do ll=1,3
+                ! piola4%abcd(i,j,k,l) = piola4%abcd(i,j,k,l) +
+C    ! *             F%ab(i,ii)*F%ab(j,jj)*F%ab(k,kk)*F%ab(l,ll)
+C    ! *             *T2%abcd(ii,jj,kk,ll)
+               ! end do
+              ! end do
+             ! end do
+            ! end do
+           ! end do
+          ! end do
+         ! end do
+        ! end do
+        ! piola4s = symstore(piola4)
+        
+        FF = symstore(F.cdya.F)
+        piola4s = FF**T**transpose(FF)
         
        end function piola4s
