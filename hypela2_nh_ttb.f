@@ -111,7 +111,7 @@
         C4 = piola(F1,C4)/J + 
         ! Jaumann Tangent
      *    ( permute(SdyaI,1,3,2,4) + permute(SdyaI,1,4,2,3)
-     *     +permute(SdyaI,2,4,1,3) + permute(SdyaI,2,3,1,4))/1.
+     *     +permute(SdyaI,2,4,1,3) + permute(SdyaI,2,3,1,4))/2.
        endif
      
        ! output as array
