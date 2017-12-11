@@ -140,7 +140,10 @@
        module procedure ddot_4s2s
        module procedure ddot_44
        module procedure ddot_4s4s
+       module procedure pow_2
+       module procedure pow_2s
        end interface
+       
        interface operator (.ddot.)
        ! double dot-product of rank 1 and rank 2 tensor combinations
        module procedure ddot_22
@@ -151,6 +154,11 @@
        module procedure ddot_4s2s
        module procedure ddot_44
        module procedure ddot_4s4s
+       end interface
+       
+       interface operator (.pow.)
+       module procedure pow_2
+       module procedure pow_2s
        end interface
        
        interface operator (+)
@@ -226,6 +234,16 @@
        interface inv
        module procedure inv_2
        module procedure inv_2s
+       end interface
+       
+       interface exp
+       module procedure exp_2
+       module procedure exp_2s
+       end interface
+       
+       interface ln
+       module procedure ln_2
+       module procedure ln_2s
        end interface
        
        interface identity2
@@ -348,6 +366,8 @@
        include 'ttb/libdot.f'
 !      ------DOUBLE DOT SECTION----------------------------------
        include 'ttb/libddot.f'
+!      ------POWER SECTION----------------------------------
+       include 'ttb/libpower.f'
 !      ------DYADIC SECTION--------------------------------------
        include 'ttb/libdyadic.f'
 !      ------CROSS-DYADIC SECTION--------------------------------------
@@ -361,6 +381,8 @@
        include 'ttb/libdet.f'
        include 'ttb/libdev.f'
        include 'ttb/libinv.f'
+       include 'ttb/libexp.f'
+       include 'ttb/libln.f'
 !      ------TENSOR INITIALIZATION SECTION-----------------------
        include 'ttb/libidentity.f'
 !      ------SYMSTORE SECTION------------------------------------
