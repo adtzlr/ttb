@@ -246,6 +246,10 @@
        module procedure ln_2s
        end interface
        
+       interface norm
+       module procedure norm_1
+       end interface
+       
        interface identity2
        module procedure ident_2
        module procedure ident_2s
@@ -383,6 +387,7 @@
        include 'ttb/libinv.f'
        include 'ttb/libexp.f'
        include 'ttb/libln.f'
+       include 'ttb/libnorm.f'
 !      ------TENSOR INITIALIZATION SECTION-----------------------
        include 'ttb/libidentity.f'
 !      ------SYMSTORE SECTION------------------------------------

@@ -16,16 +16,16 @@
         
         type(Tensor2s), intent(in) :: T
         !integer, intent(in), optional :: w
-        real(kind=8) :: det_2s, v
+        real(kind=8) :: det_2s!, v
         
-        v = 1.0
+        !v = 1.0
         
         det_2s = T%a6(1)*T%a6(2)*T%a6(3)
-     *         + T%a6(4)*T%a6(5)*T%a6(6) /v**3
-     *         + T%a6(6)*T%a6(4)*T%a6(5) /v**3
-     *         - T%a6(6)*T%a6(2)*T%a6(6) /v**3
-     *         - T%a6(5)*T%a6(5)*T%a6(1) /v**3
-     *         - T%a6(3)*T%a6(4)*T%a6(4) /v**3
+     *         + T%a6(4)*T%a6(5)*T%a6(6)! /v**3
+     *         + T%a6(6)*T%a6(4)*T%a6(5)! /v**3
+     *         - T%a6(6)*T%a6(2)*T%a6(6)! /v**3
+     *         - T%a6(5)*T%a6(5)*T%a6(1)! /v**3
+     *         - T%a6(3)*T%a6(4)*T%a6(4)! /v**3
        
        end function det_2s
        
