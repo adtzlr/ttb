@@ -262,15 +262,19 @@
        
        interface tensorstore
        module procedure tenstore_2
+       module procedure tenstore_2a
        module procedure tenstore_2s
        module procedure tenstore_4
+       module procedure tenstore_4a
        module procedure tenstore_4s
        end interface
        
        interface astensor
        module procedure tenstore_2
+       module procedure tenstore_2a
        module procedure tenstore_2s
        module procedure tenstore_4
+       module procedure tenstore_4a
        module procedure tenstore_4s
        end interface
        
@@ -279,6 +283,8 @@
        module procedure symstore_4
        module procedure symstore_2s
        module procedure symstore_4s
+       module procedure symstore_2sa
+       module procedure symstore_4sa
        end interface
        
        interface asvoigt
@@ -286,6 +292,8 @@
        module procedure symstore_4
        module procedure symstore_2s
        module procedure symstore_4s
+       module procedure symstore_2sa
+       module procedure symstore_4sa
        end interface
        
        interface voigt
@@ -293,6 +301,8 @@
        module procedure symstore_4
        module procedure symstore_2s
        module procedure symstore_4s
+       module procedure symstore_2sa
+       module procedure symstore_4sa
        end interface
        
        interface reduce_dim

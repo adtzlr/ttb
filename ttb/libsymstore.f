@@ -6,8 +6,18 @@
         type(Tensor2s) :: symstore_2s
 
         symstore_2s%a6 = T%a6
-
        end function symstore_2s
+        
+       function symstore_2sa(T)
+        implicit none
+        
+        integer :: w
+        real(kind=8), dimension(6), intent(in) :: T
+        type(Tensor2s) :: symstore_2sa
+
+        symstore_2sa%a6 = T
+
+       end function symstore_2sa
        
        function symstore_4s(T)
         implicit none
@@ -19,6 +29,17 @@
         symstore_4s%a6b6 = T%a6b6
 
        end function symstore_4s
+       
+       function symstore_4sa(T)
+        implicit none
+        
+        integer :: w1,w2
+        real(kind=8), dimension(6,6), intent(in) :: T
+        type(Tensor4s) :: symstore_4sa
+
+        symstore_4sa%a6b6 = T
+
+       end function symstore_4sa
 
        function symstore_2(T)
         implicit none

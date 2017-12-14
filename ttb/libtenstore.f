@@ -31,6 +31,16 @@
 
        end function tenstore_2
        
+       function tenstore_2a(T)
+        implicit none
+        
+        real(kind=8), dimension(3,3), intent(in) :: T
+        type(Tensor2) :: tenstore_2a
+        
+        tenstore_2a%ab = T
+
+       end function tenstore_2a
+       
        function tenstore_4(T)
         implicit none
         
@@ -41,6 +51,16 @@
         tenstore_4%abcd = T%abcd
 
        end function tenstore_4
+       
+       function tenstore_4a(T)
+        implicit none
+        
+        real(kind=8), dimension(3,3,3,3), intent(in) :: T
+        type(Tensor4) :: tenstore_4a
+        
+        tenstore_4a%abcd = T
+
+       end function tenstore_4a
        
        function tenstore_4s(T)
         implicit none
