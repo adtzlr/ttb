@@ -9,17 +9,25 @@ It provides the following [basic operations for tensor calculus](functions.md) (
 - Double Dot Product `C = A(i,j) B(i,j)` written as `C = A**B` or `C = A.ddot.B`
 - Dyadic Product `C(i,j,k,l) = A(i,j) B(k,l)` written as `C = A.dya.B`
 - Crossed Dyadic Product `C(i,j,k,l) = (A(i,k) B(j,l) + A(i,l) B(j,k))/2` written as `C = A.cdya.B`
-- Addition / Subtraction `C(i,j) = A(i,j) + B(i,j)` written as `C = A+B` or `C = A.add.B`
-- Multiplication and Division by a Scalar `C(i,j) = A(i,j) - B(i,j)` written as `C = A-B` or `C = A.sub.B`
+
+- Addition `C(i,j) = A(i,j) + B(i,j)` written as `C = A+B` or `C = A.add.B`
+- Subtraction `C(i,j) = A(i,j) - B(i,j)` written as `C = A-B` or `C = A.sub.B`
+- Multiplication and Division by a Scalar
+
 - Deviatoric Part of Tensor  `dev(C) = C - tr(C)/3 * Eye` written as `dev(C)`
 - Transpose and Permutation of indices `B(i,j,k,l) = A(i,k,j,l)` written as `B = permute(A,1,3,2,4)`
-- Assigment of a real-valued Scalar to all components of a Tensor `A = 0.0` or `A = 0.d0`
-- Assigment of a real-valued Array to a Tensor with matching dimensions `A = B` where B is an Array and A a Tensor
+
 - Rank 2 Identity tensor of input type `Eye = identity2(Eye)` with `C = Eye*C`
 - Rank 4 Identity tensor (symmetric variant) of input type `I4 = identity4(Eye)` with `C = I4(Eye)**C` or `inv(C) = identitiy4(inv(C))**C`
+
 - Square Root of a positive definite rank 2 tensor `U = sqrt(C)`
 - Natural logarithm of a rank 2 tensor `lnC = ln(C)`
 - Exponential function of a rank 2 tensor `expC = exp(C)`
+
+- Assigment of a real-valued Scalar to all components of a Tensor `A = 0.0` or `A = 0.d0`
+- Assigment of a real-valued Array to a Tensor with matching dimensions `A = B` where B is an Array and A a Tensor
+- Assigment of a Tensor in Voigt notation to a Tensor in tensorial notation
+- Assigment of a Tensor in tensorial notation to a Tensor in Voigt notation 
 
 The idea is to create derived data types for rank 1, rank 2 and rank 4 tensors (and it's symmetric variants). In a next step the operators are defined in a way that Fortran calls different functions based on the input types of the operator: performing a dot product between a vector and a rank 2 tensor or a rank 2 and a rank 2 tensor is a different function. Best of it: you don't have to take care of that.
 
