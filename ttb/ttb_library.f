@@ -234,6 +234,8 @@
        interface inv
        module procedure inv_2
        module procedure inv_2s
+       module procedure inv2d
+       module procedure inv2sd
        end interface
        
        interface exp
@@ -248,6 +250,18 @@
        
        interface norm
        module procedure norm_1
+       end interface
+       
+       interface sqrt
+       module procedure sqrt_1
+       module procedure stretch_2
+       module procedure stretch_2s
+       end interface
+       
+       interface dsqrt
+       module procedure sqrt_1
+       module procedure stretch_2
+       module procedure stretch_2s
        end interface
        
        interface identity2
@@ -365,6 +379,10 @@
        module procedure assignarr_2sr4
        module procedure assignarr_4r4
        module procedure assignarr_4sr4
+       module procedure assignten2sym_2
+       module procedure assignten2sym_4
+       module procedure assignsym2ten_2
+       module procedure assignsym2ten_4
        end interface
 !      ------END INTERFACE---------------------------------------
        
@@ -398,6 +416,7 @@
        include 'ttb/libexp.f'
        include 'ttb/libln.f'
        include 'ttb/libnorm.f'
+       include 'ttb/libsqrt.f'
 !      ------TENSOR INITIALIZATION SECTION-----------------------
        include 'ttb/libidentity.f'
 !      ------SYMSTORE SECTION------------------------------------
@@ -415,5 +434,6 @@
 !      ------BEGIN SUBROUTINES-----------------------------------
        include 'ttb/libassignscalar.f'
        include 'ttb/libassignarray.f'
+       include 'ttb/libassignten2sym.f'
 
        end module Tensor
