@@ -51,7 +51,7 @@
       
       ! material parameters
       C10 = 0.5
-      kappa = 50.0
+      kappa = 500.0
       alpha = 1.5d-4
       
       Eye = identity2(Eye)
@@ -60,22 +60,8 @@
       J = det(F1)
       J_th = (1+alpha*(t(1)+dt(1)))**3
       
-      ! voigt notation
-      !C1 = symstore(transpose(F1)*F1) 
-      
-      ! tensor notation
-      !E1 = 0.d0
-      !E1%a6(1:3)    = e(1:3)+de(1:3)
-      !E1%a6(3:ndim) = (e(3:ndim)+de(3:ndim))/2.
-      !C1 = tensorstore(2.*E1)+Eye
-      !C1 = (2.*E1)+Eye
-      !C1 = transpose(F1)*F1
-      C1 = symstore(transpose(F1)*F1)
+      C1 = transpose(F1)*F1
       J = det(C1)**(1./2.)
-      
-      !write(6,*), '1', C1
-      !write(6,*), '2', symstore(transpose(F1)*F1)
-      
       invC1 = inv(C1)
       
       ! u or u/p formulation
@@ -91,32 +77,25 @@
       S1 = 2.*C10 * J**(-2./3.) * dev(C1)*invC1 + p*J*invC1
       
       if (iupdat.eq.1) then
-       !FdyaF = tensorstore(permute(F1.dya.F1,1,3,2,4))
        S1 = piola(F1,S1)/J ! S1 = 1/J * F1*S1*transpose(F1)
       endif
       
       ! output as array
-      s(1:ndim) = asarray( symstore(S1), ndim )
+      s(1:ndim) = asarray( voigt(S1), ndim )
       
       ! material elasticity tensor
-      if (lovl.eq.4 .or. .true.) then ! stage 4: tangent
-       I4 = identity4(invC1)
-       C4 = 2.*C10*J**(-2./3.)*2./3. * (tr(C1)*I4
+      I4 = invC1.cdya.invC1
+      C4 = 2.*C10*J**(-2./3.)*2./3. * (tr(C1)*I4
      *    -(Eye.dya.invC1)-(invC1.dya.Eye)
      *    +tr(C1)/3.*(invC1.dya.invC1))
      *    +(p*J+dpdJ*J**2)*(invC1.dya.invC1)
      *    -2.*p*J*I4
-       if (iupdat.eq.1) then
-        SdyaI = S1.dya.Eye
-        C4 = piola(F1,C4)/J + 
-        ! Jaumann Tangent
-     *    ( permute(SdyaI,1,3,2,4) + permute(SdyaI,1,4,2,3)
-     *     +permute(SdyaI,2,4,1,3) + permute(SdyaI,2,3,1,4))/2.
-       endif
-     
-       ! output as array
-       d(1:ndim,1:ndim) = asarray( symstore(C4), ndim, ndim )
+      if (iupdat.eq.1) then
+       C4 = piola(F1,C4)/detF1 + (S1.cdya.Eye)+(Eye.cdya.S1)
       endif
+     
+      ! output as array
+      d(1:ndim,1:ndim) = asarray( voigt(C4), ndim, ndim )
      
       ! herrmann formulation
       if (iupdat.eq.1) then
@@ -124,14 +103,14 @@
       endif
       if (ngens > ndim) then
        s(ngens) = (J-J_th) - p*J_th**2/kappa
-       d(ngens,1:ndim) = asarray( J*symstore(invC1), ndim)
+       d(ngens,1:ndim) = asarray( J*voigt(invC1), ndim)
        d(1:ndim,ngens) = d(ngens,1:ndim)
        d(ngens,ngens) = -J_th**2/kappa
        g(1:ndim) = 0.d0
        g(ngens) = -(1+2*p/kappa*J_th) * 3.*alpha*J_th**(2./3.)*dt(1)
       else
        g(1:ndim) = -kappa*J/J_th**2 * 3.*alpha*J_th**(2./3.)
-     *              * J * asarray(symstore(invC1), ndim)*dt(1)
+     *              * J * asarray(voigt(invC1), ndim)*dt(1)
       endif
       
       return
