@@ -167,7 +167,11 @@
        module procedure add_22
        module procedure add_44
        module procedure add_2s2s
+       module procedure add_22s
+       module procedure add_2s2
        module procedure add_4s4s
+       module procedure add_44s
+       module procedure add_4s4
        end interface
        interface operator (.add.)
        ! addition of rank 1 and rank 2 tensors
@@ -175,7 +179,11 @@
        module procedure add_22
        module procedure add_44
        module procedure add_2s2s
+       module procedure add_22s
+       module procedure add_2s2
        module procedure add_4s4s
+       module procedure add_44s
+       module procedure add_4s4
        end interface
        
        interface operator (-)
@@ -184,7 +192,11 @@
        module procedure sub_22
        module procedure sub_44
        module procedure sub_2s2s
+       module procedure sub_22s
+       module procedure sub_2s2
        module procedure sub_4s4s
+       module procedure sub_44s
+       module procedure sub_4s4
        end interface
        interface operator (.sub.)
        ! subtraction of rank 1 and rank 2 tensors
@@ -192,7 +204,11 @@
        module procedure sub_22
        module procedure sub_44
        module procedure sub_2s2s
+       module procedure sub_22s
+       module procedure sub_2s2
        module procedure sub_4s4s
+       module procedure sub_44s
+       module procedure sub_4s4
        end interface
        
        interface operator (.dya.)
@@ -262,6 +278,10 @@
        module procedure sqrt_1
        module procedure stretch_2
        module procedure stretch_2s
+       end interface
+       
+       interface rotation_matrix
+       module procedure rotation_2
        end interface
        
        interface identity2
@@ -417,6 +437,7 @@
        include 'ttb/libln.f'
        include 'ttb/libnorm.f'
        include 'ttb/libsqrt.f'
+       include 'ttb/librotation.f'
 !      ------TENSOR INITIALIZATION SECTION-----------------------
        include 'ttb/libidentity.f'
 !      ------SYMSTORE SECTION------------------------------------

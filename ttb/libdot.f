@@ -233,7 +233,7 @@
         do i = 1,3
          dot_21%a(i) = 0.d0
          do j = 1,3
-          dot_21%a(i) = dot_21%a(i) + T1%ab(i,j)*T2%a(i)
+          dot_21%a(i) = dot_21%a(i) + T1%ab(i,j)*T2%a(j)
          enddo
         enddo
         
@@ -261,9 +261,9 @@
         integer :: i, j
         
         do i = 1,3
-         dot_12%a(j) = 0.d0
+         dot_12%a(i) = 0.d0
          do j = 1,3
-          dot_12%a(j) = dot_12%a(j) + T1%a(i)*T2%ab(i,j)
+          dot_12%a(i) = dot_12%a(i) + T1%a(j)*T2%ab(j,i)
          enddo
         enddo
         

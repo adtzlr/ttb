@@ -28,6 +28,28 @@
         
        end function sub_2s2s
        
+       function sub_22s(T1, T2)
+        implicit none
+        
+        type(Tensor2),  intent(in) :: T1
+        type(Tensor2s), intent(in) :: T2
+        type(Tensor2) :: sub_22s
+
+        sub_22s = T1 - astensor(T2)
+        
+       end function sub_22s
+       
+       function sub_2s2(T1, T2)
+        implicit none
+        
+        type(Tensor2s),  intent(in) :: T1
+        type(Tensor2), intent(in) :: T2
+        type(Tensor2) :: sub_2s2
+
+        sub_2s2 = astensor(T1) - T2
+        
+       end function sub_2s2
+       
        function sub_44(T1, T2)
         implicit none
         
@@ -47,3 +69,25 @@
         sub_4s4s%a6b6 = T1%a6b6 - T2%a6b6
         
        end function sub_4s4s
+       
+       function sub_44s(T1, T2)
+        implicit none
+        
+        type(Tensor4),  intent(in) :: T1
+        type(Tensor4s), intent(in) :: T2
+        type(Tensor4) :: sub_44s
+
+        sub_44s = T1 - astensor(T2)
+        
+       end function sub_44s
+       
+       function sub_4s4(T1, T2)
+        implicit none
+        
+        type(Tensor4s),  intent(in) :: T1
+        type(Tensor4), intent(in) :: T2
+        type(Tensor4) :: sub_4s4
+
+        sub_4s4 = astensor(T1) - T2
+        
+       end function sub_4s4
