@@ -6,15 +6,15 @@
      4                   nnode,jtype,lclass,ifr,ifu)
      
       ! HYPELA2 Nearly-Incompressible Neo-Hookean Material
-      ! Formulation: Total Lagrange, Normal and Herrmann Elements
+      ! Formulation: Total Lagrange, Displacement and Herrmann Elements
+      ! Updated Lagrange: Push Forward and transform to Jaumann Tangent
       ! Example for usage of Tensor Toolbox
       !
       ! Switch to Voigt Notation:
       ! - change commented Tensor Datatypes
-      ! - save C1 with symstore(...)
       !
       ! Andreas Dutzler
-      ! 2017-12-08
+      ! 2017-12-21
       ! Graz University of Technology
 
       use Tensor
