@@ -9,7 +9,7 @@
 
 ```fortran
 type(Tensor2) :: T
-real(kind=8) :: trace
+real(kind=8)  :: trace
 
 trace = tr(T)
 ```
