@@ -12,8 +12,7 @@
 ### Example
 
 ```fortran
-type(Tensor2)  :: C
-! type(Tensor2s) :: C
-real(kind=8)   :: C_dev
+type(Tensor2)  :: C, devC
+! type(Tensor2s) :: C, devC
 
-C_dev = dev(C)
+devC = dev(C)
