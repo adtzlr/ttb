@@ -2,14 +2,10 @@
 
 **Description:** Sum of diagonal terms of a rank 2 Tensor.
 
+| A          | B                      |
 | ---        | ---                    |
 | Result     | Scalar-valued function |
 | Data Types | `Tensor2`, `Tensor2s`  |
-
-Markdown | Less | Pretty
---- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
 
 ### Example
 
