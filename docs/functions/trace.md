@@ -2,7 +2,7 @@
 
 **Description:** Sum of diagonal terms of a rank 2 Tensor.
 
-| A          | B                      |
+| Property   |                        |
 | ---        | ---                    |
 | Result     | Scalar-valued function |
 | Data Types | `Tensor2`, `Tensor2s`  |
