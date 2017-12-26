@@ -3,9 +3,9 @@
 This module provides several useful functions for the derived Tensor Data Types.
 
 ### Scalar-valued functions
-- [Trace](functions/trace)
-- [Determinant](functions/determinant)
-- [Norm](functions/norm)
+- [Trace](functions/trace.md)
+- [Determinant](functions/determinant.md)
+- [Norm](functions/norm.md)
 
 ### Tensor-valued functions
 - Deviator
