@@ -1,4 +1,4 @@
-# Documentation (Tensor Toolbox for Modern Fortran)
+# Documentation
 
 ...add picture...
 
@@ -19,5 +19,5 @@ Commercial FEM software packages offer interfaces (user subroutines written in F
 - [Functions](functions.md)
 - [Examples](Examples)
 
-## Sources
+## Credits
 Naumann, C.: [Chemisch-mechanisch gekoppelte Modellierung und Simulation oxidativer Alterungsvorgänge in Gummibauteilen (German)](http://nbn-resolving.de/urn:nbn:de:bsz:ch1-qucosa-222075). PhD thesis. Fakultät für Maschinenbau der Technischen Universität Chemnitz, 2016.
