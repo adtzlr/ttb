@@ -1,4 +1,5 @@
 ## Example of a HYPELA2 for a Neo-Hookean material
+This is a very basic example on how to implement a neo-hookean material in a commercial FEM package.
 
 ```fortran
       include 'ttb/ttb_library.f'
@@ -40,10 +41,10 @@
       type(Tensor2)  :: F1
       
       ! voigt notation: change to type Tensor2s, Tensor4s
-      type(Tensor2) :: C1,S1,invC1,Eye
+      type(Tensor2) :: C1,S1,Eye
       type(Tensor4) :: C4, I4
       
-      real(kind=8) :: J,J_th,p,dpdJ,kappa,C10
+      real(kind=8) :: J,kappa,C10
       
       ! material parameters
       C10 = 0.5
@@ -53,21 +54,19 @@
       F1 = ffn1(1:3,1:3)
       J = det(F1)
       
+      ! right cauchy-green tensor
       C1 = transpose(F1)*F1
       
-      p = kappa*(J-1)
-      dpdJ = kappa
-      
       ! pk2 stress
-      S1 = 2.*C10*J**(-2./3.)*dev(C1)*inv(C1) + p*J*inv(C1)
+      S1 = 2.*C10*J**(-2./3.)*dev(C1)*inv(C1) + kappa*(J-1)*J*inv(C1)
 
       ! material elasticity tensor
       I4 = inv(C1).cdya.inv(C1)
       C4 = 2.*C10*J**(-2./3.)*2./3. * (tr(C1)*I4
      *    -(Eye.dya.inv(C1))-(inv(C1).dya.Eye)
      *    +tr(C1)/3.*(inv(C1).dya.inv(C1)))
-     *    +(p*J+dpdJ*J**2)*(inv(C1).dya.inv(C1))
-     *    -2.*p*J*I4
+     *    +(kappa*(J-1)*J+kappa*J**2)*(inv(C1).dya.inv(C1))
+     *    -2.*kappa*(J-1)*J*I4
      
       ! output as array
       s(1:ngens)         = asarray( voigt(S1), ngens )
