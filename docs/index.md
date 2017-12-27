@@ -14,7 +14,7 @@ Commercial FEM software packages offer interfaces (user subroutines written in F
 
 ## Documentation
 - [Installation](installation.md)
-- [Quick Start Guide](../readme.md)
+- [Quick Start Guide](/../readme.md)
 - [Tensor Data Types](tensordatatypes.md)
 - [Functions](functions.md)
 - [Examples](Examples)
