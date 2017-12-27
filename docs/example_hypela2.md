@@ -41,7 +41,7 @@ This is a very basic example on how to implement a neo-hookean material in a com
       
       ! voigt notation: change to type Tensor2s, Tensor4s
       type(Tensor2) :: C1,S1,Eye
-      type(Tensor4) :: C4, I4
+      type(Tensor4) :: C4
       
       ! material parameters
       C10 = 0.5
@@ -58,12 +58,11 @@ This is a very basic example on how to implement a neo-hookean material in a com
       S1 = 2.*C10*J**(-2./3.)*dev(C1)*inv(C1) + kappa*(J-1)*J*inv(C1)
 
       ! material elasticity tensor
-      I4 = inv(C1).cdya.inv(C1)
       C4 = 2.*C10*J**(-2./3.)*2./3. * (tr(C1)*I4
      *    -(Eye.dya.inv(C1))-(inv(C1).dya.Eye)
      *    +tr(C1)/3.*(inv(C1).dya.inv(C1)))
      *    +(kappa*(J-1)*J+kappa*J**2)*(inv(C1).dya.inv(C1))
-     *    -2.*kappa*(J-1)*J*I4
+     *    -2.*kappa*(J-1)*J*(inv(C1).cdya.inv(C1))
      
       ! output as array
       s(1:ngens)         = asarray( voigt(S1), ngens )
