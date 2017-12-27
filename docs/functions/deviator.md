@@ -16,3 +16,4 @@ type(Tensor2)  :: C, devC
 ! type(Tensor2s) :: C, devC
 
 devC = dev(C)
+```
