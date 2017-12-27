@@ -7,10 +7,14 @@
         type(Tensor2) :: pow_2
         integer :: j
         
-        pow_2 = T
-        do j=1,i-1
-         pow_2 = pow_2*T
-        end do
+        if (i > 0) then
+         pow_2 = T
+         do j=1,i-1
+          pow_2 = pow_2*T
+         end do
+        else
+         pow_2 = inv(T)
+        end if
      
        end function pow_2
        
@@ -23,10 +27,14 @@
         type(Tensor2s) :: pow_2s
         integer :: j
         
-        pow_2s = T
-        do j=1,i-1
-         pow_2s = pow_2s*T
-        end do
+        if (i > 0) then
+         pow_2s = T
+         do j=1,i-1
+          pow_2s = pow_2s*T
+         end do
+        else
+         pow_2s = inv(T)
+        end if
      
        end function pow_2s
        
