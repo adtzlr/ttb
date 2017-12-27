@@ -45,11 +45,6 @@
       
       real(kind=8) :: J,J_th,p,dpdJ,kappa,C10
       
-      integer ndim
-      
-      ! dimension
-      ndim = ndi+nshear
-      
       ! material parameters
       C10 = 0.5
       kappa = 500.0
@@ -59,28 +54,24 @@
       J = det(F1)
       
       C1 = transpose(F1)*F1
-      J = det(C1)**(1./2.)
-      invC1 = inv(C1)
       
       p = kappa*(J-1)
       dpdJ = kappa
       
       ! pk2 stress
-      S1 = 2.*C10 * J**(-2./3.) * dev(C1)*invC1 + p*J*invC1
+      S1 = 2.*C10*J**(-2./3.)*dev(C1)*inv(C1) + p*J*inv(C1)
 
-      ! output as array
-      s(1:ndim) = asarray( voigt(S1), ndim )
-      
       ! material elasticity tensor
-      I4 = invC1.cdya.invC1
+      I4 = inv(C1).cdya.inv(C1)
       C4 = 2.*C10*J**(-2./3.)*2./3. * (tr(C1)*I4
-     *    -(Eye.dya.invC1)-(invC1.dya.Eye)
-     *    +tr(C1)/3.*(invC1.dya.invC1))
-     *    +(p*J+dpdJ*J**2)*(invC1.dya.invC1)
+     *    -(Eye.dya.inv(C1))-(inv(C1).dya.Eye)
+     *    +tr(C1)/3.*(inv(C1).dya.inv(C1)))
+     *    +(p*J+dpdJ*J**2)*(inv(C1).dya.inv(C1))
      *    -2.*p*J*I4
      
       ! output as array
-      d(1:ndim,1:ndim) = asarray( voigt(C4), ndim, ndim )
+      s(1:ngens)         = asarray( voigt(S1), ngens )
+      d(1:ngens,1:ngens) = asarray( voigt(C4), ngens, ngens )
       
       return
       end
