@@ -18,3 +18,4 @@ type(Tensor4)  :: C4, C4_p
 
 C_p  = permute(C, 2,1)
 C4_p = permute(C4,1,3,2,4)
+```
