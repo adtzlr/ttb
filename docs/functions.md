@@ -33,5 +33,5 @@ This module provides several useful assignments, operators and functions for the
 ### Helper Functions
 - [As Array](functions/asarray.md)
 - [As Abaqus Array](functions/asabqarray.md)
-- As Voigt
-- As Tensor
+- [As Voigt](functions/asvoigt.md)
+- [As Tensor](functions/astensor.md)
