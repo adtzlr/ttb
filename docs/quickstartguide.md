@@ -1,4 +1,4 @@
-## Basic Usage
+## Quick Start Guide
 The most basic example on how to use this module is to [download the module](https://github.com/adtzlr/ttb/archive/master.zip), put the 'ttb'-Folder in your working directory and add two lines of code:
 
 ```fortran
@@ -14,4 +14,4 @@ The most basic example on how to use this module is to [download the module](htt
 ```
 The `include 'ttb/ttb_library.f'` statement replaces the line with the content of the ttb-module. The first line in a program or subroutine is now a `use Tensor` statement. That's it - now you're ready to go.
 
-Continue to [Example](example_hypela2.md) section.
+Continue to [Example](example_hypela2.md) section. For a list and detailed information of available functions go [here](functions.md).
