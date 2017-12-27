@@ -31,7 +31,7 @@ This module provides several useful assignments, operators and functions for the
 - [Rotation Matrix](functions/rotation.md)
 
 ### Helper Functions
-- As Array
+- [As Array](asarray.md)
 - As Abaqus Array
 - As Voigt
 - As Tensor
