@@ -1,6 +1,6 @@
 theme: jekyll-theme-cayman
 
-title: Tensor Toolbox for Modern Fortran
+title: [Tensor Toolbox for Modern Fortran](index.md)
 description: provide high-level tensor manipulations in fortran
 
 show_downloads: true
