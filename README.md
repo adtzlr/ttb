@@ -1,8 +1,10 @@
 # Tensor Toolbox for Modern Fortran (ttb)
 
-Commercial FEM software packages often offer interfaces (user subroutines written in Fortran) for custom defined user materials like UMAT in [Abaqus](https://www.3ds.com/products-services/simulia/products/abaqus/) or HYPELA2 in [MSC.Marc](http://www.mscsoftware.com/product/marc). Unlike other scientific programming languages like MATLAB or Python Fortran is not as comfortable to use when dealing with high level programming features of tensor manipulation. On the other hand it's super fast - so why not combine the handy features from MATLAB or Python's NumPy/Scipy with the speed of Fortran? That's the reason why I started working on a simple but effective module called **Tensor Toolbox for Modern Fortran**. I adopted the idea to my needs from [Naumann, C. (2016)](http://nbn-resolving.de/urn:nbn:de:bsz:ch1-qucosa-222075).
+Commercial FEM software packages offer interfaces (user subroutines written in Fortran) for custom defined user materials like UMAT in [Abaqus](https://www.3ds.com/products-services/simulia/products/abaqus/) or HYPELA2 in [MSC.Marc](http://www.mscsoftware.com/product/marc). Unlike other scientific programming languages like MATLAB or Python Fortran is not as comfortable to use when dealing with high level programming features of tensor manipulation. On the other hand it's super fast - so why not combine the handy features from MATLAB or Python's NumPy/Scipy with the speed of Fortran? That's the reason why I started working on a simple but effective module called **Tensor Toolbox for Modern Fortran**. I adopted the idea to my needs from [Naumann, C. (2016)](http://nbn-resolving.de/urn:nbn:de:bsz:ch1-qucosa-222075).
 
-It provides the following [basic operations for tensor calculus](functions.md) (all written in double precision `real(kind=8)`):
+The full documentation is available at [https://adtzlr.github.io/ttb](https://adtzlr.github.io/ttb).
+
+It provides the following [basic operations for tensor calculus](docs/functions.md) (all written in double precision `real(kind=8)`):
 - Dot Product `C(i,j) = A(i,k) B(k,j)` written as `C = A*B` or `C = A.dot.B`
 - Double Dot Product `C = A(i,j) B(i,j)` written as `C = A**B` or `C = A.ddot.B`
 - Dyadic Product `C(i,j,k,l) = A(i,j) B(k,l)` written as `C = A.dya.B`
@@ -42,7 +44,7 @@ The `include 'ttb/ttb_library.f'` statement replaces the line with the content o
 
 ## Tensor or Voigt Notation
 
-It depends on your preferences: either you store all tensors in full tensor `dimension(3,3)` or in [voigt](https://en.wikipedia.org/wiki/Voigt_notation) `dimension(6)` notation. The equations remain (nearly) the same. Dot Product, Double Dot Product - every function is implemented in both full tensor and voigt notation. Look for the voigt-comments in an [example](https://github.com/adtzlr/ttb/blob/master/hypela2_nh_ttb.f) of a user subroutine for MSC.Marc.
+It depends on your preferences: either you store all tensors in full tensor `dimension(3,3)` or in [voigt](https://en.wikipedia.org/wiki/Voigt_notation) `dimension(6)` notation. The equations remain (nearly) the same. Dot Product, Double Dot Product - every function is implemented in both full tensor and voigt notation. Look for the voigt-comments in an [example](docs/examples/hypela2_nh_ttb.f) of a user subroutine for MSC.Marc.
 
 ## Access Tensor components by Array
 
@@ -60,8 +62,8 @@ Tensor components may be accessed by a conventional array with the name of the t
 It is not possible to access tensor components of a tensor valued function  in a direct way `s = symstore(S1)%a6` - unfortunately this is a limitation of Fortran. To avoid the creation of an extra variable it is possible to use the `asarray(T,i_max[,j_max,k_max,l_max])` function to access tensor components. `i_max,j_max,k_max,l_max` is **not** the single component, instead a slice `T%abcd(1:i_max,1:j_max,1:k_max,1:l_max)` is returned. This can be useful when dealing with mixed formulation or variation principles where the last entry/entries of stress and strain voigt vectors are used for the pressure boundary. To export a full stress tensor `S1` to voigt notation use:
 
 ```fortran
-       s(1:ndim) = asarray( symstore(S1), ndim )
-       d(1:ndim,1:ndim) = asarray( symstore(C4), ndim, ndim )
+       s(1:ndim)        = asarray( voigt(S1), ndim )
+       d(1:ndim,1:ndim) = asarray( voigt(C4), ndim, ndim )
 ```
 
 #### Abaqus Users: Output as abqarray
@@ -75,11 +77,10 @@ To export a stress tensor to Abaqus Voigt notation use `asabqarray` which reorde
 
 ## A note on the Permutation of Indices
 
-~Currently only a subset of reordering `(i,j,k,l) --> (i,k,j,l)` with `permute(C4,1,3,2,4)` and `(i,j,k,l) --> (i,l,j,k)` with `permute(C4,1,4,2,3)` is available. Be careful, no error is raised in all other cases. Instead no reordering is perfomed and the input `(i,j,k,l)` ordering will be returned.~
 The permutation function reorders indices in the given order for a fourth order tensor of data type `Tensor4`. Example: `(i,j,k,l) --> (i,k,j,l)` with `permute(C4,1,3,2,4)`.
 
 ## External Libraries
-This library is not using any [LAPACK](http://www.netlib.org/lapack/) functions. Instead you can compile your subroutine with `-o3` flag where at least the Intel compiler translates nested for-loops to [Intel MPI](https://software.intel.com/en-us/intel-mpi-library) functions. I'm open for ideas how to use LAPACK and Intel MPI in the future - please let me know.
+This library is not using any [LAPACK](http://www.netlib.org/lapack/) functions. Instead you can compile your subroutine with `-o3` flag where at least the Intel compiler translates nested for-loops to [Intel MPI](https://software.intel.com/en-us/intel-mpi-library) functions. However commercial FEM packages have pre-defined optimization flags which should not or only be changed with caution. I'm open for ideas how to use LAPACK and Intel MPI in the future - please let me know.
 
 ## Neo-Hookean Material
 With the help of the Tensor module the Second Piola-Kirchhoff stress tensor `S` of a nearly-incompressible Neo-Hookean material model is basically a one-liner:
@@ -90,7 +91,7 @@ With the help of the Tensor module the Second Piola-Kirchhoff stress tensor `S` 
        S = mu*det(C)**(-1./3.)*dev(C)*inv(C)+p*det(C)**(1./2.)*inv(C)
 ```
 
-While this is of course not the fastest way of calculating the stress tensor it is extremely short and readable. Also the second order tensor variables `S, C` and scalar quantities `mu, p` have to be created at the beginning of the program. A minimal working example for a very simple umat user subroutine can be found in [script_umat.f](https://github.com/adtzlr/ttb/blob/master/script_umat.f). The program is just an example where umat is called and an output information is printed. It is shown that the tensor toolbox is only used inside the material user subroutine umat.
+While this is of course not the fastest way of calculating the stress tensor it is extremely short and readable. Also the second order tensor variables `S, C` and scalar quantities `mu, p` have to be created at the beginning of the program. A minimal working example for a very simple umat user subroutine can be found in [script_umat.f](docs/examples/script_umat.f). The program is just an example where umat is called and an output information is printed. It is shown that the tensor toolbox is only used inside the material user subroutine umat.
 
 ### Material Elasticity Tensor
 
@@ -105,9 +106,9 @@ Isochoric part of the material elasticity tensor `C4_iso` of a nearly-incompress
 
 ### Example of MSC.Marc HYPELA2
 
-[Here](https://github.com/adtzlr/ttb/blob/master/hypela2_nh_ttb.f) you can find an example of a nearly-incompressible version of a Neo-Hookean material for MSC.Marc. ~It works **only** in Total Lagrange (no push forward implemented)~. Updated Lagrange is implemented with a push forward of both stress tensor and tangent matrix. Herrmann Elements are automatically detected. As HYPELA2 is called twice per iteration the stiffness calculation is only active during stage `lovl == 4`. One of the best things is the super-simple switch from tensor to voigt notation: Change data types of all symmetric tensors and save the right Cauchy-Green deformation tensor in voigt notation. See commented lines for details.
+[Here](docs/examples/hypela2_nh_ttb.f) you can find an example of a nearly-incompressible version of a Neo-Hookean material for MSC.Marc. ~It works **only** in Total Lagrange (no push forward implemented)~. Updated Lagrange is implemented with a push forward of both stress tensor and tangent matrix. Herrmann Elements are automatically detected. As HYPELA2 is called twice per iteration the stiffness calculation is only active during stage `lovl == 4`. One of the best things is the super-simple switch from tensor to voigt notation: Change data types of all symmetric tensors and save the right Cauchy-Green deformation tensor in voigt notation. See commented lines for details.
 
-[Download HYPELA2](https://github.com/adtzlr/ttb/blob/master/hypela2_nh_ttb.f): Neo-Hooke, MSC.Marc, Total Lagrange, Tensor Toolbox
+[Download HYPELA2](docs/examples/hypela2_nh_ttb.f): Neo-Hooke, MSC.Marc, Total Lagrange, Tensor Toolbox
 
-## Sources
+## Credits
 Naumann, C.: [Chemisch-mechanisch gekoppelte Modellierung und Simulation oxidativer Alterungsvorgänge in Gummibauteilen (German)](http://nbn-resolving.de/urn:nbn:de:bsz:ch1-qucosa-222075). PhD thesis. Fakultät für Maschinenbau der Technischen Universität Chemnitz, 2016.
