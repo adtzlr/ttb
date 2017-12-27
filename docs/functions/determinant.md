@@ -14,3 +14,4 @@ type(Tensor2) :: T
 real(kind=8)  :: det_T
 
 det_T = det(T)
+```
