@@ -1,4 +1,4 @@
-## Function Overview
+## Module Function Overview
 
 This module provides several useful assignments, operators and functions for the derived Tensor Data Types.
 
@@ -10,7 +10,7 @@ This module provides several useful assignments, operators and functions for the
 - [Double Dot Product](operators/ddot.md)
 - [Division](operators/division.md)
 - [Addition](operators/addition.md)
-- [Subraction](operators/subtraction.md)
+- [Subtraction](operators/subtraction.md)
 
 ### Scalar-valued functions
 - [Trace](functions/trace.md)
