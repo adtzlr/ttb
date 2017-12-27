@@ -8,6 +8,8 @@ This module provides several useful assignments, operators and functions for the
 ### Operators
 - [Dot Product](operators/operators_overview.md)
 - [Double Dot Product](operators/operators_overview.md)
+- [Dyadic Product](operators/operators_overview.md)
+- [Crossed-dyadic Product](operators/operators_overview.md)
 - [Division](operators/operators_overview.md)
 - [Addition](operators/operators_overview.md)
 - [Subtraction](operators/operators_overview.md)
