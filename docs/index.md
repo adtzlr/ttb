@@ -4,7 +4,9 @@
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{S}&space;=&space;J^{-2/3}&space;\&space;\text{dev}(\mathbf{\hat&space;S}&space;\mathbf{C})&space;\&space;\mathbf{C}^{-1}&space;&plus;&space;p&space;J&space;\mathbf{C}^{-1}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{S}&space;=&space;J^{-2/3}&space;\&space;\text{dev}(\mathbf{\hat&space;S}&space;\mathbf{C})&space;\&space;\mathbf{C}^{-1}&space;&plus;&space;p&space;J&space;\mathbf{C}^{-1}" title="\mathbf{S} = J^{-2/3} \ \text{dev}(\mathbf{\hat S} \mathbf{C}) \ \mathbf{C}^{-1} + p J \mathbf{C}^{-1}" /></a>
 
-```
+A simple code example for the above Neo-Hooke stress tensor:
+
+```fortran
 S = J**(-2./3.) * dev(Shat*C) * inv(C) + p*J*inv(C)
 ```
 
