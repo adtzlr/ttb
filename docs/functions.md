@@ -17,7 +17,7 @@ This module provides several useful functions for the derived Tensor Data Types.
 - Exponential Function
 - Natural Logarithm
 - [Identity](functions/identity.md)
-- Piola Operation
+- [Piola Operation](functions/piola.md)
 - Rotation Matrix
 
 ### Helper Functions
