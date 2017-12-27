@@ -8,10 +8,10 @@ This module provides several useful functions for the derived Tensor Data Types.
 - [Norm](functions/norm.md)
 
 ### Tensor-valued functions
-- Deviator
-- Inverse
-- Transpose
-- Permute
+- [Deviator](functions/deviator.md)
+- [Inverse](functions/inverse.md)
+- [Transpose](functions/transpose.md)
+- [Permute](functions/permute.md)
 - Square root
 - Power
 - Exponential Function
