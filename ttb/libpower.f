@@ -12,6 +12,8 @@
          do j=1,i-1
           pow_2 = pow_2*T
          end do
+        else if (i == 0) then
+         pow_2 = identity2(T)
         else
          pow_2 = inv(T)
         end if
@@ -32,6 +34,8 @@
          do j=1,i-1
           pow_2s = pow_2s*T
          end do
+        else if (i == 0) then
+         pow_2s = identity2(T)
         else
          pow_2s = inv(T)
         end if

@@ -13,7 +13,7 @@ This module provides several useful functions for the derived Tensor Data Types.
 - [Transpose](functions/transpose.md)
 - [Permute](functions/permute.md)
 - [Square root](functions/squareroot.md)
-- Power
+- [Power](functions/power.md)
 - Exponential Function
 - Natural Logarithm
 - Identity
