@@ -6,11 +6,11 @@ This module provides several useful assignments, operators and functions for the
 - [General behaviour of data type conversion](assignments/ass_overview.md)
 
 ### Operators
-- [Dot Product](operators/dot.md)
-- [Double Dot Product](operators/ddot.md)
-- [Division](operators/division.md)
-- [Addition](operators/addition.md)
-- [Subtraction](operators/subtraction.md)
+- [Dot Product](operators/operators_overview.md)
+- [Double Dot Product](operators/operators_overview.md)
+- [Division](operators/operators_overview.md)
+- [Addition](operators/operators_overview.md)
+- [Subtraction](operators/operators_overview.md)
 
 ### Scalar-valued functions
 - [Trace](functions/trace.md)
