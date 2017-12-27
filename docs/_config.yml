@@ -5,7 +5,7 @@ description: provide high-level tensor manipulations in fortran
 logo: # 120x120 px default image used for Twitter summary card
 teaser: # 400x250 px default teaser image used in image archive grid
 locale: en
-url:
+url: https://adtzlr.github.io/ttb
 feed:
   path: atom.xml
 
