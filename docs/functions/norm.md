@@ -14,3 +14,4 @@ type(Tensor1) :: v
 real(kind=8)  :: norm_v
 
 norm_v = norm(v)
+```
