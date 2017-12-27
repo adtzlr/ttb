@@ -1,7 +1,0 @@
-theme: jekyll-theme-cayman
-
-title: Tensor Toolbox for Modern Fortran
-description: provide high-level tensor manipulations in fortran
-
-show_downloads: true
-google_analytics: UA-111667836-1
