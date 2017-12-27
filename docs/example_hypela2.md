@@ -1,5 +1,6 @@
-## Example of a HYPELA2 for a Neo-Hookean material
-This is a very basic example on how to implement a neo-hookean material in a commercial FEM package.
+## Examples
+
+This is a very basic example on how to implement a Neo-Hookean material model in a commercial FEM package (HYPELA2 for MSC.Marc).
 
 ```fortran
       include 'ttb/ttb_library.f'
@@ -71,3 +72,5 @@ This is a very basic example on how to implement a neo-hookean material in a com
       return
       end
 ```
+
+There are also examples for a [basic understandig of the tensor toolbox](examples/script_umat.f) and a [full featured MSC.Marc Neo-Hookean material HYPELA2 user subroutine](examples/hypela2_nh_ttb.f).
