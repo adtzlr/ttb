@@ -35,16 +35,13 @@ This is a very basic example on how to implement a neo-hookean material in a com
      *          strechn(itel),eigvn(itel,*),ffn1(itel,3),
      *          frotn1(itel,3),strechn1(itel),eigvn1(itel,*),
      *          kcus(2),lclass(2)
-      include 'concom'
-      include 'creeps'
 
       type(Tensor2)  :: F1
+      real(kind=8) :: J,kappa,C10
       
       ! voigt notation: change to type Tensor2s, Tensor4s
       type(Tensor2) :: C1,S1,Eye
       type(Tensor4) :: C4, I4
-      
-      real(kind=8) :: J,kappa,C10
       
       ! material parameters
       C10 = 0.5
