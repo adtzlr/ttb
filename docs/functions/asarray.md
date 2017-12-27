@@ -1,6 +1,6 @@
 ## As Array
 
-**Description:** Convert Tensor to Array. This is useful to export results back to the code which is not using the tensor toolbox. This function is very useful because Fortran does not allow access to Tensor components of a function result `s = (dev(S*C)*inv(C))%ab`. Instead this function can be used.
+**Description:** Convert Tensor to Array. This is useful to export results back to the code which is not using the tensor toolbox. This function is very useful because Fortran does not allow access to Tensor components of a function result `s = (dev(S*C)*inv(C))%ab`. Instead this function can be used. If you use Abaqus please use `asabqarray` to export Tensor components.
 
 | Property   | Value                  |
 | ---        | ---                    |
