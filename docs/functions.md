@@ -16,7 +16,7 @@ This module provides several useful functions for the derived Tensor Data Types.
 - [Power](functions/power.md)
 - Exponential Function
 - Natural Logarithm
-- Identity
+- [Identity](functions/identity.md)
 - Piola Operation
 - Rotation Matrix
 
