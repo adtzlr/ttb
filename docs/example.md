@@ -6,9 +6,9 @@ The helmholtz free energy per unit reference volume is additively split into an 
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\psi(\mathbf{C})&space;=&space;\psi(\mathbf{\hat&space;C})&space;&plus;&space;U(J)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\psi(\mathbf{C})&space;=&space;\psi(\mathbf{\hat&space;C})&space;&plus;&space;U(J)" title="\psi(\mathbf{C}) = \psi(\mathbf{\hat C}) + U(J)" /></a>
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\psi(\mathbf{C})&space;=&space;\text{C}_{10}&space;(\text{I}_\mathbf{C}-3)&space;&plus;&space;\frac{\kappa}{2}&space;(J-1)^2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\psi(\mathbf{C})&space;=&space;\text{C}_{10}&space;(\text{I}_\mathbf{C}-3)&space;&plus;&space;\frac{\kappa}{2}&space;(J-1)^2" title="\psi(\mathbf{C}) = \text{C}_{10} (\text{I}_\mathbf{C}-3) + \frac{\kappa}{2} (J-1)^2" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\psi(\mathbf{C})&space;=&space;\text{C}_{10}&space;(\text{I}_\mathbf{\hat&space;C}-3)&space;&plus;&space;\frac{\kappa}{2}&space;(J-1)^2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\psi(\mathbf{C})&space;=&space;\text{C}_{10}&space;(\text{I}_\mathbf{\hat&space;C}-3)&space;&plus;&space;\frac{\kappa}{2}&space;(J-1)^2" title="\psi(\mathbf{C}) = \text{C}_{10} (\text{I}_\mathbf{\hat C}-3) + \frac{\kappa}{2} (J-1)^2" /></a>
 
-We get the second Piola-Kirchhoff stress with the derivative of helmholtz free energy per unit reference volume with respect to one half of the right Cauchy-Green deformation tensor:
+We get the second Piola-Kirchhoff stress with the derivative of the helmholtz free energy per unit reference volume with respect to one half of the right Cauchy-Green deformation tensor:
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{S}&space;=&space;\frac{\partial&space;\psi(\mathbf{C})}{\partial&space;\frac{1}{2}\mathbf{C}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{S}&space;=&space;\frac{\partial&space;\psi(\mathbf{C})}{\partial&space;\frac{1}{2}\mathbf{C}}" title="\mathbf{S} = \frac{\partial \psi(\mathbf{C})}{\partial \frac{1}{2}\mathbf{C}}" /></a>
 
