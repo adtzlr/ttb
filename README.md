@@ -4,7 +4,9 @@
 
 Commercial FEM software packages offer interfaces (user subroutines written in Fortran) for custom defined user materials like UMAT in [Abaqus](https://www.3ds.com/products-services/simulia/products/abaqus/) or HYPELA2 in [MSC.Marc](http://www.mscsoftware.com/product/marc). In comparison to other scientific programming languages like MATLAB or Python Fortran is not as comfortable to use when dealing with high level programming features of tensor manipulation. On the other hand it's super fast - so why not combine the handy features from MATLAB or Python's NumPy/Scipy with the speed of Fortran? That's the reason why I started working on a simple but effective module called **Tensor Toolbox for Modern Fortran**. I adopted the idea to my needs from [Naumann, C. (2016)](http://nbn-resolving.de/urn:nbn:de:bsz:ch1-qucosa-222075).
 
-The full documentation is available at [https://adtzlr.github.io/ttb](https://adtzlr.github.io/ttb).
+The full documentation is available at [https://adtzlr.github.io/ttb](https://adtzlr.github.io/ttb). This project is licensed under the terms of the MIT license.
+
+## Overview
 
 It provides the following [basic operations for tensor calculus](docs/functions.md) (all written in double precision `real(kind=8)`):
 - Dot Product `C(i,j) = A(i,k) B(k,j)` written as `C = A*B`
