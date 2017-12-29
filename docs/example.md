@@ -1,6 +1,16 @@
 ## Examples
 
-This is a very basic example on how to implement a Neo-Hookean material model in a commercial FEM package (HYPELA2 for MSC.Marc).
+This is a very basic example on how to implement a nearly-incompressible version of the Neo-Hookean material model in a commercial FEM package (HYPELA2 for MSC.Marc).
+
+The formulation of the second Piola-Kirchhoff stress:
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{S}&space;=&space;2\text{C}_{10}&space;\&space;\text{dev}(\hat{\mathbf{C}})&space;\mathbf{C}^{-1}&space;&plus;&space;\kappa&space;(J-1)&space;J&space;\mathbf{C}^{-1}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{S}&space;=&space;2\text{C}_{10}&space;\&space;\text{dev}(\hat{\mathbf{C}})&space;\mathbf{C}^{-1}&space;&plus;&space;\kappa&space;(J-1)&space;J&space;\mathbf{C}^{-1}" title="\mathbf{S} = 2\text{C}_{10} \ \text{dev}(\hat{\mathbf{C}}) \mathbf{C}^{-1} + \kappa (J-1) J \mathbf{C}^{-1}" /></a>
+
+By evaluating the derivative of the stress with respect to the right Cauchy-Green deformation tensor we get the material elasticity tensor:
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\mathbb{C}&space;=&space;2\text{C}_{10}&space;J^{-2/3}&space;\frac{2}{3}&space;\&space;(\text{tr}(\mathbf{C})&space;\&space;\mathbb{I}&space;-&space;\mathbf{1}&space;\otimes&space;\mathbf{C}^{-1}&space;-&space;\mathbf{C}^{-1}&space;\otimes&space;\mathbf{1}&space;&plus;&space;\frac{1}{3}&space;\text{tr}(\mathbf{C})&space;\&space;\mathbf{C}^{-1}&space;\otimes&space;\mathbf{C}^{-1})&space;&plus;&space;\left(\kappa&space;(J-1)&space;J&space;&plus;&space;\kappa&space;J^2\right)&space;\&space;\mathbf{C}^{-1}&space;\otimes&space;\mathbf{C}^{-1}&space;-&space;2&space;\kappa&space;(J-1)&space;J&space;\&space;\mathbb{I}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbb{C}&space;=&space;2\text{C}_{10}&space;J^{-2/3}&space;\frac{2}{3}&space;\&space;(\text{tr}(\mathbf{C})&space;\&space;\mathbb{I}&space;-&space;\mathbf{1}&space;\otimes&space;\mathbf{C}^{-1}&space;-&space;\mathbf{C}^{-1}&space;\otimes&space;\mathbf{1}&space;&plus;&space;\frac{1}{3}&space;\text{tr}(\mathbf{C})&space;\&space;\mathbf{C}^{-1}&space;\otimes&space;\mathbf{C}^{-1})&space;&plus;&space;\left(\kappa&space;(J-1)&space;J&space;&plus;&space;\kappa&space;J^2\right)&space;\&space;\mathbf{C}^{-1}&space;\otimes&space;\mathbf{C}^{-1}&space;-&space;2&space;\kappa&space;(J-1)&space;J&space;\&space;\mathbb{I}" title="\mathbb{C} = 2\text{C}_{10} J^{-2/3} \frac{2}{3} \ (\text{tr}(\mathbf{C}) \ \mathbb{I} - \mathbf{1} \otimes \mathbf{C}^{-1} - \mathbf{C}^{-1} \otimes \mathbf{1} + \frac{1}{3} \text{tr}(\mathbf{C}) \ \mathbf{C}^{-1} \otimes \mathbf{C}^{-1}) + \left(\kappa (J-1) J + \kappa J^2\right) \ \mathbf{C}^{-1} \otimes \mathbf{C}^{-1} - 2 \kappa (J-1) J \ \mathbb{I}" /></a>
+
+The two equations are now implemented in a Total Lagrange user subroutine as follows:
 
 ```fortran
       include 'ttb/ttb_library.f'
