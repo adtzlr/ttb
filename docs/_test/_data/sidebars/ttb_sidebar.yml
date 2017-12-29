@@ -3,7 +3,7 @@
 
 entries:
 - title: Sidebar
-  product: Product1
+  product: Tensor Toolbox
   version: 1.0
   folders:
 
@@ -29,32 +29,4 @@ entries:
 
     - title: Sample 1
       url: /p1_sample1.html
-      output: web, pdf
-
-    - title: Sample 2
-      url: /p1_sample2.html
-      output: web, pdf
-
-    - title: Sample 3
-      url: /p1_sample3.html
-      output: web, pdf
-
-  - title: Another heading
-    output: web, pdf
-
-    folderitems:
-    - title: Sample 4
-      url: /p1_sample4.html
-      output: web, pdf
-
-    - title: Sample 5
-      url: /p1_sample5.html
-      output: web, pdf
-
-    - title: Sample 6
-      url: /p1_sample6.html
-      output: web, pdf
-
-    - title: Sample 7
-      url: /p1_sample7.html
       output: web, pdf
