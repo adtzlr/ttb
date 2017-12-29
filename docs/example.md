@@ -59,7 +59,8 @@ This is a very basic example on how to implement a Neo-Hookean material model in
       S1 = 2.*C10*J**(-2./3.)*dev(C1)*inv(C1) + kappa*(J-1)*J*inv(C1)
 
       ! material elasticity tensor
-      C4 = 2.*C10*J**(-2./3.)*2./3. * (tr(C1)*I4
+      C4 = 2.*C10 * J**(-2./3.) * 2./3. *
+     *     (tr(C1) * (inv(C1).cdya.inv(C1))
      *    -(Eye.dya.inv(C1))-(inv(C1).dya.Eye)
      *    +tr(C1)/3.*(inv(C1).dya.inv(C1)))
      *    +(kappa*(J-1)*J+kappa*J**2)*(inv(C1).dya.inv(C1))
