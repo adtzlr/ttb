@@ -30,16 +30,12 @@ The two equations are now implemented in a Total Lagrange user subroutine  with 
      3                   frotn1,strechn1,eigvn1,ncrd,itel,ndeg,ndm,
      4                   nnode,jtype,lclass,ifr,ifu)
      
-      ! HYPELA2 Nearly-Incompressible Neo-Hookean Material (3D analysis)
-      ! Formulation: Total Lagrange
-      ! Example for usage of Tensor Toolbox
-      !
-      ! Switch to Voigt Notation:
-      ! - change commented Tensor Datatypes
-      !
-      ! Andreas Dutzler
-      ! 2017-12-27
-      ! Graz University of Technology
+      ! HYPELA2:        Nearly-Incompressible Neo-Hookean Material
+      !                 Example for usage of Tensor Toolbox
+      ! capability:     axisymmetric and 3D analysis
+      ! Formulation:    Total Lagrange
+      ! Voigt Notation: change commented Tensor Datatypes
+      ! Andreas Dutzler, 2017-12-29, Graz University of Technology
 
       use Tensor
       implicit none
@@ -61,7 +57,7 @@ The two equations are now implemented in a Total Lagrange user subroutine  with 
       real(kind=8) :: J,kappa,C10
       
       ! voigt notation: change to type Tensor2s, Tensor4s
-      type(Tensor2) :: C1,S1,Eye
+      type(Tensor2) :: C1,invC1,S1,Eye
       type(Tensor4) :: C4
       
       ! material parameters
@@ -74,17 +70,18 @@ The two equations are now implemented in a Total Lagrange user subroutine  with 
       
       ! right cauchy-green tensor
       C1 = transpose(F1)*F1
+      invC1 = inv(C1) ! faster method: invC1 = inv(C1,J**2)
       
       ! pk2 stress
-      S1 = 2.*C10*J**(-2./3.)*dev(C1)*inv(C1) + kappa*(J-1)*J*inv(C1)
+      S1 = 2.*C10*J**(-2./3.)*dev(C1)*invC1 + kappa*(J-1)*J*invC1
 
       ! material elasticity tensor
       C4 = 2.*C10 * J**(-2./3.) * 2./3. *
-     *     (tr(C1) * (inv(C1).cdya.inv(C1))
-     *    -(Eye.dya.inv(C1))-(inv(C1).dya.Eye)
-     *    +tr(C1)/3.*(inv(C1).dya.inv(C1)))
-     *    +(kappa*(J-1)*J+kappa*J**2)*(inv(C1).dya.inv(C1))
-     *    -2.*kappa*(J-1)*J*(inv(C1).cdya.inv(C1))
+     *  ( tr(C1) * (invC1.cdya.invC1)
+     *    - (Eye.dya.invC1) - (invC1.dya.Eye)
+     *    + tr(C1)/3. * (invC1.dya.invC1) )
+     *  + (kappa*(J-1)*J+kappa*J**2) * (invC1.dya.invC1)
+     *  - 2.*kappa*(J-1)*J* (invC1.cdya.invC1)
      
       ! output as array
       s(1:ngens)         = asarray( voigt(S1), ngens )
