@@ -31,7 +31,7 @@ Eye = identity2(C)
 I4 = identity4(Eye)
 C = I4**C
 I4invC = identity4(inv(C))
-I4invC = I4invC**C
+invC = I4invC**C
 ```
 
 **Note**: the operator `**` for two tensor data types represents a double contraction. See double contraction for details. `Eye.cdya.Eye` is equivalent to `identity4(Eye)`. See crossed-dyadic product for details.
