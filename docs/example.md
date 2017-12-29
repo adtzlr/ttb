@@ -56,7 +56,7 @@ The two equations are now implemented in a Total Lagrange user subroutine  with 
       type(Tensor2)  :: F1
       real(kind=8) :: J,kappa,C10
       
-      ! voigt notation: change to type Tensor2s, Tensor4s
+      ! to use voigt notation change to type Tensor2s, Tensor4s
       type(Tensor2) :: C1,invC1,S1,Eye
       type(Tensor4) :: C4
       
@@ -65,10 +65,10 @@ The two equations are now implemented in a Total Lagrange user subroutine  with 
       kappa = 500.0
       
       Eye = identity2(Eye)
-      F1 = ffn1(1:3,1:3)
+      F1 = ffn1(1:3,1:3) ! use slices (ffn1 is an assumed size array)
       J = det(F1)
       
-      ! right cauchy-green tensor
+      ! right cauchy-green deformation tensor and it's inverse
       C1 = transpose(F1)*F1
       invC1 = inv(C1) ! faster method: invC1 = inv(C1,J**2)
       
