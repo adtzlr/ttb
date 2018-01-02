@@ -20,6 +20,12 @@ By evaluating the derivative of the stress with respect to one half of the right
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbb{C}&space;=&space;2\text{C}_{10}&space;J^{-2/3}&space;\frac{2}{3}&space;\&space;(\text{tr}(\mathbf{C})&space;\&space;\mathbb{I}&space;-&space;\mathbf{1}&space;\otimes&space;\mathbf{C}^{-1}&space;-&space;\mathbf{C}^{-1}&space;\otimes&space;\mathbf{1}&space;&plus;&space;\frac{1}{3}&space;\text{tr}(\mathbf{C})&space;\&space;\mathbf{C}^{-1}&space;\otimes&space;\mathbf{C}^{-1})&space;&plus;&space;\left(\kappa&space;(J-1)&space;J&space;&plus;&space;\kappa&space;J^2\right)&space;\&space;\mathbf{C}^{-1}&space;\otimes&space;\mathbf{C}^{-1}&space;-&space;2&space;\kappa&space;(J-1)&space;J&space;\&space;\mathbb{I}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbb{C}&space;=&space;2\text{C}_{10}&space;J^{-2/3}&space;\frac{2}{3}&space;\&space;(\text{tr}(\mathbf{C})&space;\&space;\mathbb{I}&space;-&space;\mathbf{1}&space;\otimes&space;\mathbf{C}^{-1}&space;-&space;\mathbf{C}^{-1}&space;\otimes&space;\mathbf{1}&space;&plus;&space;\frac{1}{3}&space;\text{tr}(\mathbf{C})&space;\&space;\mathbf{C}^{-1}&space;\otimes&space;\mathbf{C}^{-1})&space;&plus;&space;\left(\kappa&space;(J-1)&space;J&space;&plus;&space;\kappa&space;J^2\right)&space;\&space;\mathbf{C}^{-1}&space;\otimes&space;\mathbf{C}^{-1}&space;-&space;2&space;\kappa&space;(J-1)&space;J&space;\&space;\mathbb{I}" title="\mathbb{C} = 2\text{C}_{10} J^{-2/3} \frac{2}{3} \ (\text{tr}(\mathbf{C}) \ \mathbb{I} - \mathbf{1} \otimes \mathbf{C}^{-1} - \mathbf{C}^{-1} \otimes \mathbf{1} + \frac{1}{3} \text{tr}(\mathbf{C}) \ \mathbf{C}^{-1} \otimes \mathbf{C}^{-1}) + \left(\kappa (J-1) J + \kappa J^2\right) \ \mathbf{C}^{-1} \otimes \mathbf{C}^{-1} - 2 \kappa (J-1) J \ \mathbb{I}" /></a>
 
+with the fourth order identity tensor
+
+<a href="http://www.codecogs.com/eqnedit.php?latex=\mathbb{I}=&space;\mathbf{C}^{-1}&space;\odot&space;\mathbf{C}^{-1}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbb{I}=&space;\mathbf{C}^{-1}&space;\odot&space;\mathbf{C}^{-1}" title="\mathbb{I}= \mathbf{C}^{-1} \odot \mathbf{C}^{-1}" /></a>
+
+<a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{C}^{-1}&space;=&space;\mathbb{I}&space;:&space;\mathbf{C}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{C}^{-1}&space;=&space;\mathbb{I}&space;:&space;\mathbf{C}" title="\mathbf{C}^{-1} = \mathbb{I} : \mathbf{C}" /></a>
+
 The two equations are now implemented in a Total Lagrange user subroutine  with the help of this Tensor module as follows:
 
 ```fortran
@@ -35,24 +41,22 @@ The two equations are now implemented in a Total Lagrange user subroutine  with 
       ! capability:     axisymmetric and 3D analysis
       ! Formulation:    Total Lagrange
       ! Voigt Notation: change commented Tensor Datatypes
-      ! Andreas Dutzler, 2017-12-29, Graz University of Technology
+      ! Andreas Dutzler, 2018-01-02, Graz University of Technology
 
       use Tensor
       implicit none
+     
+      integer :: ifr,ifu,itel,jtype,ncrd,ndeg,ndi,ndm,ngens,
+     *           nn,nnode,nshear
+      integer, dimension(2)            :: m,matus,kcus,lclass
+      real(kind=8), dimension(*)       :: e,de,t,dt,g,s
+      real(kind=8), dimension(itel)    :: strechn,strechn1
+      real(kind=8), dimension(ngens,*) :: d
+      real(kind=8), dimension(ncrd,*)  :: coord
+      real(kind=8), dimension(ndeg,*)  :: disp, dispt
+      real(kind=8), dimension(itel,3)  :: ffn,ffn1,frotn,frotn1
+      real(kind=8), dimension(itel,*)  :: eigvn,eigvn1
       
-      real*8 coord, d, de, disp, dispt, dt, e, eigvn, eigvn1, ffn, ffn1
-      real*8 frotn, frotn1, g
-      integer ifr, ifu, itel, jtype, kcus, lclass, matus, m, ncrd, ndeg
-      integer ndi, ndm, ngens, nn, nnode, nshear
-      real*8 s, strechn, strechn1, t
-
-      dimension e(*),de(*),t(*),dt(*),g(*),d(ngens,*),s(*)
-      dimension m(2),coord(ncrd,*),disp(ndeg,*),matus(2),
-     *          dispt(ndeg,*),ffn(itel,3),frotn(itel,3),
-     *          strechn(itel),eigvn(itel,*),ffn1(itel,3),
-     *          frotn1(itel,3),strechn1(itel),eigvn1(itel,*),
-     *          kcus(2),lclass(2)
-
       type(Tensor2)  :: F1
       real(kind=8) :: J,kappa,C10
       
