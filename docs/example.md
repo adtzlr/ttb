@@ -48,7 +48,7 @@ The two equations are now implemented in a Total Lagrange user subroutine  with 
      
       integer :: ifr,ifu,itel,jtype,ncrd,ndeg,ndi,ndm,ngens,
      *           nn,nnode,nshear
-      integer, dimension(2)            :: m,matus,kcus,lclass
+      integer,      dimension(2)       :: m,matus,kcus,lclass
       real(kind=8), dimension(*)       :: e,de,t,dt,g,s
       real(kind=8), dimension(itel)    :: strechn,strechn1
       real(kind=8), dimension(ngens,*) :: d
