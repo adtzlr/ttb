@@ -47,3 +47,4 @@ All tensors, whether they are "stress"- or "strain"-like are stored with origina
 - [As Abaqus Array](functions/asabqarray.md)
 - [As Voigt](functions/asvoigt.md)
 - [As Tensor](functions/astensor.md)
+- [Import Strain](functions/voigtstrain.md)
