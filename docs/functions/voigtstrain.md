@@ -15,11 +15,11 @@
 
 ```fortran
 
-integer :: ndi,nshear,ngens
-real(kind=8), dimension(ngens) :: e
+       integer :: ndi,nshear,ngens
+       real(kind=8), dimension(ngens) :: e
 
-type(Tensor2s)  :: C, Eye
+       type(Tensor2s)  :: C, Eye
 
-Eye = identity2(Eye)
-C = Eye + 2.*voigtstrain(e,ndi,nshear,ngens)
+       Eye = identity2(Eye)
+       C = Eye + 2.*voigtstrain(e,ndi,nshear,ngens)
 ```
