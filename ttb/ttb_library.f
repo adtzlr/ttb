@@ -5,7 +5,7 @@
        ! Andreas Dutzler
        ! Graz University of Technology
        ! IME-BST
-       ! 2017-11-26
+       ! 2018-01-18
        ! ---------------------------------------
        ! tested on: Windows 7/10 (64bit)
        ! - Intel Fortran 2015
@@ -321,6 +321,11 @@
        module procedure symstore_4sa
        end interface
        
+       interface voigtstrain
+       ! module procedure str2ten_2
+       module procedure str2ten_2s
+       end interface
+       
        interface asvoigt
        module procedure symstore_2
        module procedure symstore_4
@@ -412,17 +417,17 @@
 !      ------+/- SECTION-----------------------------------------
        include 'ttb/libadd.f'
        include 'ttb/libsub.f'
-!      ------DIVISION SECTION----------------------------------
+!      ------DIVISION SECTION------------------------------------
        include 'ttb/libdiv.f'
 !      ------DOT SECTION-----------------------------------------
        include 'ttb/libdot.f'
 !      ------DOUBLE DOT SECTION----------------------------------
        include 'ttb/libddot.f'
-!      ------POWER SECTION----------------------------------
+!      ------POWER SECTION---------------------------------------
        include 'ttb/libpower.f'
 !      ------DYADIC SECTION--------------------------------------
        include 'ttb/libdyadic.f'
-!      ------CROSS-DYADIC SECTION--------------------------------------
+!      ------CROSS-DYADIC SECTION--------------------------------
        include 'ttb/libcrossdyadic.f'
        include 'ttb/libinnercrossdyadic.f'
 !      ------PERMUTE SECTION-------------------------------------
@@ -444,12 +449,14 @@
        include 'ttb/libsymstore.f'
 !      ------USYMSTORE SECTION-----------------------------------
        include 'ttb/libtenstore.f'
+!      ------STRAINSTORE SECTION---------------------------------
+       include 'ttb/libstrainstore.f'
 !      ------REDUCE DIM. SECTION---------------------------------
        include 'ttb/libreducedim.f'
 !      ------AS ARRAY SECTION------------------------------------
        include 'ttb/libasarray.f'
        include 'ttb/libasabqarray.f'
-!      ------PIOLA SECTION------------------------------------
+!      ------PIOLA SECTION---------------------------------------
        include 'ttb/libpiola.f'
 !      ------END FUNCTIONS---------------------------------------
 !      ------BEGIN SUBROUTINES-----------------------------------
