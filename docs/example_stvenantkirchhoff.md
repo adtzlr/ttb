@@ -129,7 +129,7 @@ Finally we have to export our Tensor data types back to conventional fortran arr
       d(1:ngens,1:ngens) = asarray( asvoigt(C4), ngens,ngens )
 ```
 
-If we would like to use the Updated Lagrange framework too, we'll have to check whether updated or total lagrange framework is active. Please note that for the updated lagrange framework it is common to use the jaumann rate of kirchhoff stress in commercial FE codes. First, the tangent matrix is pushed forward to spatial components `(i,j,k,l)`, divided by the volumetric ratio `J` and then transformed from the truesdell rate of kirchhoff stress to the jaumann rate of kirchhoff stress.
+If we would like to use the Updated Lagrange framework too, we'll have to check whether updated or total lagrange framework is active. Please note that for the updated lagrange framework it is common to use the jaumann rate of kirchhoff stress in commercial FE codes. First, the tangent matrix is pushed forward to spatial components `(i,j,k,l)`, divided by the volumetric ratio `J` and then transformed from the truesdell rate of kirchhoff stress to the jaumann rate of kirchhoff stress. For the elasticity tensor conversion have a look at [Maria Holland's Hitchhiker's Guide to Abaqus](https://github.com/mholla/hitchhikers-guide-to-abaqus).
 
 ```fortran
       real(kind=8) :: J
