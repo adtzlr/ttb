@@ -12,7 +12,7 @@ and
 <a href="https://www.codecogs.com/eqnedit.php?latex=\boldsymbol{C}&space;=&space;\boldsymbol{F}^T&space;\boldsymbol{F}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\boldsymbol{C}&space;=&space;\boldsymbol{F}^T&space;\boldsymbol{F}" title="\boldsymbol{C} = \boldsymbol{F}^T \boldsymbol{F}" /></a>
 
 ## Subroutine Header for user materials
-Before we are able to add our own user code, we have to start with an empty fortran subroutine header for MSC.Marc's HYPELA2. Similar headers are provided for Abaqus, ANSYS, etc.
+Before we are able to add our own user code, we have to start with an empty fortran subroutine header for MSC.Marc's HYPELA2. Similar headers are provided for Abaqus, ANSYS, etc in the corresponding manuals.
 
 ```fortran
       include 'ttb/ttb_library.f'
@@ -21,7 +21,7 @@ Before we are able to add our own user code, we have to start with an empty fort
      2             nshear,disp,dispt,coord,ffn,frotn,strechn,eigvn,ffn1,
      3                   frotn1,strechn1,eigvn1,ncrd,itel,ndeg,ndm,
      4                   nnode,jtype,lclass,ifr,ifu)
-	 
+      
       ! HYPELA2 St. Venant - Kirchhoff Material
       ! Formulation: Total Lagrange, Large Strain
       !              (Updated Lagrange with Push Forward
@@ -43,24 +43,38 @@ Before we are able to add our own user code, we have to start with an empty fort
       real(kind=8), dimension(ndeg,*)  :: disp, dispt
       real(kind=8), dimension(itel,3)  :: ffn,ffn1,frotn,frotn1
       real(kind=8), dimension(itel,*)  :: eigvn,eigvn1
-	  
-	  ! ...user code...
-	  
-	  return
+      
+      ! ...user code...
+      
+      return
       end
 ```
 
-In our code implementation this looks like:
+First we need to define our material parameters, which will be entered as young's modulus and poisson ratio.
+
+```fortran
+      real(kind=8) :: young,nu,lambda,mu
+      
+      ! material parameters
+      young = 210000.0
+      nu = 0.3
+      
+      ! lame parameter
+      mu = young / ( 2.*(1.+nu) )
+      lambda = nu*young / ((1.+nu)*(1.-2.*nu))
+```
+
+In our code implementation the strain tensor looks like:
 
 ```fortran
       type(Tensor2)  :: F1
       type(Tensor2s) :: E1,Eye
       
       Eye = Eye**0
-	  
+      
       F1 = Eye
       F1%ab(1:itel,1:3) = ffn1(1:itel,1:3)
-	  
+      
       E1 = 0.5*(transpose(F1)*F1-Eye)
 ```
 
@@ -80,9 +94,9 @@ Inside our subroutine the stress tensor is
 
 ```fortran
       type(Tensor2s) :: S1
-	  	  
-	  ! ...some code...
-	  
+      	  
+      ! ...some code...
+      
       S1 = lambda*tr(E1)*Eye + 2.*mu*E1
 ```
 
@@ -99,9 +113,9 @@ Again, in our fortran subroutine the code for this elasticity tensor is as follo
 
 ```fortran
       type(Tensor4s) :: C4
-	  
-	  ! ...some code...
-	  
+      
+      ! ...some code...
+      
       C4 = lambda*(Eye.dya.Eye) + 2.*mu*(Eye.cdya.Eye)
 ```
 
@@ -119,9 +133,9 @@ If we would like to use the Updated Lagrange framework too, we'll have to check 
 
 ```fortran
       real(kind=8) :: J
-	  	  
-	  ! ...some code...
-	  
+      
+      ! ...some code...
+      
       if (iupdat.eq.1) then ! updated lagrange
        J = det(F1)
        ! cauchy stress
