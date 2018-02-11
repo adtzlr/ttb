@@ -12,8 +12,8 @@ Commercial FEM software packages offer interfaces (user subroutines written in F
 - [Tensor Data Types](tensordatatypes.md)
 - [Functions](functions.md)
 - Examples
--- [St.Venant-Kirchhoff Material]((example_stvenantkirchhoff.md))
--- [Nearly-Incompressible Neo-Hookean Material]((example_neohooke.md))
+- Example 1: [St.Venant-Kirchhoff Material](example_stvenantkirchhoff.md)
+- Example 2:  [Nearly-Incompressible Neo-Hookean Material](example_neohooke.md)
 
 ## Author
 Andreas Dutzler, Graz, Austria. Last updated: 2018/02/11
