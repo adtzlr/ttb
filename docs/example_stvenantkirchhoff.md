@@ -21,14 +21,6 @@ Before we are able to add our own user code, we have to start with an empty fort
      2             nshear,disp,dispt,coord,ffn,frotn,strechn,eigvn,ffn1,
      3                   frotn1,strechn1,eigvn1,ncrd,itel,ndeg,ndm,
      4                   nnode,jtype,lclass,ifr,ifu)
-      
-      ! HYPELA2 St. Venant - Kirchhoff Material
-      ! Formulation: Total Lagrange, Large Strain
-      !              (Updated Lagrange with Push Forward
-      !               and Jaumann Correction)
-      !
-      ! Andreas Dutzler, Graz University of Technology
-      ! 2018-02-11
 
       use Tensor
       implicit none
