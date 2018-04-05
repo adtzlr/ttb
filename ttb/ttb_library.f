@@ -5,7 +5,7 @@
        ! Andreas Dutzler
        ! Graz University of Technology
        ! IME-BST
-       ! 2018-01-18
+       ! 2018-04-05
        ! ---------------------------------------
        ! tested on: Windows 7/10 (64bit)
        ! - Intel Fortran 2015
@@ -247,6 +247,13 @@
        module procedure dev_2s
        end interface
        
+       interface unimodular
+       module procedure unimod_2
+       module procedure unimod_2s
+       module procedure unimod_2d
+       module procedure unimod_2sd
+       end interface
+       
        interface inv
        module procedure inv_2
        module procedure inv_2s
@@ -321,7 +328,7 @@
        module procedure symstore_4sa
        end interface
        
-       interface voigtstrain
+       interface strain
        ! module procedure str2ten_2
        module procedure str2ten_2s
        end interface
@@ -437,6 +444,7 @@
        include 'ttb/libtrace.f'
        include 'ttb/libdet.f'
        include 'ttb/libdev.f'
+       include 'ttb/libunimodular.f'
        include 'ttb/libinv.f'
        include 'ttb/libexp.f'
        include 'ttb/libln.f'
