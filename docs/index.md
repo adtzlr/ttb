@@ -11,7 +11,18 @@ Commercial FEM software packages offer interfaces (user subroutines written in F
 - [Quick Start Guide](quickstartguide.md)
 - [Tensor Data Types](tensordatatypes.md)
 - [Functions](functions.md)
-- [Examples](example.md)
+- Examples
+- Example 1: [St.Venant-Kirchhoff Material](example_stvenantkirchhoff.md)
+- Example 2:  [Nearly-Incompressible Neo-Hookean Material](example_neohooke.md)
+
+## Author
+Andreas Dutzler, Graz, Austria.
+I'm a PhD student at the Insitute of Machine Components and Methods of Development, Area of Structural Durability and Railway Engineering at Graz University of Technology.
+
+## Discussion
+For questions I opened a [Thread at PolymerFEM.com](https://polymerfem.com/forum/polymerfem-downloads/user-material-subroutines/25668-discussion-tensor-toolbox-for-modern-fortran-ttb) for discussions regarding this module.
 
 ## Credits
 Naumann, C.: [Chemisch-mechanisch gekoppelte Modellierung und Simulation oxidativer Alterungsvorgänge in Gummibauteilen (German)](http://nbn-resolving.de/urn:nbn:de:bsz:ch1-qucosa-222075). PhD thesis. Fakultät für Maschinenbau der Technischen Universität Chemnitz, 2016.
+
+## Last updated: 2018/02/11
