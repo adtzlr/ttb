@@ -79,7 +79,7 @@
       ! inelastic deformation at beginning of the inc.
       C0_i = t(2:7)
       if (t(2) == 0.0) then
-       ! if first increment is detected
+       ! if start of analysis is detected
        ! --> no inelastic deformation
        C0_i = Eye
       end if
