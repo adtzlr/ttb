@@ -31,12 +31,14 @@ All tensors, whether they are "stress"- or "strain"-like are stored with origina
 
 ### Tensor-valued functions
 - [Deviator](functions/deviator.md)
+- [Unimodular](functions/unimodular.md)
 - [Inverse](functions/inverse.md)
 - [Transpose](functions/transpose.md)
 - [Permute](functions/permute.md)
 - [Square root](functions/squareroot.md)
 - [Power](functions/power.md)
-- Exponential Function
+- [Exponential Map](functions/exponential.md)
+- [Derivative of Exponential Map](functions/exponential.md)
 - Natural Logarithm
 - [Identity](functions/identity.md)
 - [Piola Operation](functions/piola.md)
