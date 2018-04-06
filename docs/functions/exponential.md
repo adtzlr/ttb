@@ -3,12 +3,14 @@
 **Description:** Exponential Map and Derivative of a rank 2 Tensor according to *Miehe(2002): Homogenization of inelastic solid materials at (nite strains based on incremental minimization principles. Application to the texture analysis of polycrystals*.
 
 ### Exponential Map
+
 | Property   | Value                  |
 | ---        | ---                    |
 | Result     | Tensor-valued function |
 | Data Types | `Tensor2`, `Tensor2s`  |
 
 ### Derivative of Exponential Map
+
 | Property   | Value                  |
 | ---        | ---                    |
 | Result     | Tensor-valued function |
