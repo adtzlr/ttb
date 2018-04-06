@@ -1,32 +1,40 @@
+       ! Exponential Map of Tensor Arguments
+       ! --------------------------------------------------------
+       ! Algorithmic Sources
+       ! Miehe(2002): Homogenization of inelastic solid materials
+       !    at (nite strains based on incremental minimization
+       !    principles. Application
+       !    to the texture analysis of polycrystals
+        
+       ! --------------------------------------------------------
+       ! Author: A. Dutzler, Graz University of Technology
+       ! Date:   2018-04-06
+
        function exp_2(T)
         implicit none
         
         type(Tensor2), intent(in) :: T
-        type(Tensor2) :: exp_2, Eye
-        real(kind=8), dimension(15) :: g,a
+        type(Tensor2) :: exp_2,Eye,N_i
+        real(kind=8)  :: tol,I1,I2,I3
         integer :: i
         
+        tol = 1.0d-8
+        i = 3
+
         Eye = identity2(Eye)
-        g = (/ 1.,
-     *         1./2.,
-     *         1./3./2.,
-     *         1./4./3./2.,
-     *         1./5./4./3./2., 
-     *         1./6./5./4./3./2.,
-     *         1./7./6./5./4./3./2., 
-     *         1./8./7./6./5./4./3./2.,
-     *         1./9./8./7./6./5./4./3./2.,
-     *         1./10./9./8./7./6./5./4./3./2.,
-     *         1./11./10./9./8./7./6./5./4./3./2.,
-     *         1./12./11./10./9./8./7./6./5./4./3./2.,
-     *         1./13./12./11./10./9./8./7./6./5./4./3./2.,
-     *         1./14./13./12./11./10./9./8./7./6./5./4./3./2.,
-     *         1./15./14./13./12./11./10./9./8./7./6./5./4./3./2. /)
-        a = 0.d0
+        exp_2 = Eye + T + 0.5 * (T*T)
         
-        exp_2 = g(1)*Eye
-        do i=2,14
-         exp_2 = exp_2 + g(i) * (T-a(i)*Eye)**i
+        I1 = T**Eye
+        I2 = 0.5*(I1**2-T**T)
+        I3 = det(T)
+        
+        N_i = Eye
+        do while (norm(N_i)/fact(i) .gt. tol)
+         ! Cayley-Hamilton recursive formula
+         N_i = I1 * T**(i-1) - I2 * T**(i-2) + I3 * T**(i-3)
+         exp_2 = exp_2 + 1./fact(i) * N_i
+         
+         i = i+1
         end do
      
        end function exp_2
@@ -35,31 +43,28 @@
         implicit none
         
         type(Tensor2s), intent(in) :: T
-        type(Tensor2s) :: exp_2s, Eye
-        real(kind=8), dimension(15) :: g,a
+        type(Tensor2s) :: exp_2s,Eye,N_i
+        real(kind=8)  :: tol,I1,I2,I3
         integer :: i
         
-        Eye = identity2(Eye)
-        g = (/ 1.,
-     *         1./2.,
-     *         1./3./2.,
-     *         1./4./3./2.,
-     *         1./5./4./3./2., 
-     *         1./6./5./4./3./2.,
-     *         1./7./6./5./4./3./2., 
-     *         1./8./7./6./5./4./3./2.,
-     *         1./9./8./7./6./5./4./3./2.,
-     *         1./10./9./8./7./6./5./4./3./2.,
-     *         1./11./10./9./8./7./6./5./4./3./2.,
-     *         1./12./11./10./9./8./7./6./5./4./3./2.,
-     *         1./13./12./11./10./9./8./7./6./5./4./3./2.,
-     *         1./14./13./12./11./10./9./8./7./6./5./4./3./2.,
-     *         1./15./14./13./12./11./10./9./8./7./6./5./4./3./2. /)
-        a = 0.d0
         
-        exp_2s = g(1)*Eye
-        do i=2,14
-         exp_2s = exp_2s + g(i) * (T-a(i)*Eye)**i
+        tol = 1.0d-8
+        i = 3
+
+        Eye = identity2(Eye)
+        exp_2s = Eye + T + 0.5 * (T*T)
+        
+        I1 = T**Eye
+        I2 = 0.5*(I1**2-T**T)
+        I3 = det(T)
+        
+        N_i = Eye
+        do while (norm(N_i)/fact(i) .gt. tol)
+         ! Cayley-Hamilton recursive formula
+         N_i = I1 * T**(i-1) - I2 * T**(i-2) + I3 * T**(i-3)
+         exp_2s = exp_2s + 1./fact(i) * N_i
+         
+         i = i+1
         end do
      
        end function exp_2s

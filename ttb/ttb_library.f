@@ -232,6 +232,10 @@
        module procedure icrossdyadic_2s2s
        end interface
        
+       interface fact
+       module procedure fact_i
+       end interface
+       
        interface tr
        module procedure tr_2
        module procedure tr_2s
@@ -261,19 +265,27 @@
        module procedure inv2sd
        end interface
        
+       interface norm
+       module procedure norm_1
+       module procedure norm_2
+       module procedure norm_2s
+       end interface
+       
        interface exp
        module procedure exp_2
        module procedure exp_2s
+       end interface
+       
+       interface derivative_exp
+       module procedure dexp_2
+       module procedure dexp_2s
        end interface
        
        interface ln
        module procedure ln_2
        module procedure ln_2s
        end interface
-       
-       interface norm
-       module procedure norm_1
-       end interface
+
        
        interface sqrt
        module procedure sqrt_1
@@ -421,6 +433,8 @@
        contains
 
 !      ------BEGIN FUNCTIONS-------------------------------------
+!      ------MATH TOOLS SECTION----------------------------------
+       include 'ttb/libtools.f'
 !      ------+/- SECTION-----------------------------------------
        include 'ttb/libadd.f'
        include 'ttb/libsub.f'
@@ -447,6 +461,7 @@
        include 'ttb/libunimodular.f'
        include 'ttb/libinv.f'
        include 'ttb/libexp.f'
+       include 'ttb/libderivativeexp.f'
        include 'ttb/libln.f'
        include 'ttb/libnorm.f'
        include 'ttb/libsqrt.f'
