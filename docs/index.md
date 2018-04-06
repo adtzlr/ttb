@@ -13,7 +13,8 @@ Commercial FEM software packages offer interfaces (user subroutines written in F
 - [Functions](functions.md)
 - Examples
 - Example 1: [St.Venant-Kirchhoff Material](example_stvenantkirchhoff.md)
-- Example 2:  [Nearly-Incompressible Neo-Hookean Material](example_neohooke.md)
+- Example 2: [Nearly-Incompressible Neo-Hookean Material](example_neohooke.md)
+- Example 3: [Neo-Hookean Hypelasticity with Maxwell-Viscoelasticity](examples/hypela2_nonlinear_viscoelasticity.f)
 
 ## Author
 Andreas Dutzler, Graz, Austria.
