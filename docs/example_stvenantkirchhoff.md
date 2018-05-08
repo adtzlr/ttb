@@ -143,4 +143,4 @@ In this code `iupdat` is an integer with `0` for total lagrange and `1` for upda
 ## Sources
 [1] Bonet, J., Gil, A. J., & Wood, R. D. (2016). Nonlinear Solid Mechanics for Finite Element Analysis: Statics. Cambridge University Press. https://doi.org/10.1017/cbo9781316336144
 
-[2] Holland, M. (2018, May 7). Mholla/Hitchhikers-Guide-To-Abaqus: Initial Release (Version v1.0). Zenodo. https://doi.org/10.5281/zenodo.1243270 
+[2] Holland, M. (2018, May 7). Mholla/Hitchhikers-Guide-To-Abaqus: Initial Release (Version v1.0). Zenodo. [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1243270.svg)](https://doi.org/10.5281/zenodo.1243270)
