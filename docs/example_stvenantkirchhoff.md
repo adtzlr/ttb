@@ -1,6 +1,6 @@
 ## Example: St. Venant Kirchhoff Material
 
-The following example discusses the implementation of a St.Venant-Kirchhoff material in a very simple and readable user subroutine. The St.Venant-Kirchhoff material is possibly the simplest example for a hyperelastic material but suffers from practical relevance beyond the small strain range. Anyway, it's a good starting point because stress tensor and elasticity matrix are of the same form as the linear elasticity formulation, except that Green-Lagrange strains are used.
+The following example discusses the implementation of a St.Venant-Kirchhoff material in a very simple and readable user subroutine. The St.Venant-Kirchhoff material is possibly the simplest example for a hyperelastic material but suffers from practical relevance beyond the small strain range [1]. Anyway, it's a good starting point because stress tensor and elasticity matrix are of the same form as the linear elasticity formulation, except that Green-Lagrange strains are used.
 
 ## Kinematics
 Starting from the Deformation Gradient, we calculate the Green-Lagrange strain tensor with the right Cauchy Green Deformation Tensor with
@@ -121,7 +121,7 @@ Finally we have to export our Tensor data types back to conventional fortran arr
       d(1:ngens,1:ngens) = asarray( asvoigt(C4), ngens,ngens )
 ```
 
-If we would like to use the Updated Lagrange framework too, we'll have to check whether updated or total lagrange framework is active. Please note that for the updated lagrange framework it is common to use the jaumann rate of kirchhoff stress in commercial FE codes. First, the tangent matrix is pushed forward to spatial components `(i,j,k,l)`, divided by the volumetric ratio `J` and then transformed from the truesdell rate of kirchhoff stress to the jaumann rate of kirchhoff stress. For the elasticity tensor conversion have a look at [Maria Holland's Hitchhiker's Guide to Abaqus](https://github.com/mholla/hitchhikers-guide-to-abaqus).
+If we would like to use the Updated Lagrange framework too, we'll have to check whether updated or total lagrange framework is active. Please note that for the updated lagrange framework it is common to use the jaumann rate of kirchhoff stress in commercial FE codes. First, the tangent matrix is pushed forward to spatial components `(i,j,k,l)`, divided by the volumetric ratio `J` and then transformed from the truesdell rate of kirchhoff stress to the jaumann rate of kirchhoff stress. For the elasticity tensor conversion have a look at Maria Holland's Hitchhiker's Guide to Abaqus [2].
 
 ```fortran
       real(kind=8) :: J
@@ -139,3 +139,8 @@ If we would like to use the Updated Lagrange framework too, we'll have to check 
 ```
 
 In this code `iupdat` is an integer with `0` for total lagrange and `1` for updated lagrange. You may download the whole example as a [HYPELA2 user subroutine](examples/hypela2_stvenantkirchhoff.f) for MSC.Marc.
+
+## Sources
+[1] Bonet, J., Gil, A. J., & Wood, R. D. (2016). Nonlinear Solid Mechanics for Finite Element Analysis: Statics. Cambridge University Press. https://doi.org/10.1017/cbo9781316336144
+
+[2] Holland, M. (2018, May 7). Mholla/Hitchhikers-Guide-To-Abaqus: Initial Release (Version v1.0). Zenodo. https://doi.org/10.5281/zenodo.1243270 
