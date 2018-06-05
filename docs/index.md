@@ -1,5 +1,7 @@
 # Documentation
 
+![DSGVO (GDPR)](gdpr-eu.md)
+
 ![Tensor Toolbox for Modern Fortran](images/header.jpg)
 
 ## What is this toolbox about?
