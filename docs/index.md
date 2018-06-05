@@ -1,6 +1,6 @@
 # Documentation
 
-![DSGVO (GDPR)](gdpr-eu.md)
+[DSGVO (GDPR)](gdpr-eu.md)
 
 ![Tensor Toolbox for Modern Fortran](images/header.jpg)
 
