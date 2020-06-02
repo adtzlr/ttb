@@ -20,7 +20,7 @@ Commercial FEM software packages offer interfaces (user subroutines written in F
 
 ## Author
 Andreas Dutzler, Graz, Austria.
-I'm a PhD student at the Insitute of Machine Components and Methods of Development, Area of Structural Durability and Railway Engineering at Graz University of Technology.
+I'm a PhD student at the Insitute of Structural Durability and Railway Technology at Graz University of Technology.
 
 ## Discussion
 For questions I opened a [Thread at PolymerFEM.com](https://polymerfem.com/forum/polymerfem-downloads/user-material-subroutines/25668-discussion-tensor-toolbox-for-modern-fortran-ttb) for discussions regarding this module.
@@ -28,4 +28,4 @@ For questions I opened a [Thread at PolymerFEM.com](https://polymerfem.com/forum
 ## Credits
 Naumann, C.: [Chemisch-mechanisch gekoppelte Modellierung und Simulation oxidativer Alterungsvorgänge in Gummibauteilen (German)](http://nbn-resolving.de/urn:nbn:de:bsz:ch1-qucosa-222075). PhD thesis. Fakultät für Maschinenbau der Technischen Universität Chemnitz, 2016.
 
-## Last updated: 2018/04/06
+## Last updated: 2020/06/02

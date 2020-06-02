@@ -1,4 +1,4 @@
-       include 'ttb/ttb_library.f'
+#include "ttb/ttb_library.F"
        
        program script_tensortoolbox
        

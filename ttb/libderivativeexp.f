@@ -26,7 +26,7 @@
         dexp_2 = Eye.cdya.Eye
         
         I1 = T**Eye
-        I2 = 0.5*(I1**2-T**T)
+        I2 = 5.0d-1*(I1**2-T**T)
         I3 = det(T)
         
         N_i = Eye
@@ -81,7 +81,7 @@
         dexp_2s = Eye.cdya.Eye
         
         I1 = T**Eye
-        I2 = 0.5*(I1**2-T**T)
+        I2 = 5.0d-1*(I1**2-T**T)
         I3 = det(T)
         
         N_i = Eye

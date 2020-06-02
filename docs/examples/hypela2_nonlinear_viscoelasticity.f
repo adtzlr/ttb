@@ -1,4 +1,4 @@
-      include 'ttb/ttb_library.f'
+#include "ttb/ttb_library.F"
 
       subroutine hypela2(d,g,e,de,s,t,dt,ngens,m,nn,kcus,matus,ndi,
      2             nshear,disp,dispt,coord,ffn,frotn,strechn,eigvn,ffn1,

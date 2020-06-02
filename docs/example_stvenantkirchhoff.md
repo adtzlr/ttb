@@ -15,7 +15,7 @@ and
 Before we are able to add our own user code, we have to start with an empty fortran subroutine header for MSC.Marc's HYPELA2. Similar headers are provided for Abaqus, ANSYS, etc in the corresponding manuals.
 
 ```fortran
-      include 'ttb/ttb_library.f'
+#include "ttb/ttb_library.F"
 
       subroutine hypela2(d,g,e,de,s,t,dt,ngens,m,nn,kcus,matus,ndi,
      2             nshear,disp,dispt,coord,ffn,frotn,strechn,eigvn,ffn1,

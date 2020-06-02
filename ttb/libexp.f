@@ -22,10 +22,10 @@
         i = 3
 
         Eye = identity2(Eye)
-        exp_2 = Eye + T + 0.5 * (T*T)
+        exp_2 = Eye + T + 5.0d-1 * (T*T)
         
         I1 = T**Eye
-        I2 = 0.5*(I1**2-T**T)
+        I2 = 5.0d-1*(I1**2-T**T)
         I3 = det(T)
         
         N_i = Eye

@@ -29,7 +29,7 @@ with the fourth order identity tensor
 The two equations are now implemented in a Total Lagrange user subroutine  with the help of this Tensor module as follows:
 
 ```fortran
-      include 'ttb/ttb_library.f'
+#include "ttb/ttb_library.F"
 
       subroutine hypela2(d,g,e,de,s,t,dt,ngens,m,nn,kcus,matus,ndi,
      2             nshear,disp,dispt,coord,ffn,frotn,strechn,eigvn,ffn1,

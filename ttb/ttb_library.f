@@ -4,16 +4,17 @@
        ! Tensor Toolbox Module for Fortran
        ! Andreas Dutzler
        ! Graz University of Technology
-       ! IME-BST
-       ! 2018-04-05
+       ! Institute of Structural Durability
+       !    and Railway Technology
+       ! 2020-06-01
        ! ---------------------------------------
-       ! tested on: Windows 7/10 (64bit)
-       ! - Intel Fortran 2015
-       ! - MinGW gfortran 6.3
+       ! tested on: Windows 10 (64bit)
+       ! - Intel Fortran >2015
+       ! - MinGW gfortran >6.3
        ! ---------------------------------------
        ! use this module in the following form:
        ! ---------------------------------------
-       ! include 'ttb'
+       ! #include "ttb/ttb_library.F"
        ! program sample
        !  use Tensor
        !  ...
@@ -48,51 +49,45 @@
 !      ------BEGIN INTERFACE-------------------------------------
        interface operator (/)
        module procedure div_10
-       module procedure div_10_r4
        module procedure div_20
-       module procedure div_20_r4
        module procedure div_20s
-       module procedure div_20s_r4
        module procedure div_40
-       module procedure div_40_r4
        module procedure div_40s
+#ifndef NOR4
+       module procedure div_10_r4
+       module procedure div_20_r4
+       module procedure div_20s_r4
+       module procedure div_40_r4
        module procedure div_40s_r4
+#endif
        end interface
        interface operator (.div.)
        module procedure div_10
-       module procedure div_10_r4
        module procedure div_20
-       module procedure div_20_r4
        module procedure div_20s
-       module procedure div_20s_r4
        module procedure div_40
-       module procedure div_40_r4
        module procedure div_40s
+#ifndef NOR4
+       module procedure div_10_r4
+       module procedure div_20_r4
+       module procedure div_20s_r4
+       module procedure div_40_r4
        module procedure div_40s_r4
+#endif
        end interface
        
        interface operator (*)
        ! simple dot-product of rank 1 and rank 2 tensor combinations
        module procedure dot_01
-       module procedure dot_01_r4
        module procedure dot_10
-       module procedure dot_10_r4
        module procedure dot_02
-       module procedure dot_02_r4
        module procedure dot_02s
-       module procedure dot_02s_r4
        module procedure dot_20
-       module procedure dot_20_r4
        module procedure dot_20s
-       module procedure dot_20s_r4
        module procedure dot_04
-       module procedure dot_04_r4
        module procedure dot_04s
-       module procedure dot_04s_r4
        module procedure dot_40
-       module procedure dot_40_r4
        module procedure dot_40s
-       module procedure dot_40s_r4
        module procedure dot_11
        module procedure dot_12
        module procedure dot_21
@@ -100,34 +95,50 @@
        module procedure dot_12s
        module procedure dot_22
        module procedure dot_2s2s
+#ifndef NOR4
+       module procedure dot_01_r4
+       module procedure dot_10_r4
+       module procedure dot_02_r4
+       module procedure dot_02s_r4
+       module procedure dot_20_r4
+       module procedure dot_20s_r4
+       module procedure dot_04_r4
+       module procedure dot_04s_r4
+       module procedure dot_40_r4
+       module procedure dot_40s_r4
+#endif
        end interface
        interface operator (.dot.)
        ! simple dot-product of rank 1 and rank 2 tensor combinations
        module procedure dot_01
-       module procedure dot_01_r4
        module procedure dot_10
-       module procedure dot_10_r4
        module procedure dot_02
-       module procedure dot_02_r4
        module procedure dot_02s
-       module procedure dot_02s_r4
        module procedure dot_20
-       module procedure dot_20_r4
        module procedure dot_20s
-       module procedure dot_20s_r4
        module procedure dot_04
-       module procedure dot_04_r4
        module procedure dot_04s
-       module procedure dot_04s_r4
        module procedure dot_40
-       module procedure dot_40_r4
        module procedure dot_40s
-       module procedure dot_40s_r4
        module procedure dot_11
        module procedure dot_12
        module procedure dot_21
+       module procedure dot_2s1
+       module procedure dot_12s
        module procedure dot_22
        module procedure dot_2s2s
+#ifndef NOR4
+       module procedure dot_01_r4
+       module procedure dot_10_r4
+       module procedure dot_02_r4
+       module procedure dot_02s_r4
+       module procedure dot_20_r4
+       module procedure dot_20s_r4
+       module procedure dot_04_r4
+       module procedure dot_04s_r4
+       module procedure dot_40_r4
+       module procedure dot_40s_r4
+#endif
        end interface
        
        interface operator (**)
