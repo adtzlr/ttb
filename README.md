@@ -45,7 +45,7 @@ The most basic example on how to use this module is to [download the module](htt
 
        end program script101_ttb
 ```
-The `include 'ttb/ttb_library.f'` statement replaces the line with the content of the ttb-module. The first line in a program or subroutine is now a `use Tensor` statement. That's it - now you're ready to go.
+The `#include "ttb/ttb_library.F"` statement replaces the line with the content of the ttb-module. The first line in a program or subroutine is now a `use Tensor` statement. That's it - now you're ready to go. As this module uses preprocessor definitions it is necessary to save your files with **UPPERCASE** file extensions (e.g. `filename.F`).
 
 ## Tensor or Voigt Notation
 
