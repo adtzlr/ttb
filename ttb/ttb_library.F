@@ -420,24 +420,26 @@
        module procedure assignscalar_2s
        module procedure assignscalar_4
        module procedure assignscalar_4s
-       module procedure assignscalar_1r4
-       module procedure assignscalar_2r4
-       module procedure assignscalar_2sr4
-       module procedure assignscalar_4r4
-       module procedure assignscalar_4sr4
        module procedure assignarr_1
        module procedure assignarr_2
        module procedure assignarr_2s
        module procedure assignarr_4
        module procedure assignarr_4s
-       module procedure assignarr_2r4
-       module procedure assignarr_2sr4
-       module procedure assignarr_4r4
-       module procedure assignarr_4sr4
        module procedure assignten2sym_2
        module procedure assignten2sym_4
        module procedure assignsym2ten_2
        module procedure assignsym2ten_4
+#ifndef NOR4
+       module procedure assignscalar_1r4
+       module procedure assignscalar_2r4
+       module procedure assignscalar_2sr4
+       module procedure assignscalar_4r4
+       module procedure assignscalar_4sr4
+       module procedure assignarr_2r4
+       module procedure assignarr_2sr4
+       module procedure assignarr_4r4
+       module procedure assignarr_4sr4
+#endif
        end interface
 !      ------END INTERFACE---------------------------------------
        
