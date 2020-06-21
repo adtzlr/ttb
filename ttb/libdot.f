@@ -288,13 +288,11 @@
         type(Tensor1), intent(in) :: T1
         type(Tensor1), intent(in) :: T2
         real(kind=8) :: dot_11
-        integer :: i,j
+        integer :: i
         
         dot_11 = 0.d0
         do i = 1,3
-         do j = 1,3
-           dot_11 = dot_11 + T1%a(i)*T2%a(j)
-         enddo
+         dot_11 = dot_11 + T1%a(i)*T2%a(i)
         enddo
        end function dot_11
        
