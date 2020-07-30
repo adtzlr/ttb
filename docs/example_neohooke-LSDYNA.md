@@ -277,6 +277,6 @@ c
 ```
 
 ## Example material card
-The material id in the option "MT" must equal the id in `umatXX` and `utanXX`. The value of "NHV" sets the number of used history variables, here none are used in the material model. The option "IHYPER=1" stores the deformation gradient in the history "hsv" on top of the defined "NHV". The paramters "P1" and "P2" contain the Young's modulus in "cm(1)" and the Poisson ratio in "cm(2)", respectively.
+The material id in the option "MT" must equal the id in `umatXX` and `utanXX`. The value of "NHV" sets the number of used history variables, here none are used in the material model. The option "IHYPER=1" stores the deformation gradient in the history "hsv" on top of the defined "NHV". The parameters "P1" and "P2" contain the Young's modulus in "cm(1)" and the Poisson ratio in "cm(2)", respectively.
 
 <img src="https://github.com/jfriedlein/usrmat_LS-Dyna_Fortran/blob/master/Neo-Hookean%20-%20Tensor/material-card%20example.png" width="500">
