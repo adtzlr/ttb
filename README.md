@@ -8,7 +8,7 @@ The full documentation is available at [https://adtzlr.github.io/ttb](https://ad
 
 ## How to cite
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4077379.svg)](https://doi.org/10.5281/zenodo.4077379)
+[![DOI](https://zenodo.org/badge/112017005.svg)](https://zenodo.org/badge/latestdoi/112017005)
 
 If you use *Tensor Toolbox for Modern Fortran (ttb)* in your work, please cite this toolbox in your publications. Thanks!
 
@@ -25,8 +25,6 @@ Andreas Dutzler. *Tensor Toolbox for Modern Fortran - High-Level Tensor Manipula
   url          = {https://doi.org/10.5281/zenodo.4077379}
 }
 ```
-
-[![DOI](https://zenodo.org/badge/112017005.svg)](https://zenodo.org/badge/latestdoi/112017005)
 
 ## Overview
 

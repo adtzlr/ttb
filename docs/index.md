@@ -10,7 +10,7 @@ Commercial FEM software packages offer interfaces (user subroutines written in F
 
 ## How to cite
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4077379.svg)](https://doi.org/10.5281/zenodo.4077379)
+[![DOI](https://zenodo.org/badge/112017005.svg)](https://zenodo.org/badge/latestdoi/112017005)
 
 If you use *Tensor Toolbox for Modern Fortran (ttb)* in your work, please cite this toolbox in your publications. Thanks!
 
