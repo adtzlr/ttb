@@ -6,6 +6,28 @@ Commercial FEM software packages offer interfaces (user subroutines written in F
 
 The full documentation is available at [https://adtzlr.github.io/ttb](https://adtzlr.github.io/ttb). This project is licensed under the terms of the MIT license.
 
+## How to cite
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4077379.svg)](https://doi.org/10.5281/zenodo.4077379)
+
+If you use *Tensor Toolbox for Modern Fortran (ttb)* in your work, please cite this toolbox in your publications. Thanks!
+
+Andreas Dutzler. *Tensor Toolbox for Modern Fortran - High-Level Tensor Manipulation in Fortran*. Version 1.0.0 (2020). DOI: 10.5281/zenodo.4077379.
+
+```
+@software{dutzler2020,
+  author       = {Andreas Dutzler},
+  title        = {Tensor Toolbox for Modern Fortran - High-Level Tensor Manipulation in Fortran},
+  month        = oct,
+  year         = 2020,
+  version      = {v1.0.0},
+  doi          = {10.5281/zenodo.4077379},
+  url          = {https://doi.org/10.5281/zenodo.4077379}
+}
+```
+
+[![DOI](https://zenodo.org/badge/112017005.svg)](https://zenodo.org/badge/latestdoi/112017005)
+
 ## Overview
 
 It provides the following [basic operations for tensor calculus](docs/functions.md) (all written in double precision `real(kind=8)`):
