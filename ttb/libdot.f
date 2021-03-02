@@ -318,18 +318,7 @@
         implicit none
         
         type(Tensor2s), intent(in) :: T1, T2
-        type(Tensor2s) :: dot_2s2s
+        type(Tensor2) :: dot_2s2s
         
-        dot_2s2s%a6(1) = T1%a6(1)*T2%a6(1)+T1%a6(4)*T2%a6(4)
-     *                  +T1%a6(6)*T2%a6(6)
-        dot_2s2s%a6(2) = T1%a6(2)*T2%a6(2)+T1%a6(4)*T2%a6(4)
-     *                  +T1%a6(5)*T2%a6(5)
-        dot_2s2s%a6(3) = T1%a6(3)*T2%a6(3)+T1%a6(5)*T2%a6(5)
-     *                  +T1%a6(6)*T2%a6(6)
-        dot_2s2s%a6(4) = T1%a6(1)*T2%a6(4)+T1%a6(4)*T2%a6(2)
-     *                  +T1%a6(6)*T2%a6(5)
-        dot_2s2s%a6(5) = T1%a6(4)*T2%a6(6)+T1%a6(2)*T2%a6(5)
-     *                  +T1%a6(5)*T2%a6(3)
-        dot_2s2s%a6(6) = T1%a6(6)*T2%a6(1)+T1%a6(5)*T2%a6(4)
-     *                  +T1%a6(3)*T2%a6(6)
+        dot_2s2s = dot_22(astensor(T1), astensor(T2))
        end function dot_2s2s
