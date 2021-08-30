@@ -18,9 +18,6 @@ Andreas Dutzler. *Tensor Toolbox for Modern Fortran - High-Level Tensor Manipula
 @software{dutzler2020,
   author       = {Andreas Dutzler},
   title        = {Tensor Toolbox for Modern Fortran - High-Level Tensor Manipulation in Fortran},
-  month        = oct,
-  year         = 2020,
-  version      = {v1.0.0},
   doi          = {10.5281/zenodo.4077379},
   url          = {https://doi.org/10.5281/zenodo.4077379}
 }
