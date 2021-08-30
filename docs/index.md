@@ -37,9 +37,6 @@ Andreas Dutzler. *Tensor Toolbox for Modern Fortran - High-Level Tensor Manipula
 Andreas Dutzler, Graz, Austria.
 I'm a PhD student at the Insitute of Structural Durability and Railway Technology at Graz University of Technology.
 
-## Discussion
-For questions I opened a [Thread at PolymerFEM.com](https://polymerfem.com/forum/polymerfem-downloads/user-material-subroutines/25668-discussion-tensor-toolbox-for-modern-fortran-ttb) for discussions regarding this module.
-
 ## Credits
 Naumann, C.: [Chemisch-mechanisch gekoppelte Modellierung und Simulation oxidativer Alterungsvorgänge in Gummibauteilen (German)](http://nbn-resolving.de/urn:nbn:de:bsz:ch1-qucosa-222075). PhD thesis. Fakultät für Maschinenbau der Technischen Universität Chemnitz, 2016.
 

@@ -1,5 +1,5 @@
 ## Quick Start Guide
-The most basic example on how to use this module is to [download the module](https://github.com/adtzlr/ttb/archive/master.zip), put the 'ttb'-Folder in your working directory and add two lines of code:
+The most basic example on how to use this module is to [download the module](https://github.com/adtzlr/ttb/archive/main.zip), put the 'ttb'-Folder in your working directory and add two lines of code:
 
 ```fortran
 #include 'ttb/ttb_library.F'
