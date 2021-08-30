@@ -15,7 +15,7 @@ If you use *Tensor Toolbox for Modern Fortran (ttb)* in your work, please cite t
 Andreas Dutzler. *Tensor Toolbox for Modern Fortran - High-Level Tensor Manipulation in Fortran*. DOI: 10.5281/zenodo.4077378.
 
 ```
-@software{dutzler2020,
+@software{dutzler2021,
   author       = {Andreas Dutzler},
   title        = {Tensor Toolbox for Modern Fortran - High-Level Tensor Manipulation in Fortran},
   doi          = {10.5281/zenodo.4077378},
