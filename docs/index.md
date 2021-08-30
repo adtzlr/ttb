@@ -1,7 +1,5 @@
 # Documentation
 
-[DSGVO (GDPR)](gdpr-eu.md)
-
 ![Tensor Toolbox for Modern Fortran](images/header.jpg)
 
 ## What is this toolbox about?
@@ -36,7 +34,7 @@ Andreas Dutzler. *Tensor Toolbox for Modern Fortran - High-Level Tensor Manipula
 - Examples
 - Example 1: [St.Venant-Kirchhoff Material](example_stvenantkirchhoff.md)
 - Example 2: [Nearly-Incompressible Neo-Hookean Material](example_neohooke.md)
-- Example 3: [Neo-Hookean Hyperelasticity with Maxwell-Viscoelasticity](examples/hypela2_nonlinear_viscoelasticity.f)
+- Example 3: [Neo-Hookean Hyperelasticity with Maxwell-Viscoelasticity](examples/hypela2_nonlinear_viscoelasticity.F)
 
 ## Author
 Andreas Dutzler, Graz, Austria.

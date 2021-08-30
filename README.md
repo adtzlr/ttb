@@ -39,7 +39,7 @@ It provides the following [basic operations for tensor calculus](docs/functions.
 - Deviatoric Part of Tensor  `dev(C) = C - tr(C)/3 * Eye` written as `dev(C)`
 - Transpose and Permutation of indices written as `B = permute(A,1,3,2,4)`
 - Rank 2 Identity tensor of input type `Eye = identity2(Eye)` with `C = Eye*C`
-- Rank 4 Identity tensor (symmetric variant) of input type `I4 = identity4(Eye)` or `I4 = Eye.cdya.Eye` with `C = I4**C` or `inv(C) = identitiy4(inv(C))**C`
+- Rank 4 Identity tensor (symmetric variant) of input type `I4 = identity4(Eye)` or `I4 = Eye.cdya.Eye` with `C = I4**C` or `inv(C) = identity4(inv(C))**C`
 - Square Root of a positive definite rank 2 tensor `U = sqrt(C)`
 - Natural logarithm (1) of a rank 2 tensor `lnC = ln(C)`
 - Exponential function (1) of a rank 2 tensor `expC = exp(C)`
