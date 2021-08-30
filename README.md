@@ -8,18 +8,18 @@ The full documentation is available at [https://adtzlr.github.io/ttb](https://ad
 
 ## How to cite
 
-[![DOI](https://zenodo.org/badge/112017005.svg)](https://zenodo.org/badge/latestdoi/112017005)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4077378.svg)](https://doi.org/10.5281/zenodo.4077378)
 
-If you use *Tensor Toolbox for Modern Fortran (ttb)* in your work, please cite this toolbox in your publications. Thanks!
+If you use *Tensor Toolbox for Modern Fortran (ttb)* in your work, please cite this toolbox in your publications. Thanks! **Hint**: The DOI-badge always resolves to the latest version of this toolbox - if you prefer a version-specific DOI, hit the DOI-badge and pick a version on Zenodo.
 
-Andreas Dutzler. *Tensor Toolbox for Modern Fortran - High-Level Tensor Manipulation in Fortran*. Version 1.0.0 (2020). DOI: 10.5281/zenodo.4077379.
+Andreas Dutzler. *Tensor Toolbox for Modern Fortran - High-Level Tensor Manipulation in Fortran*. Version 1.0.0 (2020). DOI: 10.5281/zenodo.4077378.
 
 ```
 @software{dutzler2020,
   author       = {Andreas Dutzler},
   title        = {Tensor Toolbox for Modern Fortran - High-Level Tensor Manipulation in Fortran},
-  doi          = {10.5281/zenodo.4077379},
-  url          = {https://doi.org/10.5281/zenodo.4077379}
+  doi          = {10.5281/zenodo.4077378},
+  url          = {https://doi.org/10.5281/zenodo.4077378}
 }
 ```
 
