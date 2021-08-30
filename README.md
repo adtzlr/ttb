@@ -12,7 +12,7 @@ The full documentation is available at [https://adtzlr.github.io/ttb](https://ad
 
 If you use *Tensor Toolbox for Modern Fortran (ttb)* in your work, please cite this toolbox in your publications. Thanks! **Hint**: The DOI-badge always resolves to the latest version of this toolbox - if you prefer a version-specific DOI, hit the DOI-badge and pick a version on Zenodo.
 
-Andreas Dutzler. *Tensor Toolbox for Modern Fortran - High-Level Tensor Manipulation in Fortran*. Version 1.0.0 (2020). DOI: 10.5281/zenodo.4077378.
+Andreas Dutzler. *Tensor Toolbox for Modern Fortran - High-Level Tensor Manipulation in Fortran*. DOI: 10.5281/zenodo.4077378.
 
 ```
 @software{dutzler2020,
