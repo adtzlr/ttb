@@ -15,7 +15,7 @@ If you use *Tensor Toolbox for Modern Fortran (ttb)* in your work, please cite t
 Andreas Dutzler. *Tensor Toolbox for Modern Fortran - High-Level Tensor Manipulation in Fortran*. DOI: 10.5281/zenodo.4077378.
 
 ```
-@software{dutzler2021,
+@software{dutzler2022,
   author       = {Andreas Dutzler},
   title        = {Tensor Toolbox for Modern Fortran - High-Level Tensor Manipulation in Fortran},
   doi          = {10.5281/zenodo.4077378},
@@ -52,7 +52,7 @@ The idea is to create derived data types for rank 1, rank 2 and rank 4 tensors (
 The most basic example on how to use this module is to [download the module](https://github.com/adtzlr/ttb/archive/main.zip), put the 'ttb'-Folder in your working directory and add two lines of code:
 
 ```fortran
-#include "ttb/ttb_library.F"
+       include 'ttb/ttb_library.f'
 
        program script101_ttb
        use Tensor
@@ -62,15 +62,15 @@ The most basic example on how to use this module is to [download the module](htt
 
        end program script101_ttb
 ```
-The `#include "ttb/ttb_library.F"` statement replaces the line with the content of the ttb-module. The first line in a program or subroutine is now a `use Tensor` statement. That's it - now you're ready to go. As this module uses preprocessor definitions it is necessary to save your files with **UPPERCASE** file extensions (e.g. `filename.F`).
+The `include 'ttb/ttb_library.f'` statement replaces the line with the content of the ttb-module. The first line in a program or subroutine is now a `use Tensor` statement. That's it - now you're ready to go.
 
 ## Tensor or Voigt Notation
 
-It depends on your preferences: either you store all tensors in full tensor `dimension(3,3)` or in [voigt](https://en.wikipedia.org/wiki/Voigt_notation) `dimension(6)` notation. The equations remain (nearly) the same. Dot Product, Double Dot Product - every function is implemented in both full tensor and voigt notation. Look for the voigt-comments in an [example](docs/examples/hypela2_nh_ttb.F) of a user subroutine for MSC.Marc.
+It depends on your preferences: either you store all tensors in full tensor `dimension(3,3)` or in [voigt](https://en.wikipedia.org/wiki/Voigt_notation) `dimension(6)` notation. The equations remain (nearly) the same. Dot Product, Double Dot Product - every function is implemented in both full tensor and voigt notation. Look for the voigt-comments in an [example](docs/examples/hypela2_nh_ttb.f) of a user subroutine for MSC.Marc.
 
 ## Access Tensor components by Array
 
-Tensor components may be accessed by a conventional array with the name of the tensor variable `T` followed by a percent operator `%` and a keyword as follows:
+Tensor components may be accessed by a conventional array with the name of the tensor variable `T` followed by a percent operator `%` and a type-specific keyword as follows:
 
 - Tensor of rank 1 components as array: `T%a`. i-th component of T: `T%a(i)`
 - Tensor of rank 2 components as array: `T%ab`. i,j component of T: `T%ab(i,j)`
@@ -110,11 +110,11 @@ With the help of the Tensor module the Second Piola-Kirchhoff stress tensor `S` 
        S = mu*det(C)**(-1./3.)*dev(C)*inv(C)+p*det(C)**(1./2.)*inv(C)
 ```
 
-While this is of course not the fastest way of calculating the stress tensor it is extremely short and readable. Also the second order tensor variables `S, C` and scalar quantities `mu, p` have to be created at the beginning of the program. A minimal working example for a very simple umat user subroutine can be found in [script_umat.F](docs/examples/script_umat.F). The program is just an example where umat is called and an output information is printed. It is shown that the tensor toolbox is only used inside the material user subroutine umat.
+While this is of course not the fastest way of calculating the stress tensor it is extremely short and readable. Also the second order tensor variables `S, C` and scalar quantities `mu, p` have to be created at the beginning of the program. A minimal working example for a very simple umat user subroutine can be found in [script_umat.f](docs/examples/script_umat.f). The program is just an example where a subroutine `umat` is called and an output information is printed. It is shown that the tensor toolbox is only used inside the material user subroutine `umat`.
 
 ### Material Elasticity Tensor
 
-Isochoric part of the material elasticity tensor `C4_iso` of a nearly-incompressible Neo-Hookean material model:
+The isochoric part of the material elasticity tensor `C4_iso` of a nearly-incompressible Neo-Hookean material model is defined and coded as:
 
 ```fortran
        C4_iso = det(F)**(-2./3.) * 2./3.* (
@@ -125,9 +125,9 @@ Isochoric part of the material elasticity tensor `C4_iso` of a nearly-incompress
 
 ### Example of MSC.Marc HYPELA2
 
-[Here](docs/examples/hypela2_nh_ttb.F) you can find an example of a nearly-incompressible version of a Neo-Hookean material for MSC.Marc. ~It works **only** in Total Lagrange (no push forward implemented)~. Updated Lagrange is implemented with a push forward of both stress tensor and tangent matrix. Herrmann Elements are automatically detected. As HYPELA2 is called twice per iteration the stiffness calculation is only active during stage `lovl == 4`. One of the best things is the super-simple switch from tensor to voigt notation: Change data types of all symmetric tensors and save the right Cauchy-Green deformation tensor in voigt notation. See commented lines for details.
+[Here](docs/examples/hypela2_nh_ttb.f) you can find an example of a nearly-incompressible version of a Neo-Hookean material for MSC.Marc. Updated Lagrange is implemented by a push forward operator of both the stress and the fourth-order elasticity tensor. Herrmann Elements are automatically detected. As HYPELA2 is called twice per iteration the stiffness calculation is only active during stage `lovl == 4`. One of the best things is the super-simple switch from tensor to voigt notation: Change data types of all symmetric tensors and save the right Cauchy-Green deformation tensor in voigt notation. See commented lines for details.
 
-[Download HYPELA2](docs/examples/hypela2_nh_ttb.F): Neo-Hooke, MSC.Marc, Total Lagrange, Tensor Toolbox
+[Download HYPELA2](docs/examples/hypela2_nh_ttb.f): Neo-Hooke, MSC.Marc, Total Lagrange, Tensor Toolbox
 
 ## Credits
 Naumann, C.: [Chemisch-mechanisch gekoppelte Modellierung und Simulation oxidativer Alterungsvorgänge in Gummibauteilen (German)](http://nbn-resolving.de/urn:nbn:de:bsz:ch1-qucosa-222075). PhD thesis. Fakultät für Maschinenbau der Technischen Universität Chemnitz, 2016.
