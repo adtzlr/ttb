@@ -29,7 +29,7 @@ with the fourth order identity tensor
 The two equations are now implemented in a Total Lagrange user subroutine  with the help of this Tensor module as follows:
 
 ```fortran
-#include "ttb/ttb_library.F"
+      include 'ttb/ttb_library.f'
 
       subroutine hypela2(d,g,e,de,s,t,dt,ngens,m,nn,kcus,matus,ndi,
      2             nshear,disp,dispt,coord,ffn,frotn,strechn,eigvn,ffn1,
@@ -95,4 +95,4 @@ The two equations are now implemented in a Total Lagrange user subroutine  with 
       end
 ```
 
-There are also examples for a [basic understandig of the tensor toolbox](examples/script_umat.F), the implementation of the [St.Venant Kirchhoff material](example_stvenantkirchhoff.md) and a [full featured MSC.Marc Neo-Hookean material HYPELA2 user subroutine](examples/hypela2_nh_ttb.F).
+There are also examples for a [basic understandig of the tensor toolbox](examples/script_umat.f), the implementation of the [St.Venant Kirchhoff material](example_stvenantkirchhoff.md) and a [full featured MSC.Marc Neo-Hookean material HYPELA2 user subroutine](examples/hypela2_nh_ttb.f).
