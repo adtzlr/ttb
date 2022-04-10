@@ -57,7 +57,7 @@
        function div_10_r4(T, w)
         implicit none
         
-        real, intent(in) :: w
+        real(kind=4), intent(in) :: w
         type(Tensor1), intent(in) :: T
         type(Tensor1) :: div_10_r4
 
@@ -68,7 +68,7 @@
        function div_20_r4(T, w)
         implicit none
         
-        real, intent(in) :: w
+        real(kind=4), intent(in) :: w
         type(Tensor2), intent(in) :: T
         type(Tensor2) :: div_20_r4
 
@@ -79,7 +79,7 @@
        function div_20s_r4(T, w)
         implicit none
         
-        real, intent(in) :: w
+        real(kind=4), intent(in) :: w
         type(Tensor2s), intent(in) :: T
         type(Tensor2s) :: div_20s_r4
 
@@ -90,7 +90,7 @@
        function div_40_r4(T, w)
         implicit none
         
-        real, intent(in) :: w
+        real(kind=4), intent(in) :: w
         type(Tensor4), intent(in) :: T
         type(Tensor4) :: div_40_r4
 
@@ -101,7 +101,7 @@
        function div_40s_r4(T, w)
         implicit none
         
-        real, intent(in) :: w
+        real(kind=4), intent(in) :: w
         type(Tensor4s), intent(in) :: T
         type(Tensor4s) :: div_40s_r4
 
