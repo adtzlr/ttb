@@ -60,8 +60,8 @@
       C4 = piola(F1,C4)/detF1 + (S1.cdya.Eye)+(Eye.cdya.S1)
      
       ! output as array
-      s(1:ntens)         = asabqarray( voigt(S1), ntens )
-      d(1:ntens,1:ntens) = asabqarray( voigt(C4), ntens, ntens )
+      STRESS(1:ntens)         = asabqarray(voigt(S1),ntens)
+      DDSDDE(1:ntens,1:ntens) = asabqarray(voigt(C4),ntens,ntens)
       
       return
       end

@@ -6,6 +6,23 @@ Commercial FEM software packages offer interfaces (user subroutines written in F
 
 The full documentation is available at [https://adtzlr.github.io/ttb](https://adtzlr.github.io/ttb). This project is licensed under the terms of the MIT license.
 
+## How to cite
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4077378.svg)](https://doi.org/10.5281/zenodo.4077378)
+
+If you use *Tensor Toolbox for Modern Fortran (ttb)* in your work, please cite this toolbox in your publications. Thanks! **Hint**: The DOI-badge always resolves to the latest version of this toolbox - if you prefer a version-specific DOI, hit the DOI-badge and pick a version on Zenodo.
+
+Andreas Dutzler. *Tensor Toolbox for Modern Fortran - High-Level Tensor Manipulation in Fortran*. DOI: 10.5281/zenodo.4077378.
+
+```
+@software{dutzler2021,
+  author       = {Andreas Dutzler},
+  title        = {Tensor Toolbox for Modern Fortran - High-Level Tensor Manipulation in Fortran},
+  doi          = {10.5281/zenodo.4077378},
+  url          = {https://doi.org/10.5281/zenodo.4077378}
+}
+```
+
 ## Overview
 
 It provides the following [basic operations for tensor calculus](docs/functions.md) (all written in double precision `real(kind=8)`):
@@ -19,7 +36,7 @@ It provides the following [basic operations for tensor calculus](docs/functions.
 - Deviatoric Part of Tensor  `dev(C) = C - tr(C)/3 * Eye` written as `dev(C)`
 - Transpose and Permutation of indices written as `B = permute(A,1,3,2,4)`
 - Rank 2 Identity tensor of input type `Eye = identity2(Eye)` with `C = Eye*C`
-- Rank 4 Identity tensor (symmetric variant) of input type `I4 = identity4(Eye)` or `I4 = Eye.cdya.Eye` with `C = I4**C` or `inv(C) = identitiy4(inv(C))**C`
+- Rank 4 Identity tensor (symmetric variant) of input type `I4 = identity4(Eye)` or `I4 = Eye.cdya.Eye` with `C = I4**C` or `inv(C) = identity4(inv(C))**C`
 - Square Root of a positive definite rank 2 tensor `U = sqrt(C)`
 - Natural logarithm (1) of a rank 2 tensor `lnC = ln(C)`
 - Exponential function (1) of a rank 2 tensor `expC = exp(C)`
@@ -32,7 +49,7 @@ It provides the following [basic operations for tensor calculus](docs/functions.
 The idea is to create derived data types for rank 1, rank 2 and rank 4 tensors (and it's symmetric variants). In a next step the operators are defined in a way that Fortran calls different functions based on the input types of the operator: performing a dot product between a vector and a rank 2 tensor or a rank 2 and a rank 2 tensor is a different function. Best of it: you don't have to take care of that.
 
 ## Basic Usage
-The most basic example on how to use this module is to [download the module](https://github.com/adtzlr/ttb/archive/master.zip), put the 'ttb'-Folder in your working directory and add two lines of code:
+The most basic example on how to use this module is to [download the module](https://github.com/adtzlr/ttb/archive/main.zip), put the 'ttb'-Folder in your working directory and add two lines of code:
 
 ```fortran
 #include "ttb/ttb_library.F"
@@ -49,7 +66,7 @@ The `#include "ttb/ttb_library.F"` statement replaces the line with the content 
 
 ## Tensor or Voigt Notation
 
-It depends on your preferences: either you store all tensors in full tensor `dimension(3,3)` or in [voigt](https://en.wikipedia.org/wiki/Voigt_notation) `dimension(6)` notation. The equations remain (nearly) the same. Dot Product, Double Dot Product - every function is implemented in both full tensor and voigt notation. Look for the voigt-comments in an [example](docs/examples/hypela2_nh_ttb.f) of a user subroutine for MSC.Marc.
+It depends on your preferences: either you store all tensors in full tensor `dimension(3,3)` or in [voigt](https://en.wikipedia.org/wiki/Voigt_notation) `dimension(6)` notation. The equations remain (nearly) the same. Dot Product, Double Dot Product - every function is implemented in both full tensor and voigt notation. Look for the voigt-comments in an [example](docs/examples/hypela2_nh_ttb.F) of a user subroutine for MSC.Marc.
 
 ## Access Tensor components by Array
 
@@ -84,9 +101,6 @@ To export a stress tensor to Abaqus Voigt notation use `asabqarray` which reorde
 
 The permutation function reorders indices in the given order for a fourth order tensor of data type `Tensor4`. Example: `(i,j,k,l) --> (i,k,j,l)` with `permute(C4,1,3,2,4)`.
 
-## External Libraries
-This library is not using any [LAPACK](http://www.netlib.org/lapack/) functions. Instead you can compile your subroutine with `-o3` flag where at least the Intel compiler translates nested for-loops to [Intel MPI](https://software.intel.com/en-us/intel-mpi-library) functions. However commercial FEM packages have pre-defined optimization flags which should not or only be changed with caution. I'm open for ideas how to use LAPACK and Intel MPI in the future - please let me know.
-
 ## Neo-Hookean Material
 With the help of the Tensor module the Second Piola-Kirchhoff stress tensor `S` of a nearly-incompressible Neo-Hookean material model is basically a one-liner:
 
@@ -96,7 +110,7 @@ With the help of the Tensor module the Second Piola-Kirchhoff stress tensor `S` 
        S = mu*det(C)**(-1./3.)*dev(C)*inv(C)+p*det(C)**(1./2.)*inv(C)
 ```
 
-While this is of course not the fastest way of calculating the stress tensor it is extremely short and readable. Also the second order tensor variables `S, C` and scalar quantities `mu, p` have to be created at the beginning of the program. A minimal working example for a very simple umat user subroutine can be found in [script_umat.f](docs/examples/script_umat.f). The program is just an example where umat is called and an output information is printed. It is shown that the tensor toolbox is only used inside the material user subroutine umat.
+While this is of course not the fastest way of calculating the stress tensor it is extremely short and readable. Also the second order tensor variables `S, C` and scalar quantities `mu, p` have to be created at the beginning of the program. A minimal working example for a very simple umat user subroutine can be found in [script_umat.F](docs/examples/script_umat.F). The program is just an example where umat is called and an output information is printed. It is shown that the tensor toolbox is only used inside the material user subroutine umat.
 
 ### Material Elasticity Tensor
 
@@ -111,9 +125,9 @@ Isochoric part of the material elasticity tensor `C4_iso` of a nearly-incompress
 
 ### Example of MSC.Marc HYPELA2
 
-[Here](docs/examples/hypela2_nh_ttb.f) you can find an example of a nearly-incompressible version of a Neo-Hookean material for MSC.Marc. ~It works **only** in Total Lagrange (no push forward implemented)~. Updated Lagrange is implemented with a push forward of both stress tensor and tangent matrix. Herrmann Elements are automatically detected. As HYPELA2 is called twice per iteration the stiffness calculation is only active during stage `lovl == 4`. One of the best things is the super-simple switch from tensor to voigt notation: Change data types of all symmetric tensors and save the right Cauchy-Green deformation tensor in voigt notation. See commented lines for details.
+[Here](docs/examples/hypela2_nh_ttb.F) you can find an example of a nearly-incompressible version of a Neo-Hookean material for MSC.Marc. ~It works **only** in Total Lagrange (no push forward implemented)~. Updated Lagrange is implemented with a push forward of both stress tensor and tangent matrix. Herrmann Elements are automatically detected. As HYPELA2 is called twice per iteration the stiffness calculation is only active during stage `lovl == 4`. One of the best things is the super-simple switch from tensor to voigt notation: Change data types of all symmetric tensors and save the right Cauchy-Green deformation tensor in voigt notation. See commented lines for details.
 
-[Download HYPELA2](docs/examples/hypela2_nh_ttb.f): Neo-Hooke, MSC.Marc, Total Lagrange, Tensor Toolbox
+[Download HYPELA2](docs/examples/hypela2_nh_ttb.F): Neo-Hooke, MSC.Marc, Total Lagrange, Tensor Toolbox
 
 ## Credits
 Naumann, C.: [Chemisch-mechanisch gekoppelte Modellierung und Simulation oxidativer Alterungsvorgänge in Gummibauteilen (German)](http://nbn-resolving.de/urn:nbn:de:bsz:ch1-qucosa-222075). PhD thesis. Fakultät für Maschinenbau der Technischen Universität Chemnitz, 2016.
