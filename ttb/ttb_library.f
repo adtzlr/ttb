@@ -14,7 +14,7 @@
        ! ---------------------------------------
        ! use this module in the following form:
        ! ---------------------------------------
-       ! include 'ttb'
+       ! include 'ttb/ttb_library.f'
        ! program sample
        !  use Tensor
        !  ...
