@@ -6,7 +6,7 @@
        ! Graz University of Technology
        ! Institute of Structural Durability
        !    and Railway Technology
-       ! 2020-06-01
+       ! 2022-04-10
        ! ---------------------------------------
        ! tested on: Windows 10 (64bit)
        ! - Intel Fortran >2015
@@ -14,7 +14,7 @@
        ! ---------------------------------------
        ! use this module in the following form:
        ! ---------------------------------------
-       ! #include "ttb/ttb_library.F"
+       ! include 'ttb/ttb_library.f'
        ! program sample
        !  use Tensor
        !  ...
@@ -53,13 +53,11 @@
        module procedure div_20s
        module procedure div_40
        module procedure div_40s
-#ifndef NOR4
        module procedure div_10_r4
        module procedure div_20_r4
        module procedure div_20s_r4
        module procedure div_40_r4
        module procedure div_40s_r4
-#endif
        end interface
        interface operator (.div.)
        module procedure div_10
@@ -67,13 +65,11 @@
        module procedure div_20s
        module procedure div_40
        module procedure div_40s
-#ifndef NOR4
        module procedure div_10_r4
        module procedure div_20_r4
        module procedure div_20s_r4
        module procedure div_40_r4
        module procedure div_40s_r4
-#endif
        end interface
        
        interface operator (*)
@@ -95,7 +91,6 @@
        module procedure dot_12s
        module procedure dot_22
        module procedure dot_2s2s
-#ifndef NOR4
        module procedure dot_01_r4
        module procedure dot_10_r4
        module procedure dot_02_r4
@@ -106,7 +101,6 @@
        module procedure dot_04s_r4
        module procedure dot_40_r4
        module procedure dot_40s_r4
-#endif
        end interface
        interface operator (.dot.)
        ! simple dot-product of rank 1 and rank 2 tensor combinations
@@ -127,7 +121,6 @@
        module procedure dot_12s
        module procedure dot_22
        module procedure dot_2s2s
-#ifndef NOR4
        module procedure dot_01_r4
        module procedure dot_10_r4
        module procedure dot_02_r4
@@ -138,7 +131,6 @@
        module procedure dot_04s_r4
        module procedure dot_40_r4
        module procedure dot_40s_r4
-#endif
        end interface
        
        interface operator (**)
@@ -429,7 +421,6 @@
        module procedure assignten2sym_4
        module procedure assignsym2ten_2
        module procedure assignsym2ten_4
-#ifndef NOR4
        module procedure assignscalar_1r4
        module procedure assignscalar_2r4
        module procedure assignscalar_2sr4
@@ -439,7 +430,6 @@
        module procedure assignarr_2sr4
        module procedure assignarr_4r4
        module procedure assignarr_4sr4
-#endif
        end interface
 !      ------END INTERFACE---------------------------------------
        

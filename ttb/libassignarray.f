@@ -12,7 +12,7 @@
         implicit none
         
         type(Tensor2s), intent(inout) :: T
-        real, dimension(6), intent(in) :: A
+        real(kind=4), dimension(6), intent(in) :: A
         
         T%a6 = dble(A)
         
@@ -32,7 +32,7 @@
         implicit none
         
         type(Tensor4s), intent(inout) :: T
-        real, dimension(6,6), intent(in) :: A
+        real(kind=4), dimension(6,6), intent(in) :: A
         
         T%a6b6 = dble(A)
         
@@ -52,7 +52,7 @@
         implicit none
         
         type(Tensor1), intent(inout) :: T
-        real, dimension(3), intent(in) :: A
+        real(kind=4), dimension(3), intent(in) :: A
         
         T%a = dble(A)
         
@@ -72,7 +72,7 @@
         implicit none
         
         type(Tensor2), intent(inout) :: T
-        real, dimension(3,3), intent(in) :: A
+        real(kind=4), dimension(3,3), intent(in) :: A
         
         T%ab = dble(A)
         
@@ -92,7 +92,7 @@
         implicit none
         
         type(Tensor4), intent(inout) :: T
-        real, dimension(3,3,3,3), intent(in) :: A
+        real(kind=4), dimension(3,3,3,3), intent(in) :: A
         
         T%abcd = dble(A)
         

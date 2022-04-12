@@ -114,7 +114,7 @@
        function dot_01_r4(w, T)
         implicit none
         
-        real, intent(in) :: w
+        real(kind=4), intent(in) :: w
         type(Tensor1), intent(in) :: T
         type(Tensor1) :: dot_01_r4
 
@@ -125,7 +125,7 @@
        function dot_10_r4(T, w)
         implicit none
         
-        real, intent(in) :: w
+        real(kind=4), intent(in) :: w
         type(Tensor1), intent(in) :: T
         type(Tensor1) :: dot_10_r4
 
@@ -136,7 +136,7 @@
        function dot_02_r4(w, T)
         implicit none
         
-        real, intent(in) :: w
+        real(kind=4), intent(in) :: w
         type(Tensor2), intent(in) :: T
         type(Tensor2) :: dot_02_r4
 
@@ -147,7 +147,7 @@
        function dot_02s_r4(w, T)
         implicit none
         
-        real, intent(in) :: w
+        real(kind=4), intent(in) :: w
         type(Tensor2s), intent(in) :: T
         type(Tensor2s) :: dot_02s_r4
 
@@ -158,7 +158,7 @@
        function dot_20_r4(T, w)
         implicit none
         
-        real, intent(in) :: w
+        real(kind=4), intent(in) :: w
         type(Tensor2), intent(in) :: T
         type(Tensor2) :: dot_20_r4
 
@@ -169,7 +169,7 @@
        function dot_20s_r4(T, w)
         implicit none
         
-        real, intent(in) :: w
+        real(kind=4), intent(in) :: w
         type(Tensor2s), intent(in) :: T
         type(Tensor2s) :: dot_20s_r4
 
@@ -180,7 +180,7 @@
        function dot_04_r4(w, T)
         implicit none
         
-        real, intent(in) :: w
+        real(kind=4), intent(in) :: w
         type(Tensor4), intent(in) :: T
         type(Tensor4) :: dot_04_r4
 
@@ -191,7 +191,7 @@
        function dot_04s_r4(w, T)
         implicit none
         
-        real, intent(in) :: w
+        real(kind=4), intent(in) :: w
         type(Tensor4s), intent(in) :: T
         type(Tensor4s) :: dot_04s_r4
 
@@ -202,7 +202,7 @@
        function dot_40_r4(T, w)
         implicit none
         
-        real, intent(in) :: w
+        real(kind=4), intent(in) :: w
         type(Tensor4), intent(in) :: T
         type(Tensor4) :: dot_40_r4
 
@@ -213,7 +213,7 @@
        function dot_40s_r4(T, w)
         implicit none
         
-        real, intent(in) :: w
+        real(kind=4), intent(in) :: w
         type(Tensor4s), intent(in) :: T
         type(Tensor4s) :: dot_40s_r4
 

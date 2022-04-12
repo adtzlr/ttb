@@ -12,7 +12,7 @@
         implicit none
         
         type(Tensor2s), intent(inout) :: T
-        real, intent(in) :: w
+        real(kind=4), intent(in) :: w
         
         T%a6 = T%a6*dble(w)
         
@@ -32,7 +32,7 @@
         implicit none
         
         type(Tensor4s), intent(inout) :: T
-        real, intent(in) :: w
+        real(kind=4), intent(in) :: w
         
         T%a6b6 = T%a6b6*dble(w)
         
@@ -52,7 +52,7 @@
         implicit none
         
         type(Tensor1), intent(inout) :: T
-        real, intent(in) :: w
+        real(kind=4), intent(in) :: w
         
         T%a = T%a*dble(w)
         
@@ -72,7 +72,7 @@
         implicit none
         
         type(Tensor2), intent(inout) :: T
-        real, intent(in) :: w
+        real(kind=4), intent(in) :: w
         
         T%ab = T%ab*dble(w)
         
@@ -92,7 +92,7 @@
         implicit none
         
         type(Tensor4), intent(inout) :: T
-        real, intent(in) :: w
+        real(kind=4), intent(in) :: w
         
         T%abcd = T%abcd*dble(w)
         

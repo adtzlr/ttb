@@ -15,7 +15,7 @@ and
 Before we are able to add our own user code, we have to start with an empty fortran subroutine header for MSC.Marc's HYPELA2. Similar headers are provided for Abaqus, ANSYS, etc in the corresponding manuals.
 
 ```fortran
-#include "ttb/ttb_library.F"
+      include 'ttb/ttb_library.f'
 
       subroutine hypela2(d,g,e,de,s,t,dt,ngens,m,nn,kcus,matus,ndi,
      2             nshear,disp,dispt,coord,ffn,frotn,strechn,eigvn,ffn1,
@@ -138,7 +138,7 @@ If we would like to use the Updated Lagrange framework too, we'll have to check 
       endif
 ```
 
-In this code `iupdat` is an integer with `0` for total lagrange and `1` for updated lagrange. You may download the whole example as a [HYPELA2 user subroutine](examples/hypela2_stvenantkirchhoff.F) for MSC.Marc.
+In this code `iupdat` is an integer with `0` for total lagrange and `1` for updated lagrange. You may download the whole example as a [HYPELA2 user subroutine](examples/hypela2_stvenantkirchhoff.f) for MSC.Marc.
 
 ## Sources
 [1] Bonet, J., Gil, A. J., & Wood, R. D. (2016). Nonlinear Solid Mechanics for Finite Element Analysis: Statics. Cambridge University Press. [![DOI:10.1017/cbo9781316336144](https://zenodo.org/badge/DOI/10.1017/cbo9781316336144.svg)](https://doi.org/10.1017/cbo9781316336144)

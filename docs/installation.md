@@ -5,11 +5,3 @@ This Toolbox is tested on Windows with both Intel Fortran >2015 (in combination 
 
 ## Download
 [Download the module](https://github.com/adtzlr/ttb/archive/main.zip), put the `ttb`-Folder in your working directory and you are ready to dive into comfortable tensor manipulations in Fortran.
-
-## A note on LS-DYNA Users
-If you have problems as reported [here] (https://github.com/adtzlr/ttb/issues/10), please add the following line **before** the Tensor-Toolbox include statement. This deactivates tensor with single-precision scalar multiplications and divisions. **Warning**: Now take care to only use double-precision constants in your code!
-
-```fortran
-#define NOR4
-#include "ttb/ttb_library.F"
-```
