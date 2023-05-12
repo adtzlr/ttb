@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="400"
+   height="80"
+   viewBox="0 0 105.83333 21.166667"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   sodipodi:docname="logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     width="320px"
+     units="px"
+     inkscape:zoom="1.050338"
+     inkscape:cx="474.60913"
+     inkscape:cy="-23.801862"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient21837">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop21833" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop21835" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient21793"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#504416;stop-opacity:1;"
+         offset="0"
+         id="stop21791" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient21837"
+       id="linearGradient21839"
+       x1="2.3309135"
+       y1="12.094236"
+       x2="67.837479"
+       y2="12.094236"
+       gradientUnits="userSpaceOnUse" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath35098">
+      <g
+         id="g35124">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:25.4px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+           x="2.9476063"
+           y="22.293415"
+           id="text35102"><tspan
+             sodipodi:role="line"
+             id="tspan35100"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.4px;font-family:Hawk;-inkscape-font-specification:Hawk;fill:#000000;fill-opacity:1;stroke-width:0.264583"
+             x="2.9476063"
+             y="22.293415">ttb</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:26.811px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+           x="38.601643"
+           y="14.398022"
+           id="text35118"><tspan
+             sodipodi:role="line"
+             id="tspan35116"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.811px;font-family:Hawk;-inkscape-font-specification:Hawk;fill:#000000;fill-opacity:1;stroke-width:0.264583"
+             x="38.601643"
+             y="14.398022"><tspan
+               style="font-size:12.7px"
+               id="tspan35104">t</tspan><tspan
+               style="font-size:9.87778px"
+               id="tspan35106">ensor</tspan><tspan
+               style="font-size:12.7px"
+               id="tspan35108">T</tspan><tspan
+               style="font-size:9.87778px"
+               id="tspan35110">ool</tspan><tspan
+               id="tspan35112"
+               style="font-size:12.7px">b</tspan><tspan
+               id="tspan35114"
+               style="font-size:9.87778px">ox</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:7.76111px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+           x="39.398499"
+           y="21.539265"
+           id="text35122"><tspan
+             sodipodi:role="line"
+             id="tspan35120"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.76111px;font-family:Hawk;-inkscape-font-specification:Hawk;fill:#000000;fill-opacity:1;stroke-width:0.264583"
+             x="39.398499"
+             y="21.539265">for modern Fortran</tspan></text>
+      </g>
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-2.465976,-2.244688)">
+    <image
+       width="105.83334"
+       height="21.166666"
+       preserveAspectRatio="none"
+       style="image-rendering:optimizeSpeed"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAY4AAAAwCAYAAAAGs53NAAAABHNCSVQICAgIfAhkiAAAApNJREFU eJzt1U3O2zAMRdFHOt8SupFuoftfUsgOSP246ITzewDDlEQpiR3g2e9ff9L8I/mPzD8y/5Gs7z0+ 6161rd5P9dhH6rU1J39k9tQ+c8kf6fnUnD3d//RneO3Z893f47pbz/uZd5fMrz1rrFObSW6Su/Kq ZXatVZ1ukknyU6f32FSXS3IpLRW7ltKzLlv391zsNfU9rrVVh7TGu6drq/X0kCyucZ45r/2yUOrM y1LadUi6xynznrOUKeR9jinlFpKHTCGzGnvXZnGNT/262/c1fvZ8zT36nrXVp+p7rr3P2qvV99Wj 3Ges2q++Wks9ivotWmtdZ++R+p51per3du0KWWb1ZfXYqrP+bpZrbvVUbfm+V++Zs57zkExWPXGv 2X6FltZ9+zXL066zbO+tV2zrte7+VSve38HOX6DqyPc4s89NWaS0+q9eRa91rd2X13itR62tnl7L POO89uR1bkYo7z19RvaZZ7zOq566zvdd52TvzX5uuzfPWZHZ66kI7d7oz8jU7t/11Zu79//jUH+P Piv+6Xs91jiPNUMK5fvxXo/09ej7sd/rr8ff535TirTz6nr9e9UuAAAGCA4AwAjBAQAYITgAACME BwBghOAAAIwQHACAEYIDADBCcAAARggOAMAIwQEAGCE4AAAjBAcAYITgAACMEBwAgBGCAwAwQnAA AEYIDgDACMEBABghOAAAIwQHAGCE4AAAjBAcAIARggMAMEJwAABGCA4AwAjBAQAYITgAACMEBwBg hOAAAIwQHACAEYIDADBCcAAARggOAMAIwQEAGCE4AAAjBAcAYITgAACMEBwAgBGCAwAwQnAAAEYI DgDACMEBABghOAAAIwQHAGCE4AAAjBAcAICRv6AM4vPvFSvvAAAAAElFTkSuQmCC "
+       id="image30769"
+       x="2.465976"
+       y="2.244688"
+       clip-path="url(#clipPath35098)" />
+  </g>
+</svg>
