@@ -1,29 +1,18 @@
-# Tensor Toolbox for Modern Fortran (ttb)
+<p align="center">
+  <img src="https://github.com/adtzlr/ttb/assets/5793153/f0d39d25-e858-478a-8b10-991a2559a645" height="67px"/>
+  <p align="center">Tensor Toolbox for Modern Fortran.</p>
+</p>
 
-![Image](docs/images/header.jpg)
+![Fortran](https://img.shields.io/badge/Fortran-%23734F96.svg?style=for-the-badge&logo=fortran&logoColor=white)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4077378.svg)](https://doi.org/10.5281/zenodo.4077378)
 
 Commercial FEM software packages offer interfaces (user subroutines written in Fortran) for custom defined user materials like UMAT in [Abaqus](https://www.3ds.com/products-services/simulia/products/abaqus/) or HYPELA2 in [MSC.Marc](http://www.mscsoftware.com/product/marc). In comparison to other scientific programming languages like MATLAB or Python Fortran is not as comfortable to use when dealing with high level programming features of tensor manipulation. On the other hand it's super fast - so why not combine the handy features from MATLAB or Python's NumPy/Scipy with the speed of Fortran? That's the reason why I started working on a simple but effective module called **Tensor Toolbox for Modern Fortran**. I adopted the idea to my needs from [Naumann, C. (2016)](http://nbn-resolving.de/urn:nbn:de:bsz:ch1-qucosa-222075).
 
-The full documentation is available at [https://adtzlr.github.io/ttb](https://adtzlr.github.io/ttb). This project is licensed under the terms of the MIT license.
-
-## How to cite
-
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4077378.svg)](https://doi.org/10.5281/zenodo.4077378)
-
-If you use *Tensor Toolbox for Modern Fortran (ttb)* in your work, please cite this toolbox in your publications. Thanks! **Hint**: The DOI-badge always resolves to the latest version of this toolbox - if you prefer a version-specific DOI, hit the DOI-badge and pick a version on Zenodo.
-
-Andreas Dutzler. *Tensor Toolbox for Modern Fortran - High-Level Tensor Manipulation in Fortran*. DOI: 10.5281/zenodo.4077378.
-
-```
-@software{dutzler2022,
-  author       = {Andreas Dutzler},
-  title        = {Tensor Toolbox for Modern Fortran - High-Level Tensor Manipulation in Fortran},
-  doi          = {10.5281/zenodo.4077378},
-  url          = {https://doi.org/10.5281/zenodo.4077378}
-}
-```
+The full documentation is available at [https://adtzlr.github.io/ttb](https://adtzlr.github.io/ttb). This project is licensed under the terms of the [MIT license](LICENSE).
 
 ## Overview
+
+![deformation](https://github.com/adtzlr/ttb/assets/5793153/14f0f4f3-2b17-4253-ad06-c279a5d75193)
 
 It provides the following [basic operations for tensor calculus](docs/functions.md) (all written in double precision `real(kind=8)`):
 - Dot Product `C(i,j) = A(i,k) B(k,j)` written as `C = A*B`
@@ -131,3 +120,6 @@ The isochoric part of the material elasticity tensor `C4_iso` of a nearly-incomp
 
 ## Credits
 Naumann, C.: [Chemisch-mechanisch gekoppelte Modellierung und Simulation oxidativer Alterungsvorgänge in Gummibauteilen (German)](http://nbn-resolving.de/urn:nbn:de:bsz:ch1-qucosa-222075). PhD thesis. Fakultät für Maschinenbau der Technischen Universität Chemnitz, 2016.
+
+# Changelog
+All notable changes to this project will be documented in [this file](CHANGELOG.md). The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
