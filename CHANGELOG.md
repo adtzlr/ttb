@@ -9,6 +9,3 @@ All notable changes to this project will be documented in this file. The format 
 - Start keeping a Changelog.
 - Add `CITATION.cff` file and remove *How To Cite* section in README.
 - Add a text logo and add badges to `README.md`.
-
-### Changed
-- Add a new logo.
