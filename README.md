@@ -3,7 +3,7 @@
   <p align="center">Tensor Toolbox for Modern Fortran.</p>
 </p>
 
-![Fortran](https://img.shields.io/badge/Fortran-%23734F96.svg?style=for-the-badge&logo=fortran&logoColor=white)
+![Fortran](https://img.shields.io/badge/modern-fortran-blueviolet)
 ![License](https://img.shields.io/github/license/adtzlr/ttb)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4077378.svg)](https://doi.org/10.5281/zenodo.4077378)
 
