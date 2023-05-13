@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+## [1.1.2] - 2023-05-13
+
+### Added
+- Add more badges in `README.md` (documentation, latest release).
+
+### Changed
+- Better readability of text logo on white background.
+
 ## [1.1.1] - 2023-05-13
 
 ### Added

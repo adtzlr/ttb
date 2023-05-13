@@ -68,55 +68,30 @@
        gradientUnits="userSpaceOnUse" />
     <clipPath
        clipPathUnits="userSpaceOnUse"
-       id="clipPath35098">
-      <g
-         id="g35124">
-        <text
-           xml:space="preserve"
-           style="font-style:normal;font-weight:normal;font-size:25.4px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-           x="2.9476063"
-           y="22.293415"
-           id="text35102"><tspan
-             sodipodi:role="line"
-             id="tspan35100"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.4px;font-family:Hawk;-inkscape-font-specification:Hawk;fill:#000000;fill-opacity:1;stroke-width:0.264583"
-             x="2.9476063"
-             y="22.293415">ttb</tspan></text>
-        <text
-           xml:space="preserve"
-           style="font-style:normal;font-weight:normal;font-size:26.811px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-           x="38.601643"
-           y="14.398022"
-           id="text35118"><tspan
-             sodipodi:role="line"
-             id="tspan35116"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.811px;font-family:Hawk;-inkscape-font-specification:Hawk;fill:#000000;fill-opacity:1;stroke-width:0.264583"
-             x="38.601643"
-             y="14.398022"><tspan
-               style="font-size:12.7px"
-               id="tspan35104">t</tspan><tspan
-               style="font-size:9.87778px"
-               id="tspan35106">ensor</tspan><tspan
-               style="font-size:12.7px"
-               id="tspan35108">T</tspan><tspan
-               style="font-size:9.87778px"
-               id="tspan35110">ool</tspan><tspan
-               id="tspan35112"
-               style="font-size:12.7px">b</tspan><tspan
-               id="tspan35114"
-               style="font-size:9.87778px">ox</tspan></tspan></text>
-        <text
-           xml:space="preserve"
-           style="font-style:normal;font-weight:normal;font-size:7.76111px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-           x="39.398499"
-           y="21.539265"
-           id="text35122"><tspan
-             sodipodi:role="line"
-             id="tspan35120"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.76111px;font-family:Hawk;-inkscape-font-specification:Hawk;fill:#000000;fill-opacity:1;stroke-width:0.264583"
-             x="39.398499"
-             y="21.539265">for modern Fortran</tspan></text>
-      </g>
+       id="clipPath21047">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:25.4px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="2.4184396"
+         y="21.235081"
+         id="text21063"><tspan
+           sodipodi:role="line"
+           id="tspan21061"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.4px;font-family:Hawk;-inkscape-font-specification:Hawk;fill:#000000;fill-opacity:1;stroke-width:0.264583"
+           x="2.4184396"
+           y="21.235081"><tspan
+             id="tspan21049"
+             style="font-size:22.5778px;stroke-width:0.264583">t</tspan><tspan
+             style="font-size:14.1111px;stroke-width:0.264583"
+             id="tspan21051">ensor</tspan><tspan
+             style="font-size:22.5778px;stroke-width:0.264583"
+             id="tspan21053">t</tspan><tspan
+             style="font-size:14.1111px;stroke-width:0.264583"
+             id="tspan21055">ool</tspan><tspan
+             style="font-size:22.5778px;stroke-width:0.264583"
+             id="tspan21057">b</tspan><tspan
+             style="font-size:14.1111px;stroke-width:0.264583"
+             id="tspan21059">ox</tspan></tspan></text>
     </clipPath>
   </defs>
   <g
@@ -133,6 +108,8 @@
        id="image30769"
        x="2.465976"
        y="2.244688"
-       clip-path="url(#clipPath35098)" />
+       clip-path="url(#clipPath21047)" />
+    <g
+       id="g35124" />
   </g>
 </svg>

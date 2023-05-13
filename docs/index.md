@@ -1,6 +1,6 @@
 # Documentation
 
-![Tensor Toolbox for Modern Fortran](images/header.jpg)
+![Tensor Toolbox for Modern Fortran](images/deformation.png)
 
 ## What is this toolbox about?
 
