@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/adtzlr/ttb/assets/5793153/f0d39d25-e858-478a-8b10-991a2559a645" height="67px"/>
+  <img src="https://github.com/adtzlr/ttb/assets/5793153/d26ec0f8-fc65-4256-95c3-2e9af9f03027"/>
   <p align="center">Tensor Toolbox for Modern Fortran.</p>
 </p>
 
