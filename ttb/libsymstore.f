@@ -30,7 +30,6 @@
        function symstore_4sa(T)
         implicit none
         
-        integer :: w1,w2
         real(kind=8), dimension(6,6), intent(in) :: T
         type(Tensor4s) :: symstore_4sa
 
