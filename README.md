@@ -30,8 +30,6 @@ This tensor toolbox provides the following [basic operations for tensor calculus
 - Rank 2 Identity tensor of input type `Eye = identity2(Eye)` with `C = Eye*C`
 - Rank 4 Identity tensor (symmetric variant) of input type `I4 = identity4(Eye)` or `I4 = Eye.cdya.Eye` with `C = I4**C` or `inv(C) = identity4(inv(C))**C`
 - Square Root of a positive definite rank 2 tensor `U = sqrt(C)`
-- Natural logarithm (1) of a rank 2 tensor `lnC = ln(C)`
-- Exponential function (1) of a rank 2 tensor `expC = exp(C)`
 - Assigment of a real-valued Scalar to all components of a Tensor `A = 0.0` or `A = 0.d0`
 - Assigment of a real-valued Array to a Tensor with matching dimensions `A = B` where B is an Array and A a Tensor
 - Assigment of a Tensor in Voigt notation to a Tensor in tensorial notation and vice versa
