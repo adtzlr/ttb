@@ -157,7 +157,7 @@
         type(Tensor4s), intent(in) :: T2
         type(Tensor4s) :: ddot_4s4s
         real(kind=8) :: w
-        integer :: i,j,k,l
+        integer :: i,j,k
         
         ddot_4s4s%a6b6 = 0.d0
         do i = 1,6
