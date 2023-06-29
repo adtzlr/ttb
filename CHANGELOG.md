@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file. The format 
 ## [Unreleased]
 
 ### Added
-- Add a warning in docs that `C**(1/2)` equals to `C**0`. The square root operator must be used instead.
+- Add a warning in the docs that `C**(1/2)` equals to `C**0`. The square root operator must be used instead.
 
 ### Changed
 - Evaluate the i-th power of the inverse of a tensor for negative exponents in `C**-3`.
