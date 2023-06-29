@@ -37,9 +37,6 @@ All tensors, whether they are "stress"- or "strain"-like are stored with origina
 - [Permute](functions/permute.md)
 - [Square root](functions/squareroot.md)
 - [Power](functions/power.md)
-- [Exponential Map](functions/exponential.md)
-- [Derivative of Exponential Map](functions/exponential.md)
-- Natural Logarithm
 - [Identity](functions/identity.md)
 - [Piola Operation](functions/piola.md)
 - [Rotation Matrix](functions/rotation.md)

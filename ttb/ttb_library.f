@@ -274,22 +274,6 @@
        module procedure norm_2s
        end interface
        
-       interface exp
-       module procedure exp_2
-       module procedure exp_2s
-       end interface
-       
-       interface derivative_exp
-       module procedure dexp_2
-       module procedure dexp_2s
-       end interface
-       
-       interface ln
-       module procedure ln_2
-       module procedure ln_2s
-       end interface
-
-       
        interface sqrt
        module procedure sqrt_1
        module procedure stretch_2
@@ -463,9 +447,6 @@
        include 'ttb/libdev.f'
        include 'ttb/libunimodular.f'
        include 'ttb/libinv.f'
-       include 'ttb/libexp.f'
-       include 'ttb/libderivativeexp.f'
-       include 'ttb/libln.f'
        include 'ttb/libnorm.f'
        include 'ttb/libsqrt.f'
        include 'ttb/librotation.f'
