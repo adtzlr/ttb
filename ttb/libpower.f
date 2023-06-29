@@ -15,7 +15,10 @@
         else if (i == 0) then
          pow_2 = identity2(T)
         else
-         pow_2 = inv(T)
+         invT = inv(T)
+         pow_2 = invT
+         do j=1,i-1
+          pow_2 = pow_2*invT
         end if
      
        end function pow_2
@@ -37,7 +40,10 @@
         else if (i == 0) then
          pow_2s = identity2(T)
         else
-         pow_2s = inv(T)
+         invT = inv(T)
+         pow_2s = invT
+         do j=1,i-1
+          pow_2s = pow_2s*invT
         end if
      
        end function pow_2s
