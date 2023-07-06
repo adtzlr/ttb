@@ -34,8 +34,6 @@ This tensor toolbox provides the following [basic operations for tensor calculus
 - Assigment of a real-valued Array to a Tensor with matching dimensions `A = B` where B is an Array and A a Tensor
 - Assigment of a Tensor in Voigt notation to a Tensor in tensorial notation and vice versa
 
-*(1) series expansion of isotropic tensor function*
-
 The idea is to create derived data types for rank 1, rank 2 and rank 4 tensors (and it's symmetric variants). In a next step the operators are defined in a way that Fortran calls different functions based on the input types of the operator: performing a dot product between a vector and a rank 2 tensor or a rank 2 and a rank 2 tensor is a different function. Best of it: you don't have to take care of that.
 
 ## Basic Usage
