@@ -4,7 +4,7 @@
         type(Tensor2s), intent(inout) :: T
         real(kind=8), intent(in) :: w
         
-        T%a6 = T%a6*w
+        T%a6 = w
         
        end subroutine assignscalar_2s
        
@@ -14,7 +14,7 @@
         type(Tensor2s), intent(inout) :: T
         real(kind=4), intent(in) :: w
         
-        T%a6 = T%a6*dble(w)
+        T%a6 = dble(w)
         
        end subroutine assignscalar_2sr4
        
@@ -24,7 +24,7 @@
         type(Tensor4s), intent(inout) :: T
         real(kind=8), intent(in) :: w
         
-        T%a6b6 = T%a6b6*w
+        T%a6b6 = w
         
        end subroutine assignscalar_4s
        
@@ -34,7 +34,7 @@
         type(Tensor4s), intent(inout) :: T
         real(kind=4), intent(in) :: w
         
-        T%a6b6 = T%a6b6*dble(w)
+        T%a6b6 = dble(w)
         
        end subroutine assignscalar_4sr4
        
@@ -44,7 +44,7 @@
         type(Tensor1), intent(inout) :: T
         real(kind=8), intent(in) :: w
         
-        T%a = T%a*w
+        T%a = w
         
        end subroutine assignscalar_1
        
@@ -54,7 +54,7 @@
         type(Tensor1), intent(inout) :: T
         real(kind=4), intent(in) :: w
         
-        T%a = T%a*dble(w)
+        T%a = dble(w)
         
        end subroutine assignscalar_1r4
        
@@ -64,7 +64,7 @@
         type(Tensor2), intent(inout) :: T
         real(kind=8), intent(in) :: w
         
-        T%ab = T%ab*w
+        T%ab = w
         
        end subroutine assignscalar_2
        
@@ -74,7 +74,7 @@
         type(Tensor2), intent(inout) :: T
         real(kind=4), intent(in) :: w
         
-        T%ab = T%ab*dble(w)
+        T%ab = dble(w)
         
        end subroutine assignscalar_2r4
        
@@ -84,7 +84,7 @@
         type(Tensor4), intent(inout) :: T
         real(kind=8), intent(in) :: w
         
-        T%abcd = T%abcd*w
+        T%abcd = w
         
        end subroutine assignscalar_4
        
@@ -94,6 +94,6 @@
         type(Tensor4), intent(inout) :: T
         real(kind=4), intent(in) :: w
         
-        T%abcd = T%abcd*dble(w)
+        T%abcd = dble(w)
         
        end subroutine assignscalar_4r4
