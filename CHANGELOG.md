@@ -9,6 +9,9 @@ All notable changes to this project will be documented in this file. The format 
 ### Changed
 - Evaluate the i-th power of the inverse of a tensor for negative exponents in `C**-3`.
 
+### Fixed
+- Fix assignments of scalars to tensors.
+
 ### Removed
 - Remove `ln`, `exp`, `dexp` functions which were based on isotropic tensor function-approximations. This could be misleading if one assumes these are analytic (exact) functions.
 - Remove unused internal variables and comments.
