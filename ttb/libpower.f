@@ -17,7 +17,7 @@
         else
          invT = inv(T)
          pow_2 = invT
-         do j=1,i-1
+         do j=1,abs(i)-1
           pow_2 = pow_2*invT
          end do
         end if
@@ -43,7 +43,7 @@
         else
          invT = inv(T)
          pow_2s = invT
-         do j=1,i-1
+         do j=1,abs(i)-1
           pow_2s = pow_2s*invT
          end do
         end if
