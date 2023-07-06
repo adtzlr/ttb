@@ -228,13 +228,6 @@
        module procedure crossdyadic_2s2s
        end interface
        
-       interface operator (.icdya.)
-       ! inner crossed dyadic product of rank 2 tensor combinations
-       ! (i,j,k,l) = (i,k,j,l)
-       module procedure icrossdyadic_22
-       module procedure icrossdyadic_2s2s
-       end interface
-       
        interface fact
        module procedure fact_i
        end interface
@@ -437,7 +430,6 @@
        include 'ttb/libdyadic.f'
 !      ------CROSS-DYADIC SECTION--------------------------------
        include 'ttb/libcrossdyadic.f'
-       include 'ttb/libinnercrossdyadic.f'
 !      ------PERMUTE SECTION-------------------------------------
        include 'ttb/libpermute.f'
 !      ------TENSOR FUNCTION SECTION-----------------------------

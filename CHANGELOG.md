@@ -17,6 +17,7 @@ All notable changes to this project will be documented in this file. The format 
 - Remove `ln`, `exp`, `dexp` functions which were based on isotropic tensor function-approximations. This could be misleading if one assumes these are analytic (exact) functions.
 - Remove unused internal variables and comments.
 - Remove unused `archive_functions.md` from the docs.
+- Remove incorrect implementation of `libinnercrossdyadic.f`.
 
 ## [1.1.2] - 2023-05-13
 
