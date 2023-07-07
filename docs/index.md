@@ -42,4 +42,4 @@ All notable changes to this project will be documented in [this file](https://gi
 ## Credits
 Naumann, C.: [Chemisch-mechanisch gekoppelte Modellierung und Simulation oxidativer Alterungsvorgänge in Gummibauteilen (German)](http://nbn-resolving.de/urn:nbn:de:bsz:ch1-qucosa-222075). PhD thesis. Fakultät für Maschinenbau der Technischen Universität Chemnitz, 2016.
 
-## Last updated: 2023/07/37
+## Last updated: 2023/07/07
