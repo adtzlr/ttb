@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Changed
 - Evaluate the i-th power of the inverse of a tensor for negative exponents in `C**-3`.
+- Initialize all tensor components to zero.
 
 ### Fixed
 - Fix assignments of scalars to tensors.
