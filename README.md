@@ -21,7 +21,7 @@ This tensor toolbox provides the following [basic operations for tensor calculus
 - Dot Product `C(i,j) = A(i,k) B(k,j)` written as `C = A*B`
 - Double Dot Product `C = A(i,j) B(i,j)` written as `C = A**B`
 - Dyadic Product `C(i,j,k,l) = A(i,j) B(k,l)` written as `C = A.dya.B`
-- Crossed Dyadic Product `C(i,j,k,l) = (A(i,k) B(j,l) + A(i,l) B(j,k))/2` written as `C = A.cdya.B`
+- Crossed Dyadic Product `C(i,j,k,l) = (A(i,k) B(j,l) + A(i,l) B(j,k) + B(i,k) A(j,l) + B(i,l) A(j,k))/4` written as `C = A.cdya.B`
 - Addition `C(i,j) = A(i,j) + B(i,j)` written as `C = A+B`
 - Subtraction `C(i,j) = A(i,j) - B(i,j)` written as `C = A-B`
 - Multiplication and Division by a Scalar
