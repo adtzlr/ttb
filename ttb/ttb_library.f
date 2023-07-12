@@ -6,7 +6,6 @@
        ! Graz University of Technology
        ! Institute of Structural Durability
        !    and Railway Technology
-       ! 2022-04-10
        ! ---------------------------------------
        ! tested on: Windows 10 (64bit)
        ! - Intel Fortran >2015
