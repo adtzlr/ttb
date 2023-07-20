@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+## [2.0.0] - 2023-07-23
+
 ### Added
 - Add a warning in the docs that `C**(1/2)` equals to `C**0`. The square root operator must be used instead.
 
