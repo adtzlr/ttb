@@ -8,12 +8,12 @@
      
       ! ABAQUS UMAT:    Nearly-Incompressible Neo-Hookean Material
       !                 Example for usage of Tensor Toolbox
-      ! capability:     3D analysis, axisymmetric?
+      ! capability:     3D analysis
       ! Formulation:    Total Lagrange with push forward for Abaqus
-      ! Andreas Dutzler, 2018-07-22, Graz University of Technology
-
+      ! Jamal Bhatti, 2023-09-23, Leibniz University Hannover
       
-     
+      
+      
       use Tensor
       !implicit none
       INCLUDE 'ABA_PARAM.INC'
