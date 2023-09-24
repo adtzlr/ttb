@@ -7,7 +7,7 @@ All notable changes to this project will be documented in this file. The format 
 - Add a new example for a Neo-Hookean Abaqus Umat.
 
 ### Fixed
-- Fix typo in example for Abaqus Umat.
+- Fix a typo in example for Abaqus Umat.
 
 ## [2.0.0] - 2023-07-23
 
