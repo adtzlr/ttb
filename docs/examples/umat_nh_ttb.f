@@ -68,7 +68,7 @@
       P4tilde = identity4(invC1) - 1./3.*(invC1.dya.invC1)
       
       C4iso = 2./3.*tr(Sbar*Cbar)*P4tilde - 2./3.*(
-     *        (invC1.dya.S_iso) + (S_iso.dya.invC1))
+     *        (invC1.dya.Siso) + (S_iso.dya.invC1))
       C4vol = (J*ptilde) * ((invC1.dya.invC1))-(2.*J*p)
      *        *(identity4(invC1))
       
