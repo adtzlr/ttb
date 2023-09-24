@@ -13,7 +13,7 @@
       ! Andreas Dutzler, 2018-07-22, Graz University of Technology
 
       use Tensor
-      !implicit none
+      implicit none
      
       INCLUDE 'ABA_PARAM.INC'
 

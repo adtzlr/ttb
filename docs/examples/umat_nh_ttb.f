@@ -12,13 +12,10 @@
       ! Formulation:    Total Lagrange with push forward for Abaqus
       ! Jamal Bhatti, 2023-09-23, Leibniz University Hannover
       
-      
-      
       use Tensor
-      !implicit none
+      implicit none
       INCLUDE 'ABA_PARAM.INC'
       
-
       CHARACTER*80 CMNAME
       DIMENSION STRESS(NTENS),STATEV(NSTATV),
      1 DDSDDE(NTENS,NTENS),DDSDDT(NTENS),DRPLDE(NTENS),
