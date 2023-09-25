@@ -58,7 +58,7 @@
       C1 = transpose(F1) * F1
       invC1 = inv(C1)
       
-      dUdJ = kappa * (J-1)
+      dUdJ = kappa * (J - 1)
       ddUdJdJ = kappa
       
       dUdI1bar = C10
@@ -71,7 +71,7 @@
       
       Cbar = J**(-2./3.) * C1
       I1bar = tr(Cbar)
-      gama1bar = TWO * (dUdI1bar + tr(Cbar) * dUdI2bar)
+      gama1bar = TWO * (dUdI1bar + I1bar * dUdI2bar)
       gama2bar = -TWO * dUdI2bar
       Sbar = gama1bar * Eye + gama2bar * Cbar
       
