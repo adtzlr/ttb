@@ -54,7 +54,7 @@
       F1 = dfgrd1(1:3,1:3)
       J = det(F1)
       
-      ! right cauchy-green deformation tensor and it's inverse
+      ! right cauchy-green deformation tensor and its inverse
       C1 = transpose(F1) * F1
       invC1 = inv(C1)
       
