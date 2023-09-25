@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+## [2.1.0] - 2023-09-25
+
 ### Added
 - Add a new example for an easy-to-extend Neo-Hookean Abaqus Umat.
 
