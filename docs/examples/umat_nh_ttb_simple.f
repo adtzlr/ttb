@@ -42,14 +42,14 @@
       F1 = dfgrd1(1:3,1:3)
       J = det(F1)
       
-      ! right cauchy-green deformation tensor and it's inverse
+      ! right cauchy-green deformation tensor and its inverse
       C1 = transpose(F1)*F1
-      invC1 = inv(C1) ! faster method: invC1 = inv(C1,J**2)
+      invC1 = inv(C1)
       
       ! pk2 stress
       S1 = 2.*C10*J**(-2./3.)*dev(C1)*invC1 + kappa*(J-1)*J*invC1
       
-      ! push forward to cauchy stress used in abaqus
+      ! push forward to cauchy stress
       S1 = piola(F1,S1)/J
 
       ! material elasticity tensor
