@@ -4,10 +4,11 @@ All notable changes to this project will be documented in this file. The format 
 ## [Unreleased]
 
 ### Added
-- Add a new example for a Neo-Hookean Abaqus Umat.
+- Add a new example for an easy-to-extend Neo-Hookean Abaqus Umat.
 
 ### Fixed
-- Fix a typo in the Neo-Hooke example for Abaqus Umat.
+- Fix a typo in the basic Neo-Hooke example for Abaqus Umat.
+- Disable `implicit none` for the basic Neo-Hooke example for Abaqus Umat (not supported in combination with `INCLUDE 'ABA_PARAM.INC'`).
 
 ## [2.0.0] - 2023-07-23
 
