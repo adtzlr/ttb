@@ -13,8 +13,12 @@
       ! Andreas Dutzler, 2018-07-22, Graz University of Technology
 
       use Tensor
-      implicit none
-     
+      
+      ! `implicit none` is not supported if 'ABA_PARAM.INC' is included
+      ! declare all double-variables which start with `i,j,k,l,m,n`
+      ! - otherwise they will be integers
+      
+      ! implicit none
       INCLUDE 'ABA_PARAM.INC'
 
       CHARACTER*80 CMNAME
