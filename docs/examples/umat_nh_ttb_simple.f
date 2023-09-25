@@ -13,8 +13,12 @@
       ! Andreas Dutzler, 2018-07-22, Graz University of Technology
 
       use Tensor
-      implicit none
-     
+      
+      ! `implicit none` is not supported if 'ABA_PARAM.INC' is included.
+      ! declare all double-variables which start with `i,j,k,l,m,n`
+      ! - otherwise they will be integers
+      
+      ! implicit none
       INCLUDE 'ABA_PARAM.INC'
 
       CHARACTER*80 CMNAME
@@ -57,7 +61,7 @@
      *  - 2.*kappa*(J-1)*J* (invC1.cdya.invC1)
      
       ! push forward to jaumann tangent of cauchy stress for abaqus
-      C4 = piola(F1,C4)/detF1 + (S1.cdya.Eye)+(Eye.cdya.S1)
+      C4 = piola(F1,C4)/J + (S1.cdya.Eye)+(Eye.cdya.S1)
      
       ! output as array
       STRESS(1:ntens)         = asabqarray(voigt(S1),ntens)
