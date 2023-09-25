@@ -14,7 +14,7 @@
 
       use Tensor
       
-      ! `implicit none` is not supported if 'ABA_PARAM.INC' is included
+      ! `implicit none` is not supported if 'ABA_PARAM.INC' is included.
       ! declare all double-variables which start with `i,j,k,l,m,n`
       ! - otherwise they will be integers
       
