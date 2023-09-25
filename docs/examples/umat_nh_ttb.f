@@ -6,7 +6,8 @@
      3 NDI,NSHR,NTENS,NSTATV,PROPS,NPROPS,COORDS,DROT,PNEWDT,
      4 CELENT,DFGRD0,DFGRD1,NOEL,NPT,LAYER,KSPT,JSTEP,KINC)
      
-      ! ABAQUS UMAT:    Nearly-Incompressible Neo-Hookean Material
+      ! ABAQUS UMAT:    Easy-to-extend Nearly-Incompressible Neo-Hookean
+!                       Material Formulation
       !                 Example for usage of Tensor Toolbox
       ! capability:     3D analysis
       ! Formulation:    Total Lagrange with push forward for Abaqus
@@ -37,7 +38,7 @@
       type(Tensor4) :: P4
       real(kind=8)  :: J,kappa,C10,D1,dUdI1bar,dUdI2bar,dUdJ,ddUdJdJ
       real(kind=8)  :: ddUdI1bardI1bar,ddUdI2bardI2bar,ddUdI1bardI2bar
-      real(kind=8)  :: p,ptilde,gama1bar,gama2bar,I1bar,trSbarCbar
+      real(kind=8)  :: p,ptilde,gama1bar,gama2bar,I1bar
       real(kind=8)  :: delta1bar,delta2bar,delta3bar,delta4bar
 
       ! also possible as types Tensor2s and Tensor4s
