@@ -35,11 +35,14 @@
       
       type(Tensor2) :: F1
       type(Tensor4) :: P4
-      real(kind=8)  :: J,kappa,C10,D1,dUdI1bar,dUdJ,ddUdJdJ,p,ptilde
+      real(kind=8)  :: J,kappa,C10,D1,dUdI1bar,dUdI2bar,dUdJ,ddUdJdJ
+      real(kind=8)  :: ddUdI1bardI1bar,ddUdI2bardI2bar,ddUdI1bardI2bar
+      real(kind=8)  :: p,ptilde,gama1bar,gama2bar,I1bar,trSbarCbar
+      real(kind=8)  :: delta1bar,delta2bar,delta3bar,delta4bar
 
       ! also possible as types Tensor2s and Tensor4s
       type(Tensor2) :: C1,invC1,S1,Eye,Cbar,Sbar,Siso
-      type(Tensor4) :: C4,P4tilde,C4iso,C4vol
+      type(Tensor4) :: C4,C4bar,P4tilde,C4iso,C4vol
       
       ! material parameters
       C10 = PROPS(2)
@@ -51,34 +54,57 @@
       J = det(F1)
       
       ! right cauchy-green deformation tensor and it's inverse
-      C1 = transpose(F1)*F1
+      C1 = transpose(F1) * F1
       invC1 = inv(C1)
-
-      dUdJ = kappa*(J-1)
+      
+      dUdJ = kappa * (J-1)
       ddUdJdJ = kappa
-
+      
       dUdI1bar = C10
-
-      Cbar = J**(-2./3.)*C1
-      Sbar = TWO*dUdI1bar*Eye
+      dUdI2bar = ZERO
+      
+      ! double derivatives
+      ddUdI1bardI1bar = ZERO
+      ddUdI1bardI2bar = ZERO
+      ddUdI2bardI2bar = ZERO
+      
+      Cbar = J**(-2./3.) * C1
+      I1bar = tr(Cbar)
+      gama1bar = TWO * (dUdI1bar + tr(Cbar) * dUdI2bar)
+      gama2bar = -TWO * dUdI2bar
+      Sbar = gama1bar * Eye + gama2bar * Cbar
       
       p = dUdJ
       ptilde = p + J * ddUdJdJ
-      P4 = identity4(Eye)-1./3.*(invC1.dya.C1)
-      Siso = J**(-2./3.)*(P4**Sbar)
+      P4 = identity4(Eye) - 1./3. * (invC1.dya.C1)
+      Siso = J**(-2./3.) * (P4**Sbar)
       
       ! push forward of pk2 stress to cauchy stress
-      S1 = piola(F1,J*p*invC1 + Siso)/J
+      S1 = piola(F1, J * p * invC1 + Siso) / J
       
-      P4tilde = identity4(invC1) - 1./3.*(invC1.dya.invC1)
+      ! coefficients for the elasticity tensor
+      delta1bar = FOUR * (ddUdI1bardI1bar +
+     *            TWO * I1bar * ddUdI1bardI2bar + dUdI2bar +
+     *            I1bar**2 * ddUdI2bardI2bar)
+      delta2bar = -FOUR * (ddUdI1bardI2bar + I1bar * ddUdI2bardI2bar)
+      delta3bar = FOUR * ddUdI2bardI2bar
+      delta4bar = -FOUR * dUdI2bar
       
-      C4iso = 2./3.*tr(Sbar*Cbar)*P4tilde - 2./3.*(
-     *        (invC1.dya.Siso) + (Siso.dya.invC1))
-      C4vol = (J*ptilde) * ((invC1.dya.invC1))-(2.*J*p)
-     *        *(identity4(invC1))
+      C4bar = J**(-4./3.) * (delta1bar * (Eye.dya.Eye)
+     *      + delta2bar * ((Eye.dya.Cbar) + (Cbar.dya.Eye))
+     *      + delta3bar * (Cbar.dya.Cbar)
+     *      + delta4bar * identity4(Eye))
+      
+      P4tilde = identity4(invC1) - 1./3. * (invC1.dya.invC1)
+      
+      C4iso = P4**C4bar**transpose(P4)
+     *      + 2./3. * tr(Sbar*Cbar) * P4tilde
+     *      - 2./3. * ((invC1.dya.Siso) + (Siso.dya.invC1))
+      C4vol = (J * ptilde) * ((invC1.dya.invC1)) - (2. * J * p)
+     *      * (identity4(invC1))
       
       ! push forward to jaumann tangent of cauchy stress for abaqus
-      C4 = piola(F1,C4iso+C4vol)/J + (S1.cdya.Eye)+(Eye.cdya.S1)
+      C4 = piola(F1, C4iso + C4vol) / J + (S1.cdya.Eye) + (Eye.cdya.S1)
       
       ! output as array
       STRESS(1:ntens)         = asabqarray(voigt(S1),ntens)
