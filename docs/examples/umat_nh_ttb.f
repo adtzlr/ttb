@@ -10,6 +10,9 @@
       !                 Example for usage of Tensor Toolbox
       ! capability:     3D analysis
       ! Formulation:    Total Lagrange with push forward for Abaqus
+      ! Reference:      Holzapfel, G. (2001). NONLINEAR SOLID MECHANICS.
+      !                 A Continuum Approach for Engineering.
+      !
       ! Jamal Bhatti, 2023-09-23, Leibniz University Hannover
       
       use Tensor
