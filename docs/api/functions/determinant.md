@@ -1,3 +1,11 @@
+---
+title: Determinant
+layout: page
+nav_order: 3
+parent: Functions
+grandparent: API Reference
+---
+
 ## Determinant
 
 **Description:** Determinant of a rank 2 Tensor.

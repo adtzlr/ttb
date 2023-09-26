@@ -1,3 +1,11 @@
+---
+title: Identity
+layout: page
+nav_order: 3
+parent: Functions
+grandparent: API Reference
+---
+
 ## Identity
 
 **Description:** Calculate the identity tensor. Two functions for generating identities are implemented:

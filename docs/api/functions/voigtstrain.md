@@ -1,3 +1,11 @@
+---
+title: Voigtstrain
+layout: page
+nav_order: 3
+parent: Functions
+grandparent: API Reference
+---
+
 ## Voigtstrain
 
 **Description:** Import a strain array in voigt storage. As this Module does not use doubled shear items for the symmetric voigt-like storage a strain-like array has to be imported rather than assigned to a Tensor.

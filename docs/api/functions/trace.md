@@ -1,3 +1,11 @@
+---
+title: Trace
+layout: page
+nav_order: 3
+parent: Functions
+grandparent: API Reference
+---
+
 ## Trace
 
 **Description:** Sum of diagonal terms of a rank 2 Tensor.

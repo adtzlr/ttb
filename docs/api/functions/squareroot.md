@@ -1,3 +1,11 @@
+---
+title: Matrix Square Root
+layout: page
+nav_order: 3
+parent: Functions
+grandparent: API Reference
+---
+
 ## Square Root
 
 **Description:** Tensorial square root of a positive definite rank 2 Tensor. For algorithmic details see [Franka, L.P. (1988)](https://inis.iaea.org/search/search.aspx?orig_q=RN:20064555). This function can be used to obtain the stretch tensor.

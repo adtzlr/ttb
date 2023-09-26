@@ -1,3 +1,11 @@
+---
+title: Transpose
+layout: page
+nav_order: 3
+parent: Functions
+grandparent: API Reference
+---
+
 ## Transpose
 
 **Description:** Transpose of a rank 2 Tensor or major transpose of a rank 4 Tensor.

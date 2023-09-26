@@ -1,3 +1,11 @@
+---
+title: Power
+layout: page
+nav_order: 3
+parent: Functions
+grandparent: API Reference
+---
+
 ## Power
 
 **Description:** Multiply a Tensor i-times by itself. Note that for a given Tensor C:

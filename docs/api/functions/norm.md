@@ -1,3 +1,11 @@
+---
+title: Norm
+layout: page
+nav_order: 3
+parent: Functions
+grandparent: API Reference
+---
+
 ## Norm
 
 **Description:** Euclidean norm of a rank 1 Tensor (Vector). Square root of the sum of the squared components `sqrt( sum( T%a**2 ))`.

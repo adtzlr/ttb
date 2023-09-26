@@ -1,3 +1,11 @@
+---
+title: Deviator
+layout: page
+nav_order: 3
+parent: Functions
+grandparent: API Reference
+---
+
 ## Deviator
 
 **Description:** Deviator of a rank 2 Tensor.

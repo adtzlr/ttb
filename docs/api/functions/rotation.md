@@ -1,3 +1,11 @@
+---
+title: Rotation Matrix
+layout: page
+nav_order: 3
+parent: Functions
+grandparent: API Reference
+---
+
 ## Rotation Matrix
 
 **Description:** Rotation Matrix with inputs angle in rad and rotation axis.

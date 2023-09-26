@@ -1,3 +1,11 @@
+---
+title: Permute
+layout: page
+nav_order: 3
+parent: Functions
+grandparent: API Reference
+---
+
 ## Permute
 
 **Description:** Index permutation of a rank 2 or a rank 4 Tensor. For rank 2 Tensors this is equal to the transpose function.

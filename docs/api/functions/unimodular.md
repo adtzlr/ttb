@@ -1,3 +1,11 @@
+---
+title: Unimodular
+layout: page
+nav_order: 3
+parent: Functions
+grandparent: API Reference
+---
+
 ## Unimodular Part of Tensor
 
 **Description:** Unimodular Part of a rank 2 Tensor.

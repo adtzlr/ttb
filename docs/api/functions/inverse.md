@@ -1,3 +1,11 @@
+---
+title: Inverse
+layout: page
+nav_order: 3
+parent: Functions
+grandparent: API Reference
+---
+
 ## Inverse
 
 **Description:** Inverse of a positive definite rank 2 Tensor (Determinant > 0). Optional Argument: Determinant
