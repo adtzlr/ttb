@@ -1,3 +1,8 @@
+---
+title: API Reference
+layout: page
+---
+
 ## Module Function Overview
 
 This module provides several useful assignments, operators and functions for the derived Tensor Data Types.
@@ -13,37 +18,37 @@ To ensure consistency in calculating the virtual work shear terms are treated di
 All tensors, whether they are "stress"- or "strain"-like are stored with original (**no doubled**) shear components. Instead all dot- and double-dot-products are modified to take virtual work consistency into account. To be more precise, the function `asvoigt` is not really a Voigt storage - it is more a synonym for storing symmetric tensors as vectors and matrices. The user does have to take care of that storage if the strain in a user subroutine is used as an input for a `Tensor2s` data type and divide all shear components by a factor of `2`.
 
 ### Assignments
-- [General behaviour of data type conversion](assignments/ass_overview.md)
+- [General behaviour of data type conversion]({% link assignments/ass_overview.md %})
 
 ### Operators
-- [Dot Product](operators/operators_overview.md)
-- [Double Dot Product](operators/operators_overview.md)
-- [Dyadic Product](operators/operators_overview.md)
-- [Crossed-dyadic Product](operators/operators_overview.md)
-- [Division](operators/operators_overview.md)
-- [Addition](operators/operators_overview.md)
-- [Subtraction](operators/operators_overview.md)
+- [Dot Product]({% link operators/operators_overview.md %})
+- [Double Dot Product]({% link operators/operators_overview.md %})
+- [Dyadic Product]({% link operators/operators_overview.md %})
+- [Crossed-dyadic Product]({% link operators/operators_overview.md %})
+- [Division]({% link operators/operators_overview.md %})
+- [Addition]({% link operators/operators_overview.md %})
+- [Subtraction]({% link operators/operators_overview.md %})
 
 ### Scalar-valued functions
-- [Trace](functions/trace.md)
-- [Determinant](functions/determinant.md)
-- [Norm](functions/norm.md)
+- [Trace](functions/trace.md %})
+- [Determinant](functions/determinant.md %})
+- [Norm](functions/norm.md %})
 
 ### Tensor-valued functions
-- [Deviator](functions/deviator.md)
-- [Unimodular](functions/unimodular.md)
-- [Inverse](functions/inverse.md)
-- [Transpose](functions/transpose.md)
-- [Permute](functions/permute.md)
-- [Square root](functions/squareroot.md)
-- [Power](functions/power.md)
-- [Identity](functions/identity.md)
-- [Piola Operation](functions/piola.md)
-- [Rotation Matrix](functions/rotation.md)
+- [Deviator]({% link functions/deviator.md %})
+- [Unimodular]({% link functions/unimodular.md %})
+- [Inverse]({% link functions/inverse.md %})
+- [Transpose]({% link functions/transpose.md %})
+- [Permute]({% link functions/permute.md %})
+- [Square root]({% link functions/squareroot.md %})
+- [Power]({% link functions/power.md %})
+- [Identity]({% link functions/identity.md %})
+- [Piola Operation]({% link functions/piola.md %})
+- [Rotation Matrix]({% link functions/rotation.md %})
 
 ### Helper Functions
-- [As Array](functions/asarray.md)
-- [As Abaqus Array](functions/asabqarray.md)
-- [As Voigt](functions/asvoigt.md)
-- [As Tensor](functions/astensor.md)
-- [Import Strain](functions/voigtstrain.md)
+- [As Array]({% link functions/asarray.md %})
+- [As Abaqus Array]({% link functions/asabqarray.md %})
+- [As Voigt]({% link functions/asvoigt.md %})
+- [As Tensor]({% link functions/astensor.md %})
+- [Import Strain]({% link functions/voigtstrain.md %})
