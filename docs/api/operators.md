@@ -1,3 +1,10 @@
+---
+title: Operators
+layout: page
+nav_order: 3
+parent: API Reference
+---
+
 ## Operators Overview
 
 This module uses derived data types where the default operators are overloaded with custom functions. Currently there are the following operators available:

@@ -23,13 +23,13 @@ All tensors, whether they are "stress"- or "strain"-like are stored with origina
 - [General behaviour of data type conversion]({% link api/assignments.md %})
 
 ### Operators
-- [Dot Product]({% link api/operators/operators_overview.md %})
-- [Double Dot Product]({% link api/operators/operators_overview.md %})
-- [Dyadic Product]({% link api/operators/operators_overview.md %})
-- [Crossed-dyadic Product]({% link api/operators/operators_overview.md %})
-- [Division]({% link api/operators/operators_overview.md %})
-- [Addition]({% link api/operators/operators_overview.md %})
-- [Subtraction]({% link api/operators/operators_overview.md %})
+- [Dot Product]({% link api/operators.md %})
+- [Double Dot Product]({% link api/operators.md %})
+- [Dyadic Product]({% link api/operators.md %})
+- [Crossed-dyadic Product]({% link api/operators.md %})
+- [Division]({% link api/operators.md %})
+- [Addition]({% link api/operators.md %})
+- [Subtraction]({% link api/operators.md %})
 
 ### Scalar-valued functions
 - [Trace]({% link api/functions/trace.md %})
