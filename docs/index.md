@@ -29,17 +29,16 @@ Andreas Dutzler. *Tensor Toolbox for Modern Fortran - High-Level Tensor Manipula
 ```
 
 ## Overview
-- [Installation](installation.md)
-- [Quick Start Guide](quickstartguide.md)
-- [Tensor Data Types](tensordatatypes.md)
-- [Functions](functions.md)
-- Example 1: [St.Venant-Kirchhoff Material](example_stvenantkirchhoff.md)
-- Example 2: [Nearly-Incompressible Neo-Hookean Material](example_neohooke.md)
+- [Installation]({% link installation.md %})
+- [Quick Start Guide]({% link quickstartguide.md %})
+- [Tensor Data Types]({% link tensordatatypes.md %})
+- [Functions]({% link functions.md %})
+- Example 1: [St.Venant-Kirchhoff Material]({% link example_stvenantkirchhoff.md)
+- Example 2: [Nearly-Incompressible Neo-Hookean Material]({% link example_neohooke.md)
 - Example 3: [Neo-Hookean Hyperelasticity with Maxwell-Viscoelasticity](examples/hypela2_nonlinear_viscoelasticity.f)
 
 ## Author
-Andreas Dutzler, Graz, Austria.
-I'm a PhD student at the Insitute of Structural Durability and Railway Technology at Graz University of Technology.
+Andreas Dutzler, Graz University of Technology, Austria.
 
 # Changelog
 All notable changes to this project will be documented in [this file](https://github.com/adtzlr/ttb/blob/main/CHANGELOG.md). The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
