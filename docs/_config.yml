@@ -1,7 +1,6 @@
 title: Fortran Tensor
 description: Tensor Toolbox for Modern Fortran
-url: "https://adtzlr.github.io"
-baseurl: "ttb"
+url: "https://adtzlr.github.io/ttb"
 repository: adtzlr/ttb
 
 theme: just-the-docs
