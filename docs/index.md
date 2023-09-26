@@ -33,8 +33,8 @@ Andreas Dutzler. *Tensor Toolbox for Modern Fortran - High-Level Tensor Manipula
 - [Quick Start Guide]({% link quickstartguide.md %})
 - [Tensor Data Types]({% link tensordatatypes.md %})
 - [Functions]({% link functions.md %})
-- Example 1: [St.Venant-Kirchhoff Material]({% link example_stvenantkirchhoff.md)
-- Example 2: [Nearly-Incompressible Neo-Hookean Material]({% link example_neohooke.md)
+- Example 1: [St.Venant-Kirchhoff Material]({% link example_stvenantkirchhoff.md %})
+- Example 2: [Nearly-Incompressible Neo-Hookean Material]({% link example_neohooke.md %})
 - Example 3: [Neo-Hookean Hyperelasticity with Maxwell-Viscoelasticity](examples/hypela2_nonlinear_viscoelasticity.f)
 
 ## Author
