@@ -1,6 +1,7 @@
 ---
 title: API Reference
 layout: page
+nav_order: 3
 ---
 
 ## Module Function Overview
