@@ -82,8 +82,6 @@ kramdown:
     block:
       line_numbers: false
 
-theme: jekyll-theme-cayman
-
 compress_html:
   clippings: all
   comments: all
