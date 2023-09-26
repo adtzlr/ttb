@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://github.com/adtzlr/ttb/assets/5793153/d26ec0f8-fc65-4256-95c3-2e9af9f03027"/>
-  <p align="center">Fortran Tensor - Tensor Toolbox for Modern Fortran.</p>
+  <p align="center">Tensor Toolbox for Modern Fortran.</p>
 </p>
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/adtzlr/ttb?color=green)
