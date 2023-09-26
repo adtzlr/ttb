@@ -1,3 +1,8 @@
+---
+title: Installation
+layout: page
+---
+
 This Toolbox is a fortran module which can be used inside modern Fortran compilers. For compatibility reasons to commercial FEM Software packages it is written in _Fixed Format_.
 
 ## Installation Requirements
