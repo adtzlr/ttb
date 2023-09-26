@@ -1,3 +1,10 @@
+---
+title: Marc (Neo-Hooke, 2)
+layout: page
+nav_order: 4
+parent: Examples
+---
+
 ## Examples
 
 This is a very basic example on how to implement a nearly-incompressible version of the Neo-Hookean material model in a commercial FEM package (HYPELA2 for MSC.Marc). As no special two- or three-field variational principle is used in this example, it is only suitable for elements with reduced integration schemes in cases of nearly-incompressible material behaviour. Otherwise the elements tend to show excessive volumetric locking during deformation and hence, wrong results are calculated. Conventional reduced displacement elements will give good results regarding displacement and convergence for a bulk modulus up to about 50 times the shear modulus.

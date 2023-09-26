@@ -1,6 +1,13 @@
+---
+title: Marc (Neo-Hooke)
+layout: page
+nav_order: 4
+parent: Examples
+---
+
 ## Examples
 
-This is a very basic example on how to implement a nearly-incompressible version of the Neo-Hookean material model in a commercial FEM package (HYPELA2 for MSC.Marc).
+This is a very basic example on how to implement a nearly-incompressible version of the Neo-Hookean material model in a commercial FEM package (HYPELA2 for Marc).
 
 The helmholtz free energy per unit reference volume is additively split into an isochoric and volumetric contribution. The first one is assumed to be proportional to the first invariant of the isochoric right Cauchy-Green deformation tensor whereas the volumetric part is only a function of the volumetric ratio.
 

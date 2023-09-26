@@ -1,3 +1,10 @@
+---
+title: Marc (Saint Venant-Kirchhoff)
+layout: page
+nav_order: 4
+parent: Examples
+---
+
 ## Example: St. Venant Kirchhoff Material
 
 The following example discusses the implementation of a St.Venant-Kirchhoff material in a very simple and readable user subroutine. The St.Venant-Kirchhoff material is possibly the simplest example for a hyperelastic material but suffers from practical relevance beyond the small strain range [1]. Anyway, it's a good starting point because stress tensor and elasticity matrix are of the same form as the linear elasticity formulation, except that Green-Lagrange strains are used.
@@ -12,7 +19,7 @@ and
 <a href="https://www.codecogs.com/eqnedit.php?latex=\boldsymbol{C}&space;=&space;\boldsymbol{F}^T&space;\boldsymbol{F}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\boldsymbol{C}&space;=&space;\boldsymbol{F}^T&space;\boldsymbol{F}" title="\boldsymbol{C} = \boldsymbol{F}^T \boldsymbol{F}" /></a>
 
 ## Subroutine Header for user materials
-Before we are able to add our own user code, we have to start with an empty fortran subroutine header for MSC.Marc's HYPELA2. Similar headers are provided for Abaqus, ANSYS, etc in the corresponding manuals.
+Before we are able to add our own user code, we have to start with an empty fortran subroutine header for Marc's HYPELA2. Similar headers are provided for Abaqus, ANSYS, etc in the corresponding manuals.
 
 ```fortran
       include 'ttb/ttb_library.f'
@@ -138,7 +145,7 @@ If we would like to use the Updated Lagrange framework too, we'll have to check 
       endif
 ```
 
-In this code `iupdat` is an integer with `0` for total lagrange and `1` for updated lagrange. You may download the whole example as a [HYPELA2 user subroutine](examples/hypela2_stvenantkirchhoff.f) for MSC.Marc.
+In this code `iupdat` is an integer with `0` for total lagrange and `1` for updated lagrange. You may download the whole example as a [HYPELA2 user subroutine](examples/hypela2_stvenantkirchhoff.f) for Marc.
 
 ## Sources
 [1] Bonet, J., Gil, A. J., & Wood, R. D. (2016). Nonlinear Solid Mechanics for Finite Element Analysis: Statics. Cambridge University Press. [![DOI:10.1017/cbo9781316336144](https://zenodo.org/badge/DOI/10.1017/cbo9781316336144.svg)](https://doi.org/10.1017/cbo9781316336144)
