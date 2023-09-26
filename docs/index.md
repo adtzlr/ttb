@@ -32,8 +32,8 @@ Andreas Dutzler. *Tensor Toolbox for Modern Fortran - High-Level Tensor Manipula
 ## Overview
 - [Installation]({% link installation/index.md %})
 - [Quick Start Guide]({% link installation/quickstartguide.md %})
-- [Tensor Data Types]({% link tensordatatypes.md %})
-- [Functions]({% link functions.md %})
+- [Tensor Data Types]({% link api/tensordatatypes.md %})
+- [API Reference]({% link api/index.md %})
 - Example 1: [St.Venant-Kirchhoff Material]({% link example_stvenantkirchhoff.md %})
 - Example 2: [Nearly-Incompressible Neo-Hookean Material]({% link example_neohooke.md %})
 - Example 3: [Neo-Hookean Hyperelasticity with Maxwell-Viscoelasticity](examples/hypela2_nonlinear_viscoelasticity.f)
@@ -44,7 +44,7 @@ Andreas Dutzler, Graz University of Technology, Austria.
 ## Changelog
 All notable changes to this project will be documented in [this file](https://github.com/adtzlr/ttb/blob/main/CHANGELOG.md). The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Credits
+## References
 Naumann, C.: [Chemisch-mechanisch gekoppelte Modellierung und Simulation oxidativer Alterungsvorgänge in Gummibauteilen (German)](http://nbn-resolving.de/urn:nbn:de:bsz:ch1-qucosa-222075). PhD thesis. Fakultät für Maschinenbau der Technischen Universität Chemnitz, 2016.
 
 ## Last updated: 2023/07/07
