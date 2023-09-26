@@ -1,3 +1,10 @@
+---
+title: Assignments
+layout: page
+nav_order: 3
+parent: API Reference
+---
+
 ## Assignments
 
 If there is a symmetric rank 2 tensor `type(Tensor2s) :: T2` on the left and a rank 2 tensor `type(Tensor2) :: T1` on the right hand side of the assignment `=` operator then the function `T2 = asvoigt(T1)` is automatically called. So it is possible to write the following examples:
