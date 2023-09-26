@@ -1,3 +1,11 @@
+---
+title: Tensor Types
+layout: page
+nav_order: 3
+parent: API Reference
+---
+
+
 There are several Tensor Data Types available inside this module:
 - `Tensor 1` rank 1 Tensor (Vector)
 - `Tensor 2` rank 2 Tensor
