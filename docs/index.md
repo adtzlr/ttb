@@ -1,3 +1,8 @@
+---
+title: Home
+layout: home
+---
+
 # Documentation
 
 ![Tensor Toolbox for Modern Fortran](images/deformation.png)
