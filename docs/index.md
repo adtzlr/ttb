@@ -30,8 +30,8 @@ Andreas Dutzler. *Tensor Toolbox for Modern Fortran - High-Level Tensor Manipula
 ```
 
 ## Overview
-- [Installation]({% link installation.md %})
-- [Quick Start Guide]({% link quickstartguide.md %})
+- [Installation]({% link installation/index.md %})
+- [Quick Start Guide]({% link installation/quickstartguide.md %})
 - [Tensor Data Types]({% link tensordatatypes.md %})
 - [Functions]({% link functions.md %})
 - Example 1: [St.Venant-Kirchhoff Material]({% link example_stvenantkirchhoff.md %})
