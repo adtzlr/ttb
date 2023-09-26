@@ -1,13 +1,8 @@
 title: Fortran Tensor
 description: Tensor Toolbox for Modern Fortran
-url: "https://adtzlr.github.io/ttb"
-repository: adtzlr/ttb
-
 theme: just-the-docs
 
-# Set a path/url to a logo that will be displayed instead of the title
-#logo: "/assets/images/just-the-docs.png"
+url: https://adtzlr.github.io/ttb
 
-# Aux links for the upper right navigation
 aux_links:
-  Fortran Tensor on GitHub: "https://github.com/adtzlr/ttb"
+  Fortran Tensor on GitHub: https://github.com/adtzlr/ttb
