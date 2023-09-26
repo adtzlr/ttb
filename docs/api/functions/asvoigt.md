@@ -3,7 +3,7 @@ title: As Voigt
 layout: page
 nav_order: 3
 parent: Functions
-grandparent: API Reference
+grand_parent: API Reference
 ---
 
 ## As Voigt

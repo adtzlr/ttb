@@ -3,7 +3,7 @@ title: Matrix Square Root
 layout: page
 nav_order: 3
 parent: Functions
-grandparent: API Reference
+grand_parent: API Reference
 ---
 
 ## Square Root
