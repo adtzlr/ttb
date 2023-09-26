@@ -4,7 +4,7 @@ layout: home
 nav_order: 1
 ---
 
-# Documentation
+# Tensor Toolbox for Modern Fortran
 
 ![Tensor Toolbox for Modern Fortran](images/deformation.png)
 
