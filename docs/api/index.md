@@ -2,6 +2,7 @@
 title: API Reference
 layout: page
 nav_order: 3
+has_children: true
 ---
 
 ## Module Function Overview
@@ -19,7 +20,7 @@ To ensure consistency in calculating the virtual work shear terms are treated di
 All tensors, whether they are "stress"- or "strain"-like are stored with original (**no doubled**) shear components. Instead all dot- and double-dot-products are modified to take virtual work consistency into account. To be more precise, the function `asvoigt` is not really a Voigt storage - it is more a synonym for storing symmetric tensors as vectors and matrices. The user does have to take care of that storage if the strain in a user subroutine is used as an input for a `Tensor2s` data type and divide all shear components by a factor of `2`.
 
 ### Assignments
-- [General behaviour of data type conversion]({% link assignments/ass_overview.md %})
+- [General behaviour of data type conversion]({% link assignments.md %})
 
 ### Operators
 - [Dot Product]({% link operators/operators_overview.md %})
