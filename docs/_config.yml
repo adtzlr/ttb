@@ -18,5 +18,8 @@ callouts:
     title: Note
     color: purple
 
+last_edit_timestamp: true # requires `last_modified_date` in frontmatter
+last_edit_time_format: "%Y-%m-%d"
+
 aux_links:
   Tensor Toolbox on GitHub: https://github.com/adtzlr/ttb
