@@ -30,8 +30,9 @@ $$
 Before we are able to add our own user code, we have to start with an empty fortran subroutine header. Headers are provided e.g. for Marc, Abaqus, ANSYS in their corresponding manuals.
 
 <details>
-<summary>HYPELA2 for Marc</summary>
+<summary>Marc</summary>
 
+### HYPELA2 for Marc
 
 ```fortran
       include 'ttb/ttb_library.f'
@@ -61,12 +62,12 @@ Before we are able to add our own user code, we have to start with an empty fort
       end
 ```
 
-
 </details>
 
 <details>
-<summary>UMAT for Abaqus</summary>
+<summary>Abaqus</summary>
 
+### UMAT for Abaqus
 
 ```fortran
       include 'ttb/ttb_library.f'
@@ -92,7 +93,6 @@ Before we are able to add our own user code, we have to start with an empty fort
       return
       end
 ```
-
 
 </details>
 
