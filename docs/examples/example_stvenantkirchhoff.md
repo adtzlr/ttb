@@ -1,5 +1,5 @@
 ---
-title: Marc (Saint Venant-Kirchhoff)
+title: Saint Venant-Kirchhoff
 layout: page
 nav_order: 4
 parent: Examples
@@ -201,7 +201,7 @@ If we would like to use the Updated Lagrange framework too, we'll have to check 
       endif
 ```
 
-In this code `iupdat` is an integer with `0` for total lagrange and `1` for updated lagrange. You may download the whole example as a [HYPELA2 user subroutine](examples/hypela2_stvenantkirchhoff.f) for Marc.
+In this code `iupdat` is an integer with `0` for total lagrange and `1` for updated lagrange. You may download the example as a [HYPELA2 user subroutine](Marc/hypela2_stvenantkirchhoff.f) for Marc.
 
 ## References
 [1] Bonet, J., Gil, A. J., & Wood, R. D. (2016). Nonlinear Solid Mechanics for Finite Element Analysis: Statics. Cambridge University Press. [![DOI:10.1017/cbo9781316336144](https://zenodo.org/badge/DOI/10.1017/cbo9781316336144.svg)](https://doi.org/10.1017/cbo9781316336144)
