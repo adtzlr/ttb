@@ -159,7 +159,7 @@ With the second derivative of the strain energy potential we get the correspondi
 
 $$
 \begin{equation}
-  \mathbb{C} = \frac{\partial^2 \psi(\boldsymbol{E})}{\partial \boldsymbol{E} \partial \boldsymbol{E}} = \lambda \boldsymbol{1} \otimes \boldsymbol{1} + 2 \mu \mathbb{I}
+  \mathbb{C} = \frac{\partial^2 \psi(\boldsymbol{E})}{\partial \boldsymbol{E} \partial \boldsymbol{E}} = \lambda \boldsymbol{1} \otimes \boldsymbol{1} + 2 \mu \boldsymbol{1} \odot \boldsymbol{1}
   \label{eq:c4-svk}
 \end{equation}
 $$
