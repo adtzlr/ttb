@@ -5,7 +5,7 @@ theme: just-the-docs
 url: https://adtzlr.github.io/ttb
 logo: "assets/images/logo.svg"
 
-math: katex
+math: mathjax
 
 aux_links:
   Tensor Toolbox on GitHub: https://github.com/adtzlr/ttb
