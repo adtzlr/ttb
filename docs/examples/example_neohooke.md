@@ -14,8 +14,7 @@ The strain energy density function per unit reference volume is additively split
 $$
 \begin{align}
   \psi(\mathbf{C}) &= \psi(\mathbf{\hat C}) + U(J) \nonumber \\
-  \psi(\mathbf{C}) &= \text{C}_{10} (\text{I}_\mathbf{\hat C}-3) + \frac{\kappa}{2} (J-1)^2
-  \label{eq:psi-nh}
+  \psi(\mathbf{C}) &= \text{C}_{10} (\text{I}_\mathbf{\hat C}-3) + \frac{\kappa}{2} (J-1)^2 \label{eq:psi-nh}
 \end{align}
 $$
 
