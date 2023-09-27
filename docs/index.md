@@ -6,7 +6,7 @@ nav_order: 1
 
 # Tensor Toolbox for Modern Fortran
 
-![Tensor Toolbox for Modern Fortran](images/deformation.png)
+![Tensor Toolbox for Modern Fortran](assets/images/deformation.png)
 
 ## What is this toolbox about?
 

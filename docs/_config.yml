@@ -3,7 +3,9 @@ description: Tensor Toolbox for Modern Fortran
 theme: just-the-docs
 
 url: https://adtzlr.github.io/ttb
-logo: "/images/logo.png"
+logo: "assets/images/logo.svg"
+
+math: katex
 
 aux_links:
   Tensor Toolbox on GitHub: https://github.com/adtzlr/ttb
