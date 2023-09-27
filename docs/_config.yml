@@ -11,6 +11,12 @@ callouts:
   warning:
     title: Warning
     color: red
+  important:
+    title: Important
+    color: blue
+  note:
+    title: Note
+    color: purple
 
 aux_links:
   Tensor Toolbox on GitHub: https://github.com/adtzlr/ttb
