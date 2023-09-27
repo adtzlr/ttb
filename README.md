@@ -17,7 +17,7 @@ The full documentation is available at [https://adtzlr.github.io/ttb](https://ad
 
 ![deformation](https://github.com/adtzlr/ttb/assets/5793153/14f0f4f3-2b17-4253-ad06-c279a5d75193)
 
-This tensor toolbox provides the following [basic operations for tensor calculus](docs/functions.md) (all written in double precision `real(kind=8)`):
+This tensor toolbox provides the following [basic operations for tensor calculus](docs/api/index.md) (all written in double precision `real(kind=8)`):
 - Dot Product `C(i,j) = A(i,k) B(k,j)` written as `C = A*B`
 - Double Dot Product `C = A(i,j) B(i,j)` written as `C = A**B`
 - Dyadic Product `C(i,j,k,l) = A(i,j) B(k,l)` written as `C = A.dya.B`
