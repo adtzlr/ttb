@@ -35,6 +35,7 @@ invC3 = C**(-3)
 Eye = C**0
 ```
 
-**Warning**: Don't use `C**(1/2)` because in Fortran an integer division, e.g. `1/2`, gives an integer `0` and this function will return the identity tensor instead of the square root.
+{: .warning }
+> Don't use `C**(1/2)` because in Fortran an integer division, e.g. `1/2`, gives an integer `0` and this function will return the identity tensor instead of the square root.
 
 For the evaluation of the tensorial square root, use [sqrt](squareroot.md) instead.
