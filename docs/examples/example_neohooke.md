@@ -194,11 +194,3 @@ Abaqus uses an Updated-Lagrange approach and hence, Eq. $$\eqref{eq:pk2-nh}$$ an
       return
       end
 ```
-
-
-There are also examples for
-
-* a [basic understandig of the tensor toolbox](script_umat.f), 
-* the implementation of the [St.Venant Kirchhoff material](example_stvenantkirchhoff.md),
-* a [full featured Marc Neo-Hookean material HYPELA2 user subroutine](Marc/hypela2_nh_ttb.f) and
-* an [easy-to-extend Abaqus Neo-Hookean material UMAT user subroutine](Abaqus/umat_nh_ttb.f).
