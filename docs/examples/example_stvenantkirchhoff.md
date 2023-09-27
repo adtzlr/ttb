@@ -150,9 +150,7 @@ Inside our subroutine the stress tensor is
 
 ```fortran
       type(Tensor2s) :: S1
-      	  
-      ! ...some code...
-      
+
       S1 = lambda*tr(E1)*Eye + 2.*mu*E1
 ```
 
@@ -170,9 +168,7 @@ Again, in our fortran subroutine the code for this elasticity tensor is as follo
 
 ```fortran
       type(Tensor4s) :: C4
-      
-      ! ...some code...
-      
+
       C4 = lambda*(Eye.dya.Eye) + 2.*mu*(Eye.cdya.Eye)
 ```
 
