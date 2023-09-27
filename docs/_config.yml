@@ -7,5 +7,10 @@ logo: "assets/images/logo.svg"
 
 math: mathjax
 
+callouts:
+  warning:
+    title: Warning
+    color: red
+
 aux_links:
   Tensor Toolbox on GitHub: https://github.com/adtzlr/ttb
