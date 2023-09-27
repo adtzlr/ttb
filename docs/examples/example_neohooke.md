@@ -60,17 +60,10 @@ $$
 with the fourth order identity tensor in Eq. $$\eqref{eq:i4}$$.
 
 $$
-\begin{equation}
-  \mathbb{I}= \mathbf{C}^{-1} \odot \mathbf{C}^{-1}
-  \label{eq:i4}
-\end{equation}
-$$
-
-$$
-\begin{equation}
-  \mathbf{C}^{-1} = \mathbb{I} : \mathbf{C}
-  \label{eq:i4-projection}
-\end{equation}
+\begin{align}
+  \mathbb{I} &= \mathbf{C}^{-1} \odot \mathbf{C}^{-1} \nonumber \\
+  \mathbf{C}^{-1} &= \mathbb{I} : \mathbf{C} \label{eq:i4}
+\end{align}
 $$
 
 The two equations are now implemented in a Total Lagrange user subroutine  with the help of this Tensor module as follows:
