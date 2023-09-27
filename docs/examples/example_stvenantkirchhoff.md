@@ -5,7 +5,7 @@ nav_order: 4
 parent: Examples
 ---
 
-## Saint Venant-Kirchhoff
+# Saint Venant-Kirchhoff
 
 The following example discusses the implementation of a Saint Venant-Kirchhoff material in a very simple and readable user subroutine. The Saint Venant-Kirchhoff material is possibly the simplest example for a hyperelastic material but suffers from practical relevance beyond the small strain range [1]. Anyway, it's a good starting point because stress tensor and elasticity matrix are of the same form as the linear elasticity formulation, except that Green-Lagrange strains are used.
 
