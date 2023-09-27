@@ -2,6 +2,7 @@
 title: Home
 layout: home
 nav_order: 1
+last_modified_date: 2023-07-07
 ---
 
 # Tensor Toolbox for Modern Fortran
@@ -46,5 +47,3 @@ All notable changes to this project will be documented in [this file](https://gi
 
 ## References
 Naumann, C.: [Chemisch-mechanisch gekoppelte Modellierung und Simulation oxidativer Alterungsvorgänge in Gummibauteilen (German)](http://nbn-resolving.de/urn:nbn:de:bsz:ch1-qucosa-222075). PhD thesis. Fakultät für Maschinenbau der Technischen Universität Chemnitz, 2016.
-
-## Last updated: 2023/07/07
