@@ -32,14 +32,8 @@ $$
 By evaluating the derivative of the stress with respect to one half of the right Cauchy-Green deformation tensor we get the material elasticity tensor, see Eq. $$\eqref{eq:c4-nh}$$,
 
 $$
-\begin{equation}
-  \mathbb{C} = \frac{\partial \mathbf{S}}{\partial\frac{1}{2}\mathbf{C}}
-  \label{eq:c4}
-\end{equation}
-$$
-
-$$
 \begin{align}
+  \mathbb{C} &= \frac{\partial \mathbf{S}}{\partial\frac{1}{2}\mathbf{C}} \nonumber \\
   \mathbb{C} &= 2\text{C}_{10} J^{-2/3} \frac{2}{3} \ (\text{tr}(\mathbf{C}) \ \mathbb{I} - \mathbf{1} \otimes \mathbf{C}^{-1} - \mathbf{C}^{-1} \otimes \mathbf{1} + \frac{1}{3} \text{tr}(\mathbf{C}) \ \mathbf{C}^{-1} \otimes \mathbf{C}^{-1}) \nonumber \\
   &+ \left(\kappa (J-1) J + \kappa J^2\right) \ \mathbf{C}^{-1} \otimes \mathbf{C}^{-1} - 2 \kappa (J-1) J \ \mathbb{I}
   \label{eq:c4-nh}
