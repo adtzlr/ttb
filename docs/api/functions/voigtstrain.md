@@ -8,7 +8,7 @@ grand_parent: API Reference
 
 ## Voigtstrain
 
-**Description:** Import a strain array in voigt storage. As this Module does not use doubled shear items for the symmetric voigt-like storage a strain-like array has to be imported rather than assigned to a Tensor.
+Import a strain array in voigt storage. As this Module does not use doubled shear items for the symmetric voigt-like storage a strain-like array has to be imported rather than assigned to a Tensor.
 - `ndi` number of direct compononets
 - `nshear` number of shear components
 - `ngens` dimension of strain array

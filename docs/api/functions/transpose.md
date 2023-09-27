@@ -8,7 +8,7 @@ grand_parent: API Reference
 
 ## Transpose
 
-**Description:** Transpose of a rank 2 Tensor or major transpose of a rank 4 Tensor.
+Transpose of a rank 2 Tensor or major transpose of a rank 4 Tensor.
 
 | Property   | Value                                         |
 | ---        | ---                                           |

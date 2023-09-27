@@ -8,7 +8,7 @@ grand_parent: API Reference
 
 ## Norm
 
-**Description:** Euclidean norm of a rank 1 Tensor (Vector). Square root of the sum of the squared components `sqrt( sum( T%a**2 ))`.
+Euclidean norm of a rank 1 Tensor (Vector). Square root of the sum of the squared components `sqrt( sum( T%a**2 ))`.
 
 | Property   | Value                  |
 | ---        | ---                    |

@@ -8,9 +8,13 @@ grand_parent: API Reference
 
 ## Deviator
 
-**Description:** Deviator of a rank 2 Tensor.
+Deviator of a rank 2 Tensor.
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\text{dev}(\mathbf{C})&space;=&space;\mathbf{C}&space;-&space;\frac{\text{tr}(\mathbf{C})}{3}&space;\mathbf{1}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\text{dev}(\mathbf{C})&space;=&space;\mathbf{C}&space;-&space;\frac{\text{tr}(\mathbf{C})}{3}&space;\mathbf{1}" title="\text{dev}(\mathbf{C}) = \mathbf{C} - \frac{\text{tr}(\mathbf{C})}{3} \mathbf{1}" /></a>
+$$
+\begin{equation}
+  \text{dev}(\mathbf{C}) = \mathbf{C} - \frac{\text{tr}(\mathbf{C})}{3} \mathbf{1}
+\end{equation}
+$$
 
 | Property   | Value                  |
 | ---        | ---                    |

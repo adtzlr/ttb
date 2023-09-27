@@ -8,7 +8,7 @@ grand_parent: API Reference
 
 ## Identity
 
-**Description:** Calculate the identity tensor. Two functions for generating identities are implemented:
+Calculate the identity tensor. Two functions for generating identities are implemented:
 
 - `Eye = identity2(C)` calculate Eye with the same tensor data type as C. The components of C are ignored.
 - `I4 = identity4(Eye)` calculate the symmetric fourth order identity tensor with the property `C = I4 : C`

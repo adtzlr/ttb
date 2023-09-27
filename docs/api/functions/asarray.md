@@ -8,7 +8,7 @@ grand_parent: API Reference
 
 ## As Array
 
-**Description:** Convert Tensor to Array. This is useful to export results back to the code which is not using the tensor toolbox. This function is very useful because Fortran does not allow access to Tensor components of a function result `s = (dev(S*C)*inv(C))%ab`. Instead this function can be used. If you use Abaqus please use `asabqarray` to export Tensor components.
+Convert Tensor to Array. This is useful to export results back to the code which is not using the tensor toolbox. This function is very useful because Fortran does not allow access to Tensor components of a function result `s = (dev(S*C)*inv(C))%ab`. Instead this function can be used. If you use Abaqus please use `asabqarray` to export Tensor components.
 
 `asarray` is called with one (rank 2) or two (rank 4) integers to slice dimensions. This is useful if an axisymmetric analysis is evaluated (3 direct and 1 shear components = 4x4 tangent matrix instead of full 6x6 storage).
 

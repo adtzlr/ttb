@@ -8,7 +8,7 @@ grand_parent: API Reference
 
 ## Determinant
 
-**Description:** Determinant of a rank 2 Tensor.
+Determinant of a rank 2 Tensor.
 
 | Property   | Value                  |
 | ---        | ---                    |

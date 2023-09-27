@@ -8,7 +8,7 @@ grand_parent: API Reference
 
 ## Unimodular Part of Tensor
 
-**Description:** Unimodular Part of a rank 2 Tensor.
+Unimodular Part of a rank 2 Tensor.
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\hat{\textbf{C}}&space;=&space;\det({\textbf{C}})^{-1/3}&space;\&space;\textbf{C}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\hat{\textbf{C}}&space;=&space;\det({\textbf{C}})^{-1/3}&space;\&space;\textbf{C}" title="\hat{\textbf{C}} = \det({\textbf{C}})^{-1/3} \ \textbf{C}" /></a>
 

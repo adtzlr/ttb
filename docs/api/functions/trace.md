@@ -8,7 +8,7 @@ grand_parent: API Reference
 
 ## Trace
 
-**Description:** Sum of diagonal terms of a rank 2 Tensor.
+Sum of diagonal terms of a rank 2 Tensor.
 
 | Property   | Value                  |
 | ---        | ---                    |
