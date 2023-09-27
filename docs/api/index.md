@@ -5,11 +5,10 @@ nav_order: 3
 has_children: true
 ---
 
-## Module Function Overview
-
+# Module Function Overview
 This module provides several useful assignments, operators and functions for the derived Tensor Data Types.
 
-### A word on Voigt notation
+## A word on Voigt notation
 Symmetric 3x3 Tensors may be stored as 6x1 column vectors with the help of the well known [Voigt notation](https://en.wikipedia.org/wiki/Voigt_notation). In an analogous way a transformation may be obtained for at least minor symmetric fourth order tensors (3x3x3x3) which may be stored as a 6x6 matrix. If the fourth order tensor is also major symmetric the reduced 6x6 matrix is also symmetric.
 
 There is no unique method for the storage ordering of tensor components - this toolbox uses the following approach:
@@ -19,10 +18,10 @@ To ensure consistency in calculating the virtual work shear terms are treated di
 
 All tensors, whether they are "stress"- or "strain"-like are stored with original (**no doubled**) shear components. Instead all dot- and double-dot-products are modified to take virtual work consistency into account. To be more precise, the function `asvoigt` is not really a Voigt storage - it is more a synonym for storing symmetric tensors as vectors and matrices. The user does have to take care of that storage if the strain in a user subroutine is used as an input for a `Tensor2s` data type and divide all shear components by a factor of `2`.
 
-### Assignments
+## Assignments
 - [General behaviour of data type conversion]({% link api/assignments.md %})
 
-### Operators
+## Operators
 - [Dot Product]({% link api/operators.md %})
 - [Double Dot Product]({% link api/operators.md %})
 - [Dyadic Product]({% link api/operators.md %})
@@ -31,12 +30,12 @@ All tensors, whether they are "stress"- or "strain"-like are stored with origina
 - [Addition]({% link api/operators.md %})
 - [Subtraction]({% link api/operators.md %})
 
-### Scalar-valued functions
+## Scalar-valued functions
 - [Trace]({% link api/functions/trace.md %})
 - [Determinant]({% link api/functions/determinant.md %})
 - [Norm]({% link api/functions/norm.md %})
 
-### Tensor-valued functions
+## Tensor-valued functions
 - [Deviator]({% link api/functions/deviator.md %})
 - [Unimodular]({% link api/functions/unimodular.md %})
 - [Inverse]({% link api/functions/inverse.md %})
@@ -48,7 +47,7 @@ All tensors, whether they are "stress"- or "strain"-like are stored with origina
 - [Piola Operation]({% link api/functions/piola.md %})
 - [Rotation Matrix]({% link api/functions/rotation.md %})
 
-### Helper Functions
+## Helper Functions
 - [As Array]({% link api/functions/asarray.md %})
 - [As Abaqus Array]({% link api/functions/asabqarray.md %})
 - [As Voigt]({% link api/functions/asvoigt.md %})

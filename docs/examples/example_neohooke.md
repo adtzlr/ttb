@@ -1,5 +1,5 @@
 ---
-title: Marc (Neo-Hooke, 2)
+title: Marc (Neo-Hooke)
 layout: page
 nav_order: 4
 parent: Examples
@@ -7,11 +7,11 @@ parent: Examples
 
 ## Examples
 
-This is a very basic example on how to implement a nearly-incompressible version of the Neo-Hookean material model in a commercial FEM package (HYPELA2 for MSC.Marc). As no special two- or three-field variational principle is used in this example, it is only suitable for elements with reduced integration schemes in cases of nearly-incompressible material behaviour. Otherwise the elements tend to show excessive volumetric locking during deformation and hence, wrong results are calculated. Conventional reduced displacement elements will give good results regarding displacement and convergence for a bulk modulus up to about 50 times the shear modulus.
+This is a very basic example on how to implement a nearly-incompressible version of the Neo-Hookean material model in a commercial FEM package (HYPELA2 for Marc). As no special two- or three-field variational principle is used in this example, it is not suitable for nearly-incompressible material behaviour. Otherwise the elements tend to show excessive volumetric locking during deformation and hence, wrong results are calculated.
 
-The helmholtz free energy per unit reference volume is additively split into an isochoric and volumetric contribution. The first one is assumed to be proportional to the first invariant of the isochoric right Cauchy-Green deformation tensor whereas the volumetric part is only a function of the volumetric ratio.
+The strain energy density function per unit reference volume is additively splitted into an isochoric and volumetric contribution. The first one is assumed to be proportional to the first invariant of the isochoric part of the right Cauchy-Green deformation tensor whereas the volumetric part is only a function of the volumetric ratio (the determinant of the deformation gradient).
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\psi(\mathbf{C})&space;=&space;\psi(\mathbf{\hat&space;C})&space;&plus;&space;U(J)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\psi(\mathbf{C})&space;=&space;\psi(\mathbf{\hat&space;C})&space;&plus;&space;U(J)" title="\psi(\mathbf{C}) = \psi(\mathbf{\hat C}) + U(J)" /></a>
+$$ \psi(\mathbf{C}) = \psi(\mathbf{\hat C}) + U(J) $$
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\psi(\mathbf{C})&space;=&space;\text{C}_{10}&space;(\text{I}_\mathbf{\hat&space;C}-3)&space;&plus;&space;\frac{\kappa}{2}&space;(J-1)^2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\psi(\mathbf{C})&space;=&space;\text{C}_{10}&space;(\text{I}_\mathbf{\hat&space;C}-3)&space;&plus;&space;\frac{\kappa}{2}&space;(J-1)^2" title="\psi(\mathbf{C}) = \text{C}_{10} (\text{I}_\mathbf{\hat C}-3) + \frac{\kappa}{2} (J-1)^2" /></a>
 

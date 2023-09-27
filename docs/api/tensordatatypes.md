@@ -5,6 +5,7 @@ nav_order: 3
 parent: API Reference
 ---
 
+# Tensor Data Types
 
 There are several Tensor Data Types available inside this module:
 - `Tensor 1` rank 1 Tensor (Vector)
