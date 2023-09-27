@@ -13,8 +13,8 @@ The strain energy density function per unit reference volume is additively split
 
 $$
 \begin{align}
-  \psi(\mathbf{C}) = \psi(\mathbf{\hat C}) + U(J) \nonumber \\
-  \psi(\mathbf{C}) = \text{C}_{10} (\text{I}_\mathbf{\hat C}-3) + \frac{\kappa}{2} (J-1)^2
+  \psi(\mathbf{C}) &= \psi(\mathbf{\hat C}) + U(J) \nonumber \\
+  \psi(\mathbf{C}) &= \text{C}_{10} (\text{I}_\mathbf{\hat C}-3) + \frac{\kappa}{2} (J-1)^2
   \label{eq:psi-nh}
 \end{align}
 $$
@@ -22,11 +22,11 @@ $$
 We get the second Piola-Kirchhoff stress with the derivative of the strain energy density function per unit reference volume with respect to one half of the right Cauchy-Green deformation tensor as shown in Eq. $$\eqref{eq:pk2-nh}$$.
 
 $$
-\begin{equation}
-  \mathbf{S} = \frac{\partial \psi(\mathbf{C})}{\partial \frac{1}{2}\mathbf{C}} \nonumber \\
-  \mathbf{S} = 2\text{C}_{10} \ \text{dev}(\hat{\mathbf{C}}) \mathbf{C}^{-1} + \kappa (J-1) J \mathbf{C}^{-1}
+\begin{align}
+  \mathbf{S} &= \frac{\partial \psi(\mathbf{C})}{\partial \frac{1}{2}\mathbf{C}} \nonumber \\
+  \mathbf{S} &= 2\text{C}_{10} \ \text{dev}(\hat{\mathbf{C}}) \mathbf{C}^{-1} + \kappa (J-1) J \mathbf{C}^{-1}
   \label{eq:pk2-nh}
-\end{equation}
+\end{align}
 $$
 
 By evaluating the derivative of the stress with respect to one half of the right Cauchy-Green deformation tensor we get the material elasticity tensor, see Eq. $$\eqref{eq:c4-nh}$$,
