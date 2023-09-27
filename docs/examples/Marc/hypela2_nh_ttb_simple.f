@@ -5,11 +5,11 @@
      3                   frotn1,strechn1,eigvn1,ncrd,itel,ndeg,ndm,
      4                   nnode,jtype,lclass,ifr,ifu)
      
-      ! HYPELA2:        Nearly-Incompressible Neo-Hookean Material
+      ! UMAT:           Nearly-Incompressible Neo-Hookean Material
       !                 Example for usage of Tensor Toolbox
-      ! capability:     axisymmetric and 3D analysis
+      ! capability:     3D, Axisymmetric
       ! Formulation:    Total Lagrange
-      ! Voigt Notation: change commented Tensor Datatypes
+      ! Voigt Notation: Change commented Tensor Datatypes
       ! Andreas Dutzler, 2018-01-02, Graz University of Technology
 
       use Tensor
@@ -35,7 +35,7 @@
       
       ! material parameters
       C10 = 0.5
-      kappa = 500.0
+      kappa = 5.0
       
       Eye = identity2(Eye)
       F1 = ffn1(1:3,1:3) ! use slices (ffn1 is an assumed size array)

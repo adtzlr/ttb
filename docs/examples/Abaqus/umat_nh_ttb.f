@@ -9,7 +9,7 @@
       ! ABAQUS UMAT:    Easy-to-extend Nearly-Incompressible Neo-Hookean
 !                       Material Formulation
       !                 Example for usage of Tensor Toolbox
-      ! capability:     3D analysis
+      ! capability:     3D, Axisymmetric
       ! Formulation:    Total Lagrange with push forward for Abaqus
       ! Reference:      Holzapfel, G. (2001). NONLINEAR SOLID MECHANICS.
       !                 A Continuum Approach for Engineering.

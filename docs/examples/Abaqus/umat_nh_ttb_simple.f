@@ -8,7 +8,7 @@
      
       ! ABAQUS UMAT:    Nearly-Incompressible Neo-Hookean Material
       !                 Example for usage of Tensor Toolbox
-      ! capability:     3D analysis, axisymmetric?
+      ! capability:     3D, Axisymmetric
       ! Formulation:    Total Lagrange with push forward for Abaqus
       ! Andreas Dutzler, 2018-07-22, Graz University of Technology
 
@@ -36,7 +36,7 @@
       
       ! material parameters
       C10 = 0.5
-      kappa = 500.0
+      kappa = 5.0
       
       Eye = identity2(Eye)
       F1 = dfgrd1(1:3,1:3)
