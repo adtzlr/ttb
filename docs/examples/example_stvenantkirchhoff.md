@@ -64,7 +64,7 @@ Before we are able to add our own user code, we have to start with an empty fort
 
 </details>
 
-<details>
+<details markdown="block">
 <summary>Abaqus</summary>
 
 ### UMAT for Abaqus
