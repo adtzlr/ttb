@@ -27,7 +27,7 @@ $$
 $$
 
 ## Subroutine Header for user materials
-Before we are able to add our own user code, we have to start with an empty fortran subroutine header. Headers are provided e.g. for Marc, Abaqus, ANSYS in their corresponding manuals.
+Before we are able to add our own user code, we have to start with an empty fortran subroutine header. Headers are provided e.g. for Marc, Abaqus, Dyna, ANSYS in their corresponding manuals.
 
 <details markdown="block">
 <summary>Marc</summary>
