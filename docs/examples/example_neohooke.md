@@ -55,7 +55,7 @@ $$
 \end{align}
 $$
 
-The two equations are now implemented in a Total Lagrange user subroutine  with the help of this Tensor module as follows:
+Eq. $$\eqref{eq:pk2-nh}$$ and Eq. $$\eqref{eq:c4-nh}$$ are now implemented in a Total Lagrange user subroutine  with the help of this Tensor module as follows:
 
 ```fortran
       include 'ttb/ttb_library.f'
