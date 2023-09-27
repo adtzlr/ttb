@@ -16,3 +16,8 @@ MathJax = {
     }
   }
 };
+window.MathJax = {
+  tex: {
+    tags: 'ams'
+  }
+};
