@@ -5,21 +5,32 @@ nav_order: 4
 parent: Examples
 ---
 
-## Example: St. Venant Kirchhoff Material
+## Example: Saint Venant-Kirchhoff Material
 
-The following example discusses the implementation of a St.Venant-Kirchhoff material in a very simple and readable user subroutine. The St.Venant-Kirchhoff material is possibly the simplest example for a hyperelastic material but suffers from practical relevance beyond the small strain range [1]. Anyway, it's a good starting point because stress tensor and elasticity matrix are of the same form as the linear elasticity formulation, except that Green-Lagrange strains are used.
+The following example discusses the implementation of a Saint Venant-Kirchhoff material in a very simple and readable user subroutine. The Saint Venant-Kirchhoff material is possibly the simplest example for a hyperelastic material but suffers from practical relevance beyond the small strain range [1]. Anyway, it's a good starting point because stress tensor and elasticity matrix are of the same form as the linear elasticity formulation, except that Green-Lagrange strains are used.
 
 ## Kinematics
-Starting from the Deformation Gradient, we calculate the Green-Lagrange strain tensor with the right Cauchy Green Deformation Tensor with
+Starting from the Deformation Gradient, we calculate the Green-Lagrange strain tensor in Eq. $$\eqref{eq:gl-strain}$$ with the right Cauchy Green Deformation Tensor, see Eq. $$\eqref{eq:cauchy-green}$$.
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\boldsymbol{E}&space;=&space;\frac{1}{2}&space;(\boldsymbol{C}&space;-&space;\boldsymbol{1})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\boldsymbol{E}&space;=&space;\frac{1}{2}&space;(\boldsymbol{C}&space;-&space;\boldsymbol{1})" title="\boldsymbol{E} = \frac{1}{2} (\boldsymbol{C} - \boldsymbol{1})" /></a>
+$$
+\begin{equation}
+  \boldsymbol{E} = \frac{1}{2} (\boldsymbol{C} - \boldsymbol{1}) \label{eq:gl-strain}
+\end{equation}
+$$
 
 and 
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\boldsymbol{C}&space;=&space;\boldsymbol{F}^T&space;\boldsymbol{F}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\boldsymbol{C}&space;=&space;\boldsymbol{F}^T&space;\boldsymbol{F}" title="\boldsymbol{C} = \boldsymbol{F}^T \boldsymbol{F}" /></a>
+$$
+\begin{equation}
+  \boldsymbol{C} = \boldsymbol{F}^T \boldsymbol{F} \label{eq:cauchy-green}
+\end{equation}
+$$
 
 ## Subroutine Header for user materials
-Before we are able to add our own user code, we have to start with an empty fortran subroutine header for Marc's HYPELA2. Similar headers are provided for Abaqus, ANSYS, etc in the corresponding manuals.
+Before we are able to add our own user code, we have to start with an empty fortran subroutine header. Headers are provided e.g. for Marc, Abaqus, ANSYS in their corresponding manuals.
+
+<details>
+<summary>HYPELA2 for Marc</summary>
 
 ```fortran
       include 'ttb/ttb_library.f'
@@ -48,6 +59,38 @@ Before we are able to add our own user code, we have to start with an empty fort
       return
       end
 ```
+
+</details>
+
+<details>
+<summary>UMAT for Abaqus</summary>
+
+```fortran
+      include 'ttb/ttb_library.f'
+
+      SUBROUTINE UMAT(STRESS,STATEV,DDSDDE,SSE,SPD,SCD,
+     1 RPL,DDSDDT,DRPLDE,DRPLDT,
+     2 STRAN,DSTRAN,TIME,DTIME,TEMP,DTEMP,PREDEF,DPRED,CMNAME,
+     3 NDI,NSHR,NTENS,NSTATV,PROPS,NPROPS,COORDS,DROT,PNEWDT,
+     4 CELENT,DFGRD0,DFGRD1,NOEL,NPT,LAYER,KSPT,JSTEP,KINC)
+
+      use Tensor
+      implicit none
+
+      CHARACTER*80 CMNAME
+      DIMENSION STRESS(NTENS),STATEV(NSTATV),
+     1 DDSDDE(NTENS,NTENS),DDSDDT(NTENS),DRPLDE(NTENS),
+     2 STRAN(NTENS),DSTRAN(NTENS),TIME(2),PREDEF(1),DPRED(1),
+     3 PROPS(NPROPS),COORDS(3),DROT(3,3),DFGRD0(3,3),DFGRD1(3,3),
+     4 JSTEP(4)
+      
+      ! ...user code...
+      
+      return
+      end
+```
+
+</details>
 
 First we need to define our material parameters, which will be entered as young's modulus and poisson ratio.
 
@@ -80,14 +123,24 @@ In our code implementation the strain tensor looks like:
 We first initialize a rank 2 Identity Tensor `Eye`. Then the Deformation Gradient Tensor at the end of the increment `F1` is initialized with no deformation and overwritten by `ffn1` with dimension `(itel,3)` where `itel` being an integer `2` or `3` based on the analysis type. This is necessary because this module is hardcoded to three dimensions whereas MSC.Marc has reduced storage options for the Deformation Gradient in plane or axisymmetric analysis types. Finally we calculate the Green-Lagrange Strain Tensor.
 
 ## Strain Energy Potential
-We'll derive both stress and elasticity tensor in the material (reference) configuration. At first we need the definition for the helmholtz free energy per unit reference volume which depends on the Green-Lagrange strain tensor.
+We'll derive both stress and elasticity tensor in the material (reference) configuration. At first we need the definition for the strain energy density function per unit reference volume which depends on the Green-Lagrange strain tensor, see Eq. $$\eqref{eq:psi-svk}$$.
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\Psi(\boldsymbol{E})&space;=&space;\frac{1}{2}&space;\lambda(\text{tr}\boldsymbol{E})^2&plus;\mu&space;\boldsymbol{E}&space;:&space;\boldsymbol{E}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\Psi(\boldsymbol{E})&space;=&space;\frac{1}{2}&space;\lambda(\text{tr}\boldsymbol{E})^2&plus;\mu&space;\boldsymbol{E}&space;:&space;\boldsymbol{E}" title="\Psi(\boldsymbol{E}) = \frac{1}{2} \lambda(\text{tr}\boldsymbol{E})^2+\mu \boldsymbol{E} : \boldsymbol{E}" /></a>
+$$
+\begin{equation}
+  \Psi(\boldsymbol{E}) = \frac{1}{2} \lambda(\text{tr}\boldsymbol{E})^2+\mu \boldsymbol{E} : \boldsymbol{E}
+  \label{eq:psi-svk}
+\end{equation}
+$$
 
 ## Material Stress Tensor
-In the next step, we get the 2nd Piola-Kirchhoff stress tensor as a partial derivative of the strain energy potential with respect to the Green-Lagrange strain tensor.
+In the next step, we get the 2nd Piola-Kirchhoff stress tensor as a partial derivative of the strain energy potential with respect to the Green-Lagrange strain tensor, see Eq. $$\eqref{eq:pk2-svk}$$.
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\boldsymbol{S}&space;=&space;\frac{\partial&space;\Psi(\boldsymbol{E})}{\partial&space;\boldsymbol{E}}&space;=&space;\lambda(\text{tr}\boldsymbol{E})&space;\boldsymbol{1}&space;&plus;&space;2&space;\mu&space;\boldsymbol{E}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\boldsymbol{S}&space;=&space;\frac{\partial&space;\Psi(\boldsymbol{E})}{\partial&space;\boldsymbol{E}}&space;=&space;\lambda(\text{tr}\boldsymbol{E})&space;\boldsymbol{1}&space;&plus;&space;2&space;\mu&space;\boldsymbol{E}" title="\boldsymbol{S} = \frac{\partial \Psi(\boldsymbol{E})}{\partial \boldsymbol{E}} = \lambda(\text{tr}\boldsymbol{E}) \boldsymbol{1} + 2 \mu \boldsymbol{E}" /></a>
+$$
+\begin{equation}
+  \boldsymbol{S} = \frac{\partial \Psi(\boldsymbol{E})}{\partial \boldsymbol{E}} = \lambda(\text{tr}\boldsymbol{E}) \boldsymbol{1} + 2 \mu \boldsymbol{E}
+  \label{eq:pk2-svk}
+\end{equation}
+$$
 
 Inside our subroutine the stress tensor is
 
@@ -100,13 +153,14 @@ Inside our subroutine the stress tensor is
 ```
 
 ## Material Elasticity Tensor
-With the second derivative of the strain energy potential we get the corresponding elasticity tensor.
+With the second derivative of the strain energy potential we get the corresponding elasticity tensor, see Eq. $$\eqref{eq:c4-svk}$$.
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\mathbb{C}&space;=&space;\frac{\partial^2&space;\Psi(\boldsymbol{E})}{\partial&space;\boldsymbol{E}&space;\partial&space;\boldsymbol{E}}&space;=&space;\lambda&space;\boldsymbol{1}&space;\otimes&space;\boldsymbol{1}&space;&plus;&space;2&space;\mu&space;\mathbb{I}^{(s)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbb{C}&space;=&space;\frac{\partial^2&space;\Psi(\boldsymbol{E})}{\partial&space;\boldsymbol{E}&space;\partial&space;\boldsymbol{E}}&space;=&space;\lambda&space;\boldsymbol{1}&space;\otimes&space;\boldsymbol{1}&space;&plus;&space;2&space;\mu&space;\mathbb{I}^{(s)}" title="\mathbb{C} = \frac{\partial^2 \Psi(\boldsymbol{E})}{\partial \boldsymbol{E} \partial \boldsymbol{E}} = \lambda \boldsymbol{1} \otimes \boldsymbol{1} + 2 \mu \mathbb{I}^{(s)}" /></a>
-
-Or in index notation:
-
-<a href="https://www.codecogs.com/eqnedit.php?latex=\mathbb{C}^{IJKL}&space;=&space;\lambda&space;\Delta^{IJ}&space;\Delta^{KL}&space;&plus;&space;2&space;\mu&space;~\frac{1}{2}&space;(&space;\Delta^{IK}&space;\Delta^{JL}&space;&plus;&space;\Delta^{IL}&space;\Delta^{JK})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbb{C}^{IJKL}&space;=&space;\lambda&space;\Delta^{IJ}&space;\Delta^{KL}&space;&plus;&space;2&space;\mu&space;~\frac{1}{2}&space;(&space;\Delta^{IK}&space;\Delta^{JL}&space;&plus;&space;\Delta^{IL}&space;\Delta^{JK})" title="\mathbb{C}^{IJKL} = \lambda \Delta^{IJ} \Delta^{KL} + 2 \mu ~\frac{1}{2} ( \Delta^{IK} \Delta^{JL} + \Delta^{IL} \Delta^{JK})" /></a>
+$$
+\begin{equation}
+  \mathbb{C} = \frac{\partial^2 \Psi(\boldsymbol{E})}{\partial \boldsymbol{E} \partial \boldsymbol{E}} = \lambda \boldsymbol{1} \otimes \boldsymbol{1} + 2 \mu \mathbb{I}
+  \label{eq:c4-svk}
+\end{equation}
+$$
 
 Again, in our fortran subroutine the code for this elasticity tensor is as follows:
 
@@ -119,6 +173,8 @@ Again, in our fortran subroutine the code for this elasticity tensor is as follo
 ```
 
 The crossed dyadic product is implemented as the symmetric variant in this module, so writing `Eye.cdya.Eye` is enough for the symmetric version of the rank 4 Identity Tensor.
+
+## Marc-specific options
 
 Finally we have to export our Tensor data types back to conventional fortran arrays. The integer `ngens = ndi + nshear` is based on the analysis dimension. 
 
@@ -147,7 +203,7 @@ If we would like to use the Updated Lagrange framework too, we'll have to check 
 
 In this code `iupdat` is an integer with `0` for total lagrange and `1` for updated lagrange. You may download the whole example as a [HYPELA2 user subroutine](examples/hypela2_stvenantkirchhoff.f) for Marc.
 
-## Sources
+## References
 [1] Bonet, J., Gil, A. J., & Wood, R. D. (2016). Nonlinear Solid Mechanics for Finite Element Analysis: Statics. Cambridge University Press. [![DOI:10.1017/cbo9781316336144](https://zenodo.org/badge/DOI/10.1017/cbo9781316336144.svg)](https://doi.org/10.1017/cbo9781316336144)
 
 [2] Holland, M. (2018, May 7). Mholla/Hitchhikers-Guide-To-Abaqus: Initial Release (Version v1.0). Zenodo. [![DOI:10.5281/zenodo.1243270](https://zenodo.org/badge/DOI/10.5281/zenodo.1243270.svg)](https://doi.org/10.5281/zenodo.1243270)
