@@ -10,7 +10,7 @@ parent: Examples
 The following example discusses the implementation of a Saint Venant-Kirchhoff material in a very simple and readable user subroutine. The Saint Venant-Kirchhoff material is possibly the simplest example for a hyperelastic material but suffers from practical relevance beyond the small strain range [1]. Anyway, it's a good starting point because stress tensor and elasticity matrix are of the same form as the linear elasticity formulation, except that Green-Lagrange strains are used.
 
 ## Kinematics
-Starting from the Deformation Gradient, we calculate the Green-Lagrange strain tensor in Eq. $$\eqref{eq:gl-strain}$$ with the right Cauchy Green Deformation Tensor, see Eq. $$\eqref{eq:cauchy-green}$$.
+Starting from the Deformation Gradient, we calculate the Green-Lagrange strain tensor in Eq. $$\eqref{eq:gl-strain}$$ with the right Cauchy-Green deformation tensor, see Eq. $$\eqref{eq:cauchy-green}$$.
 
 $$
 \begin{equation}
