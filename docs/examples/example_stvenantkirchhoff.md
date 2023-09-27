@@ -131,7 +131,7 @@ We'll derive both stress and elasticity tensor in the material (reference) confi
 
 $$
 \begin{equation}
-  \Psi(\boldsymbol{E}) = \frac{1}{2} \lambda(\text{tr}\boldsymbol{E})^2+\mu \boldsymbol{E} : \boldsymbol{E}
+  \psi(\boldsymbol{E}) = \frac{1}{2} \lambda(\text{tr}\boldsymbol{E})^2+\mu \boldsymbol{E} : \boldsymbol{E}
   \label{eq:psi-svk}
 \end{equation}
 $$
@@ -141,7 +141,7 @@ In the next step, we get the 2nd Piola-Kirchhoff stress tensor as a partial deri
 
 $$
 \begin{equation}
-  \boldsymbol{S} = \frac{\partial \Psi(\boldsymbol{E})}{\partial \boldsymbol{E}} = \lambda(\text{tr}\boldsymbol{E}) \boldsymbol{1} + 2 \mu \boldsymbol{E}
+  \boldsymbol{S} = \frac{\partial \psi(\boldsymbol{E})}{\partial \boldsymbol{E}} = \lambda(\text{tr}\boldsymbol{E}) \boldsymbol{1} + 2 \mu \boldsymbol{E}
   \label{eq:pk2-svk}
 \end{equation}
 $$
@@ -159,7 +159,7 @@ With the second derivative of the strain energy potential we get the correspondi
 
 $$
 \begin{equation}
-  \mathbb{C} = \frac{\partial^2 \Psi(\boldsymbol{E})}{\partial \boldsymbol{E} \partial \boldsymbol{E}} = \lambda \boldsymbol{1} \otimes \boldsymbol{1} + 2 \mu \mathbb{I}
+  \mathbb{C} = \frac{\partial^2 \psi(\boldsymbol{E})}{\partial \boldsymbol{E} \partial \boldsymbol{E}} = \lambda \boldsymbol{1} \otimes \boldsymbol{1} + 2 \mu \mathbb{I}
   \label{eq:c4-svk}
 \end{equation}
 $$
