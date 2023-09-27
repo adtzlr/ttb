@@ -53,11 +53,9 @@ The most basic example on how to use this module is to [download the module](htt
 The `include 'ttb/ttb_library.f'` statement replaces the line with the content of the ttb-module. The first line in a program or subroutine is now a `use Tensor` statement. That's it - now you're ready to go.
 
 ## Tensor or Voigt Notation
-
-It depends on your preferences: either you store all tensors in full tensor `dimension(3,3)` or in [voigt](https://en.wikipedia.org/wiki/Voigt_notation) `dimension(6)` notation. The equations remain (nearly) the same. Dot Product, Double Dot Product - every function is implemented in both full tensor and voigt notation. Look for the voigt-comments in an [example](docs/examples/hypela2_nh_ttb.f) of a user subroutine for MSC.Marc.
+It depends on your preferences: either you store all tensors in full tensor `dimension(3,3)` or in [voigt](https://en.wikipedia.org/wiki/Voigt_notation) `dimension(6)` notation. The equations remain (nearly) the same. Dot Product, Double Dot Product - every function is implemented in both full tensor and voigt notation. Look for the voigt-comments in an [example](docs/examples/Marc/hypela2_nh_ttb.f) of a user subroutine for MSC.Marc.
 
 ## Access Tensor components by Array
-
 Tensor components may be accessed by a conventional array with the name of the tensor variable `T` followed by a percent operator `%` and a type-specific keyword as follows:
 
 - Tensor of rank 1 components as array: `T%a`. i-th component of T: `T%a(i)`
@@ -68,7 +66,6 @@ Tensor components may be accessed by a conventional array with the name of the t
 - Symmetric Tensor of rank 4 (Voigt) components as array: `T%a6b6`. i,j component of T: `T%a6b6(i,j)` (at least minor symmetric)
 
 ### Warning: Output as array
-
 It is not possible to access tensor components of a tensor valued function  in a direct way `s = symstore(S1)%a6` - unfortunately this is a limitation of Fortran. To avoid the creation of an extra variable it is possible to use the `asarray(T,i_max[,j_max,k_max,l_max])` function to access tensor components. `i_max,j_max,k_max,l_max` is **not** the single component, instead a slice `T%abcd(1:i_max,1:j_max,1:k_max,1:l_max)` is returned. This can be useful when dealing with mixed formulation or variation principles where the last entry/entries of stress and strain voigt vectors are used for the pressure boundary. To export a full stress tensor `S1` to voigt notation use:
 
 ```fortran
@@ -77,7 +74,6 @@ It is not possible to access tensor components of a tensor valued function  in a
 ```
 
 #### Abaqus Users: Output as abqarray
-
 To export a stress tensor to Abaqus Voigt notation use `asabqarray` which reorders the storage indices to `11,22,33,12,13,23`. This function is available for `Tensor2s` and `Tensor4s` data types.
 
 ```fortran
@@ -86,14 +82,12 @@ To export a stress tensor to Abaqus Voigt notation use `asabqarray` which reorde
 ```
 
 ## A note on the Permutation of Indices
-
 The permutation function reorders indices in the given order for a fourth order tensor of data type `Tensor4`. Example: `(i,j,k,l) --> (i,k,j,l)` with `permute(C4,1,3,2,4)`.
 
 ## Neo-Hookean Material
 With the help of the Tensor module the Second Piola-Kirchhoff stress tensor `S` of a nearly-incompressible Neo-Hookean material model is basically a one-liner:
 
 ### Second Piola Kirchhoff Stress Tensor
-
 ```fortran
        S = mu*det(C)**(-1./3.)*dev(C)*inv(C)+p*det(C)**(1./2.)*inv(C)
 ```
@@ -101,7 +95,6 @@ With the help of the Tensor module the Second Piola-Kirchhoff stress tensor `S` 
 While this is of course not the fastest way of calculating the stress tensor it is extremely short and readable. Also the second order tensor variables `S, C` and scalar quantities `mu, p` have to be created at the beginning of the program. A minimal working example for a very simple umat user subroutine can be found in [script_umat.f](docs/examples/script_umat.f). The program is just an example where a subroutine `umat` is called and an output information is printed. It is shown that the tensor toolbox is only used inside the material user subroutine `umat`.
 
 ### Material Elasticity Tensor
-
 The isochoric part of the material elasticity tensor `C4_iso` of a nearly-incompressible Neo-Hookean material model is defined and coded as:
 
 ```fortran
@@ -112,10 +105,9 @@ The isochoric part of the material elasticity tensor `C4_iso` of a nearly-incomp
 ```
 
 ### Example of Marc HYPELA2
+[Here](docs/examples/Marc/hypela2_nh_ttb.f) you can find an example of a nearly-incompressible version of a Neo-Hookean material for Marc. Updated Lagrange is implemented by a push forward operator of both the stress and the fourth-order elasticity tensor. Herrmann Elements are automatically detected. As HYPELA2 is called twice per iteration the stiffness calculation is only active during stage `lovl == 4`. One of the best things is the super-simple switch from tensor to voigt notation: Change data types of all symmetric tensors and save the right Cauchy-Green deformation tensor in voigt notation. See commented lines for details.
 
-[Here](docs/examples/hypela2_nh_ttb.f) you can find an example of a nearly-incompressible version of a Neo-Hookean material for Marc. Updated Lagrange is implemented by a push forward operator of both the stress and the fourth-order elasticity tensor. Herrmann Elements are automatically detected. As HYPELA2 is called twice per iteration the stiffness calculation is only active during stage `lovl == 4`. One of the best things is the super-simple switch from tensor to voigt notation: Change data types of all symmetric tensors and save the right Cauchy-Green deformation tensor in voigt notation. See commented lines for details.
-
-[Download HYPELA2](docs/examples/hypela2_nh_ttb.f): Neo-Hooke, Marc, Total Lagrange, Tensor Toolbox
+[Download HYPELA2](docs/examples/Marc/hypela2_nh_ttb.f): *Neo-Hooke, Marc, Total Lagrange, Tensor Toolbox*
 
 ## Credits
 Naumann, C.: [Chemisch-mechanisch gekoppelte Modellierung und Simulation oxidativer Alterungsvorgänge in Gummibauteilen (German)](http://nbn-resolving.de/urn:nbn:de:bsz:ch1-qucosa-222075). PhD thesis. Fakultät für Maschinenbau der Technischen Universität Chemnitz, 2016.
