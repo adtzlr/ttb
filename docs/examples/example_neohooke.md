@@ -9,14 +9,12 @@ parent: Examples
 
 This is a very basic example on how to implement a nearly-incompressible version of the Neo-Hookean material model in a commercial FEM package (HYPELA2 for Marc). As no special two- or three-field variational principle is used in this example, it is not suitable for nearly-incompressible material behaviour. Otherwise the elements tend to show excessive volumetric locking during deformation and hence, wrong results are calculated.
 
-The strain energy density function per unit reference volume is additively splitted into an isochoric and volumetric contribution, see $$\eqref{eq:psi}$$. The first one is assumed to be proportional to the first invariant of the isochoric part of the right Cauchy-Green deformation tensor whereas the volumetric part is only a function of the volumetric ratio (the determinant of the deformation gradient).
+The strain energy density function per unit reference volume is additively splitted into an isochoric and volumetric contribution, see \eqref{eq:psi}. The first one is assumed to be proportional to the first invariant of the isochoric part of the right Cauchy-Green deformation tensor whereas the volumetric part is only a function of the volumetric ratio (the determinant of the deformation gradient).
 
-$$ 
 \begin{equation}
 \psi(\mathbf{C}) = \psi(\mathbf{\hat C}) + U(J)
 \label{eq:psi}
 \end{equation}
-$$
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\psi(\mathbf{C})&space;=&space;\text{C}_{10}&space;(\text{I}_\mathbf{\hat&space;C}-3)&space;&plus;&space;\frac{\kappa}{2}&space;(J-1)^2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\psi(\mathbf{C})&space;=&space;\text{C}_{10}&space;(\text{I}_\mathbf{\hat&space;C}-3)&space;&plus;&space;\frac{\kappa}{2}&space;(J-1)^2" title="\psi(\mathbf{C}) = \text{C}_{10} (\text{I}_\mathbf{\hat C}-3) + \frac{\kappa}{2} (J-1)^2" /></a>
 
