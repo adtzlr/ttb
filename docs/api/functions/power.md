@@ -8,7 +8,7 @@ grand_parent: API Reference
 
 ## Power
 
-**Description:** Multiply a Tensor i-times by itself. Note that for a given Tensor C:
+Multiply a Tensor i-times by itself. Note that for a given Tensor C:
 - `i < 0` calculate the i-th power of inv(C)
 - `i == 0` calculate the identity tensor
 - `i > 0` calculate the i-th power of C
@@ -38,4 +38,5 @@ Eye = C**0
 {: .warning }
 > Don't use `C**(1/2)` because in Fortran an integer division, e.g. `1/2`, gives an integer `0` and this function will return the identity tensor instead of the square root.
 
-For the evaluation of the tensorial square root, use [sqrt](squareroot.md) instead.
+{: .important }
+> For the evaluation of the tensorial square root, use [sqrt](squareroot.md) instead.
