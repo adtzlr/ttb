@@ -23,13 +23,7 @@ We get the second Piola-Kirchhoff stress with the derivative of the strain energ
 
 $$
 \begin{equation}
-  \mathbf{S} = \frac{\partial \psi(\mathbf{C})}{\partial \frac{1}{2}\mathbf{C}}
-  \label{eq:pk2}
-\end{equation}
-$$
-
-$$
-\begin{equation}
+  \mathbf{S} = \frac{\partial \psi(\mathbf{C})}{\partial \frac{1}{2}\mathbf{C}} \nonumber \\
   \mathbf{S} = 2\text{C}_{10} \ \text{dev}(\hat{\mathbf{C}}) \mathbf{C}^{-1} + \kappa (J-1) J \mathbf{C}^{-1}
   \label{eq:pk2-nh}
 \end{equation}
