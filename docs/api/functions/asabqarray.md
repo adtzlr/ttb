@@ -8,4 +8,4 @@ grandparent: API Reference
 
 ## As Abaqus Array
 
-**Description:** Same function as `asarray` but with `11,22,33,12,13,23` output ordering for Abaqus users. For details see `asarray` documentation.
+Same function as [`asarray`]({% link api/functions/asarray.md %}) but with `11,22,33,12,13,23` output ordering for Abaqus. For details see [`asarray`]({% link api/functions/asarray.md %}).
