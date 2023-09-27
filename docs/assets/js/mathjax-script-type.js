@@ -18,6 +18,6 @@ MathJax = {
 };
 window.MathJax = {
   tex: {
-    tags: 'ams'
+    tags: 'all'
   }
 };
