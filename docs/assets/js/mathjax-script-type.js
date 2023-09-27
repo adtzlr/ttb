@@ -16,8 +16,3 @@ MathJax = {
     }
   }
 };
-window.MathJax = {
-  tex: {
-    tags: 'all'
-  }
-};
