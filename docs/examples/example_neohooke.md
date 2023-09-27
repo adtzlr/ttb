@@ -49,7 +49,7 @@ $$
 $$
 
 <details markdown="block">
-<summary>Marc</summary>
+<summary>Implementation for Marc</summary>
 
 ## HYPELA2 User Subroutine for Marc
 Eq. $$\eqref{eq:pk2-nh}$$ and Eq. $$\eqref{eq:c4-nh}$$ are implemented in a Total Lagrange [user subroutine](Marc/hypela2_nh_ttb_simple.f) with the help of this Tensor module.
@@ -124,7 +124,7 @@ Eq. $$\eqref{eq:pk2-nh}$$ and Eq. $$\eqref{eq:c4-nh}$$ are implemented in a Tota
 </details>
 
 <details markdown="block">
-<summary>Abaqus</summary>
+<summary>Implementation for Abaqus</summary>
 
 ## UMAT User Subroutine for Abaqus
 Abaqus uses an Updated-Lagrange approach and hence, Eq. $$\eqref{eq:pk2-nh}$$ and Eq. $$\eqref{eq:c4-nh}$$ are transformed and implemented in a [user subroutine](Abaqus/umat_nh_ttb_simple.f) with the help of this Tensor module.
