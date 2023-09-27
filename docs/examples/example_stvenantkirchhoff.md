@@ -29,7 +29,7 @@ $$
 ## Subroutine Header for user materials
 Before we are able to add our own user code, we have to start with an empty fortran subroutine header. Headers are provided e.g. for Marc, Abaqus, ANSYS in their corresponding manuals.
 
-<details>
+<details markdown="block">
 <summary>Marc</summary>
 
 ### HYPELA2 for Marc
