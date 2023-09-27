@@ -12,17 +12,11 @@ This is a very basic example on how to implement a nearly-incompressible version
 The strain energy density function per unit reference volume is additively splitted into an isochoric and volumetric contribution, see Eq. $$\eqref{eq:psi}$$. The first one is assumed to be proportional to the first invariant of the isochoric part of the right Cauchy-Green deformation tensor whereas the volumetric part is only a function of the volumetric ratio (the determinant of the deformation gradient), see Eq. $$\eqref{eq:psi-nh}$$.
 
 $$
-\begin{equation}
-  \psi(\mathbf{C}) = \psi(\mathbf{\hat C}) + U(J)
-  \label{eq:psi}
-\end{equation}
-$$
-
-$$
-\begin{equation}
+\begin{align}
+  \psi(\mathbf{C}) = \psi(\mathbf{\hat C}) + U(J) \nonumber \\
   \psi(\mathbf{C}) = \text{C}_{10} (\text{I}_\mathbf{\hat C}-3) + \frac{\kappa}{2} (J-1)^2
   \label{eq:psi-nh}
-\end{equation}
+\end{align}
 $$
 
 We get the second Piola-Kirchhoff stress with the derivative of the strain energy density function per unit reference volume with respect to one half of the right Cauchy-Green deformation tensor as shown in Eq. $$\eqref{eq:pk2-nh}$$.
