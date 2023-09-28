@@ -3,7 +3,7 @@ description: Tensor Toolbox for Modern Fortran
 theme: just-the-docs
 
 url: https://adtzlr.github.io/ttb
-logo: "assets/images/logo.svg"
+logo: "assets/images/logo.png"
 
 math: mathjax
 
