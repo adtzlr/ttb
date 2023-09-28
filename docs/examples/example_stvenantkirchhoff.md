@@ -180,8 +180,8 @@ Finally we have to export our Tensor data back to conventional fortran arrays.
 <details markdown="block">
 <summary>Export for Marc</summary>
 
-## Updated Lagrange in Marc
-If we would like to use the Updated Lagrange framework in Marc, we'll have to check whether the updated or the total lagrange framework is active. Please note that for the updated lagrange framework it is common to use the jaumann rate of kirchhoff stress in commercial FE codes. First, the tangent matrix is pushed forward to spatial components `(i,j,k,l)`, divided by the volumetric ratio `J` and then transformed to the jaumann rate of kirchhoff stress. For the elasticity tensor conversion have a look at Maria Holland's Hitchhiker's Guide to Abaqus [2].
+{: .important }
+> If we would like to use the Updated Lagrange framework in Marc, we'll have to check whether the updated or the total lagrange framework is active. Please note that for the updated lagrange framework it is common to use the jaumann rate of kirchhoff stress in commercial FE codes. First, the tangent matrix is pushed forward to spatial components `(i,j,k,l)`, divided by the volumetric ratio `J` and then transformed to the jaumann rate of kirchhoff stress. For the elasticity tensor conversion have a look at Maria Holland's Hitchhiker's Guide to Abaqus [2].
 
 ```fortran
       real(kind=8) :: J
@@ -215,6 +215,9 @@ You may download the example as a [HYPELA2 user subroutine](Marc/hypela2_stvenan
 
 <details markdown="block">
 <summary>Export for Abaqus</summary>
+
+{: .important }
+> Abaqus uses the Updated Lagrange framework. Please note that for the updated lagrange framework it is common to use the jaumann rate of kirchhoff stress in commercial FE codes. First, the tangent matrix is pushed forward to spatial components `(i,j,k,l)`, divided by the volumetric ratio `J` and then transformed to the jaumann rate of kirchhoff stress. For the elasticity tensor conversion have a look at Maria Holland's Hitchhiker's Guide to Abaqus [2].
 
 ```fortran
       ! push forward to cauchy stress
