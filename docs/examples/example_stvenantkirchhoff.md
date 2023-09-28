@@ -175,41 +175,13 @@ Again, in our fortran subroutine the code for this elasticity tensor is as follo
 The crossed dyadic product is implemented as the symmetric variant in this module, so writing `Eye.cdya.Eye` is enough for the symmetric version of the rank 4 Identity Tensor.
 
 ## Export as Array
-
 Finally we have to export our Tensor data back to conventional fortran arrays.
 
 <details markdown="block">
 <summary>Export for Marc</summary>
 
-```fortran
-      ! output as array
-      s(1:ngens)         = asarray( asvoigt(S1), ngens )
-      d(1:ngens,1:ngens) = asarray( asvoigt(C4), ngens, ngens )
-```
-
-</details>
-
-<details markdown="block">
-<summary>Export for Abaqus</summary>
-
-```fortran
-      ! push forward to cauchy stress
-      J = det(F1)
-      S1 = piola(F1,S1)/J
-      
-      ! push forward to jaumann tangent of cauchy stress for abaqus
-      C4 = piola(F1,C4)/J + (S1.cdya.Eye)+(Eye.cdya.S1)
-      
-      ! output as abaqus array
-      STRESS(1:ntens)         = asabqarray( voigt(S1), ntens )
-      DDSDDE(1:ntens,1:ntens) = asabqarray( voigt(C4), ntens, ntens )
-```
-
-</details>
-
 ## Updated Lagrange in Marc
-
-If we would like to use the Updated Lagrange framework too, we'll have to check whether updated or total lagrange framework is active. Please note that for the updated lagrange framework it is common to use the jaumann rate of kirchhoff stress in commercial FE codes. First, the tangent matrix is pushed forward to spatial components `(i,j,k,l)`, divided by the volumetric ratio `J` and then transformed from the truesdell rate of kirchhoff stress to the jaumann rate of kirchhoff stress. For the elasticity tensor conversion have a look at Maria Holland's Hitchhiker's Guide to Abaqus [2].
+If we would like to use the Updated Lagrange framework in Marc, we'll have to check whether the updated or the total lagrange framework is active. Please note that for the updated lagrange framework it is common to use the jaumann rate of kirchhoff stress in commercial FE codes. First, the tangent matrix is pushed forward to spatial components `(i,j,k,l)`, divided by the volumetric ratio `J` and then transformed to the jaumann rate of kirchhoff stress. For the elasticity tensor conversion have a look at Maria Holland's Hitchhiker's Guide to Abaqus [2].
 
 ```fortran
       real(kind=8) :: J
@@ -231,7 +203,33 @@ In this code `iupdat` is an integer with
 * `0` for total lagrange and 
 * `1` for updated lagrange. 
 
+```fortran
+      ! output as array
+      s(1:ngens)         = asarray( asvoigt(S1), ngens )
+      d(1:ngens,1:ngens) = asarray( asvoigt(C4), ngens, ngens )
+```
+
 You may download the example as a [HYPELA2 user subroutine](Marc/hypela2_stvenantkirchhoff.f) for Marc.
+
+</details>
+
+<details markdown="block">
+<summary>Export for Abaqus</summary>
+
+```fortran
+      ! push forward to cauchy stress
+      J = det(F1)
+      S1 = piola(F1,S1)/J
+      
+      ! push forward to jaumann tangent of cauchy stress for abaqus
+      C4 = piola(F1,C4)/J + (S1.cdya.Eye)+(Eye.cdya.S1)
+      
+      ! output as abaqus array
+      STRESS(1:ntens)         = asabqarray( voigt(S1), ntens )
+      DDSDDE(1:ntens,1:ntens) = asabqarray( voigt(C4), ntens, ntens )
+```
+
+</details>
 
 ## References
 [1] Bonet, J., Gil, A. J., & Wood, R. D. (2016). Nonlinear Solid Mechanics for Finite Element Analysis: Statics. Cambridge University Press. [![DOI:10.1017/cbo9781316336144](https://zenodo.org/badge/DOI/10.1017/cbo9781316336144.svg)](https://doi.org/10.1017/cbo9781316336144)
