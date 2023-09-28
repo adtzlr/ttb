@@ -1,5 +1,5 @@
 ---
-title: Saint Venant-Kirchhoff
+title: Ex. 01 - Saint Venant-Kirchhoff
 layout: page
 nav_order: 4
 parent: Examples

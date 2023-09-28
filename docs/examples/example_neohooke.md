@@ -1,5 +1,5 @@
 ---
-title: Neo-Hooke
+title: Ex. 02 - Neo-Hooke
 layout: page
 nav_order: 4
 parent: Examples
