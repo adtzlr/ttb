@@ -6,7 +6,7 @@ parent: Examples
 ---
 
 # Neo-Hooke
-This is a very basic example on how to implement a nearly-incompressible version of the Neo-Hookean material model in a commercial FEM package (HYPELA2 for Marc or UMAT for Abaqus). As no special two- or three-field variational principle is used in this example, it is not suitable for nearly-incompressible material behaviour. Otherwise the elements tend to show excessive volumetric locking during deformation and hence, wrong results are calculated.
+This is a very basic example on how to implement a nearly-incompressible version of the Neo-Hookean material model in a commercial FEM package (HYPELA2 for Marc or UMAT for Abaqus).
 
 ## Hyperelasticity
 The strain energy density function per unit reference volume is additively splitted into an isochoric and volumetric contribution, see Eq. $$\eqref{eq:psi}$$. The first one is assumed to be proportional to the first invariant of the isochoric part of the right Cauchy-Green deformation tensor whereas the volumetric part is only a function of the volumetric ratio (the determinant of the deformation gradient), see Eq. $$\eqref{eq:psi-nh}$$.
@@ -53,6 +53,9 @@ $$
 
 ## HYPELA2 User Subroutine for Marc
 Eq. $$\eqref{eq:pk2-nh}$$ and Eq. $$\eqref{eq:c4-nh}$$ are implemented in a Total Lagrange [user subroutine](Marc/hypela2_nh_ttb_simple.f) with the help of this Tensor module.
+
+{: .warning }
+> As no special two- or three-field variational principle is used in this example, it is not suitable for nearly-incompressible material behaviour. Otherwise the elements tend to show excessive volumetric locking during deformation and hence, wrong results are calculated.
 
 ```fortran
       include 'ttb/ttb_library.f'
