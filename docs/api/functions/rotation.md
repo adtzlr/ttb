@@ -20,7 +20,7 @@ There are 3 possible cases:
 ### `rotation_matrix(phi,3)`
 $$
 \begin{equation}
-  \mathbf{R} = \begin{bmatrix} \cos \varphi & \sin \varphi & 0 \\ -\sin \varphi & \cos \varphi & 0 \\ 0 & 0 & 1 \end{bmatrix}
+  \mathbf{R} = \begin{bmatrix} \cos \varphi & -\sin \varphi & 0 \\ \sin \varphi & \cos \varphi & 0 \\ 0 & 0 & 1 \end{bmatrix}
 \end{equation}
 $$
 
@@ -34,7 +34,7 @@ $$
 ### `rotation_matrix(phi,1)`
 $$
 \begin{equation}
-  \mathbf{R} = \begin{bmatrix} 1 & 0 & 0 \\ 0 &\cos \varphi & \sin \varphi\\ 0 & -\sin \varphi & \cos \varphi\\ \end{bmatrix}
+  \mathbf{R} = \begin{bmatrix} 1 & 0 & 0 \\ 0 &\cos \varphi & -\sin \varphi\\ 0 & \sin \varphi & \cos \varphi\\ \end{bmatrix}
 \end{equation}
 $$
 

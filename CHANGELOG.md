@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Fixed
+- Fix the orientation of `rotation_matrix(phi,2)` for a rotation matrix around axis 2. Also fix the docs for `rotation_matrix(phi,1)` and `rotation_matrix(phi,3)`.
+
 ## [2.1.0] - 2023-09-25
 
 ### Added
