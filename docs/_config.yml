@@ -17,6 +17,9 @@ callouts:
   note:
     title: Note
     color: purple
+  seealso:
+    title: See Also
+    color: green
 
 last_edit_timestamp: true # requires `last_modified_date` in frontmatter
 last_edit_time_format: "%Y-%m-%d"

@@ -16,9 +16,7 @@ This module uses derived data types where the default operators are overloaded w
 - Dot-Product (single contraction) `A*B`
 - Double-Dot-Product (double contraction) `A**B`
 
-{: .note }
-> See Also
->
+{: .seealso }
 > There are also functions available for the dyadic product `A.dya.B` and the symmetric crossed-dyadic product `A.cdya.B` to perform `C(i,j,k,l) = (A(i,k)*B(j,l) + A(i,l)*B(j,k) + B(i,k)*A(j,l) + B(i,l)*A(j,k)) / 4.`.
 
 {: .warning }
