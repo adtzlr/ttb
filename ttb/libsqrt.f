@@ -8,7 +8,7 @@
         
        end function sqrt_1
 
-       function stretch_2(T)
+       function sqrt_2(T)
         ! Source:
         !
         ! Franca, L.P. (1989): AN ALGORITHM TO COMPUTE
@@ -17,7 +17,7 @@
         implicit none
         
         type(Tensor2), intent(in) :: T
-        type(Tensor2) :: stretch_2
+        type(Tensor2) :: sqrt_2
         
         real(kind=8) :: I_T,II_T,III_T,I_U,II_U,III_U,k,l,lam,phi
 
@@ -30,7 +30,7 @@
         ! Isotropy check
         if (dabs(k).le.1.0d-8) then
          lam = (I_T/3.)**(1./2.)
-         stretch_2 = lam * identity2(T)
+         sqrt_2 = lam * identity2(T)
          return
         end if
         
@@ -46,12 +46,12 @@
         
         print *, 'test', l,k,1-l**2/k**3
         
-        stretch_2 = 1./(I_U*II_U-III_U)
+        sqrt_2 = 1./(I_U*II_U-III_U)
      *           *(I_U*III_U*identity2(T) + (I_U**2-II_U)*T-T**2)
         
-       end function stretch_2
+       end function sqrt_2
        
-       function stretch_2s(T)
+       function sqrt_2s(T)
         ! Source:
         !
         ! Franca, L.P. (1989): AN ALGORITHM TO COMPUTE
@@ -60,7 +60,7 @@
         implicit none
         
         type(Tensor2s), intent(in) :: T
-        type(Tensor2s) :: stretch_2s
+        type(Tensor2s) :: sqrt_2s
         
         real(kind=8) :: I_T,II_T,III_T,I_U,II_U,III_U,k,l,lam,phi
 
@@ -73,7 +73,7 @@
         ! Isotropy check
         if (k.le.1.0d-8) then
          lam = (I_T/3.)**(1./2.)
-         stretch_2s = lam * identity2(T)
+         sqrt_2s = lam * identity2(T)
          return
         end if
         
@@ -87,7 +87,7 @@
         I_U = lam + dsqrt(-lam**2+I_T+2.*III_U/lam)
         II_U = (I_U**2-I_T)/2.
 
-        stretch_2s = 1./(I_U*II_U-III_U)
+        sqrt_2s = 1./(I_U*II_U-III_U)
      *           *(I_U*III_U*identity2(T) + (I_U**2-II_U)*T-T*T)
         
-       end function stretch_2s
+       end function sqrt_2s

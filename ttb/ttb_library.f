@@ -268,14 +268,14 @@
        
        interface sqrt
        module procedure sqrt_1
-       module procedure stretch_2
-       module procedure stretch_2s
+       module procedure sqrt_2
+       module procedure sqrt_2s
        end interface
        
        interface dsqrt
        module procedure sqrt_1
-       module procedure stretch_2
-       module procedure stretch_2s
+       module procedure sqrt_2
+       module procedure sqrt_2s
        end interface
        
        interface rotation_matrix

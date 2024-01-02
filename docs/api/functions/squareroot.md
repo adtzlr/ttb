@@ -8,7 +8,7 @@ grand_parent: API Reference
 
 ## Square Root
 
-Tensorial square root of a positive definite rank 2 Tensor. For algorithmic details see [Franka, L.P. (1988)](https://inis.iaea.org/search/search.aspx?orig_q=RN:20064555). This function can be used to obtain the stretch tensor.
+Tensorial (matrix) square root of a positive definite rank 2 Tensor. For algorithmic details see [Franka, L.P. (1988)](https://inis.iaea.org/search/search.aspx?orig_q=RN:20064555). This function can be used to obtain the stretch tensor. For a rank 1 Tensor (vector), the element-wise square root is returned.
 
 $$
 \begin{align}
