@@ -18,8 +18,8 @@
         else !i == 2
          rotation_2%ab(1,1) = R(1,1)
          rotation_2%ab(3,3) = R(2,2)
-         rotation_2%ab(1,3) = R(1,2)
-         rotation_2%ab(3,1) = R(2,1)
+         rotation_2%ab(1,3) = R(2,1)
+         rotation_2%ab(3,1) = R(1,2)
         end if
         
        end function rotation_2
