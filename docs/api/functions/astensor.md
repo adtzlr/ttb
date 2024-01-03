@@ -15,7 +15,7 @@ $$
 \boldsymbol{C} = \begin{bmatrix}
     C_{11} & C_{22} & C_{33} & C_{12} & C_{23} & C_{13}
 \end{bmatrix}^T \longrightarrow
-\boldsymbol{C} = \begin{bmatrix}
+\begin{bmatrix}
     C_{11} & C_{12} & C_{13} \\
     C_{12} & C_{22} & C_{23} \\
     C_{13} & C_{23} & C_{33}
@@ -30,7 +30,7 @@ $$
     A_{2211} & A_{2222} & A_{2233} & A_{2212} & A_{2223} & A_{2213} \\
      \dots   &  \dots   &  \dots   &  \dots   &  \dots   &  \dots   \\
     A_{1311} & A_{1322} & A_{1333} & A_{1312} & A_{1323} & A_{1313}
-\end{bmatrix}
+\end{bmatrix} \\
 &\longrightarrow \begin{bmatrix}
     A_{1111} & A_{1112} & A_{1113} &
     A_{1121} & A_{1122} & A_{1123} &
