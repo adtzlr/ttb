@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Changed
 - Rename internal matrix square-root from `stretch_2` and `stretch_2s` to `sqrt_2` and `sqrt_2s`. This does not affect the public API which remains unchanged as (matrix) square root `sqrt(T)`.
-- Remove unsed print statement in `sqrt_2()`.
+- Remove unused print statement in `sqrt_2()`.
 
 ### Fixed
 - Fix the orientation of `rotation_matrix(phi,2)` for a rotation matrix around axis 2. Also fix the docs for `rotation_matrix(phi,1)` and `rotation_matrix(phi,3)`.
