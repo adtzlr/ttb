@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+## [2.1.1] - 2024-01-03
+
 ### Changed
 - Rename internal matrix square-root from `stretch_2` and `stretch_2s` to `sqrt_2` and `sqrt_2s`. This does not affect the public API which remains unchanged as (matrix) square root `sqrt(T)`.
 - Remove an unused print statement in `sqrt_2()`.
