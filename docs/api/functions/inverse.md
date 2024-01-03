@@ -8,12 +8,21 @@ grand_parent: API Reference
 
 ## Inverse
 
-Inverse of a positive definite rank 2 Tensor (Determinant > 0). Optional Argument: Determinant
+Inverse of a positive definite rank 2 Tensor (Determinant > 0). 
+
+Optional Argument
+- Determinant
 
 | Property   | Value                  |
 | ---        | ---                    |
 | Result     | Tensor-valued function |
 | Data Types | `Tensor2`, `Tensor2s`  |
+
+$$
+\begin{equation}
+\boldsymbol{C} \boldsymbol{C}^{-1} = \boldsymbol{1}
+\end{equation}
+$$
 
 ### Example
 
