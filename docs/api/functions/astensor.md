@@ -10,6 +10,7 @@ grand_parent: API Reference
 
 Converts a `Tensor2s` or `Tensor4s` data type to a full tensor storage `Tensor2` or `Tensor4`.
 
-Possible calls:
 - `astensor(T)`
+
+Alias:
 - `tensorstore(T)`
