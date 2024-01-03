@@ -11,6 +11,7 @@ grand_parent: API Reference
 Converts a `Tensor2s` or `Tensor4s` data type to a full tensor storage `Tensor2` or `Tensor4`.
 
 $$
+\begin{equation}
 \boldsymbol{C} = \begin{bmatrix}
     C_{11} & C_{22} & C_{33} & C_{12} & C_{23} & C_{13}
 \end{bmatrix}^T \longrightarrow
@@ -19,9 +20,11 @@ $$
     C_{12} & C_{22} & C_{23} \\
     C_{13} & C_{23} & C_{33}
 \end{bmatrix}
+\end{equation}
 $$
 
 $$
+\begin{equation}
 \mathbb{A} = \begin{bmatrix}
     A_{1111} & A_{1122} & A_{1133} & A_{1112} & A_{1123} & A_{1113} \\
     A_{2211} & A_{2222} & A_{2233} & A_{2212} & A_{2223} & A_{2213} \\
@@ -40,6 +43,7 @@ $$
     A_{3121} & A_{3122} & A_{3123} &
     A_{3131} & A_{3132} & A_{3133}
 \end{bmatrix}
+\end{equation}
 $$
 
 Alias:
