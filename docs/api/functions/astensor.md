@@ -30,7 +30,7 @@ $$
     A_{2211} & A_{2222} & A_{2233} & A_{2212} & A_{2223} & A_{2213} \\
      \dots   &  \dots   &  \dots   &  \dots   &  \dots   &  \dots   \\
     A_{1311} & A_{1322} & A_{1333} & A_{1312} & A_{1323} & A_{1313}
-\end{bmatrix} \\
+\end{bmatrix} \nolabel \\
 &\longrightarrow \begin{bmatrix}
     A_{1111} & A_{1112} & A_{1113} &
     A_{1121} & A_{1122} & A_{1123} &
