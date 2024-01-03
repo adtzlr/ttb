@@ -44,8 +44,6 @@
         I_U = lam + dsqrt(-lam**2+I_T+2.*III_U/lam)
         II_U = (I_U**2-I_T)/2.
         
-        print *, 'test', l,k,1-l**2/k**3
-        
         sqrt_2 = 1./(I_U*II_U-III_U)
      *           *(I_U*III_U*identity2(T) + (I_U**2-II_U)*T-T**2)
         
