@@ -7,9 +7,6 @@ logo: "assets/images/logo.png"
 
 math: mathjax
 
-compress_html:
-  blanklines: false
-
 callouts:
   warning:
     title: Warning
