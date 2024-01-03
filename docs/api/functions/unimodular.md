@@ -11,9 +11,10 @@ grand_parent: API Reference
 Unimodular Part of a rank 2 Tensor.
 
 $$
-\begin{equation}
-\hat{\boldsymbol{C}} = \det({\boldsymbol{C}})^{-1/3} \ \boldsymbol{C}
-\end{equation}
+\begin{align}
+\hat{\boldsymbol{C}} &= \det(\boldsymbol{C})^{-1/3} \ \boldsymbol{C} \\
+(\det(\hat{\boldsymbol{C}}) &= 1) \nonumber
+\end{align}
 $$
 
 | Property   | Value                  |
