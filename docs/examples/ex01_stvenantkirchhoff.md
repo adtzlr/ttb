@@ -119,7 +119,7 @@ In our code implementation the strain tensor looks like:
       Eye = Eye**0
       
       F1 = Eye
-      F1%ab(1:itel,1:3) = ffn1(1:itel,1:3)
+      F1%ab(1:3,1:3) = ffn1(1:3,1:3)
       
       E1 = 0.5*(transpose(F1)*F1-Eye)
 ```
