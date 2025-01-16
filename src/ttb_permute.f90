@@ -35,7 +35,6 @@ contains
       integer, intent(in) :: i1, j1
       integer :: dummy
 
-
       type(Tensor2s) :: permute_2s
       ! also seem to not be used??
       dummy = i1

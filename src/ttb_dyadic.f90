@@ -52,8 +52,8 @@ contains
       integer i, j
 
       !forall (i=1:6, j=1:6) dyadic_2s2s%a6b6(i, j) = T1%a6(i)*T2%a6(j)
-      do i=1,6
-         do j=1,6
+      do i = 1, 6
+         do j = 1, 6
             dyadic_2s2s%a6b6(i, j) = T1%a6(i)*T2%a6(j)
          end do
       end do
