@@ -1,5 +1,5 @@
 program test
    use Tensor
 
-call print_banner()
+   call print_banner()
 end program test

@@ -1,5 +1,5 @@
 module ttb_fact
-  use ttb_types
+   use ttb_types
    interface fact
       module procedure fact_i
    end interface

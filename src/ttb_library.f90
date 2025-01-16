@@ -1,10 +1,10 @@
-   ! ---------------------------------------
-   ! Tensor Toolbox Module for Fortran
-   ! Andreas Dutzler
-   ! Graz University of Technology
-   ! Institute of Structural Durability
-   !    and Railway Technology
-   ! ---------------------------------------
+! ---------------------------------------
+! Tensor Toolbox Module for Fortran
+! Andreas Dutzler
+! Graz University of Technology
+! Institute of Structural Durability
+!    and Railway Technology
+! ---------------------------------------
 ! -----------MODULE TENSOR---------------------------------------
 module Tensor
    use ttb_types
@@ -48,19 +48,19 @@ module Tensor
    !  ...
    ! end program sample
    ! ---------------------------------------
-contains 
+contains
 
-    subroutine print_banner()
-        implicit none
-        print *, " "
-        print *, "---------------------------------------"
-        print *, " Tensor Toolbox Module for Fortran"
-        print *, " Andreas Dutzler"
-        print *, " Graz University of Technology"
-        print *, " Institute of Structural Durability"
-        print *, "    and Railway Technology"
-        print *, "---------------------------------------"
-        print *, " "
-    end subroutine print_banner
+   subroutine print_banner()
+      implicit none
+      print *, " "
+      print *, "---------------------------------------"
+      print *, " Tensor Toolbox Module for Fortran"
+      print *, " Andreas Dutzler"
+      print *, " Graz University of Technology"
+      print *, " Institute of Structural Durability"
+      print *, "    and Railway Technology"
+      print *, "---------------------------------------"
+      print *, " "
+   end subroutine print_banner
 
 end module Tensor

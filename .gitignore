@@ -14,3 +14,4 @@ _site/
 .bundle/
 vendor/
 build/*
+external/*
