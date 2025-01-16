@@ -36,7 +36,7 @@ add_compile_options(
   -Wconversion
   -Wline-truncation
   -Wcharacter-truncation
-#  -Warray-temporaries
+  # I need to think more how to remove these warnings -Warray-temporaries
   -fcheck=all
   -finit-real=snan
   -finit-integer=-2147483648
