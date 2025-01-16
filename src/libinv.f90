@@ -13,7 +13,7 @@ contains
 
       type(Tensor2), intent(in) :: T
       type(Tensor2) :: inv_2
-      real(kind=8) :: idetT
+      real(kind=dp) :: idetT
 
       idetT = 1.d0/det(T)
 
@@ -34,7 +34,7 @@ contains
 
       type(Tensor2s), intent(in) :: T
       type(Tensor2s) :: inv_2s
-      real(kind=8) :: idetT
+      real(kind=dp) :: idetT
 
       idetT = 1.d0/det(T)
 
@@ -52,7 +52,7 @@ contains
 
       type(Tensor2), intent(in) :: T
       type(Tensor2) :: inv2d
-      real(kind=8) :: detT, idetT
+      real(kind=dp) :: detT, idetT
 
       idetT = 1.d0/detT
 
@@ -73,7 +73,7 @@ contains
 
       type(Tensor2s), intent(in) :: T
       type(Tensor2s) :: inv2sd
-      real(kind=8):: detT, idetT
+      real(kind=dp):: detT, idetT
 
       idetT = 1.d0/detT
 

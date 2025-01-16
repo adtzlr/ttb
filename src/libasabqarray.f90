@@ -12,7 +12,7 @@ contains
       type(Tensor2s), intent(in) :: T
       integer, intent(in) :: i
       integer, intent(in), optional :: j
-      real(kind=8), dimension(i) :: asabqarray_2s
+      real(kind=dp), dimension(i) :: asabqarray_2s
       integer :: i1
 
       asabqarray_2s(1:min(i, 4)) = T%a6(1:min(i, 4))
@@ -32,7 +32,7 @@ contains
 
       type(Tensor4s), intent(in) :: T
       integer, intent(in) :: i, j
-      real(kind=8), dimension(i, j) :: asabqarray_4s
+      real(kind=dp), dimension(i, j) :: asabqarray_4s
       integer, dimension(6) :: imap
       integer :: i1, j1
 

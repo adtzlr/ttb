@@ -51,7 +51,7 @@ contains
    function tenstore_2a(T)
       implicit none
 
-      real(kind=8), dimension(3, 3), intent(in) :: T
+      real(kind=dp), dimension(3, 3), intent(in) :: T
       type(Tensor2) :: tenstore_2a
 
       tenstore_2a%ab = T
@@ -71,7 +71,7 @@ contains
    function tenstore_4a(T)
       implicit none
 
-      real(kind=8), dimension(3, 3, 3, 3), intent(in) :: T
+      real(kind=dp), dimension(3, 3, 3, 3), intent(in) :: T
       type(Tensor4) :: tenstore_4a
 
       tenstore_4a%abcd = T

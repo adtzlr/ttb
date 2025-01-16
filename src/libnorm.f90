@@ -11,7 +11,7 @@ contains
       implicit none
 
       type(Tensor1) :: T
-      real(kind=8) :: norm_1
+      real(kind=dp) :: norm_1
 
       norm_1 = sqrt(sum((T%a)**2))
 
@@ -21,7 +21,7 @@ contains
       implicit none
 
       type(Tensor2) :: T
-      real(kind=8) :: norm_2
+      real(kind=dp) :: norm_2
 
       norm_2 = sqrt(T**T)
 
@@ -31,7 +31,7 @@ contains
       implicit none
 
       type(Tensor2s) :: T
-      real(kind=8) :: norm_2s
+      real(kind=dp) :: norm_2s
 
       norm_2s = sqrt(T**T)
 

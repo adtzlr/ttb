@@ -20,7 +20,7 @@ contains
       implicit none
 
       type(Tensor2s), intent(inout) :: T
-      real(kind=8), intent(in) :: w
+      real(kind=dp), intent(in) :: w
 
       T%a6 = w
 
@@ -40,7 +40,7 @@ contains
       implicit none
 
       type(Tensor4s), intent(inout) :: T
-      real(kind=8), intent(in) :: w
+      real(kind=dp), intent(in) :: w
 
       T%a6b6 = w
 
@@ -60,7 +60,7 @@ contains
       implicit none
 
       type(Tensor1), intent(inout) :: T
-      real(kind=8), intent(in) :: w
+      real(kind=dp), intent(in) :: w
 
       T%a = w
 
@@ -80,7 +80,7 @@ contains
       implicit none
 
       type(Tensor2), intent(inout) :: T
-      real(kind=8), intent(in) :: w
+      real(kind=dp), intent(in) :: w
 
       T%ab = w
 
@@ -100,7 +100,7 @@ contains
       implicit none
 
       type(Tensor4), intent(inout) :: T
-      real(kind=8), intent(in) :: w
+      real(kind=dp), intent(in) :: w
 
       T%abcd = w
 

@@ -15,7 +15,7 @@ contains
       type(Tensor1), intent(in) :: T
       integer, intent(in) :: i
       integer, intent(in), optional :: j, k, l
-      real(kind=8), dimension(i) :: asarray_1
+      real(kind=dp), dimension(i) :: asarray_1
 
       asarray_1 = T%a(1:i)
 
@@ -27,7 +27,7 @@ contains
       type(Tensor2), intent(in) :: T
       integer, intent(in) :: i, j
       integer, intent(in), optional :: k, l
-      real(kind=8), dimension(i, j) :: asarray_2
+      real(kind=dp), dimension(i, j) :: asarray_2
 
       asarray_2 = T%ab(1:i, 1:j)
 
@@ -39,7 +39,7 @@ contains
       type(Tensor2s), intent(in) :: T
       integer, intent(in) :: i
       integer, intent(in), optional :: j, k, l
-      real(kind=8), dimension(i) :: asarray_2s
+      real(kind=dp), dimension(i) :: asarray_2s
 
       asarray_2s = T%a6(1:i)
 
@@ -50,7 +50,7 @@ contains
 
       type(Tensor4), intent(in) :: T
       integer, intent(in) :: i, j, k, l
-      real(kind=8), dimension(i, j, k, l) :: asarray_4
+      real(kind=dp), dimension(i, j, k, l) :: asarray_4
 
       asarray_4 = T%abcd(1:i, 1:j, 1:k, 1:l)
 
@@ -62,7 +62,7 @@ contains
       type(Tensor4s), intent(in) :: T
       integer, intent(in) :: i, j
       integer, intent(in), optional :: k, l
-      real(kind=8), dimension(i, j) :: asarray_4s
+      real(kind=dp), dimension(i, j) :: asarray_4s
 
       asarray_4s = T%a6b6(1:i, 1:j)
 

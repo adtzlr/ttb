@@ -8,9 +8,9 @@ contains
    function rotation_2(phi, i)
       implicit none
 
-      real(kind=8), intent(in)     :: phi
+      real(kind=dp), intent(in)     :: phi
       integer, intent(in)     :: i
-      real(kind=8), dimension(2, 2) :: R
+      real(kind=dp), dimension(2, 2) :: R
       type(Tensor2)                :: rotation_2
 
       R = reshape((/cos(phi), sin(phi), &

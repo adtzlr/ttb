@@ -16,7 +16,7 @@ contains
       implicit none
 
       type(Tensor2s), intent(inout) :: T
-      real(kind=8), dimension(6), intent(in) :: A
+      real(kind=dp), dimension(6), intent(in) :: A
 
       T%a6 = A
 
@@ -36,7 +36,7 @@ contains
       implicit none
 
       type(Tensor4s), intent(inout) :: T
-      real(kind=8), dimension(6, 6), intent(in) :: A
+      real(kind=dp), dimension(6, 6), intent(in) :: A
 
       T%a6b6 = A
 
@@ -56,7 +56,7 @@ contains
       implicit none
 
       type(Tensor1), intent(inout) :: T
-      real(kind=8), dimension(3), intent(in) :: A
+      real(kind=dp), dimension(3), intent(in) :: A
 
       T%a = A
 
@@ -76,7 +76,7 @@ contains
       implicit none
 
       type(Tensor2), intent(inout) :: T
-      real(kind=8), dimension(3, 3), intent(in) :: A
+      real(kind=dp), dimension(3, 3), intent(in) :: A
 
       T%ab = A
 
@@ -96,7 +96,7 @@ contains
       implicit none
 
       type(Tensor4), intent(inout) :: T
-      real(kind=8), dimension(3, 3, 3, 3), intent(in) :: A
+      real(kind=dp), dimension(3, 3, 3, 3), intent(in) :: A
 
       T%abcd = A
 

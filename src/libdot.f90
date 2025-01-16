@@ -1,6 +1,6 @@
 !      ------DOT SECTION-----------------------------------------
 !      ------SIMPLE DOT SECTION----------------------------------
-!      ------REAL(KIND=8)----------------------------------------
+!      ------REAL(kind=dp)----------------------------------------
 module ttb_dot
    use ttb_types
    interface operator(*)
@@ -68,7 +68,7 @@ contains
    function dot_01(w, T)
       implicit none
 
-      real(kind=8), intent(in) :: w
+      real(kind=dp), intent(in) :: w
       type(Tensor1), intent(in) :: T
       type(Tensor1) :: dot_01
 
@@ -79,7 +79,7 @@ contains
    function dot_10(T, w)
       implicit none
 
-      real(kind=8), intent(in) :: w
+      real(kind=dp), intent(in) :: w
       type(Tensor1), intent(in) :: T
       type(Tensor1) :: dot_10
 
@@ -90,7 +90,7 @@ contains
    function dot_02(w, T)
       implicit none
 
-      real(kind=8), intent(in) :: w
+      real(kind=dp), intent(in) :: w
       type(Tensor2), intent(in) :: T
       type(Tensor2) :: dot_02
 
@@ -101,7 +101,7 @@ contains
    function dot_02s(w, T)
       implicit none
 
-      real(kind=8), intent(in) :: w
+      real(kind=dp), intent(in) :: w
       type(Tensor2s), intent(in) :: T
       type(Tensor2s) :: dot_02s
 
@@ -112,7 +112,7 @@ contains
    function dot_20(T, w)
       implicit none
 
-      real(kind=8), intent(in) :: w
+      real(kind=dp), intent(in) :: w
       type(Tensor2), intent(in) :: T
       type(Tensor2) :: dot_20
 
@@ -123,7 +123,7 @@ contains
    function dot_20s(T, w)
       implicit none
 
-      real(kind=8), intent(in) :: w
+      real(kind=dp), intent(in) :: w
       type(Tensor2s), intent(in) :: T
       type(Tensor2s) :: dot_20s
 
@@ -134,7 +134,7 @@ contains
    function dot_04(w, T)
       implicit none
 
-      real(kind=8), intent(in) :: w
+      real(kind=dp), intent(in) :: w
       type(Tensor4), intent(in) :: T
       type(Tensor4) :: dot_04
 
@@ -145,7 +145,7 @@ contains
    function dot_04s(w, T)
       implicit none
 
-      real(kind=8), intent(in) :: w
+      real(kind=dp), intent(in) :: w
       type(Tensor4s), intent(in) :: T
       type(Tensor4s) :: dot_04s
 
@@ -156,7 +156,7 @@ contains
    function dot_40(T, w)
       implicit none
 
-      real(kind=8), intent(in) :: w
+      real(kind=dp), intent(in) :: w
       type(Tensor4), intent(in) :: T
       type(Tensor4) :: dot_40
 
@@ -167,7 +167,7 @@ contains
    function dot_40s(T, w)
       implicit none
 
-      real(kind=8), intent(in) :: w
+      real(kind=dp), intent(in) :: w
       type(Tensor4s), intent(in) :: T
       type(Tensor4s) :: dot_40s
 
@@ -285,7 +285,7 @@ contains
 
    end function dot_40s_r4
 
-!      ------REAL(KIND=8)----------------------------------------
+!      ------REAL(kind=dp)----------------------------------------
    function dot_21(T1, T2)
       implicit none
 
@@ -351,7 +351,7 @@ contains
 
       type(Tensor1), intent(in) :: T1
       type(Tensor1), intent(in) :: T2
-      real(kind=8) :: dot_11
+      real(kind=dp) :: dot_11
       integer :: i
 
       dot_11 = 0.d0

@@ -17,5 +17,5 @@ implicit-external = false
 source-form = "free"
 
 [dependencies]
-#stdlib="*"
+stdlib="*"
 test-drive.git = "https://github.com/fortran-lang/test-drive"

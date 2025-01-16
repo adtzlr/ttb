@@ -42,7 +42,7 @@ contains
       type(Tensor2), intent(in) :: T
       type(Tensor2) :: sqrt_2
 
-      real(kind=8) :: I_T, II_T, III_T, I_U, II_U, III_U, k, l, lam, phi
+      real(kind=dp) :: I_T, II_T, III_T, I_U, II_U, III_U, k, l, lam, phi
 
       ! Invariants of T
       I_T = tr(T)
@@ -83,7 +83,7 @@ contains
       type(Tensor2s), intent(in) :: T
       type(Tensor2s) :: sqrt_2s
 
-      real(kind=8) :: I_T, II_T, III_T, I_U, II_U, III_U, k, l, lam, phi
+      real(kind=dp) :: I_T, II_T, III_T, I_U, II_U, III_U, k, l, lam, phi
 
       ! Invariants of T
       I_T = tr(T)

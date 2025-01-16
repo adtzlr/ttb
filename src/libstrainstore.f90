@@ -2,7 +2,7 @@
 !         implicit none
 !
 !         integer :: ndi,nshear,ngens
-!         real(kind=8), dimension(ngens) :: E
+!         real(kind=dp), dimension(ngens) :: E
 !         type(Tensor2) :: str2ten_2
 !         integer, dimension(3) :: ii, jj
 !         integer :: i
@@ -35,7 +35,7 @@ contains
       implicit none
 
       integer :: ndi, nshear, ngens
-      real(kind=8), dimension(ngens) :: E
+      real(kind=dp), dimension(ngens) :: E
       type(Tensor2s) :: str2ten_2s
       integer :: i
 

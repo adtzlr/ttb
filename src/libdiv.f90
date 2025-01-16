@@ -1,4 +1,4 @@
-!      ------REAL(KIND=8)--------------------------------------
+!      ------REAL(kind=dp)--------------------------------------
 module ttb_div
    use ttb_types
 
@@ -33,7 +33,7 @@ contains
    function div_10(T, w)
       implicit none
 
-      real(kind=8), intent(in) :: w
+      real(kind=dp), intent(in) :: w
       type(Tensor1), intent(in) :: T
       type(Tensor1) :: div_10
 
@@ -44,7 +44,7 @@ contains
    function div_20(T, w)
       implicit none
 
-      real(kind=8), intent(in) :: w
+      real(kind=dp), intent(in) :: w
       type(Tensor2), intent(in) :: T
       type(Tensor2) :: div_20
 
@@ -55,7 +55,7 @@ contains
    function div_20s(T, w)
       implicit none
 
-      real(kind=8), intent(in) :: w
+      real(kind=dp), intent(in) :: w
       type(Tensor2s), intent(in) :: T
       type(Tensor2s) :: div_20s
 
@@ -66,7 +66,7 @@ contains
    function div_40(T, w)
       implicit none
 
-      real(kind=8), intent(in) :: w
+      real(kind=dp), intent(in) :: w
       type(Tensor4), intent(in) :: T
       type(Tensor4) :: div_40
 
@@ -77,7 +77,7 @@ contains
    function div_40s(T, w)
       implicit none
 
-      real(kind=8), intent(in) :: w
+      real(kind=dp), intent(in) :: w
       type(Tensor4s), intent(in) :: T
       type(Tensor4s) :: div_40s
 

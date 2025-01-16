@@ -39,7 +39,7 @@ contains
    function symstore_2sa(T)
       implicit none
 
-      real(kind=8), dimension(6), intent(in) :: T
+      real(kind=dp), dimension(6), intent(in) :: T
       type(Tensor2s) :: symstore_2sa
 
       symstore_2sa%a6 = T
@@ -59,7 +59,7 @@ contains
    function symstore_4sa(T)
       implicit none
 
-      real(kind=8), dimension(6, 6), intent(in) :: T
+      real(kind=dp), dimension(6, 6), intent(in) :: T
       type(Tensor4s) :: symstore_4sa
 
       symstore_4sa%a6b6 = T
