@@ -45,7 +45,7 @@ add_compile_options(
 
 # Create the static library
 set(ttb_lib tensor_ttbs)
-set(debug_exec_name ${project_name})
+# set(debug_exec_name ${project_name})
 
 add_library(${ttb_lib} STATIC)
 
@@ -62,11 +62,10 @@ include_directories(
 )
 add_subdirectory(src)
 add_subdirectory(test)
-add_executable(${debug_exec_name} ${PROJECT_SOURCE_DIR}/app/main.f90)
-# Set the module directory for the executable
-target_include_directories(${debug_exec_name}
-                           PRIVATE "${CMAKE_BINARY_DIR}/modules")
+# add_executable(${debug_exec_name} ${PROJECT_SOURCE_DIR}/app/main.f90) Set the
+# module directory for the executable
+# target_include_directories(${debug_exec_name} PRIVATE
+# "${CMAKE_BINARY_DIR}/modules")
 
 # ${PROJECT_SOURCE_DIR}/lib/test-drive/lib/libtest-drive.a) Link the library to
-# the executable
-target_link_libraries(${debug_exec_name} PRIVATE ${ttb_lib})
+# the executable target_link_libraries(${debug_exec_name} PRIVATE ${ttb_lib})
