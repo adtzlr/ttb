@@ -1,3 +1,10 @@
+   ! ---------------------------------------
+   ! Tensor Toolbox Module for Fortran
+   ! Andreas Dutzler
+   ! Graz University of Technology
+   ! Institute of Structural Durability
+   !    and Railway Technology
+   ! ---------------------------------------
 ! -----------MODULE TENSOR---------------------------------------
 module Tensor
    use ttb_types
@@ -30,24 +37,30 @@ module Tensor
    use ttb_transpose
    use ttb_unimodular
 
-   ! ---------------------------------------
-   ! Tensor Toolbox Module for Fortran
-   ! Andreas Dutzler
-   ! Graz University of Technology
-   ! Institute of Structural Durability
-   !    and Railway Technology
-   ! ---------------------------------------
    ! tested on: Windows 10 (64bit)
    ! - Intel Fortran >2015
    ! - MinGW gfortran >6.3
    ! ---------------------------------------
    ! use this module in the following form:
    ! ---------------------------------------
-   ! include 'ttb/ttb_library.f'
    ! program sample
    !  use Tensor
    !  ...
    ! end program sample
    ! ---------------------------------------
+contains 
+
+    subroutine print_banner()
+        implicit none
+        print *, " "
+        print *, "---------------------------------------"
+        print *, " Tensor Toolbox Module for Fortran"
+        print *, " Andreas Dutzler"
+        print *, " Graz University of Technology"
+        print *, " Institute of Structural Durability"
+        print *, "    and Railway Technology"
+        print *, "---------------------------------------"
+        print *, " "
+    end subroutine print_banner
 
 end module Tensor
