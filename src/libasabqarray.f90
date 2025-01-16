@@ -6,14 +6,14 @@ module ttb_asabqarray
    end interface
 contains
 !      ------AS ABAQUS ARRAY SECTION-------------------
-   function asabqarray_2s(T, i, j)
+   function asabqarray_2s(T, i)
+   !function asabqarray_2s(T, i,j)
       implicit none
 
       type(Tensor2s), intent(in) :: T
       integer, intent(in) :: i
-      integer, intent(in), optional :: j
+      !integer, intent(in), optional :: j
       real(kind=dp), dimension(i) :: asabqarray_2s
-      integer :: i1
 
       asabqarray_2s(1:min(i, 4)) = T%a6(1:min(i, 4))
 

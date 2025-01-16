@@ -17,8 +17,11 @@ contains
 
       type(Tensor2), intent(in) :: T
       integer, intent(in) :: i1, j1
+      integer :: dummy
 
       type(Tensor2) :: permute_2
+      dummy = i1
+      dummy = j1
 
       permute_2%ab = transpose(T%ab)
 
@@ -30,8 +33,13 @@ contains
 
       type(Tensor2s), intent(in) :: T
       integer, intent(in) :: i1, j1
+      integer :: dummy
+
 
       type(Tensor2s) :: permute_2s
+      ! also seem to not be used??
+      dummy = i1
+      dummy = j1
 
       permute_2s%a6 = T%a6
 
@@ -45,7 +53,7 @@ contains
       integer, intent(in) :: i1, j1, k1, l1
 
       type(Tensor4) :: permute_4
-      integer i, j, k, l
+      !integer i, j, k, l
 
 !        hard-coded permutation
 !        if (i1==1 .and. j1==3 .and. k1==2 .and. l1==4) then
@@ -73,7 +81,7 @@ contains
       type(Tensor4) :: permute_4
       type(Tensor4s) :: permute_4s
 
-      integer i, j, k, l
+      !integer i, j, k, l
 
       Tp = tensorstore(T)
 

@@ -36,7 +36,7 @@ add_compile_options(
   -Wconversion
   -Wline-truncation
   -Wcharacter-truncation
-  -Warray-temporaries
+#  -Warray-temporaries
   -fcheck=all
   -finit-real=snan
   -finit-integer=-2147483648

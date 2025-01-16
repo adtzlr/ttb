@@ -14,7 +14,12 @@ contains
       type(Tensor2) :: dyadic_11
       integer i, j
 
-      forall (i=1:3, j=1:3) dyadic_11%ab(i, j) = T1%a(i)*T2%a(j)
+      !forall (i=1:3, j=1:3) dyadic_11%ab(i, j) = T1%a(i)*T2%a(j)
+      do i = 1, 3
+         do j = 1, 3
+            dyadic_11%ab(i, j) = T1%a(i)*T2%a(j)
+         end do
+      end do
 
    end function dyadic_11
 
