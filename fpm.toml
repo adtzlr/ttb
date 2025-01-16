@@ -13,7 +13,7 @@ module-naming = false
 library = false
 [fortran]
 implicit-typing = false
-implicit-external = true
+implicit-external = false
 source-form = "free"
 
 [dependencies]
