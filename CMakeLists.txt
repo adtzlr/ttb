@@ -50,14 +50,12 @@ set(debug_exec_name ${project_name})
 add_library(${ttb_lib} STATIC)
 
 target_link_libraries(
-  ${ttb_lib} PRIVATE 
-                      ${PROJECT_SOURCE_DIR}/lib/test-drive/lib/libtest-drive.a)
+  ${ttb_lib} PRIVATE ${PROJECT_SOURCE_DIR}/lib/test-drive/lib/libtest-drive.a)
 
 # Set the library output and module directories
 set_target_properties(
-  ${ttb_lib}
-  PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
-             Fortran_MODULE_DIRECTORY "${CMAKE_BINARY_DIR}/modules")
+  ${ttb_lib} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
+                        Fortran_MODULE_DIRECTORY "${CMAKE_BINARY_DIR}/modules")
 
 include_directories(
   ${PROJECT_SOURCE_DIR}/lib/test-drive/include/test-drive/${CMAKE_Fortran_COMPILER_ID}-${CMAKE_Fortran_COMPILER_VERSION}
@@ -71,7 +69,4 @@ target_include_directories(${debug_exec_name}
 
 # ${PROJECT_SOURCE_DIR}/lib/test-drive/lib/libtest-drive.a) Link the library to
 # the executable
-target_link_libraries(
-  ${debug_exec_name}
-  PRIVATE ${ttb_lib}
-          )
+target_link_libraries(${debug_exec_name} PRIVATE ${ttb_lib})

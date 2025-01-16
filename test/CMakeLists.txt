@@ -13,8 +13,7 @@ set_target_properties(
              Fortran_MODULE_DIRECTORY "${CMAKE_BINARY_DIR}/modules")
 target_link_libraries(
   "${project_name}-tester"
-  PRIVATE "${ttb_lib}"
-          ${PROJECT_SOURCE_DIR}/lib/test-drive/lib/libtest-drive.a)
+  PRIVATE "${ttb_lib}" ${PROJECT_SOURCE_DIR}/lib/test-drive/lib/libtest-drive.a)
 
 foreach(t IN LISTS tests)
   message(STATUS "${project_name}/${t} ${project_name}-tester ${t}")
