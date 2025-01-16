@@ -38,8 +38,13 @@ contains
 
       imap = (/1, 2, 3, 4, 6, 5/)
 
-      forall (i1=1:i, j1=1:j) asabqarray_4s(i1, j1) = &
-         T%a6b6(imap(i1), imap(j1))
+     ! forall (i1=1:i, j1=1:j) asabqarray_4s(i1, j1) = &
+     !    T%a6b6(imap(i1), imap(j1))
+         do i1 = 1, i
+    do j1 = 1, j
+        asabqarray_4s(i1, j1) = T%a6b6(imap(i1), imap(j1))
+    end do
+end do
 
    end function asabqarray_4s
 end module ttb_asabqarray

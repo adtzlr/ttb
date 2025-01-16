@@ -87,9 +87,19 @@ contains
       integer, dimension(3, 3) :: i6j6
 
       i6j6 = reshape((/1, 4, 6, 4, 2, 5, 6, 5, 3/), (/3, 3/))
+      ! could be replaced with a do concurrent?
+do i = 1, 3
+    do j = 1, 3
+        do k = 1, 3
+            do l = 1, 3
+                tenstore_4s%abcd(i, j, k, l) = T%a6b6(i6j6(i, j), i6j6(k, l))
+            end do
+        end do
+    end do
+end do
 
-      forall (i=1:3, j=1:3, k=1:3, l=1:3) tenstore_4s%abcd(i, j, k, l) &
-         = T%a6b6(i6j6(i, j), i6j6(k, l))
+!      forall (i=1:3, j=1:3, k=1:3, l=1:3) tenstore_4s%abcd(i, j, k, l) &
+!         = T%a6b6(i6j6(i, j), i6j6(k, l))
 
    end function tenstore_4s
 end module ttb_tensorstore

@@ -15,9 +15,21 @@ contains
       type(Tensor4) :: crossdyadic_22
       integer i, j, k, l
 
-      forall (i=1:3, j=1:3, k=1:3, l=1:3) crossdyadic_22%abcd(i, j, k, l) &
-         = (T1%ab(i, k)*T2%ab(j, l) + T1%ab(i, l)*T2%ab(j, k) + &
-            T2%ab(i, k)*T1%ab(j, l) + T2%ab(i, l)*T1%ab(j, k))/4.d0
+      ! forall (i=1:3, j=1:3, k=1:3, l=1:3) crossdyadic_22%abcd(i, j, k, l) &
+      !    = (T1%ab(i, k)*T2%ab(j, l) + T1%ab(i, l)*T2%ab(j, k) + &
+      !       T2%ab(i, k)*T1%ab(j, l) + T2%ab(i, l)*T1%ab(j, k))/4.d0
+
+      do i = 1, 3
+         do j = 1, 3
+            do k = 1, 3
+               do l = 1, 3
+                  crossdyadic_22%abcd(i, j, k, l) = &
+                     (T1%ab(i, k)*T2%ab(j, l) + T1%ab(i, l)*T2%ab(j, k) + &
+                      T2%ab(i, k)*T1%ab(j, l) + T2%ab(i, l)*T1%ab(j, k))/4.d0
+               end do
+            end do
+         end do
+      end do
 
    end function crossdyadic_22
 

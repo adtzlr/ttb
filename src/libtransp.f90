@@ -36,8 +36,18 @@ contains
       integer :: i, j, k, l
 
       transp4%abcd = 0.d0
-      forall (i=1:3, j=1:3, k=1:3, l=1:3) transp4%abcd(i, j, k, l) &
-         = T%abcd(k, l, i, j)
+      ! forall (i=1:3, j=1:3, k=1:3, l=1:3) transp4%abcd(i, j, k, l) &
+      !    = T%abcd(k, l, i, j)
+
+      do i=1,3
+         do j=1,3
+            do k=1,3
+               do l=1,3
+                  transp4%abcd(i,j,k,l) = T%abcd(k,l,i,j)
+               end do
+            end do
+         end do
+      end do
 
    end function transp4
 
