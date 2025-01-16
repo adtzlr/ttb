@@ -8,7 +8,7 @@ grand_parent: API Reference
 
 ## Inverse
 
-Inverse of a positive definite rank 2 Tensor (Determinant > 0). 
+Inverse of a positive definite rank 2 Tensor (Determinant > 0).
 
 Optional Argument
 - Determinant

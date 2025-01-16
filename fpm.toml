@@ -1,0 +1,21 @@
+name = "TensorToolBox"
+version = "0.1.0"
+license = "MIT"
+author = "Andreas Dutzler"
+maintainer = "@"
+copyright = "Copyright 2024, Andreas Dutzler"
+[build]
+auto-executables = true
+auto-tests = true
+auto-examples = true
+module-naming = false
+[install]
+library = false
+[fortran]
+implicit-typing = false
+implicit-external = false
+source-form = "free"
+
+[dependencies]
+stdlib="*"
+test-drive.git = "https://github.com/fortran-lang/test-drive"

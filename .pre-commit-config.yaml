@@ -1,0 +1,29 @@
+
+---
+repos:
+  - repo: local
+    hooks:
+      - id: fortran-fprettify
+        name: Fortran fprettify
+        entry: fprettify
+        language: system
+        files: \.(f90|F90|f95|F95|f03|F03|for|FOR|ftn|FTN)$
+  - repo: https://github.com/cheshirekow/cmake-format-precommit
+    rev: v0.6.13
+    hooks:
+      - id: cmake-format
+        name: CMake Format
+        entry: cmake-format
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-shebang-scripts-are-executable
+      - id: check-executables-have-shebangs
+      - id: check-json
+      - id: check-yaml
+      - id: check-symlinks
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: check-case-conflict
+      - id: mixed-line-ending
+      - id: trailing-whitespace

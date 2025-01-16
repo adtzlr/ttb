@@ -36,4 +36,3 @@ U = sqrt(C)
 ! polar decomposition F = R*U
 R = F*inv(U)
 ```
-

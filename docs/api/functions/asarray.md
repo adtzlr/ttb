@@ -8,10 +8,10 @@ grand_parent: API Reference
 
 ## As Array
 
-Convert Tensor to Array. This is useful to export results back to the code which is not using the tensor toolbox. 
+Convert Tensor to Array. This is useful to export results back to the code which is not using the tensor toolbox.
 
 {: .note }
-> This function is very useful because Fortran does not allow access to Tensor components of a function result `s = (dev(S*C)*inv(C))%ab`. Instead this function can be used. 
+> This function is very useful because Fortran does not allow access to Tensor components of a function result `s = (dev(S*C)*inv(C))%ab`. Instead this function can be used.
 
 {: .warning }
 > If you use Abaqus please use [`asabqarray`]({% link api/functions/asabqarray.md %}) to export Tensor components.
