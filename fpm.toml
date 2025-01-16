@@ -1,0 +1,20 @@
+name = "TensorToolBox"
+version = "0.1.0"
+license = "MIT"
+author = "Andreas Dutzler"
+maintainer = "@"
+copyright = "Copyright 2024, Andreas Dutzler"
+[build]
+auto-executables = true
+auto-tests = true
+auto-examples = true
+module-naming = false
+[install]
+library = false
+[fortran]
+implicit-typing = false
+implicit-external = true
+source-form = "fixed"
+
+#[dependencies]
+#stdlib="*"
