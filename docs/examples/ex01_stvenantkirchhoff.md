@@ -18,7 +18,7 @@ $$
 \end{equation}
 $$
 
-and 
+and
 
 $$
 \begin{equation}
@@ -44,7 +44,7 @@ Before we are able to add our own user code, we have to start with an empty fort
 
       use Tensor
       implicit none
-     
+
       integer :: ifr,ifu,itel,jtype,ncrd,ndeg,ndi,ndm,ngens,
      *           nn,nnode,nshear
       integer,      dimension(2)       :: m,matus,kcus,lclass
@@ -55,9 +55,9 @@ Before we are able to add our own user code, we have to start with an empty fort
       real(kind=8), dimension(ndeg,*)  :: disp, dispt
       real(kind=8), dimension(itel,3)  :: ffn,ffn1,frotn,frotn1
       real(kind=8), dimension(itel,*)  :: eigvn,eigvn1
-      
+
       ! ...user code...
-      
+
       return
       end
 ```
@@ -87,9 +87,9 @@ Before we are able to add our own user code, we have to start with an empty fort
      2 STRAN(NTENS),DSTRAN(NTENS),TIME(2),PREDEF(1),DPRED(1),
      3 PROPS(NPROPS),COORDS(3),DROT(3,3),DFGRD0(3,3),DFGRD1(3,3),
      4 JSTEP(4)
-      
+
       ! ...user code...
-      
+
       return
       end
 ```
@@ -100,11 +100,11 @@ First we need to define our material parameters, which will be entered as young'
 
 ```fortran
       real(kind=8) :: young,nu,lambda,mu
-      
+
       ! material parameters
       young = 210000.0
       nu = 0.3
-      
+
       ! lame parameter
       mu = young / ( 2.*(1.+nu) )
       lambda = nu*young / ((1.+nu)*(1.-2.*nu))
@@ -115,12 +115,12 @@ In our code implementation the strain tensor looks like:
 ```fortran
       type(Tensor2)  :: F1
       type(Tensor2s) :: E1,Eye
-      
+
       Eye = Eye**0
-      
+
       F1 = Eye
       F1%ab(1:3,1:3) = ffn1(1:3,1:3)
-      
+
       E1 = 0.5*(transpose(F1)*F1-Eye)
 ```
 
@@ -185,9 +185,9 @@ Finally we have to export our Tensor data back to conventional fortran arrays.
 
 ```fortran
       real(kind=8) :: J
-      
+
       ! ...some code...
-      
+
       if (iupdat.eq.1) then ! updated lagrange
        J = det(F1)
        ! cauchy stress
@@ -198,10 +198,10 @@ Finally we have to export our Tensor data back to conventional fortran arrays.
       endif
 ```
 
-In this code `iupdat` is an integer with 
+In this code `iupdat` is an integer with
 
-* `0` for total lagrange and 
-* `1` for updated lagrange. 
+* `0` for total lagrange and
+* `1` for updated lagrange.
 
 ```fortran
       ! output as array
@@ -223,10 +223,10 @@ You may download the example as a [HYPELA2 user subroutine](Marc/hypela2_stvenan
       ! push forward to cauchy stress
       J = det(F1)
       S1 = piola(F1,S1)/J
-      
+
       ! push forward to jaumann tangent of cauchy stress for abaqus
       C4 = piola(F1,C4)/J + (S1.cdya.Eye)+(Eye.cdya.S1)
-      
+
       ! output as abaqus array
       STRESS(1:ntens)         = asabqarray( voigt(S1), ntens )
       DDSDDE(1:ntens,1:ntens) = asabqarray( voigt(C4), ntens, ntens )

@@ -41,4 +41,3 @@ Sigma = 1./J * F*S*transpose(F)
 ! push forward of (contra-variant) fourth order material elasticity tensor
 c4 = 1./J * piola(F,C4)
 ```
-

@@ -42,33 +42,33 @@ contains
       type(Tensor2), intent(in) :: T
       type(Tensor2) :: sqrt_2
 
-      real(kind=8) :: I_T,II_T,III_T,I_U,II_U,III_U,k,l,lam,phi
+      real(kind=8) :: I_T, II_T, III_T, I_U, II_U, III_U, k, l, lam, phi
 
       ! Invariants of T
       I_T = tr(T)
-      II_T = 0.5*(I_T**2-T**T)
+      II_T = 0.5*(I_T**2 - T**T)
       III_T = det(T)
-      k = I_T**2-3.*II_T
+      k = I_T**2 - 3.*II_T
 
       ! Isotropy check
-      if (dabs(k).le.1.0d-8) then
+      if (dabs(k) .le. 1.0d-8) then
          lam = (I_T/3.)**(1./2.)
-         sqrt_2 = lam * identity2(T)
+         sqrt_2 = lam*identity2(T)
          return
       end if
 
       ! Calculate largest eigenvalues
-      l = I_T**3 - 9./2. * I_T*II_T + 27./2. * III_T
+      l = I_T**3 - 9./2.*I_T*II_T + 27./2.*III_T
       phi = dacos(l/k**(3./2.))
-      lam = dsqrt(1./3.*(I_T+2*k**(1./2.)*dcos(phi/3.)))
+      lam = dsqrt(1./3.*(I_T + 2*k**(1./2.)*dcos(phi/3.)))
 
       ! Invariants of U
       III_U = (III_T)**(1./2.)
-      I_U = lam + dsqrt(-lam**2+I_T+2.*III_U/lam)
-      II_U = (I_U**2-I_T)/2.
+      I_U = lam + dsqrt(-lam**2 + I_T + 2.*III_U/lam)
+      II_U = (I_U**2 - I_T)/2.
 
-      sqrt_2 = 1./(I_U*II_U-III_U) &
-              *(I_U*III_U*identity2(T) + (I_U**2-II_U)*T-T.pow.(2))
+      sqrt_2 = 1./(I_U*II_U - III_U) &
+               *(I_U*III_U*identity2(T) + (I_U**2 - II_U)*T - T.pow. (2))
 
    end function sqrt_2
 
@@ -83,33 +83,33 @@ contains
       type(Tensor2s), intent(in) :: T
       type(Tensor2s) :: sqrt_2s
 
-      real(kind=8) :: I_T,II_T,III_T,I_U,II_U,III_U,k,l,lam,phi
+      real(kind=8) :: I_T, II_T, III_T, I_U, II_U, III_U, k, l, lam, phi
 
       ! Invariants of T
       I_T = tr(T)
-      II_T = 0.5*(I_T**2-tr(T*T))
+      II_T = 0.5*(I_T**2 - tr(T*T))
       III_T = det(T)
-      k = I_T**2-3.*II_T
+      k = I_T**2 - 3.*II_T
 
       ! Isotropy check
-      if (k.le.1.0d-8) then
+      if (k .le. 1.0d-8) then
          lam = (I_T/3.)**(1./2.)
-         sqrt_2s = lam * identity2(T)
+         sqrt_2s = lam*identity2(T)
          return
       end if
 
       ! Calculate largest eigenvalues
-      l = I_T**3 - 9./2. * I_T*II_T + 27./2. * III_T
+      l = I_T**3 - 9./2.*I_T*II_T + 27./2.*III_T
       phi = dacos(l/k**(3./2.))
-      lam = dsqrt(1./3.*(I_T+2*k**(1./2.)*dcos(phi/3.)))
+      lam = dsqrt(1./3.*(I_T + 2*k**(1./2.)*dcos(phi/3.)))
 
       ! Invariants of U
       III_U = (III_T)**(1./2.)
-      I_U = lam + dsqrt(-lam**2+I_T+2.*III_U/lam)
-      II_U = (I_U**2-I_T)/2.
+      I_U = lam + dsqrt(-lam**2 + I_T + 2.*III_U/lam)
+      II_U = (I_U**2 - I_T)/2.
 
-      sqrt_2s = 1./(I_U*II_U-III_U) &
-               *(I_U*III_U*identity2(T) + (I_U**2-II_U)*T-T*T)
+      sqrt_2s = 1./(I_U*II_U - III_U) &
+                *(I_U*III_U*identity2(T) + (I_U**2 - II_U)*T - T*T)
 
    end function sqrt_2s
 end module ttb_sqrt

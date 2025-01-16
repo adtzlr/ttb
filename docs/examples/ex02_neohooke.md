@@ -64,7 +64,7 @@ Eq. $$\eqref{eq:pk2-nh}$$ and Eq. $$\eqref{eq:c4-nh}$$ are implemented in a Tota
      2             nshear,disp,dispt,coord,ffn,frotn,strechn,eigvn,ffn1,
      3                   frotn1,strechn1,eigvn1,ncrd,itel,ndeg,ndm,
      4                   nnode,jtype,lclass,ifr,ifu)
-     
+
       ! HYPELA2:        Nearly-Incompressible Neo-Hookean Material
       !                 Example for usage of Tensor Toolbox
       ! capability:     3D, Axisymmetric
@@ -74,7 +74,7 @@ Eq. $$\eqref{eq:pk2-nh}$$ and Eq. $$\eqref{eq:c4-nh}$$ are implemented in a Tota
 
       use Tensor
       implicit none
-     
+
       integer :: ifr,ifu,itel,jtype,ncrd,ndeg,ndi,ndm,ngens,
      *           nn,nnode,nshear
       integer,      dimension(2)       :: m,matus,kcus,lclass
@@ -85,26 +85,26 @@ Eq. $$\eqref{eq:pk2-nh}$$ and Eq. $$\eqref{eq:c4-nh}$$ are implemented in a Tota
       real(kind=8), dimension(ndeg,*)  :: disp, dispt
       real(kind=8), dimension(itel,3)  :: ffn,ffn1,frotn,frotn1
       real(kind=8), dimension(itel,*)  :: eigvn,eigvn1
-      
+
       type(Tensor2)  :: F1
       real(kind=8) :: J,kappa,C10
-      
+
       ! to use voigt notation change to type Tensor2s, Tensor4s
       type(Tensor2) :: C1,invC1,S1,Eye
       type(Tensor4) :: C4
-      
+
       ! material parameters
       C10 = 0.5
       kappa = 5.0
-      
+
       Eye = identity2(Eye)
       F1 = ffn1(1:3,1:3) ! use slices (ffn1 is an assumed size array)
       J = det(F1)
-      
+
       ! right cauchy-green deformation tensor and it's inverse
       C1 = transpose(F1)*F1
       invC1 = inv(C1) ! faster method: invC1 = inv(C1,J**2)
-      
+
       ! pk2 stress
       S1 = 2.*C10*J**(-2./3.)*dev(C1)*invC1 + kappa*(J-1)*J*invC1
 
@@ -115,11 +115,11 @@ Eq. $$\eqref{eq:pk2-nh}$$ and Eq. $$\eqref{eq:c4-nh}$$ are implemented in a Tota
      *    + tr(C1)/3. * (invC1.dya.invC1) )
      *  + (kappa*(J-1)*J+kappa*J**2) * (invC1.dya.invC1)
      *  - 2.*kappa*(J-1)*J* (invC1.cdya.invC1)
-     
+
       ! output as array
       s(1:ngens)         = asarray( voigt(S1), ngens )
       d(1:ngens,1:ngens) = asarray( voigt(C4), ngens, ngens )
-      
+
       return
       end
 ```
@@ -140,7 +140,7 @@ Abaqus uses an Updated-Lagrange approach and hence, Eq. $$\eqref{eq:pk2-nh}$$ an
      2 STRAN,DSTRAN,TIME,DTIME,TEMP,DTEMP,PREDEF,DPRED,CMNAME,
      3 NDI,NSHR,NTENS,NSTATV,PROPS,NPROPS,COORDS,DROT,PNEWDT,
      4 CELENT,DFGRD0,DFGRD1,NOEL,NPT,LAYER,KSPT,JSTEP,KINC)
-     
+
       ! ABAQUS UMAT:    Nearly-Incompressible Neo-Hookean Material
       !                 Example for usage of Tensor Toolbox
       ! capability:     3D, Axisymmetric
@@ -148,11 +148,11 @@ Abaqus uses an Updated-Lagrange approach and hence, Eq. $$\eqref{eq:pk2-nh}$$ an
       ! Andreas Dutzler, 2018-07-22, Graz University of Technology
 
       use Tensor
-      
+
       ! `implicit none` is not supported if 'ABA_PARAM.INC' is included.
       ! declare all double-variables which start with `i,j,k,l,m,n`
       ! - otherwise they will be integers
-      
+
       ! implicit none
       INCLUDE 'ABA_PARAM.INC'
 
@@ -162,28 +162,28 @@ Abaqus uses an Updated-Lagrange approach and hence, Eq. $$\eqref{eq:pk2-nh}$$ an
      2 STRAN(NTENS),DSTRAN(NTENS),TIME(2),PREDEF(1),DPRED(1),
      3 PROPS(NPROPS),COORDS(3),DROT(3,3),DFGRD0(3,3),DFGRD1(3,3),
      4 JSTEP(4)
-      
+
       type(Tensor2) :: F1
       real(kind=8)  :: J,kappa,C10
-      
+
       type(Tensor2s) :: C1,invC1,S1,Eye
       type(Tensor4s) :: C4
-      
+
       ! material parameters
       C10 = 0.5
       kappa = 5.0
-      
+
       Eye = identity2(Eye)
       F1 = dfgrd1(1:3,1:3)
       J = det(F1)
-      
+
       ! right cauchy-green deformation tensor and its inverse
       C1 = transpose(F1)*F1
       invC1 = inv(C1)
-      
+
       ! pk2 stress
       S1 = 2.*C10*J**(-2./3.)*dev(C1)*invC1 + kappa*(J-1)*J*invC1
-      
+
       ! push forward to cauchy stress
       S1 = piola(F1,S1)/J
 
@@ -194,14 +194,14 @@ Abaqus uses an Updated-Lagrange approach and hence, Eq. $$\eqref{eq:pk2-nh}$$ an
      *    + tr(C1)/3. * (invC1.dya.invC1) )
      *  + (kappa*(J-1)*J+kappa*J**2) * (invC1.dya.invC1)
      *  - 2.*kappa*(J-1)*J* (invC1.cdya.invC1)
-     
+
       ! push forward to jaumann tangent of cauchy stress for abaqus
       C4 = piola(F1,C4)/J + (S1.cdya.Eye)+(Eye.cdya.S1)
-     
+
       ! output as array
       STRESS(1:ntens)         = asabqarray(voigt(S1),ntens)
       DDSDDE(1:ntens,1:ntens) = asabqarray(voigt(C4),ntens,ntens)
-      
+
       return
       end
 ```
