@@ -55,10 +55,10 @@ contains
       print *, " "
       print *, "---------------------------------------"
       print *, " Tensor Toolbox Module for Fortran"
-      print *, " Andreas Dutzler"
-      print *, " Graz University of Technology"
+      print *, "         Andreas Dutzler"
+      print *, "   Graz University of Technology"
       print *, " Institute of Structural Durability"
-      print *, "    and Railway Technology"
+      print *, "       and Railway Technology"
       print *, "---------------------------------------"
       print *, " "
    end subroutine print_banner
