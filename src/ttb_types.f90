@@ -1,5 +1,4 @@
 module ttb_types
-  use stdlib_kinds, only: sp, dp
    ! ---------------------------------------
    ! Tensor Toolbox Module for Fortran
    ! Andreas Dutzler
@@ -19,6 +18,7 @@ module ttb_types
    !  ...
    ! end program sample
    ! ---------------------------------------
+   integer, parameter :: dp = selected_real_kind(15)
 
    type Tensor1
       ! tensor of rank 1
