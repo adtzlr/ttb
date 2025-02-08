@@ -20,51 +20,64 @@ include(ExternalProject)
 # Set the source directory path
 set(SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src")
 
-set(test-drive_version 0.5.0)
-ExternalProject_Add(
-  test-drive
-  URL https://github.com/fortran-lang/test-drive/archive/refs/tags/v${test-drive_version}.tar.gz
-  PREFIX ${PROJECT_SOURCE_DIR}/external/test-drive
-  CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PROJECT_SOURCE_DIR}/lib/test-drive)
-add_compile_options(-pedantic -Wampersand -Wsurprising -std=f2018)
-add_compile_options(
-  -g
-  -fbacktrace
-  -Wall
-  -Wextra
-  -Wunderflow
-  -Wconversion
-  -Wline-truncation
-  -Wcharacter-truncation
-  # I need to think more how to remove these warnings -Warray-temporaries
-  -fcheck=all
-  -finit-real=snan
-  -finit-integer=-2147483648
-  -finit-logical=true
-  -fimplicit-none)
-
-# Create the static library
+# set(test-drive_version 0.5.0) ExternalProject_Add( test-drive URL
+# https://github.com/fortran-lang/test-drive/archive/refs/tags/v${test-drive_version}.tar.gz
+# PREFIX ${PROJECT_SOURCE_DIR}/external/test-drive CMAKE_ARGS
+# -DCMAKE_INSTALL_PREFIX=${PROJECT_SOURCE_DIR}/lib/test-drive)
 set(ttb_lib tensor_ttbs)
-# set(debug_exec_name ${project_name})
-
 add_library(${ttb_lib} STATIC)
+if("${CMAKE_Fortran_COMPILER_ID}" STREQUAL "GNU")
+  # so far this seems to only pop up on gcc 11.1...
+  target_compile_options(
+    ${ttb_lib}
+    PRIVATE $<$<COMPILE_LANGUAGE:Fortran>:
+            -pedantic
+            -Wampersand
+            -Wsurprising
+            -std=f2018
+            -g
+            -fbacktrace
+            -Wall
+            -Wextra
+            -Wunderflow
+            -Wconversion
+            -Wline-truncation
+            -Wcharacter-truncation
+            # I need to think more how to remove these warnings
+            # -Warray-temporaries
+            -fcheck=all
+            -finit-real=snan
+            -finit-integer=-2147483648
+            -finit-logical=true
+            -fimplicit-none
+            >)
+elseif("${CMAKE_Fortran_COMPILER_ID}" STREQUAL "Cray")
 
-target_link_libraries(
-  ${ttb_lib} PRIVATE ${PROJECT_SOURCE_DIR}/lib/test-drive/lib/libtest-drive.a)
+elseif("${CMAKE_Fortran_COMPILER_ID}" STREQUAL "Intel"
+       OR ${CMAKE_Fortran_COMPILER_ID} STREQUAL "IntelLLVM")
+
+elseif("${CMAKE_Fortran_COMPILER_ID}" STREQUAL "NVHPC")
+
+elseif("${CMAKE_Fortran_COMPILER_ID}" STREQUAL "LLVMFlang")
+
+endif()
+# Create the static library set(debug_exec_name ${project_name})
+
+# target_link_libraries( ${ttb_lib} PRIVATE
+# ${PROJECT_SOURCE_DIR}/lib/test-drive/lib/libtest-drive.a)
 
 # Set the library output and module directories
 set_target_properties(
   ${ttb_lib} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
                         Fortran_MODULE_DIRECTORY "${CMAKE_BINARY_DIR}/modules")
 
-include_directories(
-  ${PROJECT_SOURCE_DIR}/lib/test-drive/include/test-drive/${CMAKE_Fortran_COMPILER_ID}-${CMAKE_Fortran_COMPILER_VERSION}
-)
+# include_directories(
+# ${PROJECT_SOURCE_DIR}/lib/test-drive/include/test-drive/${CMAKE_Fortran_COMPILER_ID}-${CMAKE_Fortran_COMPILER_VERSION}
+# )
 add_subdirectory(src)
-add_subdirectory(test)
-# add_executable(${debug_exec_name} ${PROJECT_SOURCE_DIR}/app/main.f90) Set the
-# module directory for the executable
-# target_include_directories(${debug_exec_name} PRIVATE
+# add_subdirectory(test) add_executable(${debug_exec_name}
+# ${PROJECT_SOURCE_DIR}/app/main.f90) Set the module directory for the
+# executable target_include_directories(${debug_exec_name} PRIVATE
 # "${CMAKE_BINARY_DIR}/modules")
 
 # ${PROJECT_SOURCE_DIR}/lib/test-drive/lib/libtest-drive.a) Link the library to
