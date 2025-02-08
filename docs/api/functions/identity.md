@@ -43,4 +43,3 @@ invC = I4invC**C
 ```
 
 **Note**: the operator `**` for two tensor data types represents a double contraction. See double contraction for details. `Eye.cdya.Eye` is equivalent to `identity4(Eye)`. See crossed-dyadic product for details.
-
