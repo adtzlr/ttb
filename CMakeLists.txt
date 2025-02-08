@@ -63,22 +63,21 @@ elseif("${CMAKE_Fortran_COMPILER_ID}" STREQUAL "LLVMFlang")
 endif()
 # Create the static library set(debug_exec_name ${project_name})
 
-# target_link_libraries( ${ttb_lib} PRIVATE
-# ${PROJECT_SOURCE_DIR}/lib/test-drive/lib/libtest-drive.a)
+target_link_libraries(
+  ${ttb_lib} PRIVATE ${PROJECT_SOURCE_DIR}/lib/test-drive/lib/libtest-drive.a)
 
 # Set the library output and module directories
 set_target_properties(
   ${ttb_lib} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
                         Fortran_MODULE_DIRECTORY "${CMAKE_BINARY_DIR}/modules")
 
-# include_directories(
-# ${PROJECT_SOURCE_DIR}/lib/test-drive/include/test-drive/${CMAKE_Fortran_COMPILER_ID}-${CMAKE_Fortran_COMPILER_VERSION}
-# )
+include_directories(
+  ${PROJECT_SOURCE_DIR}/lib/test-drive/include/test-drive/${CMAKE_Fortran_COMPILER_ID}-${CMAKE_Fortran_COMPILER_VERSION}
+)
 add_subdirectory(src)
-# add_subdirectory(test) add_executable(${debug_exec_name}
-# ${PROJECT_SOURCE_DIR}/app/main.f90) Set the module directory for the
-# executable target_include_directories(${debug_exec_name} PRIVATE
-# "${CMAKE_BINARY_DIR}/modules")
+add_subdirectory(test)
+add_executable(bob ${PROJECT_SOURCE_DIR}/app/main.f90)
+target_include_directories(bob PRIVATE "${CMAKE_BINARY_DIR}/modules")
+target_link_libraries(bob PRIVATE ${ttb_lib})
 
 # ${PROJECT_SOURCE_DIR}/lib/test-drive/lib/libtest-drive.a) Link the library to
-# the executable target_link_libraries(${debug_exec_name} PRIVATE ${ttb_lib})

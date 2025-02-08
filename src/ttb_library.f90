@@ -61,6 +61,10 @@ contains
       print *, "       and Railway Technology"
       print *, "---------------------------------------"
       print *, " "
+      print *, " with contributions from: "
+      print *, "   Jorge Luis Galvez Vallejo (JorgeG94)"
+      ! add more contributors here :)
+      print *, " "
    end subroutine print_banner
 
 end module Tensor
