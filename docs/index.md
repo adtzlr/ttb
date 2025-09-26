@@ -17,7 +17,7 @@ Commercial FEM software packages offer interfaces (user subroutines written in F
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4077378.svg)](https://doi.org/10.5281/zenodo.4077378)
 
-If you use *Tensor Toolbox for Modern Fortran (ttb)* in your work, please cite this toolbox in your publications and let us know. Thanks! 
+If you use *Tensor Toolbox for Modern Fortran (ttb)* in your work, please cite this toolbox in your publications and let us know. Thanks!
 
 {: .note }
 >The DOI-badge always resolves to the latest version of this toolbox - if you prefer a version-specific DOI, hit the DOI-badge and pick a version on Zenodo.

@@ -36,6 +36,24 @@ This tensor toolbox provides the following [basic operations for tensor calculus
 
 The idea is to create derived data types for rank 1, rank 2 and rank 4 tensors (and it's symmetric variants). In a next step the operators are defined in a way that Fortran calls different functions based on the input types of the operator: performing a dot product between a vector and a rank 2 tensor or a rank 2 and a rank 2 tensor is a different function. Best of it: you don't have to take care of that.
 
+## Building
+
+The TensorToolBox can be used in several ways. Since moving to free form, slotting it into existing build systems in Fortran legacy applications might cause trouble! Therefore, we have included several new ways to integrate it.
+
+The TTB can be built either with Makefiles, CMake, or the Fortran Package Mangager (FPM). This will ensure maximum compatibility with any build system available. Therefore...
+
+### Makefiles
+
+You can include the dependencies and the build logic into an existing Makefile build system using the existing Makefile provided here as a template. Otherwise, you can make sure this is built first and then your main application, linking statically to yours.
+
+### CMake
+
+Via CMake one can include the building of the TTB into another CMake application via Fetch commands. An example is provided in the examples/ directory.
+
+### FPM
+
+TTB can be built and linked to using the FPM. An example is show in the examples directory/
+
 ## Basic Usage
 The most basic example on how to use this module is to [download the module](https://github.com/adtzlr/ttb/archive/main.zip), put the 'ttb'-Folder in your working directory and add two lines of code:
 
