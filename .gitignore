@@ -1,5 +1,6 @@
 # Not sure what a .gitignore is?
 # See: https://git-scm.com/docs/gitignore
+lib/
 
 # These are directly copied from Jekyll's first-party docs on `.gitignore` files:
 # https://jekyllrb.com/tutorials/using-jekyll-with-bundler/#commit-to-source-control
